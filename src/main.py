@@ -1,24 +1,19 @@
-import os
-import json
-
 from dotenv import load_dotenv
 
 from groq import Groq
 
-import xml.etree.ElementTree as ET
-import cairosvg
 
-from src import utils
+from src.utils import save_file, save_report, topic_to_slug, timestamp_now
+from src.generator import build_system_prompt, generate_svg_with_groq
+from src.renderer import save_png_from_svg
+from src.validator import validate_svg
+from src.config import GROQ_API_KEY, MAX_ATTEMPTS, MODEL_NAME
 
 load_dotenv()
 
-model = "openai/gpt-oss-120b"  # or "llama-3.3-70b-versatile"
+model = MODEL_NAME  # or "llama-3.3-70b-versatile"
 
-api_key = os.getenv("GROQ_API_KEY")
-if not api_key:
-    raise ValueError("GROQ_API_KEY not found in .env")
-
-client = Groq(api_key=api_key)
+client = Groq(api_key=GROQ_API_KEY)
 
 
 # change this each run: "TCP 3-way handshake", "Cell structure", "Photosynthesis", "Water cycle",
@@ -28,42 +23,21 @@ client = Groq(api_key=api_key)
 # "Transport Layer Security (TLS) Handshake Process", "HTTP request-response cycle", "Neural network architecture",
 # Neural network architecture, Software development lifecycle, Compiler design stages, Database normalization forms, Object-oriented programming concepts, Data structure visualization, Algorithm flowchart, Computer memory hierarchy, Operating system process management, Network protocol stack, Cloud computing architecture, Cybersecurity attack vectors, Software testing strategies, Mobile app architecture, User interface design principles
 
-TOPIC = "Transformer architecture"
+TOPIC = "Water condensation"
 
-topic_slug = utils.topic_to_slug(TOPIC)
-timestamp = utils.timestamp_now()
+topic_slug = topic_to_slug(TOPIC)
+timestamp = timestamp_now()
 
-SYSTEM_PROMPT = f"""You are an expert educational SVG diagram generator.
-
-Return ONLY valid SVG XML.
-No markdown fences.
-Canvas must be exactly width="1000" height="700".
-Use clear labels with readable font-size (>=16).
-
-Task:
-Create a simple educational diagram for: "{TOPIC}"
-
-Rules:
-1) Group each logical concept in <g id="..."> with short snake_case ids.
-2) Include at least 6 concept groups.
-3) Keep layout clean: avoid overlaps, keep spacing between blocks.
-4) Use arrows/lines to show relationships or flow.
-5) Keep style minimal and classroom-friendly.
-6) All text must be inside canvas bounds.
-7) Do not use external assets/images/fonts/scripts.
-8) Define arrow marker in <defs> with id containing arrow.
-9) Use marker-end arrows on connectors.
-"""
+SYSTEM_PROMPT = build_system_prompt(topic=TOPIC)
 
 
-max_attempts = 5
 attempt = 1
 last_validation = None
 svg_text = ""
 
 base_user_prompt = f"Generate an educational SVG for topic: {TOPIC}"
 
-while attempt <= max_attempts:
+while attempt <= MAX_ATTEMPTS:
     if attempt == 1:
         user_prompt = base_user_prompt
     else:
@@ -79,7 +53,7 @@ while attempt <= max_attempts:
             f"Regenerate a corrected SVG that satisfies all rules."
         )
 
-    print(f"\n--- Attempt {attempt}/{max_attempts} ---")
+    print(f"\n--- Attempt {attempt}/{MAX_ATTEMPTS} ---")
     svg_text = generate_svg_with_groq(client, SYSTEM_PROMPT, user_prompt)
     last_validation = validate_svg(svg_text)
 
@@ -91,27 +65,21 @@ while attempt <= max_attempts:
         attempt += 1
 
 
-with open(f"svg/{topic_slug}_{timestamp}.svg", "w", encoding="utf-8") as f:
-    f.write(svg_text)
+# save svg
+save_file(f"svg/{topic_slug}_{timestamp}.svg", svg_text)
 
 # New: render PNG from SVG
-cairosvg.svg2png(
-    url=f"svg/{topic_slug}_{timestamp}.svg",
-    write_to=f"img/{topic_slug}_{timestamp}.png",
-)
+save_png_from_svg(topic_slug, timestamp)
 
 report_path = f"reports/{topic_slug}_{timestamp}.json"
 
-experiment_report = {
+report_data = {
     "timestamp": timestamp,
     "topic": TOPIC,
-    "model": model,
-    "attempts_used": attempt if attempt <= max_attempts else max_attempts,
-    "max_attempts": max_attempts,
+    "model": MODEL_NAME,
+    "attempts_used": attempt if attempt <= MAX_ATTEMPTS else MAX_ATTEMPTS,
+    "max_attempts": MAX_ATTEMPTS,
     "validation": last_validation,
 }
 
-with open(report_path, "w", encoding="utf-8") as f:
-    json.dump(experiment_report, f, indent=2)
-
-print(f"Saved {report_path}")
+save_report(report_path, report_data)

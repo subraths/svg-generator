@@ -8,5 +8,7 @@ dependencies = [
     "cairosvg>=2.9.0",
     "groq>=1.1.2",
     "lxml>=6.0.4",
+    "pillow>=12.2.0",
+    "pyqt6>=6.11.0",
     "python-dotenv>=1.2.2",
 ]
