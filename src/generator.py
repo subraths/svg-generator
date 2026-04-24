@@ -1,3 +1,5 @@
+import json
+
 from src.config import CANVAS_H, CANVAS_W, MODEL_NAME
 
 
@@ -39,3 +41,28 @@ def generate_svg_with_groq(client, system_prompt: str, user_prompt: str) -> str:
         svg_text.replace("```svg", "").replace("```xml", "").replace("```", "").strip()
     )
     return svg_text
+
+
+def build_system_prompt_from_plan() -> str:
+    return f"""You are an expert SVG generator.
+Return ONLY valid SVG XML. No markdown.
+
+Canvas must be exactly width="{CANVAS_W}" height="{CANVAS_H}".
+Use <g id="..."> for each node id from the plan.
+Draw rectangles or circles and centered labels for nodes.
+Draw connectors for all edges with marker-end arrows.
+Define arrow marker in <defs> with id containing "arrow".
+Do not place text outside canvas.
+Do not use external assets/scripts.
+"""
+
+
+def build_user_prompt_from_plan(topic: str, plan: dict) -> str:
+    return (
+        f"Generate an educational SVG for topic: {topic}\n\n"
+        f"Use this layout plan exactly (JSON):\n{json.dumps(plan, indent=2)}\n\n"
+        "Requirements:\n"
+        "- Keep node ids exactly as given.\n"
+        "- Connect edges from source box boundary to target box boundary.\n"
+        "- Keep output clean and readable.\n"
+    )
