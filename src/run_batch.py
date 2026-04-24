@@ -7,7 +7,7 @@ from src.config import GROQ_API_KEY, MAX_ATTEMPTS, MODEL_NAME
 from src.generator import generate_svg_with_groq, build_system_prompt
 from src.validator import validate_svg
 from src.renderer import save_png_from_svg
-from src.utils import topic_to_slug, timestamp_now, save_file, save_report
+from src.utils import topic_to_slug, timestamp_now, save_file, save_json
 
 
 TOPICS = [
@@ -121,7 +121,7 @@ def run_batch():
                     "csv": csv_path,
                 },
             }
-            save_report(report_path, report)
+            save_json(report_path, report, "report")
 
             writer.writerow(
                 {
