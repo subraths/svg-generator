@@ -42,30 +42,51 @@ def main():
 
     plan = None
     base_user_prompt = f"Generate an educational SVG for topic {TOPIC}"
-
-    # ---- NEW: planner stage (only when USE_PLANNER=True) ----
-    if USE_PLANNER:
-        plan = generate_layout_plan(client, TOPIC, min_nodes=6)
-        plan_path = f"reports/{topic_slug}_{timestamp}_plan.json"
-        save_json(plan_path, plan, "plan")
-
-    # SYSTEM_PROMPT = build_system_prompt(topic=TOPIC)
-    # ---- retry loop (same idea as v1, but prompt source differs) ----
     attempt = 1
     last_validation = None
     svg_text = ""
+
+    # ---- NEW: planner stage (only when USE_PLANNER=True) ----
+    if USE_PLANNER:
+        try:
+            plan = generate_layout_plan(client, TOPIC, min_nodes=6)
+            plan_path = f"reports/{topic_slug}_{timestamp}_plan.json"
+            save_json(plan_path, plan, "plan")
+        except Exception as e:
+            raise ValueError(f"Planner failed before SVG generation: {e}")
+
+    # SYSTEM_PROMPT = build_system_prompt(topic=TOPIC)
+    # ---- retry loop (same idea as v1, but prompt source differs) ----
 
     while attempt <= MAX_ATTEMPTS:
         print(f"\n--- Attempt {attempt}/{MAX_ATTEMPTS} ---")
 
         if USE_PLANNER and plan is not None:
+            if attempt > 1 and last_validation and last_validation["errors"]:
+                feedback = "; ".join(last_validation["errors"])
+                print(f"Regenerating plan due to validation errors: {feedback}")
+
+                # lightweight feedback injection into topic prompt
+                replanned_topic = (
+                    f"{TOPIC}. Previous SVG failed with: {feedback}. "
+                    "Create a cleaner layout with more spacing, clear connector routing, "
+                    "and strict non-overlap."
+                )
+                plan = generate_layout_plan(client, replanned_topic, min_nodes=6)
+
+                # overwrite latest plan artifact for traceability
+                plan_path = (
+                    f"reports/{topic_slug}_{timestamp}_plan_attempt_{attempt}.json"
+                )
+                save_json(plan_path, plan, "plan")
             system_prompt = build_system_prompt_from_plan()
             user_prompt = build_user_prompt_from_plan(TOPIC, plan)
+
             if attempt > 1 and last_validation:
                 errs = "; ".join(last_validation["errors"])
                 user_prompt += (
                     f"\nPrevious SVG failed validation: {errs}\n"
-                    "Regenerate corrected SVG while keeping the same plan."
+                    "Regenerate corrected SVG while keeping this updated plan."
                 )
         else:
             system_prompt = build_system_prompt(TOPIC)
