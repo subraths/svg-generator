@@ -37,7 +37,6 @@ def validate_svg(svg_text: str):
     ids = []
     # collect rects as (id_or_unknown, x, y, w, h)
     rects = []
-    current_gid_stack = []
 
     # Build parent map (ElementTree has no parent pointer)
     parent_map = {c: p for p in root.iter() for c in p}
