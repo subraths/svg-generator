@@ -5,7 +5,7 @@ from src.config import MAX_ATTEMPTS, MODEL_NAME
 from src.generator import generate_svg_with_groq, build_system_prompt
 from src.validator import validate_svg
 from src.renderer import save_png_from_svg
-from src.utils import topic_to_slug, timestamp_now, save_file, save_report
+from src.utils import topic_to_slug, timestamp_now, save_file, save_json
 
 
 TOPICS = [
@@ -89,7 +89,7 @@ def run_batch(client):
                 "max_attempts": MAX_ATTEMPTS,
                 "validation": last_validation,
             }
-            save_report(f"reports/{topic_slug}_{tstamp}.json", report)
+            save_json(f"reports/{topic_slug}_{tstamp}.json", report, "report")
 
             writer.writerow(
                 {

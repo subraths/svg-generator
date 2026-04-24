@@ -12,7 +12,7 @@ from src.generator import (
 from src.planner import generate_layout_plan
 from src.renderer import save_png_from_svg
 from src.validator import validate_svg
-from src.utils import save_file, save_report, topic_to_slug, timestamp_now
+from src.utils import save_file, save_json, topic_to_slug, timestamp_now
 from src.config import GROQ_API_KEY, MAX_ATTEMPTS, MODEL_NAME
 
 
@@ -23,7 +23,7 @@ from src.config import GROQ_API_KEY, MAX_ATTEMPTS, MODEL_NAME
 # "Transport Layer Security (TLS) Handshake Process", "HTTP request-response cycle", "Neural network architecture",
 # Neural network architecture, Software development lifecycle, Compiler design stages, Database normalization forms, Object-oriented programming concepts, Data structure visualization, Algorithm flowchart, Computer memory hierarchy, Operating system process management, Network protocol stack, Cloud computing architecture, Cybersecurity attack vectors, Software testing strategies, Mobile app architecture, User interface design principles
 
-TOPIC = "Water condensation"
+TOPIC = "Photosynthesis"
 USE_PLANNER = True
 
 
@@ -47,8 +47,7 @@ def main():
     if USE_PLANNER:
         plan = generate_layout_plan(client, TOPIC, min_nodes=6)
         plan_path = f"reports/{topic_slug}_{timestamp}_plan.json"
-        save_report(plan_path, plan)
-        print(f"Saved plan: {plan_path}")
+        save_json(plan_path, plan, "plan")
 
     # SYSTEM_PROMPT = build_system_prompt(topic=TOPIC)
     # ---- retry loop (same idea as v1, but prompt source differs) ----
@@ -119,8 +118,7 @@ def main():
     }
 
     report_path = f"reports/{topic_slug}_{timestamp}.json"
-    save_report(report_path, report)
-    print(f"Saved report: {report_path}")
+    save_json(report_path, report, "report")
 
 
 if __name__ == "__main__":
