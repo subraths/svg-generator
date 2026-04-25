@@ -95,6 +95,14 @@ def compute_metrics(csv_path: str):
             f"avg_errors={s['avg_errors']:.2f} avg_overlaps={s['avg_overlaps']:.2f}"
         )
 
+    paired = paired_topic_comparison(rows)
+
+    print("\n=== Topic-Paired Comparison (v2 vs v1) ===")
+    print(f"Paired topics: {paired['paired_topics']}")
+    print(f"v2 wins: {paired['v2_wins']}")
+    print(f"v1 wins: {paired['v1_wins']}")
+    print(f"ties: {paired['ties']}")
+
     # Optional delta if both known modes exist
     delta = {}
     if "v1_direct" in mode_summaries and "v2_planner" in mode_summaries:
@@ -122,6 +130,7 @@ def compute_metrics(csv_path: str):
         "overall": overall,
         "by_mode": mode_summaries,
         "delta_v2_minus_v1": delta,
+        "paired_topic_comparison": paired,
     }
 
     out_path = f"reports/summary_{summary['timestamp']}.json"
@@ -140,6 +149,84 @@ def compute_metrics(csv_path: str):
                 f"(errors={r.get('error_count')}, attempts={r.get('attempts_used')}) "
                 f"{'fatal=' + r.get('fatal_error') if r.get('fatal_error') else ''}"
             )
+
+
+def paired_topic_comparison(rows):
+    """
+    Build per-topic comparison between v1_direct and v2_planner.
+    Returns dict with wins/losses/ties + per-topic deltas.
+    """
+    by_topic = defaultdict(dict)
+    for r in rows:
+        topic = r.get("topic")
+        mode = r.get("mode")
+        by_topic[topic][mode] = r
+
+    comparisons = []
+    v2_wins = 0
+    v1_wins = 0
+    ties = 0
+
+    for topic, modes in by_topic.items():
+        v1 = modes.get("v1_direct")
+        v2 = modes.get("v2_planner")
+        if not v1 or not v2:
+            continue
+
+        v1_pass = to_bool(v1.get("passed", False))
+        v2_pass = to_bool(v2.get("passed", False))
+        v1_attempts = to_int(v1.get("attempts_used", 0))
+        v2_attempts = to_int(v2.get("attempts_used", 0))
+        v1_errors = to_int(v1.get("error_count", 0))
+        v2_errors = to_int(v2.get("error_count", 0))
+        v1_overlaps = to_int(v1.get("overlap_count", 0))
+        v2_overlaps = to_int(v2.get("overlap_count", 0))
+
+        # Decide winner priority: pass first, then fewer errors, then fewer attempts
+        if v2_pass and not v1_pass:
+            winner = "v2_planner"
+            v2_wins += 1
+        elif v1_pass and not v2_pass:
+            winner = "v1_direct"
+            v1_wins += 1
+        else:
+            # both pass or both fail
+            if v2_errors < v1_errors:
+                winner = "v2_planner"
+                v2_wins += 1
+            elif v1_errors < v2_errors:
+                winner = "v1_direct"
+                v1_wins += 1
+            elif v2_attempts < v1_attempts:
+                winner = "v2_planner"
+                v2_wins += 1
+            elif v1_attempts < v2_attempts:
+                winner = "v1_direct"
+                v1_wins += 1
+            else:
+                winner = "tie"
+                ties += 1
+
+        comparisons.append(
+            {
+                "topic": topic,
+                "v1_passed": v1_pass,
+                "v2_passed": v2_pass,
+                "attempts_delta_v2_minus_v1": v2_attempts - v1_attempts,
+                "errors_delta_v2_minus_v1": v2_errors - v1_errors,
+                "overlaps_delta_v2_minus_v1": v2_overlaps - v1_overlaps,
+                "winner": winner,
+            }
+        )
+
+    summary = {
+        "paired_topics": len(comparisons),
+        "v2_wins": v2_wins,
+        "v1_wins": v1_wins,
+        "ties": ties,
+        "comparisons": comparisons,
+    }
+    return summary
 
 
 if __name__ == "__main__":

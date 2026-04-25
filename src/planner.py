@@ -1,5 +1,6 @@
 import json
 from src.config import MODEL_NAME, CANVAS_W, CANVAS_H
+from src.groq_pool import GroqClientPool
 
 
 PLANNER_SCHEMA_HINT = {
@@ -25,7 +26,7 @@ def _extract_json(text: str) -> str:
     return t
 
 
-def generate_layout_plan(client, topic: str, min_nodes: int = 6) -> dict:
+def generate_layout_plan(pool: GroqClientPool, topic: str, min_nodes: int = 6) -> dict:
     system_prompt = f"""You are a diagram planner.
 Return ONLY valid JSON (no markdown).
 
@@ -44,13 +45,13 @@ Output schema:
         f"Include meaningful educational structure and correct directional edges."
     )
 
-    resp = client.chat.completions.create(
+    resp = pool.chat_completion_with_failover(
         model=MODEL_NAME,
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
-        temperature=0,
+        temperature=0.1,
     )
 
     raw = resp.choices[0].message.content
@@ -87,8 +88,6 @@ def _boxes_too_close(a, b, min_gap=20):
 def validate_plan(plan: dict, min_nodes: int = 6) -> list[str]:
     errors = []
 
-    if not isinstance(plan, dict):
-        return ["Plan is not a JSON object."]
     if "nodes" not in plan or "edges" not in plan:
         return ["Plan must contain 'nodes' and 'edges'."]
     if not isinstance(plan["nodes"], list) or not isinstance(plan["edges"], list):
@@ -144,13 +143,28 @@ def validate_plan(plan: dict, min_nodes: int = 6) -> list[str]:
 
     id_set = set(ids)
 
+    MIN_GAP_HARD = 2.0  # only reject if essentially touching/overlapping
+    MIN_GAP_WARN = 12.0  # optional diagnostics only
+
+    warnings = []
+
     # spacing / overlap check
     for i in range(len(boxes)):
         for j in range(i + 1, len(boxes)):
             id_a, ax, ay, aw, ah = boxes[i]
             id_b, bx, by, bw, bh = boxes[j]
-            if _boxes_too_close((ax, ay, aw, ah), (bx, by, bw, bh), min_gap=20):
-                errors.append(f"Nodes too close/overlapping: {id_a} vs {id_b}")
+            A = (ax, ay, aw, ah)
+            B = (bx, by, bw, bh)
+
+            if _boxes_overlap(A, B):
+                errors.append(f"Nodes overlap: {id_a} vs {id_b}")
+                continue  # no need to check gap if they already overlap
+
+            gap = _edge_gap(A, B)
+            if gap < MIN_GAP_HARD:
+                errors.append(f"Nodes too close: {id_a} vs {id_b} (gap={gap:.1f}px)")
+            elif gap < MIN_GAP_WARN:
+                warnings.append(f"Nodes close: {id_a} vs {id_b} (gap={gap:.1f}px)")
 
     # edge validation
     for k, e in enumerate(edges):
@@ -169,3 +183,19 @@ def validate_plan(plan: dict, min_nodes: int = 6) -> list[str]:
             errors.append(f"edges[{k}] self-loop not allowed ('{src}' -> '{dst}').")
 
     return errors
+
+
+def _boxes_overlap(a, b):
+    ax, ay, aw, ah = a
+    bx, by, bw, bh = b
+    return not (ax + aw <= bx or bx + bw <= ax or ay + ah <= by or by + bh <= ay)
+
+
+def _edge_gap(a, b):
+    # minimum axis gap between two non-overlapping boxes (0 if overlapping/projection intersect)
+    ax, ay, aw, ah = a
+    bx, by, bw, bh = b
+
+    gap_x = max(0.0, max(bx - (ax + aw), ax - (bx + bw)))
+    gap_y = max(0.0, max(by - (ay + ah), ay - (by + bh)))
+    return max(gap_x, gap_y)

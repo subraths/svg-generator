@@ -1,7 +1,5 @@
 from pathlib import Path
 
-from groq import Groq
-
 
 from src.generator import (
     build_system_prompt,
@@ -13,7 +11,8 @@ from src.planner import generate_layout_plan
 from src.renderer import save_png_from_svg
 from src.validator import validate_svg
 from src.utils import save_file, save_json, topic_to_slug, timestamp_now
-from src.config import GROQ_API_KEY, MAX_ATTEMPTS, MODEL_NAME
+from src.config import MAX_ATTEMPTS, MODEL_NAME
+from src.groq_pool import GroqClientPool
 
 
 # change this each run: "TCP 3-way handshake", "Cell structure", "Photosynthesis", "Water cycle",
@@ -28,10 +27,7 @@ USE_PLANNER = True
 
 
 def main():
-    if not GROQ_API_KEY:
-        raise ValueError("GROQ_API_KEY environment variable not defined")
-
-    client = Groq(api_key=GROQ_API_KEY)
+    pool = GroqClientPool.from_env()
 
     Path("reports").mkdir(exist_ok=True)
     Path("svg").mkdir(exist_ok=True)
@@ -49,7 +45,7 @@ def main():
     # ---- NEW: planner stage (only when USE_PLANNER=True) ----
     if USE_PLANNER:
         try:
-            plan = generate_layout_plan(client, TOPIC, min_nodes=6)
+            plan = generate_layout_plan(pool, TOPIC, min_nodes=6)
             plan_path = f"reports/{topic_slug}_{timestamp}_plan.json"
             save_json(plan_path, plan, "plan")
         except Exception as e:
@@ -72,7 +68,7 @@ def main():
                     "Create a cleaner layout with more spacing, clear connector routing, "
                     "and strict non-overlap."
                 )
-                plan = generate_layout_plan(client, replanned_topic, min_nodes=6)
+                plan = generate_layout_plan(pool, replanned_topic, min_nodes=6)
 
                 # overwrite latest plan artifact for traceability
                 plan_path = (
@@ -104,7 +100,7 @@ def main():
                     "Regenerate a corrected SVG that satisfies all rules."
                 )
 
-        svg_text = generate_svg_with_groq(client, system_prompt, user_prompt)
+        svg_text = generate_svg_with_groq(pool, system_prompt, user_prompt)
         last_validation = validate_svg(svg_text)
 
         if last_validation["xml_valid"] and not last_validation["errors"]:
