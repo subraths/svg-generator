@@ -11,4 +11,5 @@ dependencies = [
     "pillow>=12.2.0",
     "pyqt6>=6.11.0",
     "python-dotenv>=1.2.2",
+    "svgwrite>=1.4.3",
 ]
