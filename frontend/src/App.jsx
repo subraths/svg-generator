@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useGenerateLessonMutation } from './services/lessonApi'
 
 function App() {
@@ -45,13 +45,13 @@ function App() {
     if (target) target.classList.add('highlighted')
   }
 
-  const stopAudio = () => {
+  const stopAudio = useCallback(() => {
     if (audioRef.current) {
       audioRef.current.pause()
       audioRef.current.currentTime = 0
       audioRef.current = null
     }
-  }
+  }, [])
 
   async function playFromIndex(index) {
     if (!lesson || !lessonId) return
@@ -221,7 +221,7 @@ function App() {
                     {node.label}
                   </button>
 
-                  <ul className="mt-2 ml-3 list-disc space-y-2 text-sm text-slate-600">
+                  <ul className="mt-2 ml-3 list-disc space-y-2 text-sm text-slate-600" aria-label={`${node.label} sub explanations`}>
                     {node.children.map((sub) => (
                       <li key={sub.id}>
                         <button

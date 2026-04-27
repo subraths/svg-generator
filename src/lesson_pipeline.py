@@ -212,8 +212,8 @@ def _fallback_graph(topic: str, diagram_type: DiagramType) -> dict[str, Any]:
         for i in range(len(nodes)):
             edges.append(
                 {
-                    "from": nodes[i]["id"],
-                    "to": nodes[(i + 1) % len(nodes)]["id"],
+                    "from_node": nodes[i]["id"],
+                    "to_node": nodes[(i + 1) % len(nodes)]["id"],
                     "label": "next phase",
                 }
             )
@@ -221,8 +221,8 @@ def _fallback_graph(topic: str, diagram_type: DiagramType) -> dict[str, Any]:
         for i in range(1, len(nodes)):
             edges.append(
                 {
-                    "from": nodes[0]["id"],
-                    "to": nodes[i]["id"],
+                    "from_node": nodes[0]["id"],
+                    "to_node": nodes[i]["id"],
                     "label": "contains",
                 }
             )
@@ -230,8 +230,8 @@ def _fallback_graph(topic: str, diagram_type: DiagramType) -> dict[str, Any]:
         for i in range(len(nodes) - 1):
             edges.append(
                 {
-                    "from": nodes[i]["id"],
-                    "to": nodes[i + 1]["id"],
+                    "from_node": nodes[i]["id"],
+                    "to_node": nodes[i + 1]["id"],
                     "label": "leads to",
                 }
             )
@@ -516,11 +516,16 @@ def _simplify_graph(raw: dict[str, Any]) -> dict[str, Any]:
     edges = [
         e
         for e in raw.get("svg_edges", [])
-        if e.get("from") in node_ids and e.get("to") in node_ids
+        if (e.get("from") or e.get("from_node")) in node_ids
+        and (e.get("to") or e.get("to_node")) in node_ids
     ]
     if not edges and len(nodes) >= 2:
         edges = [
-            {"from": nodes[i]["id"], "to": nodes[i + 1]["id"], "label": "related"}
+            {
+                "from_node": nodes[i]["id"],
+                "to_node": nodes[i + 1]["id"],
+                "label": "related",
+            }
             for i in range(len(nodes) - 1)
         ]
 
