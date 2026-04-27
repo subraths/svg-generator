@@ -57,6 +57,46 @@ Outputs:
 - `reports/summary_<timestamp>.json`
 - console summary with mode-wise comparison and deltas
 
+## FastAPI lesson API + interactive browser player
+
+Run API server:
+
+```bash
+uv run uvicorn src.api:app --reload
+# or
+python -m uvicorn src.api:app --reload
+```
+
+Open:
+
+- `http://127.0.0.1:8000/` (interactive player UI)
+
+Core endpoints:
+
+- `POST /lesson/generate`
+  - body: `{"topic":"Photosynthesis","difficulty":"beginner","use_llm":true}`
+  - returns lesson JSON + SVG URL + audio base URL
+- `GET /lesson/{id}`
+- `GET /diagram/{id}.svg`
+- `GET /audio/{id}/{segment}`
+
+Generated lesson assets are stored in:
+
+- `data/lessons/<lesson_id>/lesson.json`
+- `data/lessons/<lesson_id>/diagram.svg`
+- `data/lessons/<lesson_id>/audio/*.wav`
+
+## Structured pipeline evaluation
+
+```bash
+python -m src.evaluate_pipeline
+```
+
+Outputs:
+
+- `reports/evaluation_<timestamp>.csv`
+- `reports/evaluation_<timestamp>.json`
+
 ## Validation checks (SVG)
 
 Current validator checks:

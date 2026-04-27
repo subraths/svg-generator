@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "fastapi>=0.115.12",
     "cairosvg>=2.9.0",
     "groq>=1.1.2",
     "lxml>=6.0.4",
@@ -12,4 +13,5 @@ dependencies = [
     "pyqt6>=6.11.0",
     "python-dotenv>=1.2.2",
     "svgwrite>=1.4.3",
+    "uvicorn>=0.30.6",
 ]

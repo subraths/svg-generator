@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Tutor Lesson Player</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; background: #f1f5f9; color: #0f172a; }
+      .wrap { max-width: 1200px; margin: 20px auto; padding: 0 16px; }
+      .card { background: white; border-radius: 12px; padding: 16px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+      .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+      input, button { padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; }
+      button { background: #2563eb; color: white; border: none; cursor: pointer; }
+      button.secondary { background: #475569; }
+      #svgHost { margin-top: 16px; overflow: auto; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; }
+      #status { font-size: 14px; color: #475569; }
+      .active-item { background: #fef3c7; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <h2>AI Tutor Interactive Lesson</h2>
+        <div class="row">
+          <input id="topic" type="text" value="Photosynthesis" style="min-width: 320px" />
+          <button id="generateBtn">Generate lesson</button>
+          <button id="playBtn" class="secondary">Play</button>
+          <button id="pauseBtn" class="secondary">Pause</button>
+          <button id="resumeBtn" class="secondary">Resume</button>
+          <span id="status">Ready</span>
+        </div>
+        <div id="svgHost"></div>
+      </div>
+    </div>
+
+    <script>
+      let lessonData = null;
+      let lessonId = null;
+      let currentIndex = 0;
+      let isPaused = false;
+      let currentAudio = null;
+      let raf = null;
+
+      const statusEl = document.getElementById('status');
+      const svgHost = document.getElementById('svgHost');
+
+      function setStatus(text) { statusEl.textContent = text; }
+
+      function clearHighlights() {
+        svgHost.querySelectorAll('.highlighted').forEach(el => el.classList.remove('highlighted'));
+      }
+
+      function highlightById(id) {
+        clearHighlights();
+        const el = svgHost.querySelector(`#${CSS.escape(id)}`);
+        if (el) el.classList.add('highlighted');
+      }
+
+      async function loadSvg(url) {
+        const res = await fetch(url);
+        const svgText = await res.text();
+        svgHost.innerHTML = svgText;
+      }
+
+      async function generateLesson() {
+        const topic = document.getElementById('topic').value.trim();
+        if (!topic) return;
+        setStatus('Generating lesson...');
+        const res = await fetch('/lesson/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ topic, difficulty: 'beginner', use_llm: true })
+        });
+        const data = await res.json();
+        lessonData = data.lesson;
+        lessonId = data.lesson_id;
+        currentIndex = 0;
+        await loadSvg(data.svg_url);
+        wireJumpInteractions();
+        setStatus(`Lesson ready: ${lessonData.title}`);
+      }
+
+      function wireJumpInteractions() {
+        if (!lessonData) return;
+        const ids = lessonData.narration_order || [];
+        ids.forEach((id, index) => {
+          const el = svgHost.querySelector(`#${CSS.escape(id)}`);
+          if (!el) return;
+          el.style.cursor = 'pointer';
+          el.onclick = () => { currentIndex = index; playFromCurrent(); };
+        });
+      }
+
+      function stopCurrentAudio() {
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          currentAudio = null;
+        }
+      }
+
+      function updateHighlightLoop(segment) {
+        const start = performance.now();
+        const duration = Math.max(0, segment.end_ms - segment.start_ms);
+        function loop() {
+          if (isPaused) return;
+          const elapsed = performance.now() - start;
+          if (elapsed <= duration) {
+            highlightById(segment.id);
+            raf = requestAnimationFrame(loop);
+          }
+        }
+        raf = requestAnimationFrame(loop);
+      }
+
+      async function playFromCurrent() {
+        if (!lessonData || !lessonId) return;
+        isPaused = false;
+        stopCurrentAudio();
+        cancelAnimationFrame(raf);
+
+        if (currentIndex >= lessonData.sync_map.length) {
+          setStatus('Playback finished');
+          clearHighlights();
+          return;
+        }
+
+        const segment = lessonData.sync_map[currentIndex];
+        highlightById(segment.id);
+        setStatus(`Playing segment ${currentIndex + 1}/${lessonData.sync_map.length}`);
+
+        currentAudio = new Audio(`/audio/${lessonId}/${segment.audio_chunk}`);
+        updateHighlightLoop(segment);
+
+        currentAudio.onended = () => {
+          cancelAnimationFrame(raf);
+          currentIndex += 1;
+          if (!isPaused) playFromCurrent();
+        };
+
+        await currentAudio.play();
+      }
+
+      document.getElementById('generateBtn').onclick = generateLesson;
+      document.getElementById('playBtn').onclick = () => { currentIndex = 0; playFromCurrent(); };
+      document.getElementById('pauseBtn').onclick = () => {
+        isPaused = true;
+        if (currentAudio) currentAudio.pause();
+        setStatus('Paused');
+      };
+      document.getElementById('resumeBtn').onclick = async () => {
+        if (!lessonData) return;
+        isPaused = false;
+        if (currentAudio) {
+          await currentAudio.play();
+          setStatus('Resumed');
+        } else {
+          playFromCurrent();
+        }
+      };
+    </script>
+  </body>
+</html>
