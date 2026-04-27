@@ -14,7 +14,6 @@
       button.secondary { background: #475569; }
       #svgHost { margin-top: 16px; overflow: auto; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; }
       #status { font-size: 14px; color: #475569; }
-      .active-item { background: #fef3c7; }
     </style>
   </head>
   <body>
@@ -102,11 +101,11 @@
       function updateHighlightLoop(segment) {
         const start = performance.now();
         const duration = Math.max(0, segment.end_ms - segment.start_ms);
+        highlightById(segment.id);
         function loop() {
           if (isPaused) return;
           const elapsed = performance.now() - start;
           if (elapsed <= duration) {
-            highlightById(segment.id);
             raf = requestAnimationFrame(loop);
           }
         }

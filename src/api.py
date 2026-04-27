@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
@@ -10,9 +11,11 @@ from fastapi.staticfiles import StaticFiles
 
 from src.lesson_models import GenerateLessonRequest
 from src.lesson_pipeline import generate_lesson
+from src.lesson_pipeline import AUDIO_SEGMENT_RE
 
 BASE_DIR = Path("data/lessons")
 STATIC_DIR = Path("web")
+LESSON_ID_RE = re.compile(r"^[a-z0-9_-]+$")
 
 app = FastAPI(title="AI Tutor SVG Lesson API", version="1.0.0")
 app.add_middleware(
@@ -25,6 +28,24 @@ app.add_middleware(
 
 if STATIC_DIR.exists():
     app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+
+
+def _safe_lesson_dir(lesson_id: str) -> Path:
+    if not LESSON_ID_RE.fullmatch(lesson_id):
+        raise HTTPException(status_code=400, detail="Invalid lesson id format")
+    if not BASE_DIR.exists():
+        raise HTTPException(status_code=404, detail="Lesson not found")
+    for lesson_json in BASE_DIR.glob("*/lesson.json"):
+        if lesson_json.parent.name == lesson_id:
+            return lesson_json.parent.resolve()
+    raise HTTPException(status_code=404, detail="Lesson not found")
+
+
+def _load_lesson_payload(lesson_dir: Path) -> dict:
+    lesson_file = lesson_dir / "lesson.json"
+    if not lesson_file.exists():
+        raise HTTPException(status_code=404, detail="Lesson not found")
+    return json.loads(lesson_file.read_text(encoding="utf-8"))
 
 
 @app.get("/")
@@ -48,10 +69,8 @@ def create_lesson(req: GenerateLessonRequest):
 
 @app.get("/lesson/{lesson_id}")
 def get_lesson(lesson_id: str):
-    lesson_file = BASE_DIR / lesson_id / "lesson.json"
-    if not lesson_file.exists():
-        raise HTTPException(status_code=404, detail="Lesson not found")
-    payload = json.loads(lesson_file.read_text(encoding="utf-8"))
+    lesson_dir = _safe_lesson_dir(lesson_id)
+    payload = _load_lesson_payload(lesson_dir)
     payload["svg_url"] = f"/diagram/{lesson_id}.svg"
     payload["audio_base_url"] = f"/audio/{lesson_id}"
     return payload
@@ -59,7 +78,8 @@ def get_lesson(lesson_id: str):
 
 @app.get("/diagram/{lesson_id}.svg")
 def get_diagram(lesson_id: str):
-    svg_path = BASE_DIR / lesson_id / "diagram.svg"
+    lesson_dir = _safe_lesson_dir(lesson_id)
+    svg_path = lesson_dir / "diagram.svg"
     if not svg_path.exists():
         raise HTTPException(status_code=404, detail="SVG not found")
     return FileResponse(svg_path, media_type="image/svg+xml")
@@ -67,7 +87,15 @@ def get_diagram(lesson_id: str):
 
 @app.get("/audio/{lesson_id}/{segment}")
 def get_audio_segment(lesson_id: str, segment: str):
-    audio_path = BASE_DIR / lesson_id / "audio" / segment
+    if not AUDIO_SEGMENT_RE.fullmatch(segment):
+        raise HTTPException(status_code=400, detail="Invalid segment format")
+    lesson_dir = _safe_lesson_dir(lesson_id)
+    payload = _load_lesson_payload(lesson_dir)
+    sync_map = payload.get("lesson", {}).get("sync_map", [])
+    allowed_segments = {seg.get("audio_chunk") for seg in sync_map if isinstance(seg, dict)}
+    if segment not in allowed_segments:
+        raise HTTPException(status_code=404, detail="Audio segment not found")
+    audio_path = (lesson_dir / "audio" / segment).resolve()
     if not audio_path.exists():
         raise HTTPException(status_code=404, detail="Audio segment not found")
     return FileResponse(audio_path, media_type="audio/wav")

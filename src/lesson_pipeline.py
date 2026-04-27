@@ -10,6 +10,7 @@ import wave
 from collections import defaultdict, deque
 from pathlib import Path
 from typing import Any
+from urllib.parse import unquote
 
 from src.groq_pool import GroqClientPool
 from src.lesson_models import (
@@ -27,6 +28,7 @@ from src.lesson_renderer import render_lesson_svg
 DIAGRAM_TYPES = [t.value for t in DiagramType]
 MAX_NODES = 10
 MAX_SUBTOPICS = 8
+AUDIO_SEGMENT_RE = re.compile(r"^segment_[0-9]+\.wav$")
 
 
 def _slug(text: str) -> str:
@@ -38,6 +40,21 @@ def _extract_json(text: str) -> str:
     if t.startswith("```"):
         t = t.replace("```json", "").replace("```", "").strip()
     return t
+
+
+def _safe_join(base: Path, child: str) -> Path:
+    decoded = unquote(child or "")
+    if decoded != child:
+        raise ValueError("Encoded path fragments are not allowed")
+    if not re.fullmatch(r"[a-z0-9_-]+", child):
+        raise ValueError("Invalid path fragment")
+    if "/" in child or "\\" in child or ".." in child:
+        raise ValueError("Invalid path fragment")
+    base_resolved = base.expanduser().resolve()
+    target = (base_resolved / child).resolve()
+    if not target.is_relative_to(base_resolved):
+        raise ValueError("Path escapes base directory")
+    return target
 
 
 def _llm_json(pool: GroqClientPool, system_prompt: str, user_prompt: str) -> dict[str, Any]:
@@ -197,7 +214,13 @@ def generate_concept_graph(topic: str, diagram_type: DiagramType, pool: GroqClie
     return _fallback_graph(topic, diagram_type)
 
 
-def generate_narration(graph: dict[str, Any], topic: str, pool: GroqClientPool | None, use_llm: bool) -> list[dict[str, str]]:
+def generate_narration(
+    graph: dict[str, Any],
+    topic: str,
+    difficulty: str,
+    pool: GroqClientPool | None,
+    use_llm: bool,
+) -> list[dict[str, str]]:
     if use_llm and pool is not None:
         try:
             data = _llm_json(
@@ -206,6 +229,7 @@ def generate_narration(graph: dict[str, Any], topic: str, pool: GroqClientPool |
                 (
                     "Given this graph JSON, produce narration_segments array with objects "
                     "{id,text}. One segment per node/subtopic in teaching order. "
+                    f"Difficulty level: {difficulty}. "
                     f"Graph: {json.dumps(graph)}"
                 ),
             )
@@ -217,7 +241,12 @@ def generate_narration(graph: dict[str, Any], topic: str, pool: GroqClientPool |
 
     segments = []
     for node in graph.get("svg_nodes", []):
-        segments.append({"id": node["id"], "text": f"{node['label']} is a key part of {topic}."})
+        segments.append(
+            {
+                "id": node["id"],
+                "text": f"At {difficulty} level, {node['label']} is a key part of {topic}.",
+            }
+        )
     for sub in graph.get("subtopics", []):
         segments.append({"id": sub["id"], "text": sub["explanation"]})
     return segments
@@ -321,9 +350,14 @@ def _tone_wav(path: Path, duration_ms: int, freq: float):
 
 
 def synthesize_audio_segments(sync_map: list[SyncSegment], output_dir: Path):
+    output_dir = output_dir.expanduser().resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     for i, seg in enumerate(sync_map):
-        target = output_dir / seg.audio_chunk
+        if not AUDIO_SEGMENT_RE.fullmatch(seg.audio_chunk):
+            raise ValueError(f"Invalid audio chunk name: {seg.audio_chunk}")
+        target = (output_dir / seg.audio_chunk).resolve()
+        if not target.is_relative_to(output_dir):
+            raise ValueError("Audio chunk path escapes lesson audio directory")
         duration = max(300, seg.end_ms - seg.start_ms)
         _tone_wav(target, duration, freq=220 + (i * 25))
 
@@ -354,8 +388,12 @@ def get_pool_if_available() -> GroqClientPool | None:
         return None
 
 
-def generate_lesson(topic: str, difficulty: str = "beginner", use_llm: bool = True, base_dir: Path = Path("data/lessons")) -> LessonBundle:
-    _ = difficulty
+def generate_lesson(
+    topic: str,
+    difficulty: str = "beginner",
+    use_llm: bool = True,
+    base_dir: Path = Path("data/lessons"),
+) -> LessonBundle:
     pool = get_pool_if_available() if use_llm else None
     diagram_type = classify_diagram_type(topic, pool=pool, use_llm=use_llm)
     graph = generate_concept_graph(topic, diagram_type, pool=pool, use_llm=use_llm)
@@ -363,7 +401,13 @@ def generate_lesson(topic: str, difficulty: str = "beginner", use_llm: bool = Tr
 
     graph["svg_nodes"] = _layout_nodes(diagram_type, graph.get("svg_nodes", []))
 
-    narration_segments = generate_narration(graph, topic, pool=pool, use_llm=use_llm)
+    narration_segments = generate_narration(
+        graph,
+        topic,
+        difficulty=difficulty,
+        pool=pool,
+        use_llm=use_llm,
+    )
     graph["narration_segments"] = narration_segments
     graph["narration_order"] = [s["id"] for s in narration_segments]
     graph["sync_map"] = build_sync_map(narration_segments)
@@ -374,13 +418,29 @@ def generate_lesson(topic: str, difficulty: str = "beginner", use_llm: bool = Tr
     if checks:
         graph = _simplify_graph(graph)
         graph["svg_nodes"] = _layout_nodes(diagram_type, graph.get("svg_nodes", []))
-        graph["narration_segments"] = narration_segments
-        graph["narration_order"] = [s["id"] for s in narration_segments]
-        graph["sync_map"] = build_sync_map(narration_segments)
+        valid_ids = {n["id"] for n in graph.get("svg_nodes", [])} | {
+            s["id"] for s in graph.get("subtopics", [])
+        }
+        filtered_narration = [s for s in narration_segments if s["id"] in valid_ids]
+        if not filtered_narration:
+            filtered_narration = [
+                {"id": n["id"], "text": f"At {difficulty} level, {n['label']} is important in {topic}."}
+                for n in graph.get("svg_nodes", [])
+            ]
+
+        graph["narration_segments"] = filtered_narration
+        graph["narration_order"] = [s["id"] for s in filtered_narration]
+        graph["sync_map"] = build_sync_map(filtered_narration)
         lesson = _to_lesson_graph(graph, diagram_type=diagram_type)
+        final_checks = _graph_checks(lesson)
+        if final_checks:
+            raise ValueError(
+                "Lesson graph failed validation after simplification: "
+                + "; ".join(final_checks)
+            )
 
     lesson_id = f"{_slug(topic)}_{int(time.time())}_{uuid.uuid4().hex[:8]}"
-    lesson_dir = base_dir / lesson_id
+    lesson_dir = _safe_join(base_dir, lesson_id)
     audio_dir = lesson_dir / "audio"
     lesson_dir.mkdir(parents=True, exist_ok=True)
 

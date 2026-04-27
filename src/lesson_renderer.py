@@ -12,6 +12,13 @@ CANVAS_W = 1200
 CANVAS_H = 800
 
 
+def _safe_svg_output_path(output_path: Path) -> Path:
+    safe = output_path.expanduser().resolve()
+    if safe.suffix.lower() != ".svg":
+        raise ValueError("output_path must be an .svg file")
+    return safe
+
+
 def _node_box(node: SVGNode):
     return (node.x - node.w / 2, node.y - node.h / 2, node.w, node.h)
 
@@ -43,6 +50,7 @@ def _bezier_path(x1: float, y1: float, x2: float, y2: float) -> str:
 
 
 def render_lesson_svg(lesson: LessonGraph, output_path: Path) -> str:
+    output_path = _safe_svg_output_path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     dwg = svgwrite.Drawing(
         filename=str(output_path),
