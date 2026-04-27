@@ -599,7 +599,7 @@ def synthesize_audio_segments(
 
     if api_key and len(api_key) < 16:
         raise ValueError(
-            "ELEVEN_LABS_TTS_API_KEY appears invalid (too short)."
+            "ELEVEN_LABS_TTS_API_KEY appears invalid (must be at least 16 characters)."
         )
 
     if api_key and ElevenLabs is not None:
