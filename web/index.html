@@ -141,7 +141,12 @@
       }
 
       document.getElementById('generateBtn').onclick = generateLesson;
-      document.getElementById('playBtn').onclick = () => { currentIndex = 0; playFromCurrent(); };
+      document.getElementById('playBtn').onclick = () => {
+        stopCurrentAudio();
+        cancelAnimationFrame(raf);
+        currentIndex = 0;
+        playFromCurrent();
+      };
       document.getElementById('pauseBtn').onclick = () => {
         isPaused = true;
         if (currentAudio) currentAudio.pause();

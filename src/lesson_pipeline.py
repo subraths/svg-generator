@@ -256,6 +256,10 @@ def build_sync_map(segments: list[dict[str, str]]) -> list[dict[str, Any]]:
     sync = []
     cursor = 0
     for i, seg in enumerate(segments):
+        # Timing heuristic for segment-level TTS sync:
+        # - min 4 words avoids near-zero segments for very short labels
+        # - 340ms/word approximates moderate narration pace
+        # - 1800ms minimum keeps highlights perceptible in UI
         words = max(4, len(seg["text"].split()))
         dur = max(1800, words * 340)
         sync.append(
@@ -337,6 +341,7 @@ def _simplify_graph(raw: dict[str, Any]) -> dict[str, Any]:
 
 def _tone_wav(path: Path, duration_ms: int, freq: float):
     sample_rate = 22050
+    # 9000 ~= 27% of signed 16-bit PCM peak to keep generated tones audible without clipping.
     amplitude = 9000
     frames = int(sample_rate * (duration_ms / 1000.0))
     with wave.open(str(path), "w") as wavf:

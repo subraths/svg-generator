@@ -16,6 +16,7 @@ from src.lesson_pipeline import AUDIO_SEGMENT_RE
 BASE_DIR = Path("data/lessons")
 STATIC_DIR = Path("web")
 LESSON_ID_RE = re.compile(r"^[a-z0-9_-]+$")
+LESSON_DIR_CACHE: dict[str, Path] = {}
 
 app = FastAPI(title="AI Tutor SVG Lesson API", version="1.0.0")
 app.add_middleware(
@@ -33,11 +34,17 @@ if STATIC_DIR.exists():
 def _safe_lesson_dir(lesson_id: str) -> Path:
     if not LESSON_ID_RE.fullmatch(lesson_id):
         raise HTTPException(status_code=400, detail="Invalid lesson id format")
-    if not BASE_DIR.exists():
-        raise HTTPException(status_code=404, detail="Lesson not found")
-    for lesson_json in BASE_DIR.glob("*/lesson.json"):
-        if lesson_json.parent.name == lesson_id:
-            return lesson_json.parent.resolve()
+    cached = LESSON_DIR_CACHE.get(lesson_id)
+    if cached and (cached / "lesson.json").exists():
+        return cached
+
+    if BASE_DIR.exists():
+        for lesson_json in BASE_DIR.glob("*/lesson.json"):
+            LESSON_DIR_CACHE[lesson_json.parent.name] = lesson_json.parent.resolve()
+
+    resolved = LESSON_DIR_CACHE.get(lesson_id)
+    if resolved and (resolved / "lesson.json").exists():
+        return resolved
     raise HTTPException(status_code=404, detail="Lesson not found")
 
 
@@ -59,6 +66,7 @@ def index():
 @app.post("/lesson/generate")
 def create_lesson(req: GenerateLessonRequest):
     bundle = generate_lesson(req.topic, difficulty=req.difficulty, use_llm=req.use_llm)
+    LESSON_DIR_CACHE[bundle.lesson_id] = Path(bundle.svg_path).resolve().parent
     return {
         "lesson_id": bundle.lesson_id,
         "lesson": bundle.lesson.model_dump(by_alias=True),
