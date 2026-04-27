@@ -13,6 +13,10 @@ Set env:
 
 ```bash
 export GROQ_API_KEY=...
+export ELEVEN_LABS_TTS_API_KEY=...
+# optional:
+# export ELEVEN_LABS_TTS_VOICE_ID=JBFqnCBsd6RMkjVDRZzb
+# export ELEVEN_LABS_TTS_MODEL_ID=eleven_multilingual_v2
 ```
 
 ## Single run
@@ -59,6 +63,21 @@ Outputs:
 
 ## FastAPI lesson API + interactive browser player
 
+Frontend (React + Tailwind + RTK Query):
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend production build (served by FastAPI root `/`):
+
+```bash
+cd frontend
+npm run build
+```
+
 Run API server:
 
 ```bash
@@ -69,7 +88,8 @@ python -m uvicorn src.api:app --reload
 
 Open:
 
-- `http://127.0.0.1:8000/` (interactive player UI)
+- `http://127.0.0.1:5173/` for Vite dev UI (recommended during development)
+- `http://127.0.0.1:8000/` for FastAPI-served production build after `npm run build`
 
 Core endpoints:
 

@@ -14,7 +14,8 @@ from src.lesson_pipeline import generate_lesson
 from src.lesson_pipeline import AUDIO_SEGMENT_RE
 
 BASE_DIR = Path("data/lessons")
-STATIC_DIR = Path("web")
+FRONTEND_DIST_DIR = Path("frontend/dist")
+LEGACY_STATIC_DIR = Path("web")
 LESSON_ID_RE = re.compile(r"^[a-z0-9_-]+$")
 LESSON_DIR_CACHE: dict[str, Path] = {}
 
@@ -27,8 +28,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-if STATIC_DIR.exists():
-    app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+if FRONTEND_DIST_DIR.exists() and (FRONTEND_DIST_DIR / "assets").exists():
+    app.mount(
+        "/assets",
+        StaticFiles(directory=str(FRONTEND_DIST_DIR / "assets")),
+        name="assets",
+    )
+elif LEGACY_STATIC_DIR.exists():
+    app.mount("/static", StaticFiles(directory=str(LEGACY_STATIC_DIR)), name="static")
 
 
 def _safe_lesson_dir(lesson_id: str) -> Path:
@@ -57,7 +64,11 @@ def _load_lesson_payload(lesson_dir: Path) -> dict:
 
 @app.get("/")
 def index():
-    index_path = STATIC_DIR / "index.html"
+    index_path = (
+        FRONTEND_DIST_DIR / "index.html"
+        if (FRONTEND_DIST_DIR / "index.html").exists()
+        else LEGACY_STATIC_DIR / "index.html"
+    )
     if not index_path.exists():
         raise HTTPException(status_code=404, detail="Frontend not found")
     return FileResponse(index_path)

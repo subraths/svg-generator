@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import re
 import struct
 import time
@@ -25,14 +26,30 @@ from src.lesson_models import (
 )
 from src.lesson_renderer import render_lesson_svg
 
+try:
+    from elevenlabs.client import ElevenLabs
+except Exception:  # pragma: no cover - optional during local setup
+    ElevenLabs = None
+
 DIAGRAM_TYPES = [t.value for t in DiagramType]
 MAX_NODES = 10
-MAX_SUBTOPICS = 8
+MAX_SUBTOPICS = 16
 AUDIO_SEGMENT_RE = re.compile(r"^segment_[0-9]+\.wav$")
+
+MIN_WORDS_FOR_TIMING = 4
+MIN_SEGMENT_DURATION_MS = 1800
+MS_PER_WORD = 340
+
+ELEVENLABS_SAMPLE_RATE = 22050
+ELEVENLABS_OUTPUT_FORMAT = "pcm_22050"
+DEFAULT_ELEVENLABS_VOICE_ID = "JBFqnCBsd6RMkjVDRZzb"
+DEFAULT_ELEVENLABS_MODEL_ID = "eleven_multilingual_v2"
+
 
 
 def _slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", text.lower()).strip("_") or "topic"
+
 
 
 def _extract_json(text: str) -> str:
@@ -40,6 +57,7 @@ def _extract_json(text: str) -> str:
     if t.startswith("```"):
         t = t.replace("```json", "").replace("```", "").strip()
     return t
+
 
 
 def _safe_join(base: Path, child: str) -> Path:
@@ -57,6 +75,7 @@ def _safe_join(base: Path, child: str) -> Path:
     return target
 
 
+
 def _llm_json(pool: GroqClientPool, system_prompt: str, user_prompt: str) -> dict[str, Any]:
     resp = pool.chat_completion_with_failover(
         model="openai/gpt-oss-120b",
@@ -70,15 +89,41 @@ def _llm_json(pool: GroqClientPool, system_prompt: str, user_prompt: str) -> dic
     return json.loads(_extract_json(raw))
 
 
-def classify_diagram_type(topic: str, pool: GroqClientPool | None, use_llm: bool = True) -> DiagramType:
+
+def _has_placeholder_content(items: list[dict[str, Any]]) -> bool:
+    patterns = [
+        r"^component\s+[a-z0-9]+$",
+        r"^node\s*[0-9]+$",
+        r"^item\s*[0-9]+$",
+        r"^step\s*[0-9]+$",
+        r"^topic\s*[0-9]+$",
+    ]
+    for item in items:
+        label = str(item.get("label", "")).strip().lower()
+        if not label:
+            return True
+        if any(re.match(p, label) for p in patterns):
+            return True
+    return False
+
+
+
+def classify_diagram_type(
+    topic: str, pool: GroqClientPool | None, use_llm: bool = True
+) -> DiagramType:
     if use_llm and pool is not None:
         try:
             data = _llm_json(
                 pool,
-                "You classify educational topics. Return JSON only.",
+                """You are an educational diagram classifier.
+Return strictly JSON with keys: diagram_type, confidence, rationale.
+Allowed diagram_type values only: pipeline, hierarchy, cycle, comparison, network.
+No markdown or extra keys.
+""",
                 (
-                    "Classify this topic into one of: pipeline, hierarchy, cycle, comparison, network. "
-                    f"Topic: {topic}. Return {{\"diagram_type\": \"...\", \"confidence\": 0-1}}"
+                    f"Topic: {topic}\n"
+                    "Classify this topic by explanatory structure only, not by domain buzzwords.\n"
+                    "Return: {\"diagram_type\":\"...\",\"confidence\":0.0-1.0,\"rationale\":\"short\"}"
                 ),
             )
             value = str(data.get("diagram_type", "")).strip().lower()
@@ -99,58 +144,126 @@ def classify_diagram_type(topic: str, pool: GroqClientPool | None, use_llm: bool
     return DiagramType.network
 
 
+
 def _template_instructions(diagram_type: DiagramType) -> str:
     templates = {
-        DiagramType.pipeline: "Use linear left-to-right stages, no cycles, 4-7 nodes.",
-        DiagramType.hierarchy: "Use root->children structure, max depth 3, no sibling edges.",
-        DiagramType.cycle: "Use closed-loop transitions with one optional entry node.",
-        DiagramType.comparison: "Use two groups with mirrored properties and contrast labels.",
-        DiagramType.network: "Use central concept with connected supporting concepts.",
+        DiagramType.pipeline: "Use linear left-to-right stages, no cycles, 5-8 nodes.",
+        DiagramType.hierarchy: "Use parent-child decomposition, 2-3 depth levels, 5-8 nodes.",
+        DiagramType.cycle: "Use a true loop with named transitions and at least one feedback edge.",
+        DiagramType.comparison: "Use two contrasting branches plus shared criteria/outcomes.",
+        DiagramType.network: "Use a hub-and-spoke or multi-cluster concept map with meaningful links.",
     }
     return templates[diagram_type]
 
 
-def _fallback_graph(topic: str, diagram_type: DiagramType) -> dict[str, Any]:
-    base_labels = [
-        "Core concept",
-        "Component A",
-        "Component B",
-        "Process",
-        "Outcome",
-        "Applications",
-    ]
-    nodes = []
-    for i, label in enumerate(base_labels):
-        nid = f"node_{i+1}"
-        nodes.append({"id": nid, "label": label})
 
-    edges = []
-    if diagram_type == DiagramType.cycle:
-        for i in range(len(nodes)):
-            edges.append({"from": nodes[i]["id"], "to": nodes[(i + 1) % len(nodes)]["id"], "label": ""})
+def _fallback_graph(topic: str, diagram_type: DiagramType) -> dict[str, Any]:
+    title = topic.title()
+    if diagram_type == DiagramType.pipeline:
+        labels = [
+            "Input acquisition",
+            "Preprocessing",
+            "Core transformation",
+            "Quality validation",
+            "Output delivery",
+            "Monitoring feedback",
+        ]
     elif diagram_type == DiagramType.hierarchy:
-        for i in range(1, len(nodes)):
-            edges.append({"from": nodes[0]["id"], "to": nodes[i]["id"], "label": ""})
+        labels = [
+            f"{title} overview",
+            "Foundational layer",
+            "Control layer",
+            "Execution layer",
+            "Observation layer",
+            "Improvement loop",
+        ]
+    elif diagram_type == DiagramType.cycle:
+        labels = [
+            "Initiation",
+            "Build-up",
+            "Peak activity",
+            "Release",
+            "Recovery",
+            "Re-entry trigger",
+        ]
     elif diagram_type == DiagramType.comparison:
-        edges = [
-            {"from": "node_1", "to": "node_3", "label": "similarity"},
-            {"from": "node_2", "to": "node_4", "label": "contrast"},
-            {"from": "node_1", "to": "node_5", "label": "impact"},
-            {"from": "node_2", "to": "node_6", "label": "impact"},
+        labels = [
+            "Approach A",
+            "Approach B",
+            "Strength profile",
+            "Risk profile",
+            "Best-fit context",
+            "Decision rule",
         ]
     else:
+        labels = [
+            f"{title} core",
+            "Inputs",
+            "Mechanisms",
+            "Dependencies",
+            "Outcomes",
+            "Failure points",
+        ]
+
+    nodes = [{"id": f"node_{i+1}", "label": label} for i, label in enumerate(labels)]
+
+    edges: list[dict[str, str]] = []
+    if diagram_type == DiagramType.cycle:
+        for i in range(len(nodes)):
+            edges.append(
+                {
+                    "from": nodes[i]["id"],
+                    "to": nodes[(i + 1) % len(nodes)]["id"],
+                    "label": "next phase",
+                }
+            )
+    elif diagram_type == DiagramType.hierarchy:
+        for i in range(1, len(nodes)):
+            edges.append(
+                {
+                    "from": nodes[0]["id"],
+                    "to": nodes[i]["id"],
+                    "label": "contains",
+                }
+            )
+    else:
         for i in range(len(nodes) - 1):
-            edges.append({"from": nodes[i]["id"], "to": nodes[i + 1]["id"], "label": ""})
+            edges.append(
+                {
+                    "from": nodes[i]["id"],
+                    "to": nodes[i + 1]["id"],
+                    "label": "leads to",
+                }
+            )
 
-    subtopics = [
-        {"id": "sub_history", "label": "Historical context", "explanation": f"How {topic} evolved over time."},
-        {"id": "sub_limits", "label": "Limitations", "explanation": f"Common limits and constraints in {topic}."},
-        {"id": "sub_examples", "label": "Practical examples", "explanation": f"Real-world examples of {topic}."},
-    ]
-    return {"title": topic.title(), "svg_nodes": nodes, "svg_edges": edges, "subtopics": subtopics}
+    subtopics: list[dict[str, Any]] = []
+    for node in nodes:
+        sid = f"sub_{node['id']}"
+        subtopics.append(
+            {
+                "id": sid,
+                "parent_id": node["id"],
+                "label": f"{node['label']} explanation",
+                "explanation": f"How {node['label'].lower()} influences {topic} in practical settings.",
+                "bullet_points": [
+                    f"Key signal: {node['label'].lower()} affects reliability.",
+                    f"Checkpoint: validate {node['label'].lower()} with an observable metric.",
+                ],
+            }
+        )
+
+    return {
+        "title": title,
+        "svg_nodes": nodes,
+        "svg_edges": edges,
+        "subtopics": subtopics,
+    }
 
 
-def _layout_nodes(diagram_type: DiagramType, nodes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+
+def _layout_nodes(
+    diagram_type: DiagramType, nodes: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
     n = len(nodes)
     if n == 0:
         return nodes
@@ -177,7 +290,14 @@ def _layout_nodes(diagram_type: DiagramType, nodes: list[dict[str, Any]]) -> lis
         cx, cy, r = 450, 380, 220
         for i, node in enumerate(nodes):
             ang = (2 * math.pi * i) / n
-            node.update({"x": cx + r * math.cos(ang), "y": cy + r * math.sin(ang), "w": 160, "h": 64})
+            node.update(
+                {
+                    "x": cx + r * math.cos(ang),
+                    "y": cy + r * math.sin(ang),
+                    "w": 160,
+                    "h": 64,
+                }
+            )
         return nodes
 
     if diagram_type == DiagramType.comparison:
@@ -195,23 +315,55 @@ def _layout_nodes(diagram_type: DiagramType, nodes: list[dict[str, Any]]) -> lis
     return nodes
 
 
-def generate_concept_graph(topic: str, diagram_type: DiagramType, pool: GroqClientPool | None, use_llm: bool) -> dict[str, Any]:
+
+def generate_concept_graph(
+    topic: str,
+    diagram_type: DiagramType,
+    pool: GroqClientPool | None,
+    use_llm: bool,
+) -> dict[str, Any]:
     if use_llm and pool is not None:
-        try:
-            system = "You generate educational concept graph JSON. Return JSON only."
-            user = (
-                f"Topic: {topic}\n"
-                f"Diagram type: {diagram_type.value}\n"
-                f"Rules: {_template_instructions(diagram_type)}\n"
-                "Output keys: title, svg_nodes[{id,label}], svg_edges[{from,to,label}], subtopics[{id,label,explanation}]\n"
-                "Keep 4-8 nodes and <=8 edges."
-            )
-            graph = _llm_json(pool, system, user)
-            if {"title", "svg_nodes", "svg_edges", "subtopics"}.issubset(graph):
-                return graph
-        except Exception:
-            pass
+        for attempt in range(2):
+            try:
+                system = f"""You generate high-quality educational concept graph JSON.
+Return JSON only, no markdown.
+Avoid placeholders like 'Component A' / 'Node 1' / 'Step 1'.
+Every label and explanation must be domain-specific for the topic.
+
+Required schema:
+{{
+  "title": "string",
+  "svg_nodes": [{{"id": "snake_case", "label": "domain-specific"}}],
+  "svg_edges": [{{"from": "node_id", "to": "node_id", "label": "relationship"}}],
+  "subtopics": [{{
+    "id": "snake_case",
+    "parent_id": "node_id",
+    "label": "concise subtitle",
+    "explanation": "2-3 sentence educational explanation",
+    "bullet_points": ["fact 1", "fact 2"]
+  }}]
+}}
+"""
+                user = (
+                    f"Topic: {topic}\n"
+                    f"Diagram type: {diagram_type.value}\n"
+                    f"Rules: {_template_instructions(diagram_type)}\n"
+                    "Use 5-8 nodes and up to 12 edges.\n"
+                    "Create at least one subtopic for each node.\n"
+                    "Subtopics must reference valid node ids via parent_id.\n"
+                    "Explain mechanisms, trade-offs, and practical cues.\n"
+                    "If uncertain, still produce best educational estimate with concrete terminology."
+                )
+                graph = _llm_json(pool, system, user)
+                if {"title", "svg_nodes", "svg_edges", "subtopics"}.issubset(graph):
+                    if attempt == 0 and _has_placeholder_content(graph.get("svg_nodes", [])):
+                        continue
+                    return graph
+            except Exception:
+                pass
+
     return _fallback_graph(topic, diagram_type)
+
 
 
 def generate_narration(
@@ -225,12 +377,16 @@ def generate_narration(
         try:
             data = _llm_json(
                 pool,
-                "You write short educational narration mapped to ids. Return JSON only.",
+                """You write concise educational narration.
+Return JSON only: {"narration_segments":[{"id":"...","text":"..."}]}
+One segment per node and one segment per subtopic.
+Narration must follow pedagogical order: foundations -> mechanism -> implications.
+""",
                 (
-                    "Given this graph JSON, produce narration_segments array with objects "
-                    "{id,text}. One segment per node/subtopic in teaching order. "
-                    f"Difficulty level: {difficulty}. "
-                    f"Graph: {json.dumps(graph)}"
+                    f"Difficulty level: {difficulty}\n"
+                    f"Topic: {topic}\n"
+                    f"Graph: {json.dumps(graph)}\n"
+                    "Keep each segment 1-2 sentences and avoid repetition."
                 ),
             )
             segs = data.get("narration_segments", [])
@@ -244,25 +400,46 @@ def generate_narration(
         segments.append(
             {
                 "id": node["id"],
-                "text": f"At {difficulty} level, {node['label']} is a key part of {topic}.",
+                "text": f"At {difficulty} level, {node['label']} is a critical concept inside {topic}.",
             }
         )
     for sub in graph.get("subtopics", []):
-        segments.append({"id": sub["id"], "text": sub["explanation"]})
+        points = "; ".join(sub.get("bullet_points", [])[:2])
+        text = f"{sub['explanation']}"
+        if points:
+            text += f" Key points: {points}."
+        segments.append({"id": sub["id"], "text": text})
     return segments
 
 
-def build_sync_map(segments: list[dict[str, str]]) -> list[dict[str, Any]]:
+
+def _build_sync_map_from_durations(
+    segment_durations: list[tuple[str, int, str]],
+) -> list[dict[str, Any]]:
     sync = []
     cursor = 0
-    for i, seg in enumerate(segments):
-        # Timing heuristic for segment-level TTS sync:
-        # - min 4 words avoids near-zero segments for very short labels
-        # - 340ms/word approximates moderate narration pace
-        # - 1800ms minimum keeps highlights perceptible in UI
-        words = max(4, len(seg["text"].split()))
-        dur = max(1800, words * 340)
+    for seg_id, duration_ms, audio_chunk in segment_durations:
+        dur = max(MIN_SEGMENT_DURATION_MS, duration_ms)
         sync.append(
+            {
+                "id": seg_id,
+                "start_ms": cursor,
+                "end_ms": cursor + dur,
+                "audio_chunk": audio_chunk,
+            }
+        )
+        cursor += dur
+    return sync
+
+
+
+def _estimated_sync_map(segments: list[dict[str, str]]) -> list[dict[str, Any]]:
+    cursor = 0
+    output: list[dict[str, Any]] = []
+    for i, seg in enumerate(segments):
+        words = max(MIN_WORDS_FOR_TIMING, len(seg["text"].split()))
+        dur = max(MIN_SEGMENT_DURATION_MS, words * MS_PER_WORD)
+        output.append(
             {
                 "id": seg["id"],
                 "start_ms": cursor,
@@ -271,7 +448,8 @@ def build_sync_map(segments: list[dict[str, str]]) -> list[dict[str, Any]]:
             }
         )
         cursor += dur
-    return sync
+    return output
+
 
 
 def _graph_checks(graph: LessonGraph) -> list[str]:
@@ -285,6 +463,12 @@ def _graph_checks(graph: LessonGraph) -> list[str]:
         errors.append(f"too many subtopics: {len(graph.subtopics)} > {MAX_SUBTOPICS}")
 
     ids = {n.id for n in graph.svg_nodes}
+    sub_ids = {s.id for s in graph.subtopics}
+
+    for sub in graph.subtopics:
+        if sub.parent_id and sub.parent_id not in ids:
+            errors.append(f"subtopic {sub.id} has unknown parent_id: {sub.parent_id}")
+
     for e in graph.svg_edges:
         if e.from_node not in ids:
             errors.append(f"unknown edge source: {e.from_node}")
@@ -298,7 +482,7 @@ def _graph_checks(graph: LessonGraph) -> list[str]:
                 adj[e.from_node].add(e.to_node)
                 adj[e.to_node].add(e.from_node)
         start = graph.svg_nodes[0].id
-        seen = set([start])
+        seen = {start}
         q = deque([start])
         while q:
             cur = q.popleft()
@@ -314,10 +498,16 @@ def _graph_checks(graph: LessonGraph) -> list[str]:
     if set(order_ids) != set(narration_ids):
         errors.append("narration_order ids must match narration_segments ids")
 
+    allowed_narration_ids = ids | sub_ids
+    bad_narration_ids = [nid for nid in narration_ids if nid not in allowed_narration_ids]
+    if bad_narration_ids:
+        errors.append(f"narration has unknown ids: {bad_narration_ids}")
+
     if any(seg.end_ms <= seg.start_ms for seg in graph.sync_map):
         errors.append("sync_map contains invalid duration")
 
     return errors
+
 
 
 def _simplify_graph(raw: dict[str, Any]) -> dict[str, Any]:
@@ -330,18 +520,40 @@ def _simplify_graph(raw: dict[str, Any]) -> dict[str, Any]:
     ]
     if not edges and len(nodes) >= 2:
         edges = [
-            {"from": nodes[i]["id"], "to": nodes[i + 1]["id"], "label": ""}
+            {"from": nodes[i]["id"], "to": nodes[i + 1]["id"], "label": "related"}
             for i in range(len(nodes) - 1)
         ]
+
+    subtopics = [
+        s
+        for s in raw.get("subtopics", [])
+        if s.get("parent_id") in node_ids or not s.get("parent_id")
+    ][:MAX_SUBTOPICS]
+
+    if not subtopics:
+        subtopics = [
+            {
+                "id": f"sub_{n['id']}",
+                "parent_id": n["id"],
+                "label": f"{n['label']} details",
+                "explanation": f"Practical explanation for {n['label'].lower()}.",
+                "bullet_points": [
+                    f"Observe {n['label'].lower()} through measurable indicators.",
+                    f"Relate {n['label'].lower()} to end outcomes.",
+                ],
+            }
+            for n in nodes[: min(6, len(nodes))]
+        ]
+
     raw["svg_nodes"] = nodes
     raw["svg_edges"] = edges
-    raw["subtopics"] = raw.get("subtopics", [])[:MAX_SUBTOPICS]
+    raw["subtopics"] = subtopics
     return raw
+
 
 
 def _tone_wav(path: Path, duration_ms: int, freq: float):
     sample_rate = 22050
-    # 9000 ~= 27% of signed 16-bit PCM peak to keep generated tones audible without clipping.
     amplitude = 9000
     frames = int(sample_rate * (duration_ms / 1000.0))
     with wave.open(str(path), "w") as wavf:
@@ -354,17 +566,72 @@ def _tone_wav(path: Path, duration_ms: int, freq: float):
             wavf.writeframes(struct.pack("<h", value))
 
 
-def synthesize_audio_segments(sync_map: list[SyncSegment], output_dir: Path):
+
+def _write_pcm_as_wav(target: Path, pcm_bytes: bytes, sample_rate: int = ELEVENLABS_SAMPLE_RATE):
+    with wave.open(str(target), "wb") as wavf:
+        wavf.setnchannels(1)
+        wavf.setsampwidth(2)
+        wavf.setframerate(sample_rate)
+        wavf.writeframes(pcm_bytes)
+
+
+
+def _duration_ms_from_pcm_bytes(pcm_bytes: bytes, sample_rate: int = ELEVENLABS_SAMPLE_RATE) -> int:
+    samples = len(pcm_bytes) / 2.0
+    return max(1, int((samples / sample_rate) * 1000))
+
+
+
+def synthesize_audio_segments(
+    narration_segments: list[dict[str, str]], output_dir: Path
+) -> list[tuple[str, int, str]]:
     output_dir = output_dir.expanduser().resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
-    for i, seg in enumerate(sync_map):
-        if not AUDIO_SEGMENT_RE.fullmatch(seg.audio_chunk):
-            raise ValueError(f"Invalid audio chunk name: {seg.audio_chunk}")
-        target = (output_dir / seg.audio_chunk).resolve()
+
+    api_key = os.getenv("ELEVEN_LABS_TTS_API_KEY", "").strip()
+    voice_id = os.getenv("ELEVEN_LABS_TTS_VOICE_ID", DEFAULT_ELEVENLABS_VOICE_ID).strip()
+    model_id = os.getenv("ELEVEN_LABS_TTS_MODEL_ID", DEFAULT_ELEVENLABS_MODEL_ID).strip()
+
+    if api_key and ElevenLabs is not None:
+        client = ElevenLabs(api_key=api_key)
+        results: list[tuple[str, int, str]] = []
+
+        for i, seg in enumerate(narration_segments):
+            audio_chunk = f"segment_{i}.wav"
+            if not AUDIO_SEGMENT_RE.fullmatch(audio_chunk):
+                raise ValueError(f"Invalid audio chunk name: {audio_chunk}")
+            target = (output_dir / audio_chunk).resolve()
+            if not target.is_relative_to(output_dir):
+                raise ValueError("Audio chunk path escapes lesson audio directory")
+
+            audio_stream = client.text_to_speech.convert(
+                voice_id=voice_id,
+                model_id=model_id,
+                output_format=ELEVENLABS_OUTPUT_FORMAT,
+                text=seg["text"],
+            )
+            pcm_bytes = b"".join(audio_stream)
+            if not pcm_bytes:
+                raise ValueError("ElevenLabs returned empty audio payload")
+            _write_pcm_as_wav(target, pcm_bytes)
+            duration_ms = _duration_ms_from_pcm_bytes(pcm_bytes)
+            results.append((seg["id"], duration_ms, audio_chunk))
+        return results
+
+    # fallback for local/dev environments when ELEVEN_LABS_TTS_API_KEY is not set
+    results = []
+    for i, seg in enumerate(narration_segments):
+        audio_chunk = f"segment_{i}.wav"
+        target = (output_dir / audio_chunk).resolve()
         if not target.is_relative_to(output_dir):
             raise ValueError("Audio chunk path escapes lesson audio directory")
-        duration = max(300, seg.end_ms - seg.start_ms)
-        _tone_wav(target, duration, freq=220 + (i * 25))
+
+        words = max(MIN_WORDS_FOR_TIMING, len(seg["text"].split()))
+        duration_ms = max(MIN_SEGMENT_DURATION_MS, words * MS_PER_WORD)
+        _tone_wav(target, duration_ms, freq=220 + (i * 25))
+        results.append((seg["id"], duration_ms, audio_chunk))
+    return results
+
 
 
 def _to_lesson_graph(raw: dict[str, Any], diagram_type: DiagramType) -> LessonGraph:
@@ -386,11 +653,13 @@ def _to_lesson_graph(raw: dict[str, Any], diagram_type: DiagramType) -> LessonGr
     )
 
 
+
 def get_pool_if_available() -> GroqClientPool | None:
     try:
         return GroqClientPool.from_env()
     except Exception:
         return None
+
 
 
 def generate_lesson(
@@ -415,7 +684,7 @@ def generate_lesson(
     )
     graph["narration_segments"] = narration_segments
     graph["narration_order"] = [s["id"] for s in narration_segments]
-    graph["sync_map"] = build_sync_map(narration_segments)
+    graph["sync_map"] = _estimated_sync_map(narration_segments)
 
     lesson = _to_lesson_graph(graph, diagram_type=diagram_type)
 
@@ -429,13 +698,16 @@ def generate_lesson(
         filtered_narration = [s for s in narration_segments if s["id"] in valid_ids]
         if not filtered_narration:
             filtered_narration = [
-                {"id": n["id"], "text": f"At {difficulty} level, {n['label']} is important in {topic}."}
+                {
+                    "id": n["id"],
+                    "text": f"At {difficulty} level, {n['label']} is important in {topic}.",
+                }
                 for n in graph.get("svg_nodes", [])
             ]
 
         graph["narration_segments"] = filtered_narration
         graph["narration_order"] = [s["id"] for s in filtered_narration]
-        graph["sync_map"] = build_sync_map(filtered_narration)
+        graph["sync_map"] = _estimated_sync_map(filtered_narration)
         lesson = _to_lesson_graph(graph, diagram_type=diagram_type)
         final_checks = _graph_checks(lesson)
         if final_checks:
@@ -449,10 +721,12 @@ def generate_lesson(
     audio_dir = lesson_dir / "audio"
     lesson_dir.mkdir(parents=True, exist_ok=True)
 
+    audio_meta = synthesize_audio_segments(graph["narration_segments"], audio_dir)
+    graph["sync_map"] = _build_sync_map_from_durations(audio_meta)
+    lesson = _to_lesson_graph(graph, diagram_type=diagram_type)
+
     svg_path = lesson_dir / "diagram.svg"
     render_lesson_svg(lesson, svg_path)
-
-    synthesize_audio_segments(lesson.sync_map, audio_dir)
 
     lesson_json = lesson.model_dump(by_alias=True)
     (lesson_dir / "lesson.json").write_text(

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import math
 from pathlib import Path
 
 import svgwrite
@@ -88,37 +87,83 @@ def render_lesson_svg(lesson: LessonGraph, output_path: Path) -> str:
     )
     dwg.add(
         dwg.text(
-            "Sub-topics",
-            insert=(16, 32),
-            font_size="18px",
+            lesson.title,
+            insert=(16, 30),
+            font_size="16px",
             font_weight="bold",
             fill="#0f172a",
         )
     )
 
-    max_bullets = int((CANVAS_H - 70) / 28)
-    visible = lesson.subtopics[:max_bullets]
-    for i, sub in enumerate(visible):
-        y = 62 + i * 28
-        dwg.add(dwg.circle(center=(18, y - 5), r=3, fill="#3b82f6"))
+    y_cursor = 56
+    row_h = 18
+    max_rows = int((CANVAS_H - y_cursor - 18) / row_h)
+    used_rows = 0
+
+    children_map: dict[str, list] = {}
+    for sub in lesson.subtopics:
+        if not sub.parent_id:
+            continue
+        children_map.setdefault(sub.parent_id, []).append(sub)
+
+    for node in lesson.svg_nodes:
+        if used_rows >= max_rows:
+            break
         dwg.add(
             dwg.text(
-                sub.label,
-                insert=(28, y),
-                id=sub.id,
+                node.label,
+                insert=(14, y_cursor),
+                id=f"panel-{node.id}",
                 class_="highlightable",
                 font_size="13px",
-                fill="#334155",
+                font_weight="bold",
+                fill="#1e293b",
             )
         )
+        y_cursor += row_h
+        used_rows += 1
 
-    if len(lesson.subtopics) > max_bullets:
-        rem = len(lesson.subtopics) - max_bullets
+        for sub in children_map.get(node.id, []):
+            if used_rows >= max_rows:
+                break
+            dwg.add(dwg.circle(center=(22, y_cursor - 5), r=2.5, fill="#3b82f6"))
+            dwg.add(
+                dwg.text(
+                    sub.explanation[:58] + ("…" if len(sub.explanation) > 58 else ""),
+                    insert=(30, y_cursor),
+                    id=sub.id,
+                    class_="highlightable",
+                    font_size="11px",
+                    fill="#334155",
+                )
+            )
+            y_cursor += row_h
+            used_rows += 1
+
+            for bullet in sub.bullet_points[:2]:
+                if used_rows >= max_rows:
+                    break
+                dwg.add(dwg.circle(center=(32, y_cursor - 5), r=2, fill="#94a3b8"))
+                dwg.add(
+                    dwg.text(
+                        bullet[:50] + ("…" if len(bullet) > 50 else ""),
+                        insert=(38, y_cursor),
+                        font_size="10px",
+                        fill="#475569",
+                    )
+                )
+                y_cursor += row_h
+                used_rows += 1
+
+    remaining = len(lesson.subtopics) - sum(
+        len(children_map.get(node.id, [])) for node in lesson.svg_nodes
+    )
+    if used_rows >= max_rows and remaining > 0:
         dwg.add(
             dwg.text(
-                f"+{rem} more",
-                insert=(28, 62 + max_bullets * 28),
-                font_size="12px",
+                f"...more topics available in lesson JSON",
+                insert=(14, CANVAS_H - 12),
+                font_size="10px",
                 fill="#64748b",
             )
         )

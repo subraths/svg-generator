@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from enum import Enum
 from typing import List
+from typing import Optional
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
@@ -35,6 +36,8 @@ class Subtopic(BaseModel):
     id: str = Field(min_length=1)
     label: str = Field(min_length=1)
     explanation: str = Field(min_length=1)
+    parent_id: Optional[str] = None
+    bullet_points: List[str] = Field(default_factory=list)
 
 
 class NarrationSegment(BaseModel):
