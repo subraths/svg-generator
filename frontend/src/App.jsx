@@ -221,7 +221,7 @@ function App() {
                     {node.label}
                   </button>
 
-                  <ul className="mt-2 ml-3 list-disc space-y-2 text-sm text-slate-600" aria-label={`${node.label} sub explanations`}>
+                  <ul className="mt-2 ml-3 list-disc space-y-2 text-sm text-slate-600" aria-label={`Sub-topics for ${node.label}`}>
                     {node.children.map((sub) => (
                       <li key={sub.id}>
                         <button

@@ -597,6 +597,11 @@ def synthesize_audio_segments(
     voice_id = os.getenv("ELEVEN_LABS_TTS_VOICE_ID", DEFAULT_ELEVENLABS_VOICE_ID).strip()
     model_id = os.getenv("ELEVEN_LABS_TTS_MODEL_ID", DEFAULT_ELEVENLABS_MODEL_ID).strip()
 
+    if api_key and len(api_key) < 16:
+        raise ValueError(
+            "ELEVEN_LABS_TTS_API_KEY appears invalid (too short)."
+        )
+
     if api_key and ElevenLabs is not None:
         client = ElevenLabs(api_key=api_key)
         results: list[tuple[str, int, str]] = []
