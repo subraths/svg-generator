@@ -13,3 +13,8 @@ dependencies = [
     "python-dotenv>=1.2.2",
     "svgwrite>=1.4.3",
 ]
+
+[tool.uv.workspace]
+members = [
+    "backend",
+]
