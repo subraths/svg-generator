@@ -95,7 +95,7 @@ Core endpoints:
 
 - `POST /lesson/generate`
   - body: `{"topic":"Photosynthesis","difficulty":"beginner","use_llm":true}`
-  - returns lesson JSON + SVG URL + audio base URL
+  - returns explanation text + svg_json + lesson JSON + SVG URL + audio base URL
 - `GET /lesson/{id}`
 - `GET /diagram/{id}.svg`
 - `GET /audio/{id}/{segment}`

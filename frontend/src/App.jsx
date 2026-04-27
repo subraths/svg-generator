@@ -5,6 +5,8 @@ function App() {
   const [topic, setTopic] = useState('Photosynthesis')
   const [lesson, setLesson] = useState(null)
   const [lessonId, setLessonId] = useState('')
+  const [explanation, setExplanation] = useState('')
+  const [svgJson, setSvgJson] = useState(null)
   const [svgMarkup, setSvgMarkup] = useState('')
   const [status, setStatus] = useState('Ready')
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -101,6 +103,8 @@ function App() {
       const res = await generateLesson({ topic: clean, difficulty: 'beginner', use_llm: true }).unwrap()
       setLesson(res.lesson)
       setLessonId(res.lesson_id)
+      setExplanation(res.explanation || '')
+      setSvgJson(res.svg_json || null)
 
       const svgResponse = await fetch(res.svg_url)
       const svgText = await svgResponse.text()
@@ -204,6 +208,12 @@ function App() {
 
       <main className="grid grid-cols-1 gap-4 lg:grid-cols-[380px_1fr]">
         <aside className="rounded-xl bg-white p-4 shadow-sm">
+          {explanation ? (
+            <div className="mb-4 rounded-md border border-slate-200 bg-slate-50 p-3">
+              <h2 className="text-sm font-semibold text-slate-700">Explanation</h2>
+              <p className="mt-1 text-sm text-slate-600">{explanation}</p>
+            </div>
+          ) : null}
           <h2 className="text-lg font-semibold">Topic map</h2>
           {!lesson ? (
             <p className="mt-3 text-sm text-slate-500">Generate a lesson to view structured sub explanations.</p>
@@ -250,6 +260,12 @@ function App() {
         </aside>
 
         <section className="rounded-xl bg-white p-3 shadow-sm">
+          {svgJson ? (
+            <details className="mb-3 rounded border border-slate-200 bg-slate-50 p-2 text-xs text-slate-600">
+              <summary className="cursor-pointer font-medium">SVG JSON</summary>
+              <pre className="mt-2 overflow-auto whitespace-pre-wrap">{JSON.stringify(svgJson, null, 2)}</pre>
+            </details>
+          ) : null}
           <div
             ref={svgHostRef}
             className="overflow-auto rounded-lg border border-slate-200 bg-white"

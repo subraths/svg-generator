@@ -80,6 +80,8 @@ def create_lesson(req: GenerateLessonRequest):
     LESSON_DIR_CACHE[bundle.lesson_id] = Path(bundle.svg_path).resolve().parent
     return {
         "lesson_id": bundle.lesson_id,
+        "explanation": bundle.explanation,
+        "svg_json": bundle.svg_json,
         "lesson": bundle.lesson.model_dump(by_alias=True),
         "svg_url": f"/diagram/{bundle.lesson_id}.svg",
         "audio_base_url": f"/audio/{bundle.lesson_id}",

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from enum import Enum
+from typing import Any
 from typing import List
 from typing import Optional
 
@@ -76,6 +77,8 @@ class LessonBundle(BaseModel):
     lesson: LessonGraph
     svg_path: str
     audio_base_path: str
+    explanation: str = ""
+    svg_json: dict[str, Any] = Field(default_factory=dict)
 
 
 class GenerateLessonRequest(BaseModel):

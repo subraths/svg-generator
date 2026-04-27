@@ -156,6 +156,52 @@ def _template_instructions(diagram_type: DiagramType) -> str:
     return templates[diagram_type]
 
 
+def generate_explanation(
+    topic: str,
+    difficulty: str,
+    pool: GroqClientPool | None,
+    use_llm: bool,
+) -> dict[str, Any]:
+    if use_llm and pool is not None:
+        try:
+            data = _llm_json(
+                pool,
+                """You are an educational explainer.
+Return JSON only with keys:
+{
+  "overview": "2-4 sentence explanation grounded in the topic",
+  "key_points": ["point 1", "point 2", "point 3"]
+}
+No placeholders.
+""",
+                (
+                    f"Topic: {topic}\n"
+                    f"Difficulty: {difficulty}\n"
+                    "Use practical terminology and causal relationships."
+                ),
+            )
+            if isinstance(data, dict) and isinstance(data.get("overview"), str):
+                points = data.get("key_points", [])
+                if not isinstance(points, list):
+                    points = []
+                return {
+                    "overview": data["overview"].strip(),
+                    "key_points": [str(p).strip() for p in points if str(p).strip()],
+                }
+        except Exception:
+            pass
+    return {
+        "overview": (
+            f"{topic} can be understood as an interacting set of concepts where each stage "
+            "influences downstream outcomes and trade-offs."
+        ),
+        "key_points": [
+            "Identify the core mechanism first.",
+            "Track dependencies between major components.",
+            "Validate outcomes with observable signals.",
+        ],
+    }
+
 
 def _fallback_graph(topic: str, diagram_type: DiagramType) -> dict[str, Any]:
     title = topic.title()
@@ -319,6 +365,7 @@ def _layout_nodes(
 def generate_concept_graph(
     topic: str,
     diagram_type: DiagramType,
+    explanation: dict[str, Any],
     pool: GroqClientPool | None,
     use_llm: bool,
 ) -> dict[str, Any]:
@@ -346,6 +393,8 @@ Required schema:
 """
                 user = (
                     f"Topic: {topic}\n"
+                    f"Explanation overview: {explanation.get('overview', '')}\n"
+                    f"Key points: {json.dumps(explanation.get('key_points', []))}\n"
                     f"Diagram type: {diagram_type.value}\n"
                     f"Rules: {_template_instructions(diagram_type)}\n"
                     "Use 5-8 nodes and up to 12 edges.\n"
@@ -664,6 +713,25 @@ def _to_lesson_graph(raw: dict[str, Any], diagram_type: DiagramType) -> LessonGr
 
 
 
+def _to_svg_json_payload(raw: dict[str, Any], diagram_type: DiagramType) -> dict[str, Any]:
+    edges = []
+    for e in raw.get("svg_edges", []):
+        edges.append(
+            {
+                "from": e.get("from") or e.get("from_node"),
+                "to": e.get("to") or e.get("to_node"),
+                "label": e.get("label", ""),
+            }
+        )
+    return {
+        "title": raw.get("title", ""),
+        "diagram_type": diagram_type.value,
+        "svg_nodes": raw.get("svg_nodes", []),
+        "svg_edges": edges,
+        "subtopics": raw.get("subtopics", []),
+    }
+
+
 def get_pool_if_available() -> GroqClientPool | None:
     try:
         return GroqClientPool.from_env()
@@ -680,7 +748,19 @@ def generate_lesson(
 ) -> LessonBundle:
     pool = get_pool_if_available() if use_llm else None
     diagram_type = classify_diagram_type(topic, pool=pool, use_llm=use_llm)
-    graph = generate_concept_graph(topic, diagram_type, pool=pool, use_llm=use_llm)
+    explanation = generate_explanation(
+        topic=topic,
+        difficulty=difficulty,
+        pool=pool,
+        use_llm=use_llm,
+    )
+    graph = generate_concept_graph(
+        topic,
+        diagram_type,
+        explanation=explanation,
+        pool=pool,
+        use_llm=use_llm,
+    )
     graph = _simplify_graph(graph)
 
     graph["svg_nodes"] = _layout_nodes(diagram_type, graph.get("svg_nodes", []))
@@ -739,8 +819,17 @@ def generate_lesson(
     render_lesson_svg(lesson, svg_path)
 
     lesson_json = lesson.model_dump(by_alias=True)
+    svg_json = _to_svg_json_payload(graph, diagram_type=diagram_type)
     (lesson_dir / "lesson.json").write_text(
-        json.dumps({"lesson_id": lesson_id, "lesson": lesson_json}, indent=2),
+        json.dumps(
+            {
+                "lesson_id": lesson_id,
+                "explanation": explanation.get("overview", ""),
+                "svg_json": svg_json,
+                "lesson": lesson_json,
+            },
+            indent=2,
+        ),
         encoding="utf-8",
     )
 
@@ -749,4 +838,6 @@ def generate_lesson(
         lesson=lesson,
         svg_path=str(svg_path),
         audio_base_path=str(audio_dir),
+        explanation=explanation.get("overview", ""),
+        svg_json=svg_json,
     )
