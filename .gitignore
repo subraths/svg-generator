@@ -10,3 +10,8 @@ wheels/
 .venv
 .env
 .cache
+
+# reports, svgs, and other generated files
+reports/
+svg/
+img/
