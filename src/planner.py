@@ -16,7 +16,13 @@ PLANNER_SCHEMA_HINT = {
             "h": 70,
         }
     ],
-    "edges": [{"from": "node_id", "to": "node_id", "label": "optional short text"}],
+    "edges": [
+        {
+            "from": "node_id",
+            "to": "node_id",
+            "label": "optional short text but try to include",
+        }
+    ],
 }
 
 
@@ -27,13 +33,15 @@ def _extract_json(text: str) -> str:
 
 
 def generate_layout_plan(pool: GroqClientPool, topic: str, min_nodes: int = 6) -> dict:
-    system_prompt = f"""You are a diagram planner.
+    system_prompt = f"""You are a SVG diagram planner.
 Return ONLY valid JSON (no markdown).
 
 Canvas: width={CANVAS_W}, height={CANVAS_H}
 Use grid-aligned coordinates (multiples of 20).
 Avoid overlaps. Keep at least 20px spacing between node boxes.
 All nodes must stay within canvas bounds.
+Include as much nodes as possible
+Include as labels as much as possible
 
 Output schema:
 {json.dumps(PLANNER_SCHEMA_HINT, indent=2)}
