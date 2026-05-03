@@ -71,6 +71,7 @@ Use <g id="..."> for each node id from the plan.
 Draw rectangles or circles and centered labels for nodes.
 Draw connectors for all edges with marker-end arrows.
 Define arrow marker in <defs> with id containing "arrow".
+Connect edges from source box boundary to target box boundary.
 Do not place text outside canvas.
 Do not use external assets/scripts.
 """

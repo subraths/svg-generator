@@ -14,6 +14,8 @@ def save_file(path, content):
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
 
+    print(f"Saved file: {path}")
+
 
 def save_json(report_path, report_data, type: str):
     experiment_report = report_data
