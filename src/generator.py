@@ -3,14 +3,12 @@ import re
 import time
 from typing import Callable
 
-from groq import Groq
 
 from src.config import CANVAS_H, CANVAS_W, MODEL_NAME
-from src.config import MODEL_NAME
 
 # global/shared limiter instance (or inject it)
 from src.groq_pool import GroqClientPool
-from src.rate_limit import SimpleRateLimiter, estimate_tokens
+from src.rate_limit import SimpleRateLimiter
 
 limiter = SimpleRateLimiter(min_interval_sec=2.5, daily_token_budget=190_000)
 
@@ -72,6 +70,10 @@ Draw rectangles or circles and centered labels for nodes.
 Draw connectors for all edges with marker-end arrows.
 Define arrow marker in <defs> with id containing "arrow".
 Connect edges from source box boundary to target box boundary.
+Connectors should not overlap nodes.
+Connoctor arrows should touch the node boundary, not start/end inside the node.
+Use best side to draw connectors (e.g. from right side of source to left side of target if source is left of target).
+Use brezier curves only where necessory for connectors eg. To avoid overlaps and keep layout clean.
 Do not place text outside canvas.
 Do not use external assets/scripts.
 """
