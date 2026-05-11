@@ -10,10 +10,15 @@ from src.config import CANVAS_H, CANVAS_W, MODEL_NAME
 from src.groq_pool import GroqClientPool
 from src.rate_limit import SimpleRateLimiter
 
+from src.svg_repair import feedback_to_instructions
+
 limiter = SimpleRateLimiter(min_interval_sec=2.5, daily_token_budget=190_000)
 
 
 def build_system_prompt(topic: str) -> str:
+    """
+    Build the system prompt for SVG generation with clear instructions and constraints.
+    """
     return f"""You are an expert educational SVG diagram generator.
 
     Return ONLY valid SVG XML.
@@ -61,6 +66,9 @@ def generate_svg_with_groq(
 
 
 def build_system_prompt_from_plan() -> str:
+    """
+    Build a system prompt with detailed SVG generation instructions, referencing the plan structure.
+    """
     return f"""You are an expert SVG generator.
 Return ONLY valid SVG XML. No markdown.
 
@@ -79,7 +87,18 @@ Do not use external assets/scripts.
 """
 
 
-def build_user_prompt_from_plan(topic: str, plan: dict) -> str:
+def build_user_prompt_from_plan(
+    topic: str, plan: dict, feedback: dict | None = None
+) -> str:
+    """
+    Build SVG generation prompt using plan and optional critique feedback.
+    """
+    feedback_block = ""
+    if feedback:
+        feedback_block = (
+            "\n\nCRITIQUE FIXES:\n" + feedback_to_instructions(feedback) + "\n"
+        )
+
     return (
         f"Generate an educational SVG for topic: {topic}\n\n"
         f"Use this layout plan exactly (JSON):\n{json.dumps(plan, indent=2)}\n\n"
@@ -87,6 +106,7 @@ def build_user_prompt_from_plan(topic: str, plan: dict) -> str:
         "- Keep node ids exactly as given.\n"
         "- Connect edges from source box boundary to target box boundary.\n"
         "- Keep output clean and readable.\n"
+        "- Do not change layout unless required by critique fixes.\n" + feedback_block
     )
 
 
