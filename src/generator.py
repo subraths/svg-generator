@@ -73,6 +73,9 @@ def build_system_prompt_from_plan() -> str:
 Return ONLY valid SVG XML. No markdown.
 
 Canvas must be exactly width="{CANVAS_W}" height="{CANVAS_H}".
+Place the SVG from center of the canvas
+Try to make best use of the canvas space
+Do not draw svg over topic
 Use <g id="..."> for each node id from the plan.
 Draw rectangles or circles and centered labels for nodes.
 Draw connectors for all edges with marker-end arrows.
@@ -106,6 +109,8 @@ def build_user_prompt_from_plan(
         "- Keep node ids exactly as given.\n"
         "- Connect edges from source box boundary to target box boundary.\n"
         "- Keep output clean and readable.\n"
+        "- Maintain proper space between nodes.\n"
+        "- Make sure node labels do not go outside of node boundary"
         "- Do not change layout unless required by critique fixes.\n" + feedback_block
     )
 

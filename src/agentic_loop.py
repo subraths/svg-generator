@@ -42,6 +42,7 @@ def generate_with_agentic_feedback(
     system_prompt = build_system_prompt_from_plan()
 
     best_svg = ""
+    best_validation = None
     last_feedback: Optional[dict] = None
     history = []
 
@@ -76,6 +77,10 @@ def generate_with_agentic_feedback(
             }
             continue
 
+        # valid SVG path
+        best_svg = svg_text
+        best_validation = validation
+
         # Only if XML is valid proceed to PNG + vision critique.
         svg_path = f"svg/{out_base}_iter{i}.svg"
         save_file(svg_path, svg_text)
@@ -96,12 +101,14 @@ def generate_with_agentic_feedback(
             }
         )
 
-        best_svg = svg_text
         last_feedback = feedback
 
         # Stop early if vision model approves.
         if feedback.get("pass") is True:
             break
+
+    if not best_svg:
+        raise ValueError("All agentic iterations produced invalid SVG. Check prompts.")
 
     report = {
         "topic": topic,

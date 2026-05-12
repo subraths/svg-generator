@@ -2,7 +2,7 @@ from src.groq_pool import GroqClientPool
 from src.planner import generate_layout_plan
 from src.agentic_loop import generate_with_agentic_feedback
 
-TOPIC = "Photosynthesis"
+TOPIC = "Water cycle"
 
 pool = GroqClientPool.from_env()
 plan = generate_layout_plan(pool, TOPIC, min_nodes=6)
