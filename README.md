@@ -1,81 +1,50 @@
-# svg-generator
+## SVG Generator (Agentic)
 
-Generate educational SVG diagrams using LLMs, validate them, render PNGs, and compare baseline vs planner-guided generation.
+This project generates SVG diagrams from a topic using an LLM planner + generator + validation/repair loop.
 
-## Setup
+### Setup
+
+- Python via `uv`
+- Create a `.env` file with required keys
+
+Example:
+
+```bash
+OPENROUTER_API_KEY=...
+GROQ_API_KEY=...
+# (Optional) Gemini (used by explanation/speech features on newer branches)
+GEMINI_API_KEY=...
+
+# Vision QA resilience (optional)
+VISION_FAIL_OPEN=true
+VISION_RETRIES=3
+VISION_REQUEST_TIMEOUT_S=60
+VISION_RETRY_BACKOFF_S=2
+```
+
+### Run
 
 ```bash
 uv sync
-# or: pip install -e .
+uv run python -m src.main
 ```
 
-Set env:
+### Outputs
+
+- `reports/*.json` plan + reports
+- `svg/*.svg` generated SVG iterations
+- `img/*.png` rendered PNGs for visual QA
+
+### Note on vision feedback stability
+
+The visual QA step calls an external vision provider via OpenRouter.
+Free tiers can intermittently return 5xx/504 or close connections.
+
+By default, the repo is configured to **fail-open** on provider/network errors:
+- The run continues and still produces SVG outputs.
+
+If you want provider failures to count as failures (and keep iterating), set:
 
 ```bash
-export GROQ_API_KEY=...
+VISION_FAIL_OPEN=false
 ```
-
-## Single run
-
-```bash
-python -m src.main
-```
-
-- Configure topic/mode in `src/main.py`:
-  - `TOPIC = "..."`
-  - `USE_PLANNER = True|False`
-
-Outputs:
-
-- `svg/*.svg`
-- `img/*.png`
-- `reports/*.json`
-- planner mode also writes `*_plan*.json`
-
-## Batch compare (v1 vs v2)
-
-```bash
-python -m src.run_batch
-```
-
-Outputs:
-
-- `reports/batch_compare_<timestamp>.csv`
-- per-run reports in `reports/`
-- SVG/PNG artifacts in `svg/` and `img/`
-
-## Metrics
-
-```bash
-python -m src.metrics
-# or
-python -m src.metrics reports/batch_compare_<timestamp>.csv
-```
-
-Outputs:
-
-- `reports/summary_<timestamp>.json`
-- console summary with mode-wise comparison and deltas
-
-## Validation checks (SVG)
-
-Current validator checks:
-
-- XML validity
-- minimum group count
-- duplicate group IDs
-- rectangle overlap detection
-- connector count
-- arrow marker presence and marker-end usage
-
-## Planner checks (Plan JSON)
-
-Current planner validation checks:
-
-- nodes/edges schema presence
-- minimum node count
-- numeric geometry
-- bounds within canvas
-- spacing/overlap
-- unique node IDs
-- valid edge references
