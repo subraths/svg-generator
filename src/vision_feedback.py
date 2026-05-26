@@ -75,7 +75,7 @@ def get_vision_feedback(png_path: str) -> Dict[str, Any]:
         ],
         "response_format": {"type": "json_object"},
         "temperature": 0.1,
-        # "max_tokens": 1024,
+        "max_tokens": 1024,
     }
 
     resp = requests.post(
@@ -89,7 +89,6 @@ def get_vision_feedback(png_path: str) -> Dict[str, Any]:
         data=json.dumps(payload),
         timeout=60,
     )
-
     print(resp.status_code, resp.text)
 
     resp.raise_for_status()

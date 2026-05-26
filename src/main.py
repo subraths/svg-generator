@@ -11,14 +11,13 @@ from src.planner import generate_layout_plan
 from src.renderer import save_png_from_svg
 from src.validator import validate_svg
 from src.utils import save_file, save_json, topic_to_slug, timestamp_now
-from src.config import MAX_ATTEMPTS, MODEL_NAME
+from src.config import MAX_ATTEMPTS, MODEL_NAME, MAX_AGENTIC_ITERS
 from src.groq_pool import GroqClientPool
 
 
-TOPIC = "Photosynthesis"
+TOPIC = "TCP handshake process"
 USE_PLANNER = True
 USE_AGENTIC = True
-MAX_AGENTIC_ITERS = 3
 
 
 def main():
