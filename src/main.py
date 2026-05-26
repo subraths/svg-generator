@@ -1,6 +1,11 @@
 from pathlib import Path
 
 from src.agentic_loop import generate_with_agentic_feedback
+from src.explanation_planner import (
+    build_explanation_plan,
+    collect_allowed_highlight_ids,
+    validate_explanation_plan,
+)
 from src.generator import (
     build_system_prompt,
     generate_svg_with_groq,
@@ -11,6 +16,7 @@ from src.planner import generate_layout_plan
 from src.renderer import save_png_from_svg
 from src.validator import validate_svg
 from src.utils import save_file, save_json, topic_to_slug, timestamp_now
+from src.gemini_speech import synthesize_explanation_plan
 from src.config import MAX_ATTEMPTS, MODEL_NAME, MAX_AGENTIC_ITERS
 from src.groq_pool import GroqClientPool
 
@@ -26,6 +32,7 @@ def main():
     Path("reports").mkdir(exist_ok=True)
     Path("svg").mkdir(exist_ok=True)
     Path("img").mkdir(exist_ok=True)
+    Path("out").mkdir(exist_ok=True)
 
     topic_slug = topic_to_slug(TOPIC)
     timestamp = timestamp_now()
@@ -125,6 +132,29 @@ def main():
     else:
         print("Skipping PNG render: SVG is invalid XML.")
 
+    if not (last_validation and last_validation.get("xml_valid")):
+        raise ValueError("Cannot generate explanation/audio because final SVG is invalid.")
+
+    allowed_highlight_ids = collect_allowed_highlight_ids(plan, svg_text)
+    explanation_plan = build_explanation_plan(TOPIC, allowed_highlight_ids)
+    explanation_errors = validate_explanation_plan(explanation_plan, allowed_highlight_ids)
+    if explanation_errors:
+        raise ValueError(
+            "Explanation plan validation failed: " + "; ".join(explanation_errors)
+        )
+
+    explanation_plan_path = f"reports/{topic_slug}_{timestamp}_explanation_plan.json"
+    save_json(explanation_plan_path, explanation_plan, "explanation_plan")
+
+    bundle_dir = Path("out") / f"{topic_slug}_{timestamp}"
+    bundle_dir.mkdir(parents=True, exist_ok=True)
+    bundle_svg_path = str(bundle_dir / "diagram.svg")
+    save_file(bundle_svg_path, svg_text)
+
+    audio_path, timeline_path, timeline = synthesize_explanation_plan(
+        explanation_plan, bundle_dir
+    )
+
     report = {
         "timestamp": timestamp,
         "topic": TOPIC,
@@ -141,7 +171,14 @@ def main():
             "plan": f"reports/{topic_slug}_{timestamp}_plan.json"
             if USE_PLANNER
             else None,
+            "explanation_plan": explanation_plan_path,
+            "bundle": {
+                "diagram_svg": bundle_svg_path,
+                "narration_audio": audio_path,
+                "timeline": timeline_path,
+            },
         },
+        "timeline": timeline,
     }
 
     report_path = f"reports/{topic_slug}_{timestamp}.json"
