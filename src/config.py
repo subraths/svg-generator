@@ -1,5 +1,10 @@
 import os
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+except Exception:  # pragma: no cover - optional in minimal test environments
+    def load_dotenv():
+        return None
+
 
 load_dotenv()
 
@@ -24,3 +29,5 @@ OPENROUTER_VISION_MODEL = os.getenv(
 # Gemini settings (direct)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_VISION_MODEL = os.getenv("GEMINI_VISION_MODEL", "gemini-1.5-flash")
+GEMINI_TTS_MODEL = os.getenv("GEMINI_TTS_MODEL", "gemini-2.5-flash-preview-tts")
+GEMINI_TTS_VOICE = os.getenv("GEMINI_TTS_VOICE", "Kore")

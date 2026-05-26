@@ -13,6 +13,7 @@ Set env:
 
 ```bash
 export GROQ_API_KEY=...
+export GEMINI_API_KEY=...
 ```
 
 ## Single run
@@ -31,6 +32,15 @@ Outputs:
 - `img/*.png`
 - `reports/*.json`
 - planner mode also writes `*_plan*.json`
+- multimodal bundle: `out/<topic>_<timestamp>/diagram.svg`, `out/<topic>_<timestamp>/narration.wav`, `out/<topic>_<timestamp>/timeline.json`
+
+`timeline.json` contains ordered segments with `t0`/`t1` ranges and `highlights` SVG IDs.
+Frontend usage pattern:
+
+1. Play `narration.wav`
+2. Track current audio time
+3. Find active segment where `t0 <= time < t1`
+4. Add highlight CSS class to each SVG element ID listed in `highlights`
 
 ## Batch compare (v1 vs v2)
 
