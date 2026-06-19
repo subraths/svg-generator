@@ -33,25 +33,86 @@ def _extract_json(text: str) -> str:
 
 
 def generate_layout_plan(pool: GroqClientPool, topic: str, min_nodes: int = 6) -> dict:
-    system_prompt = f"""You are a SVG diagram planner.
-Return ONLY valid JSON (no markdown).
 
-Canvas: width={CANVAS_W}, height={CANVAS_H}
-Use grid-aligned coordinates (multiples of 20).
-Avoid overlaps. Keep at least 20px spacing between node boxes.
-All nodes must stay within canvas bounds.
-Include as much nodes as possible
-Include as labels as much as possible
+    with open("edited_samples/photosynthesis.svg", "r") as f:
+        example_svg = f.read()
 
-Output schema:
-{json.dumps(PLANNER_SCHEMA_HINT, indent=2)}
-"""
+    system_prompt = f"""
+        You are an expert SVG diagram PLANNER for an educational tutor.
 
-    user_prompt = (
-        f"Create a layout plan JSON for topic: {topic}\n"
-        f"Minimum nodes: {min_nodes}\n"
-        f"Include meaningful educational structure and correct directional edges."
-    )
+        You do NOT generate SVG. You generate ONLY a JSON layout plan that will later be converted to SVG.
+        Return ONLY valid JSON. No markdown. No comments.
+
+        Hard constraints (MUST FOLLOW):
+        - Canvas size is fixed: width={CANVAS_W}, height={CANVAS_H}.
+        - Coordinates must be multiples of 20 (grid-aligned).
+        - Every node must be fully inside the canvas bounds (including its width/height).
+        - No overlaps: maintain >= 20px spacing between node bounding boxes.
+        - Text must be readable: prefer short labels that fit inside nodes; use multi-line labels only if schema supports it.
+        - IDs must be stable, short, and snake_case. Do NOT use spaces. Do NOT change IDs once assigned.
+        - Each node must represent ONE clear concept. Avoid vague nodes like "Other" or "Misc".
+        - Edges must be meaningful and directionally correct for the topic (cause→effect, step→next step, input→output).
+        - The plan must be self-contained and consistent: every edge source/target must exist.
+        - Labels MUST fit inside their node boxes.
+        - If a label would be longer than ~18 characters OR more than 2–3 words, you MUST insert line breaks using '\\n'
+          so it renders as multiple lines inside the box.
+          Example: "Transmission Control Protocol" -> "Transmission\\nControl\\nProtocol"
+        - Prefer 1–3 lines per label. Avoid single very long lines.
+        - Do NOT use hyphenation. Break on spaces between words.
+
+        Educational quality constraints:
+        - Organize the diagram as a teaching flow:
+        1) Start/overview node(s)
+        2) Core steps/components (main chain)
+        3) Supporting concepts (side nodes)
+        4) Output/summary node(s)
+        - Prefer 2–4 major stages with subcomponents rather than a flat list.
+        - Use labels that a learner would understand (avoid jargon unless necessary).
+        
+        ID convention:
+        - Node ids must be noun-like (e.g., "client", "syn_sent"), not "box1".
+        - Edge ids should be "from_to" style (e.g., "client_to_server_syn").
+
+        Output must follow this JSON schema exactly:
+        {json.dumps(PLANNER_SCHEMA_HINT, indent=2)}
+        
+        Here is an example SVG: {example_svg}
+
+        Before returning JSON, verify for every node:
+        - schema validity
+        - grid alignment
+        - no overlaps
+        - all elements in bounds
+        - minimum node count met
+        - label has '\\n' inserted if it is long (e.g., > 18 chars or > 3 words)
+        - each line is short enough to fit visually
+    """
+
+    user_prompt = f"""
+        Topic: {topic}
+
+        Requirements:
+        - Minimum nodes: {min_nodes}
+        - Create a clear educational diagram plan suitable for a narrated tutor.
+        - Use concise labels, but include key terms a student should remember.
+        - Include directional edges that represent the learning flow.
+
+        Layout preference (choose the best one for this topic):
+        - Horizontal pipeline (left→right) for processes / sequences
+        - Vertical flow (top→bottom) for step-by-step procedures
+        - Hub-and-spoke for definitions / taxonomy
+        - Two-column compare/contrast if the topic naturally splits into two groups
+
+        Label formatting requirement:
+        - Ensure labels never overflow node boxes.
+        - Use '\\n' to split long labels into 2–3 lines (break on word boundaries).
+
+        Node/edge guidance:
+        - Each node: unique id (snake_case) + label.
+        - Edges: connect only when there is a real relationship; label edges only when it adds clarity.
+
+        Return ONLY the JSON plan.
+    """
 
     resp = pool.chat_completion_with_failover(
         model=MODEL_NAME,

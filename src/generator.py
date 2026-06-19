@@ -14,6 +14,11 @@ limiter = SimpleRateLimiter(min_interval_sec=2.5, daily_token_budget=190_000)
 
 
 def build_system_prompt(topic: str) -> str:
+    """Builds a system prompt and inlines a sample SVG example into it."""
+
+    with open("edited_samples/photosynthesis.svg", "r") as f:
+        sample_svg = f.read()
+
     return f"""You are an expert educational SVG diagram generator.
 
     Return ONLY valid SVG XML.
@@ -34,6 +39,9 @@ def build_system_prompt(topic: str) -> str:
     7) Do not use external assets/images/fonts/scripts.
     8) Define arrow marker in <defs> with id containing arrow.
     9) Use marker-end arrows on connectors.
+
+    Below is an example svg for Photosynthesis
+    {sample_svg}
     """
 
 
@@ -46,7 +54,7 @@ def generate_svg_with_groq(
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
-        temperature=0.0,
+        temperature=0.1,
     )
 
     text = resp.choices[0].message.content or ""
@@ -61,22 +69,30 @@ def generate_svg_with_groq(
 
 
 def build_system_prompt_from_plan() -> str:
-    return f"""You are an expert SVG generator.
-Return ONLY valid SVG XML. No markdown.
 
-Canvas must be exactly width="{CANVAS_W}" height="{CANVAS_H}".
-Use <g id="..."> for each node id from the plan.
-Draw rectangles or circles and centered labels for nodes.
-Draw connectors for all edges with marker-end arrows.
-Define arrow marker in <defs> with id containing "arrow".
-Connect edges from source box boundary to target box boundary.
-Connectors should not overlap nodes.
-Connoctor arrows should touch the node boundary, not start/end inside the node.
-Use best side to draw connectors (e.g. from right side of source to left side of target if source is left of target).
-Use brezier curves only where necessory for connectors eg. To avoid overlaps and keep layout clean.
-Do not place text outside canvas.
-Do not use external assets/scripts.
-"""
+    with open("edited_samples/photosynthesis.svg", "r") as f:
+        sample_svg = f.read()
+
+    return f"""
+        You are an expert SVG generator.
+        Return ONLY valid SVG XML. No markdown.
+
+        1) Canvas must be exactly width="{CANVAS_W}" height="{CANVAS_H}".
+        2) Use <g id="..."> for each node id from the plan.
+        3) Draw rectangles or circles and centered labels for nodes.
+        4) Draw connectors for all edges with marker-end arrows.
+        5) Define arrow marker in <defs> with id containing "arrow".
+        6) Connect edges from source box boundary to target box boundary.
+        7) Connectors should not overlap nodes.
+        8) Connoctor arrows should touch the node boundary, not start/end inside the node.
+        9) Use best side to draw connectors (e.g. from right side of source to left side of target if source is left of target).
+        10) Use brezier curves only where necessory for connectors eg. To avoid overlaps and keep layout clean.
+        11) Do not place text outside canvas.
+        12) Do not use external assets/scripts.
+
+        Below is an example svg for Photosynthesis
+        {sample_svg}
+    """
 
 
 def build_user_prompt_from_plan(topic: str, plan: dict) -> str:

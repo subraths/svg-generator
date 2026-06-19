@@ -1,12 +1,19 @@
 from pathlib import Path
 
 
+from src import planner
 from src.generator import (
     build_system_prompt,
     generate_svg_with_groq,
     build_system_prompt_from_plan,
     build_user_prompt_from_plan,
 )
+
+from src.generator_explanation import (
+    build_system_prompt as build_system_prompt_explanation,
+)
+from src.generator_explanation import build_user_prompt as build_user_prompt_explanation
+
 from src.planner import generate_layout_plan
 from src.renderer import save_png_from_svg
 from src.validator import validate_svg
@@ -112,7 +119,26 @@ def main():
 
     attempts_used = min(attempt, MAX_ATTEMPTS)
 
+    system_prompt_explanation = build_system_prompt_explanation()
+    user_prompt_explanation = build_user_prompt_explanation(
+        TOPIC=TOPIC, PLANNER_JSON=svg_text
+    )
+    explanation = generate_svg_with_groq(
+        pool,
+        system_prompt=system_prompt_explanation,
+        user_prompt=user_prompt_explanation,
+    )
+
+    print("\n--- Final Explanation Plan ---")
+    print(explanation)
+
     # ---- save artifacts ----
+
+    # ---- explanation artifact ----
+    explanation_path = f"reports/{topic_slug}_{timestamp}_explanation.json"
+    save_file(explanation_path, explanation)
+
+    # ---- SVG and PNG artifacts ----
     svg_path = f"svg/{topic_slug}_{timestamp}.svg"
     save_file(svg_path, svg_text)
     save_png_from_svg(topic_slug, timestamp)

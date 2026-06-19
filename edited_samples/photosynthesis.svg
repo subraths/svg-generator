@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+  <text x="643.244" y="34.19" text-anchor="middle" font-size="24" font-weight="bold" style="white-space: pre; stroke-width: 1px;">Photosynthesis Process</text>
+  <g id="sunlight" transform="matrix(1, 0, 0, 1, 43.244171, -15.810369)">
+    <rect x="100" y="100" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space: pre;">Sunlight</text>
+  </g>
+  <g id="chlorophyll" transform="matrix(1, 0, 0, 1, 43.244171, -15.810369)">
+    <rect x="340" y="100" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="430" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space: pre;">Chlorophyll</text>
+  </g>
+  <g id="water_splitting" transform="matrix(1, 0, 0, 1, 33.872646, -63.770691)">
+    <rect x="613.627" y="145.755" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text style="white-space: pre;" transform="matrix(0.944811, 0, 0, 1, 47.777699, -8.820292)" x="695.91" y="182.409" text-anchor="middle" font-size="14" dominant-baseline="middle">Water Splitting <tspan x="695.9099731445312" dy="1em">​</tspan>(H₂O ` O₂ + e⁻)</text>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Arial&quot;, sans-serif; font-size: 28px;" x="868.233" y="194.201"> </text>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Arial&quot;, sans-serif; font-size: 28px;" x="943.206" y="432.348">Enter your text here</text>
+  </g>
+  <g id="light_dependent" transform="matrix(1, 0, 0, 1, 43.244171, -15.810369)">
+    <rect x="340" y="190" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="430" y="225" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space: pre;">Light‑Dependent Reactions</text>
+  </g>
+  <g id="oxygen_release" transform="matrix(1, 0, 0, 1, 43.244171, -15.810369)">
+    <rect x="606.461" y="188.346" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="685.987" y="223.897" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space: pre;">O₂ Release</text>
+  </g>
+  <g id="atp_nadph" transform="matrix(1, 0, 0, 1, 43.244171, -15.810369)">
+    <rect x="340" y="300" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="430" y="335" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space: pre;">ATP &amp; NADPH Production</text>
+  </g>
+  <g id="calvin_cycle" transform="matrix(1, 0, 0, 1, 43.244171, -15.810369)">
+    <rect x="340" y="420" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="430" y="455" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space: pre;">Calvin Cycle (C₃)</text>
+  </g>
+  <g id="glucose" transform="matrix(1, 0, 0, 1, 74.115189, -16.912878)">
+    <rect x="580" y="420" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="670" y="455" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space: pre;">Glucose Production</text>
+  </g>
+  <path d="M 323.244 119.19 L 383.244 119.19" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width: 1px;"/>
+  <text x="353.244" y="109.19" font-size="12" text-anchor="middle" style="white-space: pre; stroke-width: 1px;">absorbs</text>
+  <path d="M 473.244 154.19 L 473.244 174.19" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width: 1px;"/>
+  <text x="483.244" y="164.19" font-size="12" style="white-space: pre; stroke-width: 1px;">excites</text>
+  <path d="M 735.703 153.92 C 775.703 153.92 623.244 209.19 563.244 209.19" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width: 1px;"/>
+  <text x="683.101" y="163.562" font-size="12" text-anchor="middle" style="white-space: pre; stroke-width: 1px;">provides electrons</text>
+  <path d="M 563.244 209.19 L 649.154 209.19" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width: 1px;"/>
+  <text x="605.372" y="222.343" font-size="12" text-anchor="middle" style="white-space: pre; stroke-width: 1px;">produces O₂</text>
+  <path d="M 473.244 244.19 L 473.244 284.19" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width: 1px;"/>
+  <text x="483.244" y="264.19" font-size="12" style="white-space: pre; stroke-width: 1px;">generates</text>
+  <path d="M 473.244 354.19 L 473.244 404.19" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width: 1px;"/>
+  <text x="483.244" y="379.19" font-size="12" style="white-space: pre; stroke-width: 1px;">provides energy</text>
+  <path d="M 563.244 439.19 L 654.115 439.741" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width: 1px;"/>
+  <text x="606.474" y="428.087" font-size="12" text-anchor="middle" style="white-space: pre; stroke-width: 1px;">synthesizes</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Arial&quot;, sans-serif; font-size: 28px;" x="642.006" y="308.159"> </text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Arial&quot;, sans-serif; font-size: 28px;" x="302.977" y="330.209"> </text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Arial&quot;, sans-serif; font-size: 28px;" x="614.994" y="270.121"> </text>
+</svg>
