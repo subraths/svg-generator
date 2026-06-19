@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="20" text-anchor="middle" font-size="24" font-weight="bold" style="white-space:pre;">Photosynthesis Process</text>
+
+  <!-- Nodes -->
+  <g id="overview">
+    <rect x="500" y="40" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="590" y="75" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="590" dy="0">Photosynthesis</tspan>
+      <tspan x="590" dy="1.2em">Overview</tspan>
+    </text>
+  </g>
+
+  <g id="light_absorption">
+    <rect x="500" y="140" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="590" y="175" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="590" dy="0">Light</tspan>
+      <tspan x="590" dy="1.2em">Absorption</tspan>
+    </text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="500" y="240" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="590" y="275" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="590" dy="0">Water</tspan>
+      <tspan x="590" dy="1.2em">Splitting</tspan>
+      <tspan x="590" dy="1.2em">(H₂O → O₂ + e⁻)</tspan>
+    </text>
+  </g>
+
+  <g id="electron_transport">
+    <rect x="500" y="340" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="590" y="375" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="590" dy="0">Electron</tspan>
+      <tspan x="590" dy="1.2em">Transport</tspan>
+      <tspan x="590" dy="1.2em">Chain</tspan>
+    </text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="500" y="440" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="590" y="475" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="590" dy="0">ATP &amp; NADPH</tspan>
+      <tspan x="590" dy="1.2em">Production</tspan>
+    </text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="500" y="540" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="590" y="575" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="590" dy="0">Calvin</tspan>
+      <tspan x="590" dy="1.2em">Cycle (C₃)</tspan>
+    </text>
+  </g>
+
+  <g id="glucose_output">
+    <rect x="500" y="640" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="590" y="675" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="590" dy="0">Glucose</tspan>
+      <tspan x="590" dy="1.2em">Synthesis</tspan>
+    </text>
+  </g>
+
+  <!-- Edges -->
+  <path d="M 590 110 L 590 140" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width:1px;"/>
+  <text x="590" y="125" font-size="12" text-anchor="middle" style="white-space:pre;">starts with</text>
+
+  <path d="M 590 210 L 590 240" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width:1px;"/>
+  <text x="590" y="225" font-size="12" text-anchor="middle" style="white-space:pre;">drives</text>
+
+  <path d="M 590 310 L 590 340" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width:1px;"/>
+  <text x="590" y="325" font-size="12" text-anchor="middle" style="white-space:pre;">feeds</text>
+
+  <path d="M 590 410 L 590 440" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width:1px;"/>
+  <text x="590" y="425" font-size="12" text-anchor="middle" style="white-space:pre;">produces</text>
+
+  <path d="M 590 510 L 590 540" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width:1px;"/>
+  <text x="590" y="525" font-size="12" text-anchor="middle" style="white-space:pre;">provides energy</text>
+
+  <path d="M 590 610 L 590 640" stroke="#000" fill="none" marker-end="url(#arrow)" style="stroke-width:1px;"/>
+  <text x="590" y="625" font-size="12" text-anchor="middle" style="white-space:pre;">creates</text>
+</svg>

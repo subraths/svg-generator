@@ -1,0 +1,117 @@
+{
+  "diagram_type": "cycle",
+  "title": "Water Cycle",
+  "nodes": [
+    {
+      "id": "sun",
+      "label": "Sun (energy)",
+      "x": 500,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "evaporation",
+      "label": "Evaporation",
+      "x": 500,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "transpiration",
+      "label": "Transpiration",
+      "x": 720,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "condensation",
+      "label": "Condensation",
+      "x": 500,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "precipitation",
+      "label": "Precipitation",
+      "x": 500,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "collection",
+      "label": "Collection (lakes/oceans)",
+      "x": 500,
+      "y": 480,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "infiltration_runoff",
+      "label": "Infiltration / Runoff",
+      "x": 280,
+      "y": 480,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "groundwater_flow",
+      "label": "Groundwater Flow",
+      "x": 280,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sun",
+      "to": "evaporation",
+      "label": "heat"
+    },
+    {
+      "from": "sun",
+      "to": "transpiration",
+      "label": "energy"
+    },
+    {
+      "from": "evaporation",
+      "to": "condensation",
+      "label": "water vapor rises"
+    },
+    {
+      "from": "transpiration",
+      "to": "condensation",
+      "label": "water vapor"
+    },
+    {
+      "from": "condensation",
+      "to": "precipitation",
+      "label": "cloud formation"
+    },
+    {
+      "from": "precipitation",
+      "to": "collection",
+      "label": "rainfall"
+    },
+    {
+      "from": "collection",
+      "to": "infiltration_runoff",
+      "label": "water enters ground"
+    },
+    {
+      "from": "infiltration_runoff",
+      "to": "groundwater_flow",
+      "label": "percolates"
+    },
+    {
+      "from": "groundwater_flow",
+      "to": "collection",
+      "label": "returns to water bodies"
+    }
+  ]
+}

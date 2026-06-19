@@ -1,0 +1,59 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Cell Membrane -->
+  <g id="cell_membrane">
+    <ellipse cx="600" cy="400" rx="500" ry="350" fill="none" stroke="black" stroke-width="3"/>
+    <text x="600" y="70" text-anchor="middle" font-family="sans-serif" font-size="24" fill="black">Cell Membrane</text>
+  </g>
+
+  <!-- Cytoplasm -->
+  <g id="cytoplasm">
+    <text x="600" y="150" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">Cytoplasm</text>
+  </g>
+
+  <!-- Nucleus -->
+  <g id="nucleus">
+    <circle cx="400" cy="350" r="100" fill="#ffcccc" stroke="black" stroke-width="2"/>
+    <text x="400" y="350" text-anchor="middle" dy="5" font-family="sans-serif" font-size="18" fill="black">Nucleus</text>
+  </g>
+
+  <!-- Mitochondrion -->
+  <g id="mitochondrion">
+    <rect x="730" y="260" width="140" height="80" rx="20" ry="20" fill="#ffebcc" stroke="black" stroke-width="2"/>
+    <text x="800" y="310" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Mitochondrion</text>
+  </g>
+
+  <!-- Endoplasmic Reticulum -->
+  <g id="endoplasmic_reticulum">
+    <rect x="560" y="500" width="240" height="80" rx="15" ry="15" fill="#cce5ff" stroke="black" stroke-width="2"/>
+    <text x="680" y="545" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Endoplasmic Reticulum</text>
+  </g>
+
+  <!-- Ribosome -->
+  <g id="ribosome">
+    <circle cx="800" cy="620" r="30" fill="#ccffcc" stroke="black" stroke-width="2"/>
+    <text x="800" y="620" text-anchor="middle" dy="5" font-family="sans-serif" font-size="18" fill="black">Ribosome</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- Nucleus inside Cytoplasm -->
+  <line x1="400" y1="250" x2="400" y2="150" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="410" y="200" font-family="sans-serif" font-size="16" fill="black">contains</text>
+
+  <!-- Mitochondrion inside Cytoplasm -->
+  <line x1="800" y1="240" x2="800" y2="150" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="810" y="200" font-family="sans-serif" font-size="16" fill="black">contains</text>
+
+  <!-- Ribosome attached to ER -->
+  <line x1="800" y1="590" x2="800" y2="540" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="810" y="565" font-family="sans-serif" font-size="16" fill="black">synthesizes</text>
+
+  <!-- ER inside Cytoplasm -->
+  <line x1="680" y1="460" x2="680" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="690" y="420" font-family="sans-serif" font-size="16" fill="black">contains</text>
+</svg>

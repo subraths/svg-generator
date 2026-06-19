@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Client box -->
+  <g id="client_box">
+    <rect x="100" y="250" width="200" height="100" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="200" y="300" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#000">Client</text>
+  </g>
+
+  <!-- Server box -->
+  <g id="server_box">
+    <rect x="900" y="250" width="200" height="100" fill="#ffe0b2" stroke="#000" stroke-width="2"/>
+    <text x="1000" y="300" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#000">Server</text>
+  </g>
+
+  <!-- SYN arrow -->
+  <g id="syn_arrow">
+    <line x1="300" y1="300" x2="900" y2="300" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="600" y="280" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#000">SYN (Seq = x)</text>
+  </g>
+
+  <!-- SYN-ACK arrow -->
+  <g id="syn_ack_arrow">
+    <line x1="900" y1="340" x2="300" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="600" y="360" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#000">SYN‑ACK (Seq = y, Ack = x+1)</text>
+  </g>
+
+  <!-- ACK arrow -->
+  <g id="ack_arrow">
+    <line x1="300" y1="380" x2="900" y2="380" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="600" y="420" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#000">ACK (Ack = y+1)</text>
+  </g>
+
+  <!-- Connection established note -->
+  <g id="connection_note">
+    <rect x="500" y="460" width="200" height="60" fill="#dcedc8" stroke="#000" stroke-width="2"/>
+    <text x="600" y="495" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#000">Connection Established</text>
+  </g>
+</svg>

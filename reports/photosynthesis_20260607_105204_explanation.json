@@ -1,0 +1,82 @@
+{
+  "mode": "tutor",
+  "title": "Photosynthesis Process",
+  "learning_goals": [
+    "Identify the main stages of photosynthesis",
+    "Explain how light energy is converted into chemical energy",
+    "Describe the role of the Calvin cycle in producing glucose",
+    "Connect each diagram element to its function in the overall process"
+  ],
+  "segments": [
+    {
+      "seg_id": "seg_001",
+      "text": "Let's start with an overview of photosynthesis, the process plants use to turn light into food.",
+      "highlights": [
+        {
+          "target_id": "overview",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_002",
+      "text": "First, light is captured by pigments in the thylakoid membranes.",
+      "highlights": [
+        {
+          "target_id": "light_absorption",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_003",
+      "text": "The absorbed energy splits water molecules, releasing oxygen and electrons.",
+      "highlights": [
+        {
+          "target_id": "water_splitting",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_004",
+      "text": "Electrons travel through a series of carriers in the electron transport chain.",
+      "highlights": [
+        {
+          "target_id": "electron_transport",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_005",
+      "text": "The flow of electrons powers the production of ATP and NADPH, the energy carriers.",
+      "highlights": [
+        {
+          "target_id": "atp_nadph",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_006",
+      "text": "ATP and NADPH then fuel the Calvin cycle, where carbon dioxide is fixed into sugars.",
+      "highlights": [
+        {
+          "target_id": "calvin_cycle",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_007",
+      "text": "Finally, the sugars are assembled into glucose, the plant's primary energy storage molecule.",
+      "highlights": [
+        {
+          "target_id": "glucose_output",
+          "style": "glow"
+        }
+      ]
+    }
+  ]
+}

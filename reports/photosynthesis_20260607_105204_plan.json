@@ -1,0 +1,120 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Overview",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 20,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll",
+      "x": 260,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_absorption",
+      "label": "Light\nAbsorption",
+      "x": 500,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent",
+      "label": "Light\nDependent\nReactions",
+      "x": 500,
+      "y": 130,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water\nSplitting\n(O\u2082 Release)",
+      "x": 500,
+      "y": 220,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP &\nNADPH\nProduction",
+      "x": 500,
+      "y": 310,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin\nCycle\n(C\u2083)",
+      "x": 500,
+      "y": 400,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "co2_uptake",
+      "label": "CO\u2082\nUptake",
+      "x": 840,
+      "y": 400,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_synthesis",
+      "label": "Glucose\nSynthesis",
+      "x": 500,
+      "y": 490,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "light_absorption",
+      "label": "provides light"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_absorption",
+      "label": "captures"
+    },
+    {
+      "from": "light_absorption",
+      "to": "light_dependent",
+      "label": "excites"
+    },
+    {
+      "from": "light_dependent",
+      "to": "water_splitting",
+      "label": "splits H\u2082O"
+    },
+    {
+      "from": "water_splitting",
+      "to": "atp_nadph",
+      "label": "produces ATP/NADPH"
+    },
+    {
+      "from": "atp_nadph",
+      "to": "calvin_cycle",
+      "label": "powers"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_synthesis",
+      "label": "creates glucose"
+    },
+    {
+      "from": "co2_uptake",
+      "to": "calvin_cycle",
+      "label": "provides CO\u2082"
+    }
+  ]
+}

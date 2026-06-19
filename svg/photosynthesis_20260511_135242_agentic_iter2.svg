@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .node-rect { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .node-text { font-size:16px; fill:#004d40; }
+      .edge-line { stroke:#000; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
+      .edge-label { font-size:14px; fill:#000; background:#fff; }
+      .title { font-size:24px; font-weight:bold; fill:#212121; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" class="title">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="20" y="20" width="180" height="70" class="node-rect"/>
+    <text x="110" y="55" dominant-baseline="middle" text-anchor="middle" class="node-text">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="240" y="20" width="180" height="70" class="node-rect"/>
+    <text x="330" y="55" dominant-baseline="middle" text-anchor="middle" class="node-text">Chlorophyll absorption</text>
+  </g>
+
+  <g id="water_split">
+    <rect x="460" y="20" width="180" height="70" class="node-rect"/>
+    <text x="550" y="55" dominant-baseline="middle" text-anchor="middle" class="node-text">Water splitting (photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="680" y="20" width="180" height="70" class="node-rect"/>
+    <text x="770" y="55" dominant-baseline="middle" text-anchor="middle" class="node-text">Oxygen release</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="460" y="120" width="180" height="70" class="node-rect"/>
+    <text x="550" y="155" dominant-baseline="middle" text-anchor="middle" class="node-text">ATP &amp; NADPH production</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="460" y="240" width="180" height="70" class="node-rect"/>
+    <text x="550" y="275" dominant-baseline="middle" text-anchor="middle" class="node-text">Calvin Cycle (light‑independent)</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect x="680" y="240" width="180" height="70" class="node-rect"/>
+    <text x="770" y="275" dominant-baseline="middle" text-anchor="middle" class="node-text">CO₂ fixation</text>
+  </g>
+
+  <g id="glucose">
+    <rect x="460" y="360" width="180" height="70" class="node-rect"/>
+    <text x="550" y="395" dominant-baseline="middle" text-anchor="middle" class="node-text">Glucose synthesis</text>
+  </g>
+
+  <g id="starch_storage">
+    <rect x="680" y="360" width="180" height="70" class="node-rect"/>
+    <text x="770" y="395" dominant-baseline="middle" text-anchor="middle" class="node-text">Starch storage</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_sunlight_chlorophyll">
+    <line x1="200" y1="55" x2="240" y2="55" class="edge-line"/>
+    <text x="220" y="48" text-anchor="middle" class="edge-label">absorbs</text>
+  </g>
+
+  <g id="edge_chlorophyll_water_split">
+    <line x1="420" y1="55" x2="460" y2="55" class="edge-line"/>
+    <text x="440" y="48" text-anchor="middle" class="edge-label">drives</text>
+  </g>
+
+  <g id="edge_water_split_oxygen_release">
+    <line x1="640" y1="55" x2="680" y2="55" class="edge-line"/>
+    <text x="660" y="48" text-anchor="middle" class="edge-label">produces</text>
+  </g>
+
+  <g id="edge_chlorophyll_atp_nadph">
+    <line x1="330" y1="90" x2="550" y2="120" class="edge-line"/>
+    <text x="440" y="100" text-anchor="middle" class="edge-label">energizes</text>
+  </g>
+
+  <g id="edge_water_split_atp_nadph">
+    <line x1="550" y1="90" x2="550" y2="120" class="edge-line"/>
+    <text x="550" y="100" text-anchor="middle" class="edge-label">provides electrons</text>
+  </g>
+
+  <g id="edge_atp_nadph_calvin_cycle">
+    <line x1="550" y1="190" x2="550" y2="240" class="edge-line"/>
+    <text x="550" y="215" text-anchor="middle" class="edge-label">supplies energy</text>
+  </g>
+
+  <g id="edge_co2_fixation_calvin_cycle">
+    <line x1="680" y1="275" x2="640" y2="275" class="edge-line"/>
+    <text x="660" y="268" text-anchor="middle" class="edge-label">feeds</text>
+  </g>
+
+  <g id="edge_calvin_cycle_glucose">
+    <line x1="550" y1="310" x2="550" y2="360" class="edge-line"/>
+    <text x="550" y="335" text-anchor="middle" class="edge-label">produces</text>
+  </g>
+
+  <g id="edge_glucose_starch_storage">
+    <line x1="640" y1="395" x2="680" y2="395" class="edge-line"/>
+    <text x="660" y="388" text-anchor="middle" class="edge-label">stores as</text>
+  </g>
+</svg>

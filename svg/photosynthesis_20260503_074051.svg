@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="0" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,-5L10,0L0,5" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" font-size="24" text-anchor="middle" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="100" y="80" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="190" y="115" font-size="14" text-anchor="middle" dominant-baseline="middle">Light Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="100" y="180" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="190" y="215" font-size="14" text-anchor="middle" dominant-baseline="middle">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="100" y="280" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="190" y="315" font-size="14" text-anchor="middle" dominant-baseline="middle">Oxygen Release (O₂)</text>
+  </g>
+
+  <g id="electron_transport">
+    <rect x="320" y="180" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="410" y="215" font-size="14" text-anchor="middle" dominant-baseline="middle">Electron Transport Chain</text>
+  </g>
+
+  <g id="atp_synthesis">
+    <rect x="320" y="280" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="410" y="315" font-size="14" text-anchor="middle" dominant-baseline="middle">ATP Synthesis</text>
+  </g>
+
+  <g id="nadph_formation">
+    <rect x="540" y="280" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="630" y="315" font-size="14" text-anchor="middle" dominant-baseline="middle">NADPH Formation</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="540" y="380" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="630" y="425" font-size="14" text-anchor="middle" dominant-baseline="middle">Calvin Cycle</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="540" y="480" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="630" y="515" font-size="14" text-anchor="middle" dominant-baseline="middle">Carbon Fixation (CO₂)</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="540" y="580" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="630" y="615" font-size="14" text-anchor="middle" dominant-baseline="middle">Glucose Production</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edges">
+    <!-- light_absorption -> water_splitting -->
+    <line x1="190" y1="115" x2="190" y2="215" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="190" y="165" font-size="12" text-anchor="middle" dominant-baseline="middle">photolysis</text>
+
+    <!-- light_absorption -> electron_transport -->
+    <line x1="190" y1="115" x2="410" y2="215" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="300" y="165" font-size="12" text-anchor="middle" dominant-baseline="middle">excites electrons</text>
+
+    <!-- water_splitting -> oxygen_release -->
+    <line x1="190" y1="215" x2="190" y2="315" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="190" y="265" font-size="12" text-anchor="middle" dominant-baseline="middle">O₂</text>
+
+    <!-- electron_transport -> atp_synthesis -->
+    <line x1="410" y1="215" x2="410" y2="315" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="410" y="265" font-size="12" text-anchor="middle" dominant-baseline="middle">ATP</text>
+
+    <!-- electron_transport -> nadph_formation -->
+    <line x1="410" y1="215" x2="630" y2="315" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="520" y="265" font-size="12" text-anchor="middle" dominant-baseline="middle">NADPH</text>
+
+    <!-- atp_synthesis -> calvin_cycle -->
+    <line x1="410" y1="315" x2="630" y2="425" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="520" y="370" font-size="12" text-anchor="middle" dominant-baseline="middle">energy</text>
+
+    <!-- nadph_formation -> calvin_cycle -->
+    <line x1="630" y1="315" x2="630" y2="425" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="630" y="370" font-size="12" text-anchor="middle" dominant-baseline="middle">reducing power</text>
+
+    <!-- calvin_cycle -> carbon_fixation -->
+    <line x1="630" y1="425" x2="630" y2="515" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="630" y="470" font-size="12" text-anchor="middle" dominant-baseline="middle">CO₂ fixation</text>
+
+    <!-- carbon_fixation -> glucose_production -->
+    <line x1="630" y1="515" x2="630" y2="615" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="630" y="565" font-size="12" text-anchor="middle" dominant-baseline="middle">glucose</text>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L10,3.5 Z" fill="#000"/>
+    </marker>
+    <style>
+      .box { fill:#e0f7ff; stroke:#000; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; text-anchor:middle; dominant-baseline:middle; }
+    </style>
+  </defs>
+
+  <!-- Pending -->
+  <g id="pending">
+    <rect class="box" x="100" y="50" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="200" y="90">Pending</text>
+  </g>
+
+  <!-- Scheduled -->
+  <g id="scheduled">
+    <rect class="box" x="100" y="170" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="200" y="210">Scheduled</text>
+  </g>
+
+  <!-- Container Creating -->
+  <g id="container_creating">
+    <rect class="box" x="100" y="290" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="200" y="330">ContainerCreating</text>
+  </g>
+
+  <!-- Running -->
+  <g id="running">
+    <rect class="box" x="100" y="410" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="200" y="450">Running</text>
+  </g>
+
+  <!-- Succeeded -->
+  <g id="succeeded">
+    <rect class="box" x="400" y="410" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="500" y="450">Succeeded</text>
+  </g>
+
+  <!-- Failed -->
+  <g id="failed">
+    <rect class="box" x="400" y="530" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="500" y="570">Failed</text>
+  </g>
+
+  <!-- Arrows -->
+  <path d="M200,130 L200,170" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M200,250 L200,290" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M200,370 L200,410" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M300,450 L400,450" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M300,490 L350,520 L400,520" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

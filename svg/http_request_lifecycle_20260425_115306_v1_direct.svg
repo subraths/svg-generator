@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Client -->
+  <g id="client">
+    <rect x="50" y="300" width="150" height="80" fill="#cce5ff" stroke="#333" stroke-width="2"/>
+    <text x="125" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Client (Browser)</text>
+  </g>
+
+  <!-- DNS Lookup -->
+  <g id="dns_lookup">
+    <rect x="250" y="300" width="150" height="80" fill="#e6ffe6" stroke="#333" stroke-width="2"/>
+    <text x="325" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">DNS Lookup</text>
+  </g>
+
+  <!-- TCP Handshake -->
+  <g id="tcp_handshake">
+    <rect x="450" y="300" width="150" height="80" fill="#fff0cc" stroke="#333" stroke-width="2"/>
+    <text x="525" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">TCP Handshake</text>
+  </g>
+
+  <!-- Server Processing -->
+  <g id="server_processing">
+    <rect x="650" y="300" width="150" height="80" fill="#ffd9cc" stroke="#333" stroke-width="2"/>
+    <text x="725" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Server Processing</text>
+  </g>
+
+  <!-- HTTP Response -->
+  <g id="http_response">
+    <rect x="850" y="300" width="150" height="80" fill="#e6e6ff" stroke="#333" stroke-width="2"/>
+    <text x="925" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">HTTP Response</text>
+  </g>
+
+  <!-- Rendering -->
+  <g id="rendering">
+    <rect x="1050" y="300" width="150" height="80" fill="#ffe6f2" stroke="#333" stroke-width="2"/>
+    <text x="1125" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Rendering</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="200" y1="340" x2="250" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="400" y1="340" x2="450" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="340" x2="650" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="800" y1="340" x2="850" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="1000" y1="340" x2="1050" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

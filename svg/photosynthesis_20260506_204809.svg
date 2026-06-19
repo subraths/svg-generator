@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold">Photosynthesis Process</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="40" y="40" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="130" y="75" text-anchor="middle" dominant-baseline="middle" font-size="14">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="260" y="40" width="180" height="70" fill="#e8f5e9" stroke="#000"/>
+    <text x="350" y="75" text-anchor="middle" dominant-baseline="middle" font-size="14">Chlorophyll</text>
+  </g>
+
+  <g id="water_split">
+    <rect x="480" y="40" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="570" y="75" text-anchor="middle" dominant-baseline="middle" font-size="14">Water Splitting</text>
+  </g>
+
+  <g id="light_dependent">
+    <rect x="260" y="140" width="180" height="70" fill="#f3e5f5" stroke="#000"/>
+    <text x="350" y="175" text-anchor="middle" dominant-baseline="middle" font-size="14">Light‑Dependent Reactions</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="480" y="140" width="180" height="70" fill="#ffebee" stroke="#000"/>
+    <text x="570" y="175" text-anchor="middle" dominant-baseline="middle" font-size="14">O₂ Release</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="260" y="240" width="180" height="70" fill="#e1f5fe" stroke="#000"/>
+    <text x="350" y="275" text-anchor="middle" dominant-baseline="middle" font-size="14">ATP &amp; NADPH</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="480" y="240" width="180" height="70" fill="#fffde7" stroke="#000"/>
+    <text x="570" y="275" text-anchor="middle" dominant-baseline="middle" font-size="14">Calvin Cycle (Light‑Independent)</text>
+  </g>
+
+  <g id="glucose">
+    <rect x="480" y="340" width="180" height="70" fill="#f1f8e9" stroke="#000"/>
+    <text x="570" y="375" text-anchor="middle" dominant-baseline="middle" font-size="14">Glucose Production</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- sunlight -> chlorophyll -->
+  <line x1="220" y1="75" x2="260" y2="75" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="240" y="65" text-anchor="middle" font-size="12">absorbs</text>
+
+  <!-- chlorophyll -> light_dependent -->
+  <line x1="350" y1="110" x2="350" y2="140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="350" y="115" text-anchor="middle" font-size="12">excites</text>
+
+  <!-- water_split -> light_dependent -->
+  <line x1="570" y1="110" x2="350" y2="140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="460" y="115" text-anchor="middle" font-size="12">provides e⁻</text>
+
+  <!-- light_dependent -> oxygen_release -->
+  <line x1="440" y1="175" x2="480" y2="175" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="460" y="165" text-anchor="middle" font-size="12">produces O₂</text>
+
+  <!-- light_dependent -> atp_nadph -->
+  <line x1="350" y1="210" x2="350" y2="240" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="350" y="215" text-anchor="middle" font-size="12">generates</text>
+
+  <!-- atp_nadph -> calvin_cycle -->
+  <line x1="440" y1="275" x2="480" y2="275" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="460" y="265" text-anchor="middle" font-size="12">energy &amp; NADPH</text>
+
+  <!-- calvin_cycle -> glucose -->
+  <line x1="570" y1="310" x2="570" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="570" y="315" text-anchor="middle" font-size="12">synthesizes</text>
+
+  <!-- glucose -> sunlight -->
+  <line x1="570" y1="340" x2="40" y2="75" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="305" y="197.5" text-anchor="middle" font-size="12">stores energy</text>
+</svg>

@@ -1,0 +1,112 @@
+{
+  "mode": "tutor",
+  "title": "Photosynthesis",
+  "learning_goals": [
+    "Describe the overall flow of photosynthesis from light capture to glucose production.",
+    "Explain how sunlight energy is converted into chemical energy (ATP and NADPH).",
+    "Identify the role of the Calvin Cycle in carbon fixation.",
+    "Recognize the by‑product oxygen release."
+  ],
+  "segments": [
+    {
+      "seg_id": "seg_001",
+      "text": "Let's explore the whole photosynthesis diagram, which shows how light energy becomes sugar in a plant.",
+      "highlights": [
+        {
+          "target_id": "sunlight_energy",
+          "style": "glow"
+        },
+        {
+          "target_id": "glucose_synthesis",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_002",
+      "text": "Sunlight is captured by chlorophyll pigments in the leaf.",
+      "highlights": [
+        {
+          "target_id": "sunlight_energy",
+          "style": "pulse"
+        },
+        {
+          "target_id": "chlorophyll",
+          "style": "pulse"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_003",
+      "text": "The absorbed light drives the light‑dependent reactions.",
+      "highlights": [
+        {
+          "target_id": "light_dependent",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_004",
+      "text": "These reactions produce the energy carriers ATP and NADPH.",
+      "highlights": [
+        {
+          "target_id": "atp_nadph",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_005",
+      "text": "ATP and NADPH are then used in the Calvin Cycle to fix carbon dioxide.",
+      "highlights": [
+        {
+          "target_id": "calvin_cycle",
+          "style": "pulse"
+        },
+        {
+          "target_id": "atp_nadph",
+          "style": "outline"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_006",
+      "text": "The Calvin Cycle produces glucose, the plant's stored energy.",
+      "highlights": [
+        {
+          "target_id": "glucose_synthesis",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_007",
+      "text": "A side product of the light‑dependent reactions is oxygen, which is released into the atmosphere.",
+      "highlights": [
+        {
+          "target_id": "oxygen_release",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_008",
+      "text": "In summary, sunlight → chlorophyll → light‑dependent reactions → ATP/NADPH → Calvin Cycle → glucose, with oxygen released along the way.",
+      "highlights": [
+        {
+          "target_id": "sunlight_energy",
+          "style": "outline"
+        },
+        {
+          "target_id": "calvin_cycle",
+          "style": "outline"
+        },
+        {
+          "target_id": "oxygen_release",
+          "style": "outline"
+        }
+      ]
+    }
+  ]
+}

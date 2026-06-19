@@ -1,0 +1,55 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+    <style>
+      .concept-rect { fill:#e0f7ff; stroke:#000; stroke-width:2; }
+      .concept-text { font-family:sans-serif; font-size:18px; fill:#000; dominant-baseline:middle; text-anchor:middle; }
+      .connector { stroke:#000; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- Evaporation -->
+  <g id="evaporation">
+    <rect class="concept-rect" x="100" y="600" width="180" height="80" rx="10" ry="10"/>
+    <text class="concept-text" x="190" y="640">Evaporation</text>
+  </g>
+
+  <!-- Rising Air -->
+  <g id="rising_air">
+    <rect class="concept-rect" x="100" y="400" width="180" height="80" rx="10" ry="10"/>
+    <text class="concept-text" x="190" y="440">Rising Warm Air</text>
+  </g>
+
+  <!-- Cooling -->
+  <g id="cooling">
+    <rect class="concept-rect" x="100" y="200" width="180" height="80" rx="10" ry="10"/>
+    <text class="concept-text" x="190" y="240">Cooling at Altitude</text>
+  </g>
+
+  <!-- Condensation -->
+  <g id="condensation">
+    <rect class="concept-rect" x="350" y="200" width="200" height="80" rx="10" ry="10"/>
+    <text class="concept-text" x="450" y="240">Condensation</text>
+  </g>
+
+  <!-- Droplet Growth -->
+  <g id="droplet_growth">
+    <rect class="concept-rect" x="350" y="350" width="200" height="80" rx="10" ry="10"/>
+    <text class="concept-text" x="450" y="390">Droplet Growth</text>
+  </g>
+
+  <!-- Precipitation -->
+  <g id="precipitation">
+    <rect class="concept-rect" x="350" y="500" width="200" height="80" rx="10" ry="10"/>
+    <text class="concept-text" x="450" y="540">Precipitation</text>
+  </g>
+
+  <!-- Connectors -->
+  <line class="connector" x1="190" y1="600" x2="190" y2="400" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="190" y1="400" x2="190" y2="200" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="280" y1="240" x2="350" y2="240" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="450" y1="280" x2="450" y2="350" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="450" y1="430" x2="450" y2="500" marker-end="url(#arrowhead)"/>
+</svg>

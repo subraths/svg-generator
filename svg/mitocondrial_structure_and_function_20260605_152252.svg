@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold" style="white-space:pre;">Mitochondrial Structure and Function</text>
+
+  <!-- Nodes -->
+  <g id="overview">
+    <rect x="500" y="40" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="80" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">Mitochondrion</tspan>
+      <tspan x="600" dy="1.2em">Overview</tspan>
+    </text>
+  </g>
+
+  <g id="outer_membrane">
+    <rect x="500" y="140" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="180" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">Outer Membrane</text>
+  </g>
+
+  <g id="intermembrane_space">
+    <rect x="500" y="240" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="280" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">Intermembrane</tspan>
+      <tspan x="600" dy="1.2em">Space</tspan>
+    </text>
+  </g>
+
+  <g id="inner_membrane">
+    <rect x="500" y="340" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="380" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">Inner Membrane</tspan>
+      <tspan x="600" dy="1.2em">(Cristae)</tspan>
+    </text>
+  </g>
+
+  <g id="matrix">
+    <rect x="500" y="440" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="480" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">Matrix</tspan>
+      <tspan x="600" dy="1.2em">(Contains DNA &amp; Enzymes)</tspan>
+    </text>
+  </g>
+
+  <g id="atp_production">
+    <rect x="500" y="540" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="580" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">ATP Production</tspan>
+      <tspan x="600" dy="1.2em">Oxidative</tspan>
+      <tspan x="600" dy="1.2em">Phosphorylation</tspan>
+    </text>
+  </g>
+
+  <!-- Edges -->
+  <path d="M600,120 L600,140" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:2"/>
+  <path d="M600,220 L600,240" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:2"/>
+  <path d="M600,320 L600,340" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:2"/>
+  <path d="M600,420 L600,440" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:2"/>
+  <path d="M600,520 L600,540" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:2"/>
+</svg>

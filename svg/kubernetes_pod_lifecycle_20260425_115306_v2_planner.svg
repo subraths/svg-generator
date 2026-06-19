@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="14">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <g id="pending">
+    <rect x="410" y="25" width="180" height="70" fill="#cce5ff" stroke="#333"/>
+    <text x="500" y="60" text-anchor="middle" dominant-baseline="middle">Pending</text>
+  </g>
+
+  <g id="container_creating">
+    <rect x="410" y="125" width="180" height="70" fill="#cce5ff" stroke="#333"/>
+    <text x="500" y="160" text-anchor="middle" dominant-baseline="middle">Container Creating</text>
+  </g>
+
+  <g id="running">
+    <rect x="410" y="225" width="180" height="70" fill="#cce5ff" stroke="#333"/>
+    <text x="500" y="260" text-anchor="middle" dominant-baseline="middle">Running</text>
+  </g>
+
+  <g id="succeeded">
+    <rect x="210" y="325" width="180" height="70" fill="#d4edda" stroke="#333"/>
+    <text x="300" y="360" text-anchor="middle" dominant-baseline="middle">Succeeded</text>
+  </g>
+
+  <g id="failed">
+    <rect x="610" y="325" width="180" height="70" fill="#f8d7da" stroke="#333"/>
+    <text x="700" y="360" text-anchor="middle" dominant-baseline="middle">Failed</text>
+  </g>
+
+  <g id="unknown">
+    <rect x="410" y="425" width="180" height="70" fill="#fff3cd" stroke="#333"/>
+    <text x="500" y="460" text-anchor="middle" dominant-baseline="middle">Unknown</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_pending_container_creating">
+    <line x1="500" y1="95" x2="500" y2="125" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="500" y="110" text-anchor="middle" dominant-baseline="middle">containers being created</text>
+  </g>
+
+  <g id="edge_container_creating_running">
+    <line x1="500" y1="195" x2="500" y2="225" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="500" y="210" text-anchor="middle" dominant-baseline="middle">containers ready</text>
+  </g>
+
+  <g id="edge_running_succeeded">
+    <line x1="500" y1="295" x2="300" y2="325" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="400" y="310" text-anchor="middle" dominant-baseline="middle">exit 0</text>
+  </g>
+
+  <g id="edge_running_failed">
+    <line x1="500" y1="295" x2="700" y2="325" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="600" y="310" text-anchor="middle" dominant-baseline="middle">exit non-zero</text>
+  </g>
+
+  <g id="edge_running_unknown">
+    <line x1="500" y1="295" x2="500" y2="425" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="500" y="360" text-anchor="middle" dominant-baseline="middle">node lost</text>
+  </g>
+
+  <g id="edge_pending_unknown">
+    <line x1="500" y1="95" x2="500" y2="425" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="500" y="260" text-anchor="middle" dominant-baseline="middle">node lost before start</text>
+  </g>
+</svg>

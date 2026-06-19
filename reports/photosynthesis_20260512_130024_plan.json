@@ -1,0 +1,120 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 20,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_uptake",
+      "label": "Water Uptake",
+      "x": 240,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "co2_entry",
+      "label": "CO\u2082 Entry",
+      "x": 460,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "photolysis",
+      "label": "Photolysis (H\u2082O \u2192 O\u2082 + H\u207a + e\u207b)",
+      "x": 20,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "electron_transport",
+      "label": "Electron Transport Chain",
+      "x": 240,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph_production",
+      "label": "ATP & NADPH Production",
+      "x": 460,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle",
+      "x": 240,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_synthesis",
+      "label": "Glucose Synthesis",
+      "x": 460,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 20,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "light_absorption",
+      "to": "photolysis",
+      "label": "drives"
+    },
+    {
+      "from": "light_absorption",
+      "to": "electron_transport",
+      "label": "excites"
+    },
+    {
+      "from": "water_uptake",
+      "to": "photolysis",
+      "label": "provides H\u2082O"
+    },
+    {
+      "from": "co2_entry",
+      "to": "calvin_cycle",
+      "label": "provides CO\u2082"
+    },
+    {
+      "from": "photolysis",
+      "to": "oxygen_release",
+      "label": "produces O\u2082"
+    },
+    {
+      "from": "electron_transport",
+      "to": "atp_nadph_production",
+      "label": "generates"
+    },
+    {
+      "from": "atp_nadph_production",
+      "to": "calvin_cycle",
+      "label": "supplies energy"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_synthesis",
+      "label": "produces glucose"
+    }
+  ]
+}

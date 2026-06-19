@@ -1,0 +1,107 @@
+{
+  "diagram_type": "architecture",
+  "title": "Transformer Architecture",
+  "nodes": [
+    {
+      "id": "input_embedding",
+      "label": "Input Embedding",
+      "x": 100,
+      "y": 50,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "positional_encoding",
+      "label": "Positional Encoding",
+      "x": 100,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "add_norm_1",
+      "label": "Add & Norm",
+      "x": 100,
+      "y": 230,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "multi_head_self_attention",
+      "label": "Multi\u2011Head Self\u2011Attention",
+      "x": 100,
+      "y": 320,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "add_norm_2",
+      "label": "Add & Norm",
+      "x": 100,
+      "y": 410,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "feed_forward_network",
+      "label": "Feed\u2011Forward Network",
+      "x": 100,
+      "y": 500,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "add_norm_3",
+      "label": "Add & Norm",
+      "x": 100,
+      "y": 590,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "output_projection",
+      "label": "Output Projection",
+      "x": 100,
+      "y": 680,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "input_embedding",
+      "to": "positional_encoding",
+      "label": "embed"
+    },
+    {
+      "from": "positional_encoding",
+      "to": "add_norm_1",
+      "label": "add"
+    },
+    {
+      "from": "add_norm_1",
+      "to": "multi_head_self_attention",
+      "label": "norm"
+    },
+    {
+      "from": "multi_head_self_attention",
+      "to": "add_norm_2",
+      "label": "add & norm"
+    },
+    {
+      "from": "add_norm_2",
+      "to": "feed_forward_network",
+      "label": "norm"
+    },
+    {
+      "from": "feed_forward_network",
+      "to": "add_norm_3",
+      "label": "add & norm"
+    },
+    {
+      "from": "add_norm_3",
+      "to": "output_projection",
+      "label": "project"
+    }
+  ]
+}

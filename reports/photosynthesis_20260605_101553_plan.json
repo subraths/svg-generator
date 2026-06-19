@@ -1,0 +1,120 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 20,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll",
+      "x": 240,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent_reactions",
+      "label": "Light\u2011Dependent Reactions",
+      "x": 460,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "O\u2082 Release",
+      "x": 680,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph_production",
+      "label": "ATP & NADPH",
+      "x": 900,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting",
+      "x": 140,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_dioxide_fixation",
+      "label": "CO\u2082 Fixation",
+      "x": 380,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle",
+      "x": 620,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 860,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll",
+      "label": "light absorbed"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent_reactions",
+      "label": "excites"
+    },
+    {
+      "from": "light_dependent_reactions",
+      "to": "water_splitting",
+      "label": "drives"
+    },
+    {
+      "from": "light_dependent_reactions",
+      "to": "atp_nadph_production",
+      "label": "produces"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "releases O\u2082"
+    },
+    {
+      "from": "atp_nadph_production",
+      "to": "calvin_cycle",
+      "label": "provides ATP/NADPH"
+    },
+    {
+      "from": "carbon_dioxide_fixation",
+      "to": "calvin_cycle",
+      "label": "feeds CO\u2082"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_production",
+      "label": "synthesizes glucose"
+    }
+  ]
+}

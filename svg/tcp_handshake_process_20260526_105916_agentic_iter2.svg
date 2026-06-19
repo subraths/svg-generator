@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold">
+    TCP Handshake Process
+  </text>
+
+  <!-- Centered diagram -->
+  <g transform="translate(310,215)">
+    <!-- Nodes -->
+    <g id="client_send_syn">
+      <rect x="100" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="190" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+        Client: SEND SYN
+      </text>
+    </g>
+
+    <g id="server_receive_syn">
+      <rect x="500" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="590" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+        Server: RECEIVE SYN
+      </text>
+    </g>
+
+    <g id="server_send_syn_ack">
+      <rect x="500" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="590" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+        Server: SEND SYN‑ACK
+      </text>
+    </g>
+
+    <g id="client_receive_syn_ack">
+      <rect x="100" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="190" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+        Client: RECEIVE SYN‑ACK
+      </text>
+    </g>
+
+    <g id="client_send_ack">
+      <rect x="100" y="300" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="190" y="335" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+        Client: SEND ACK
+      </text>
+    </g>
+
+    <g id="server_receive_ack">
+      <rect x="500" y="300" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="590" y="335" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+        Server: RECEIVE ACK
+      </text>
+    </g>
+
+    <g id="connection_established">
+      <rect x="300" y="400" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="390" y="435" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+        Connection Established
+      </text>
+    </g>
+
+    <!-- Edges -->
+    <!-- client_send_syn -> server_receive_syn -->
+    <line x1="280" y1="135" x2="500" y2="135" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="390" y="125" text-anchor="middle" font-family="sans-serif" font-size="12">SYN</text>
+
+    <!-- server_receive_syn -> server_send_syn_ack -->
+    <line x1="590" y1="170" x2="590" y2="200" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="605" y="185" text-anchor="start" font-family="sans-serif" font-size="12">process</text>
+
+    <!-- server_send_syn_ack -> client_receive_syn_ack -->
+    <line x1="500" y1="235" x2="280" y2="235" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="390" y="225" text-anchor="middle" font-family="sans-serif" font-size="12">SYN‑ACK</text>
+
+    <!-- client_receive_syn_ack -> client_send_ack -->
+    <line x1="190" y1="270" x2="190" y2="300" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="205" y="285" text-anchor="start" font-family="sans-serif" font-size="12">process</text>
+
+    <!-- client_send_ack -> server_receive_ack -->
+    <line x1="280" y1="335" x2="500" y2="335" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="390" y="325" text-anchor="middle" font-family="sans-serif" font-size="12">ACK</text>
+
+    <!-- server_receive_ack -> connection_established -->
+    <line x1="590" y1="370" x2="390" y2="400" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="490" y="385" text-anchor="middle" font-family="sans-serif" font-size="12">establish</text>
+  </g>
+</svg>

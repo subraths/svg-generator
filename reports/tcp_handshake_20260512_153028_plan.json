@@ -1,0 +1,81 @@
+{
+  "diagram_type": "flow",
+  "title": "TCP Handshake",
+  "nodes": [
+    {
+      "id": "client_syn",
+      "label": "Client: SYN",
+      "x": 40,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "server_syn_ack",
+      "label": "Server: SYN\u2011ACK",
+      "x": 240,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "client_ack",
+      "label": "Client: ACK",
+      "x": 440,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "connection_established",
+      "label": "Connection Established",
+      "x": 40,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "data_transfer",
+      "label": "Data Transfer",
+      "x": 240,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "connection_termination",
+      "label": "Connection Termination",
+      "x": 440,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "client_syn",
+      "to": "server_syn_ack",
+      "label": "SYN"
+    },
+    {
+      "from": "server_syn_ack",
+      "to": "client_ack",
+      "label": "SYN\u2011ACK"
+    },
+    {
+      "from": "client_ack",
+      "to": "connection_established",
+      "label": "ACK"
+    },
+    {
+      "from": "connection_established",
+      "to": "data_transfer",
+      "label": "establish"
+    },
+    {
+      "from": "data_transfer",
+      "to": "connection_termination",
+      "label": "FIN"
+    }
+  ]
+}

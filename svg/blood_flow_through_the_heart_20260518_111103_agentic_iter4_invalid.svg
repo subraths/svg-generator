@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold">
+    Blood Flow Through the Heart
+  </text>
+
+  <g transform="translate(360,65)">
+
+    <!-- Edges -->
+    <!-- vena_cava → right_atrium -->
+    <path d="M550,235 L550,265" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="560" y="250" font-family="sans-serif" font-size="12" text-anchor="start" dominant-baseline="middle">deoxygenated blood</text>
+
+    <!-- right_atrium → tricuspid_valve -->
+    <path d="M550,335 L550,365" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="560" y="350" font-family="sans-serif" font-size="12" text-anchor="start" dominant-baseline="middle">through</text>
+
+    <!-- tricuspid_valve → right_ventricle -->
+    <path d="M550,435 L550,465" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- right_ventricle → pulmonary_valve -->
+    <path d="M550,535 L550,565" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- pulmonary_valve → pulmonary_artery -->
+    <path d="M550,635 L550,665" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- pulmonary_artery → lungs -->
+    <path d="M550,735 L550,765" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- lungs → pulmonary_veins (curved) -->
+    <path d="M640,800 C640,600 760,600 760,200" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- pulmonary_veins → left_atrium (curved) -->
+    <path d="M940,200 C940,150 760,150 760,300" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- left_atrium → mitral_valve -->
+    <path d="M850,335 L850,365" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="840" y="350" font-family="sans-serif" font-size="12" text-anchor="end" dominant-baseline="middle">through</text>
+
+    <!-- mitral_valve → left_ventricle -->
+    <path d="M850,435 L850,465" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- left_ventricle → aortic_valve -->
+    <path d="M850,535 L850,565" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- aortic_valve → aorta -->
+    <path d="M850,635 L850,665" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Nodes -->
+    <g id="vena_cava">
+      <rect x="100" y="100" width="180" height="70" fill="#f0f8ff" stroke="#000" stroke-width="2"/>
+      <text x="190" y="135" font-family="sans-serif" font-size="12" text-anchor="middle" dominant-baseline="middle">
+        Superior &amp; Inferior Vena Cava
+      </text>
+    </g>
+
+    <g id="right_atrium">
+      <rect x="100" y="200" width="180" height="70" fill="#f0f8ff" stroke="#000" stroke-width="2"/>
+      <text x="190" y="235" font-family="sans-serif" font-size="12" text-anchor="middle" dominant-baseline="middle">
+        Right Atrium
+      </text>
+    </g>
+
+    <g id="tricuspid_valve">
+      <rect x="100" y="300" width="180" height="70" fill="#f0f8ff" stroke="#000

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+    <style>
+      .label { font-family: Arial, sans-serif; font-size: 18px; fill: black; }
+      .box { fill: #e0f7fa; stroke: #006064; stroke-width: 2; }
+      .circle { fill: #fff3e0; stroke: #bf360c; stroke-width: 2; }
+      .ellipse { fill: none; stroke: #4a148c; stroke-width: 3; }
+    </style>
+  </defs>
+
+  <!-- Cell membrane (ellipse) -->
+  <g id="cell_membrane">
+    <ellipse class="ellipse" cx="600" cy="400" rx="550" ry="350"/>
+    <text x="600" y="50" text-anchor="middle" class="label">Cell Membrane</text>
+  </g>
+
+  <!-- Nucleus -->
+  <g id="nucleus">
+    <rect class="box" x="300" y="200" width="200" height="150" rx="15"/>
+    <text x="400" y="275" text-anchor="middle" class="label">Nucleus</text>
+  </g>
+
+  <!-- Mitochondria -->
+  <g id="mitochondria">
+    <rect class="box" x="600" y="250" width="180" height="80" rx="15"/>
+    <text x="690" y="300" text-anchor="middle" class="label">Mitochondria</text>
+  </g>
+
+  <!-- Endoplasmic Reticulum -->
+  <g id="endoplasmic_reticulum">
+    <rect class="box" x="200" y="400" width="250" height="120" rx="15"/>
+    <text x="325" y="470" text-anchor="middle" class="label">Endoplasmic Reticulum</text>
+  </g>
+
+  <!-- Golgi Apparatus -->
+  <g id="golgi_apparatus">
+    <rect class="box" x="500" y="500" width="200" height="100" rx="15"/>
+    <text x="600" y="560" text-anchor="middle" class="label">Golgi Apparatus</text>
+  </g>
+
+  <!-- Ribosome -->
+  <g id="ribosome">
+    <circle class="circle" cx="900" cy="200" r="30"/>
+    <text x="900" y="210" text-anchor="middle" class="label">Ribosome</text>
+  </g>
+
+  <!-- Lysosome -->
+  <g id="lysosome">
+    <circle class="circle" cx="950" cy="600" r="35"/>
+    <text x="950" y="610" text-anchor="middle" class="label">Lysosome</text>
+  </g>
+
+  <!-- Arrows showing relationships -->
+  <!-- Nucleus to Ribosome -->
+  <line x1="500" y1="275" x2="870" y2="215" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <!-- Endoplasmic Reticulum to Golgi Apparatus -->
+  <line x1="450" y1="460" x2="500" y2="540" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <!-- Golgi Apparatus to Lysosome -->
+  <line x1="700" y1="560" x2="915" y2="585" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

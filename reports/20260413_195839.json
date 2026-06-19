@@ -1,0 +1,42 @@
+{
+  "timestamp": "20260413_195839",
+  "topic": "Transformers architecture",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 3,
+  "max_attempts": 3,
+  "validation": {
+    "xml_valid": true,
+    "width": "1000",
+    "height": "700",
+    "group_ids": [
+      "input_embedding",
+      "positional_encoding",
+      "encoder",
+      "multi_head_attention",
+      "feed_forward",
+      "decoder",
+      "output_layer"
+    ],
+    "group_count": 7,
+    "rect_count": 7,
+    "overlap_pairs": [
+      [
+        "encoder",
+        "multi_head_attention"
+      ],
+      [
+        "encoder",
+        "feed_forward"
+      ]
+    ],
+    "line_count": 5,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 5,
+    "has_duplicate_ids": false,
+    "errors": [
+      "Detected overlapping rect groups: [['encoder', 'multi_head_attention'], ['encoder', 'feed_forward']]"
+    ]
+  }
+}

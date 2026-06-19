@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Layer -->
+  <g id="input_layer">
+    <rect x="100" y="250" width="150" height="300" fill="#e0f7fa" stroke="black"/>
+    <text x="175" y="240" text-anchor="middle" font-family="sans-serif" font-size="18">Input Layer</text>
+    <!-- Example neurons -->
+    <circle cx="175" cy="300" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="175" cy="350" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="175" cy="400" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="175" cy="450" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="175" cy="500" r="12" fill="#ffffff" stroke="black"/>
+  </g>
+
+  <!-- Hidden Layer 1 -->
+  <g id="hidden1_layer">
+    <rect x="350" y="200" width="150" height="300" fill="#fff3e0" stroke="black"/>
+    <text x="425" y="190" text-anchor="middle" font-family="sans-serif" font-size="18">Hidden Layer 1</text>
+    <text x="425" y="160" text-anchor="middle" font-family="sans-serif" font-size="16">ReLU</text>
+    <circle cx="425" cy="260" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="425" cy="320" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="425" cy="380" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="425" cy="440" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="425" cy="500" r="12" fill="#ffffff" stroke="black"/>
+    <text x="425" y="540" text-anchor="middle" font-family="sans-serif" font-size="16">+ b</text>
+  </g>
+
+  <!-- Hidden Layer 2 -->
+  <g id="hidden2_layer">
+    <rect x="600" y="200" width="150" height="300" fill="#e8f5e9" stroke="black"/>
+    <text x="675" y="190" text-anchor="middle" font-family="sans-serif" font-size="18">Hidden Layer 2</text>
+    <text x="675" y="160" text-anchor="middle" font-family="sans-serif" font-size="16">ReLU</text>
+    <circle cx="675" cy="260" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="675" cy="320" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="675" cy="380" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="675" cy="440" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="675" cy="500" r="12" fill="#ffffff" stroke="black"/>
+    <text x="675" y="540" text-anchor="middle" font-family="sans-serif" font-size="16">+ b</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect x="850" y="300" width="150" height="200" fill="#f3e5f5" stroke="black"/>
+    <text x="925" y="290" text-anchor="middle" font-family="sans-serif" font-size="18">Output Layer</text>
+    <circle cx="925" cy="350" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="925" cy="400" r="12" fill="#ffffff" stroke="black"/>
+    <circle cx="925" cy="450" r="12" fill="#ffffff" stroke="black"/>
+    <text x="925" y="500" text-anchor="middle" font-family="sans-serif" font-size="16">+ b</text>
+  </g>
+
+  <!-- Weights and Connections -->
+  <g id="weights">
+    <!-- Input to Hidden1 -->
+    <line x1="250" y1="400" x2="350" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- Hidden1 to Hidden2 -->
+    <line x1="500" y1="350" x2="600" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- Hidden2 to Output -->
+    <line x1="750" y1="350" x2="850" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Bias Addition Labels -->
+  <g id="bias">
+    <text x="425" y="560" text-anchor="middle" font-family="sans-serif" font-size="16">Bias added before activation</text>
+    <text x="675" y="560" text-anchor="middle" font-family="sans-serif" font-size="16">Bias added before activation</text>
+    <text x="925" y="540" text-anchor="middle" font-family="sans-serif" font-size="16">Bias added before output</text>
+  </g>
+
+  <!-- Activation Functions -->
+  <g id="activation">
+    <text x="425" y="120" text-anchor="middle" font-family="sans-serif" font-size="20">Activation Functions</text>
+    <text x="425" y="150" text-anchor="middle" font-family="sans-serif" font-size="16">ReLU applied to each hidden layer</text>
+  </g>
+</svg>

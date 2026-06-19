@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold">Photosynthesis</text>
+
+  <!-- Connectors -->
+  <g id="edges" stroke="black" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+    <!-- light_absorption → light_dependent_reactions -->
+    <path d="M220,95 C230,95 250,115 260,115"/>
+    <text x="240" y="105" font-size="12" text-anchor="middle" dominant-baseline="middle">absorbs light</text>
+
+    <!-- water_uptake → light_dependent_reactions -->
+    <path d="M220,195 C240,195 240,115 260,115"/>
+    <text x="240" y="155" font-size="12" text-anchor="middle" dominant-baseline="middle">provides electrons</text>
+
+    <!-- co2_fixation → calvin_cycle -->
+    <path d="M220,295 L260,295"/>
+    <text x="240" y="295" font-size="12" text-anchor="middle" dominant-baseline="middle">CO₂ enters</text>
+
+    <!-- light_dependent_reactions → oxygen_release -->
+    <path d="M360,150 L350,180"/>
+    <text x="355" y="165" font-size="12" text-anchor="middle" dominant-baseline="middle">produces O₂</text>
+
+    <!-- light_dependent_reactions → energy_carriers -->
+    <path d="M460,115 L500,115"/>
+    <text x="480" y="115" font-size="12" text-anchor="middle" dominant-baseline="middle">produces ATP/NADPH</text>
+
+    <!-- energy_carriers → calvin_cycle -->
+    <path d="M500,115 C520,115 440,295 460,295"/>
+    <text x="480" y="205" font-size="12" text-anchor="middle" dominant-baseline="middle">provides energy</text>
+
+    <!-- calvin_cycle → glucose_production -->
+    <path d="M460,295 L500,295"/>
+    <text x="480" y="295" font-size="12" text-anchor="middle" dominant-baseline="middle">synthesizes glucose</text>
+  </g>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="40" y="60" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="130" y="95" text-anchor="middle" dominant-baseline="middle" font-size="14">Light Absorption</text>
+  </g>
+
+  <g id="water_uptake">
+    <rect x="40" y="160" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="130" y="195" text-anchor="middle" dominant-baseline="middle" font-size="14">Water Uptake</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect x="40" y="260" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="130" y="295" text-anchor="middle" dominant-baseline="middle" font-size="14">CO₂ Fixation</text>
+  </g>
+
+  <g id="light_dependent_reactions">
+    <rect x="260" y="80" width="200" height="70" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="360" y="115" text-anchor="middle" dominant-baseline="middle" font-size="14">Light‑Dependent Reactions</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="260" y="260" width="200" height="70" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="360" y="295" text-anchor="middle" dominant-baseline="middle" font-size="14">Calvin Cycle</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="260" y="180" width="180" height="70" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="350" y="215" text-anchor="middle" dominant-baseline="middle" font-size="14">Oxygen Release</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="500" y="260" width="200" height="70" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="600" y="295" text-anchor="middle" dominant-bas

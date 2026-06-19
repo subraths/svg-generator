@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+    <style>
+      .block { fill:#f9f9f9; stroke:#333; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; fill:#000; }
+      .arrow { stroke:#333; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- Input Embedding -->
+  <g id="input_embedding">
+    <rect class="block" x="50" y="100" width="200" height="60" rx="8"/>
+    <text class="label" x="150" y="138" text-anchor="middle">Input Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect class="block" x="50" y="200" width="200" height="60" rx="8"/>
+    <text class="label" x="150" y="238" text-anchor="middle">Positional Encoding</text>
+  </g>
+
+  <!-- Encoder Stack -->
+  <g id="encoder_block">
+    <rect class="block" x="300" y="150" width="250" height="200" rx="8"/>
+    <text class="label" x="425" y="180" text-anchor="middle">Encoder (N layers)</text>
+    <text class="label" x="425" y="210" text-anchor="middle">- Multi‑Head Self‑Attention</text>
+    <text class="label" x="425" y="240" text-anchor="middle">- Add &amp; Norm</text>
+    <text class="label" x="425" y="270" text-anchor="middle">- Feed‑Forward</text>
+    <text class="label" x="425" y="300" text-anchor="middle">- Add &amp; Norm</text>
+  </g>
+
+  <!-- Decoder Stack -->
+  <g id="decoder_block">
+    <rect class="block" x="600" y="150" width="250" height="250" rx="8"/>
+    <text class="label" x="725" y="180" text-anchor="middle">Decoder (N layers)</text>
+    <text class="label" x="725" y="210" text-anchor="middle">- Masked Multi‑Head Self‑Attention</text>
+    <text class="label" x="725" y="240" text-anchor="middle">- Add &amp; Norm</text>
+    <text class="label" x="725" y="270" text-anchor="middle">- Encoder‑Decoder Attention</text>
+    <text class="label" x="725" y="300" text-anchor="middle">- Add &amp; Norm</text>
+    <text class="label" x="725" y="330" text-anchor="middle">- Feed‑Forward</text>
+    <text class="label" x="725" y="360" text-anchor="middle">- Add &amp; Norm</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect class="block" x="950" y="250" width="200" height="80" rx="8"/>
+    <text class="label" x="1050" y="288" text-anchor="middle">Linear + Softmax</text>
+  </g>
+
+  <!-- Arrows / Flow -->
+  <g id="flow_arrows">
+    <!-- Input Embedding → Positional Encoding -->
+    <line class="arrow" x1="150" y1="160" x2="150" y2="200" marker-end="url(#arrowhead)"/>
+    <!-- Positional Encoding → Encoder -->
+    <line class="arrow" x1="250" y1="230" x2="300" y2="230" marker-end="url(#arrowhead)"/>
+    <!-- Encoder → Decoder (Encoder‑Decoder Attention) -->
+    <line class="arrow" x1="550" y1="250" x2="600" y2="250" marker-end="url(#arrowhead)"/>
+    <!-- Decoder → Output Layer -->
+    <line class="arrow" x1="850" y1="275" x2="950" y2="275" marker-end="url(#arrowhead)"/>
+    <!-- Positional Encoding also feeds Decoder -->
+    <line class="arrow" x1="250" y1="260" x2="600" y2="260" marker-end="url(#arrowhead)"/>
+  </g>
+</svg>

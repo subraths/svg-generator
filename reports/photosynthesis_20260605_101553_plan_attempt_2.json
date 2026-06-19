@@ -1,0 +1,107 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll",
+      "x": 340,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting (H\u2082O \u2192 O\u2082 + e\u207b)",
+      "x": 580,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent",
+      "label": "Light\u2011Dependent Reactions",
+      "x": 340,
+      "y": 190,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "O\u2082 Release",
+      "x": 580,
+      "y": 190,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP & NADPH Production",
+      "x": 340,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (C\u2083)",
+      "x": 340,
+      "y": 420,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose",
+      "label": "Glucose Production",
+      "x": 580,
+      "y": 420,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll",
+      "label": "absorbs"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent",
+      "label": "excites"
+    },
+    {
+      "from": "water_splitting",
+      "to": "light_dependent",
+      "label": "provides electrons"
+    },
+    {
+      "from": "light_dependent",
+      "to": "oxygen_release",
+      "label": "produces O\u2082"
+    },
+    {
+      "from": "light_dependent",
+      "to": "atp_nadph",
+      "label": "generates"
+    },
+    {
+      "from": "atp_nadph",
+      "to": "calvin_cycle",
+      "label": "provides energy"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose",
+      "label": "synthesizes"
+    }
+  ]
+}

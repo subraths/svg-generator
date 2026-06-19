@@ -1,0 +1,50 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Water Vapor -->
+  <g id="water_vapor">
+    <rect x="100" y="150" width="180" height="80" fill="#a0c4ff" stroke="black"/>
+    <text x="190" y="200" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Water Vapor</text>
+  </g>
+
+  <!-- Cooling -->
+  <g id="cooling">
+    <rect x="340" y="150" width="180" height="80" fill="#cfd8dc" stroke="black"/>
+    <text x="430" y="190" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Cooling</text>
+  </g>
+
+  <!-- Condensation Nuclei -->
+  <g id="condensation_nuclei">
+    <rect x="580" y="150" width="200" height="80" fill="#b2dfdb" stroke="black"/>
+    <text x="680" y="190" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Condensation Nuclei</text>
+  </g>
+
+  <!-- Droplet Formation -->
+  <g id="droplet_formation">
+    <rect x="340" y="350" width="200" height="80" fill="#ffcc80" stroke="black"/>
+    <text x="440" y="390" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Droplet Formation</text>
+  </g>
+
+  <!-- Cloud -->
+  <g id="cloud">
+    <rect x="580" y="350" width="180" height="80" fill="#ffffff" stroke="black"/>
+    <text x="670" y="390" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Cloud</text>
+  </g>
+
+  <!-- Precipitation -->
+  <g id="precipitation">
+    <rect x="820" y="350" width="200" height="80" fill="#ce93d8" stroke="black"/>
+    <text x="920" y="390" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Precipitation</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="280" y1="190" x2="340" y2="190" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="520" y1="190" x2="580" y2="190" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="680" y1="230" x2="440" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="540" y1="390" x2="580" y2="390" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="760" y1="390" x2="820" y2="390" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

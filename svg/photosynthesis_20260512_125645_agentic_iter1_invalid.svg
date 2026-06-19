@@ -1,0 +1,59 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="80" text-anchor="middle" font-size="24" font-weight="bold" fill="#000">Photosynthesis Process</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="250" y="350" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="340" y="385" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#000">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll_absorption">
+    <rect x="450" y="350" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="540" y="385" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#000">Chlorophyll absorbs light</text>
+  </g>
+
+  <g id="water_photolysis">
+    <rect x="650" y="350" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="740" y="385" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#000">Water splitting (photolysis)</text>
+  </g>
+
+  <g id="atp_nadph_production">
+    <rect x="850" y="350" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="940" y="385" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#000">ATP &amp; NADPH production</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="250" y="460" width="180" height="70" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="340" y="495" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#000">Carbon fixation (Calvin Cycle)</text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect x="450" y="460" width="180" height="70" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="540" y="495" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#000">Glucose synthesis</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="650" y="460" width="180" height="70" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="740" y="495" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#000">Oxygen release</text>
+  </g>
+
+  <g id="stomata_co2_intake">
+    <rect x="850" y="460" width="180" height="70" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="940" y="495" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#000">CO₂ intake (stomata)</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- Sunlight → Chlorophyll Absorption -->
+  <path d="M430,385 L450,385" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="440" y="370" text-anchor="middle" font-size="12" fill="#000">light energy</text>
+
+  <!-- Chlorophyll Absorption → Water Photolysis -->
+  <path d="M630,385 L650,385" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="640" y="370" text

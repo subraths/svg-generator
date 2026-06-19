@@ -1,0 +1,46 @@
+{
+  "timestamp": "20260605_101301",
+  "topic": "Photosynthesis",
+  "model": "openai/gpt-oss-120b",
+  "mode": "v2_planner",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "light_absorption",
+      "water_splitting",
+      "oxygen_release",
+      "electron_transport",
+      "atp_synthesis",
+      "nadph_formation",
+      "calvin_cycle",
+      "glucose_production",
+      "edge_light_absorption_water_splitting",
+      "edge_water_splitting_oxygen_release",
+      "edge_water_splitting_electron_transport",
+      "edge_electron_transport_atp_synthesis",
+      "edge_electron_transport_nadph_formation",
+      "edge_atp_synthesis_calvin_cycle",
+      "edge_nadph_formation_calvin_cycle",
+      "edge_calvin_cycle_glucose_production"
+    ],
+    "group_count": 16,
+    "rect_count": 8,
+    "overlap_pairs": [],
+    "line_count": 8,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 8,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/photosynthesis_20260605_101301.svg",
+    "png": "img/photosynthesis_20260605_101301.png",
+    "plan": "reports/photosynthesis_20260605_101301_plan.json"
+  }
+}

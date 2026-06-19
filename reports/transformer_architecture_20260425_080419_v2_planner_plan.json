@@ -1,0 +1,81 @@
+{
+  "diagram_type": "architecture",
+  "title": "Transformer Architecture",
+  "nodes": [
+    {
+      "id": "input_embedding",
+      "label": "Input Embedding",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "positional_encoding",
+      "label": "Positional Encoding",
+      "x": 320,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_self_attention",
+      "label": "Multi\u2011Head Self\u2011Attention",
+      "x": 540,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_feed_forward",
+      "label": "Feed\u2011Forward Network",
+      "x": 760,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_add_norm",
+      "label": "Add & Norm",
+      "x": 980,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_output",
+      "label": "Encoder Output",
+      "x": 100,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "input_embedding",
+      "to": "positional_encoding",
+      "label": ""
+    },
+    {
+      "from": "positional_encoding",
+      "to": "encoder_self_attention",
+      "label": ""
+    },
+    {
+      "from": "encoder_self_attention",
+      "to": "encoder_feed_forward",
+      "label": ""
+    },
+    {
+      "from": "encoder_feed_forward",
+      "to": "encoder_add_norm",
+      "label": ""
+    },
+    {
+      "from": "encoder_add_norm",
+      "to": "encoder_output",
+      "label": ""
+    }
+  ]
+}

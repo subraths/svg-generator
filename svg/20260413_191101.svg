@@ -1,0 +1,65 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+    <style>
+      .block { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .msg { fill:#fff9c4; stroke:#f57f17; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; fill:#212121; }
+    </style>
+  </defs>
+
+  <!-- Client block -->
+  <g id="client_block">
+    <rect class="block" x="150" y="300" width="150" height="100" rx="10"/>
+    <text class="label" x="225" y="355" text-anchor="middle">Client</text>
+  </g>
+
+  <!-- Server block -->
+  <g id="server_block">
+    <rect class="block" x="700" y="300" width="150" height="100" rx="10"/>
+    <text class="label" x="775" y="355" text-anchor="middle">Server</text>
+  </g>
+
+  <!-- SYN message -->
+  <g id="syn_msg">
+    <rect class="msg" x="320" y="340" width="120" height="40" rx="5"/>
+    <text class="label" x="380" y="365" text-anchor="middle">SYN (seq=x)</text>
+  </g>
+
+  <!-- Arrow: Client → Server (SYN) -->
+  <g id="arrow_syn">
+    <line x1="300" y1="360" x2="700" y2="360" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- SYN‑ACK message -->
+  <g id="synack_msg">
+    <rect class="msg" x="560" y="240" width="140" height="40" rx="5"/>
+    <text class="label" x="630" y="265" text-anchor="middle">SYN‑ACK (seq=y, ack=x+1)</text>
+  </g>
+
+  <!-- Arrow: Server → Client (SYN‑ACK) -->
+  <g id="arrow_synack">
+    <line x1="700" y1="260" x2="300" y2="260" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- ACK message -->
+  <g id="ack_msg">
+    <rect class="msg" x="320" y="440" width="120" height="40" rx="5"/>
+    <text class="label" x="380" y="465" text-anchor="middle">ACK (ack=y+1)</text>
+  </g>
+
+  <!-- Arrow: Client → Server (ACK) -->
+  <g id="arrow_ack">
+    <line x1="300" y1="460" x2="700" y2="460" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Optional labels for steps -->
+  <g id="step_labels">
+    <text class="label" x="500" y="200" text-anchor="middle">TCP 3‑Way Handshake</text>
+    <text class="label" x="500" y="230" text-anchor="middle" font-size="16">Step 1: Client → Server</text>
+    <text class="label" x="500" y="380" text-anchor="middle" font-size="16">Step 2: Server → Client</text>
+    <text class="label" x="500" y="530" text-anchor="middle" font-size="16">Step 3: Client → Server</text>
+  </g>
+</svg>

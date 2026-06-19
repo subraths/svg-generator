@@ -1,0 +1,43 @@
+{
+  "timestamp": "20260424_154734",
+  "batch_stamp": "20260424_154520",
+  "topic": "DNS resolution flow",
+  "mode": "v2_planner",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "client_application",
+      "recursive_resolver",
+      "root_name_server",
+      "tld_name_server",
+      "authoritative_name_server",
+      "final_response",
+      "edge_client_application_recursive_resolver",
+      "edge_recursive_resolver_root_name_server",
+      "edge_root_name_server_tld_name_server",
+      "edge_tld_name_server_authoritative_name_server",
+      "edge_authoritative_name_server_recursive_resolver",
+      "edge_recursive_resolver_client_application"
+    ],
+    "group_count": 12,
+    "rect_count": 6,
+    "overlap_pairs": [],
+    "line_count": 6,
+    "polyline_count": 0,
+    "path_count": 1,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 7,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/dns_resolution_flow_20260424_154520_v2_planner.svg",
+    "png": "img/dns_resolution_flow_20260424_154520_v2_planner.png",
+    "plan": "reports/dns_resolution_flow_20260424_154520_v2_planner_plan.json"
+  }
+}

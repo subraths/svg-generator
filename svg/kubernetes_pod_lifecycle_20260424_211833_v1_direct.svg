@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Pending -->
+  <g id="pending">
+    <rect x="80" y="360" width="150" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="155" y="400" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">Pending</text>
+  </g>
+
+  <!-- Container Creating -->
+  <g id="container_creating">
+    <rect x="310" y="360" width="150" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="385" y="400" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">ContainerCreating</text>
+  </g>
+
+  <!-- Running -->
+  <g id="running">
+    <rect x="540" y="360" width="150" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="615" y="400" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">Running</text>
+  </g>
+
+  <!-- Succeeded -->
+  <g id="succeeded">
+    <rect x="770" y="260" width="150" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="845" y="300" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">Succeeded</text>
+  </g>
+
+  <!-- Failed -->
+  <g id="failed">
+    <rect x="770" y="460" width="150" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="845" y="500" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">Failed</text>
+  </g>
+
+  <!-- Unknown -->
+  <g id="unknown">
+    <rect x="1000" y="360" width="150" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="1075" y="400" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">Unknown</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- Pending -> ContainerCreating -->
+  <line x1="230" y1="400" x2="310" y2="400" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <!-- ContainerCreating -> Running -->
+  <line x1="460" y1="400" x2="540" y2="400" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <!-- Running -> Succeeded -->
+  <line x1="615" y1="380" x2="770" y2="300" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <!-- Running -> Failed -->
+  <line x1="615" y1="420" x2="770" y2="500" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <!-- Failed -> Unknown -->
+  <line x1="920" y1="500" x2="1000" y2="500" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

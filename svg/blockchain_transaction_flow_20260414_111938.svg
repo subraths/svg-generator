@@ -1,0 +1,50 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- User Wallet -->
+  <g id="user_wallet">
+    <rect x="50" y="200" width="150" height="80" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <text x="125" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">User Wallet</text>
+  </g>
+
+  <!-- Transaction Creation -->
+  <g id="transaction_creation">
+    <rect x="240" y="200" width="150" height="80" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <text x="315" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">Create Transaction</text>
+  </g>
+
+  <!-- Broadcast Network -->
+  <g id="broadcast_network">
+    <rect x="430" y="200" width="150" height="80" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <text x="505" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">Broadcast to Network</text>
+  </g>
+
+  <!-- Miner Validation -->
+  <g id="miner_validation">
+    <rect x="620" y="200" width="150" height="80" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <text x="695" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">Miner Validation</text>
+  </g>
+
+  <!-- Block Inclusion -->
+  <g id="block_inclusion">
+    <rect x="810" y="200" width="150" height="80" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <text x="885" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">Add to Block</text>
+  </g>
+
+  <!-- Confirmation -->
+  <g id="confirmation">
+    <rect x="1000" y="200" width="150" height="80" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <text x="1075" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#000">Transaction Confirmed</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="200" y1="240" x2="240" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="390" y1="240" x2="430" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="580" y1="240" x2="620" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="770" y1="240" x2="810" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="960" y1="240" x2="1000" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

@@ -1,0 +1,57 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- User Application -->
+  <g id="user_application">
+    <rect x="50" y="300" width="180" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="140" y="340" font-size="18" text-anchor="middle" dominant-baseline="middle">User Application</text>
+  </g>
+
+  <!-- Recursive Resolver -->
+  <g id="recursive_resolver">
+    <rect x="300" y="300" width="200" height="80" fill="#fff9c4" stroke="#000"/>
+    <text x="400" y="340" font-size="18" text-anchor="middle" dominant-baseline="middle">Recursive Resolver</text>
+  </g>
+
+  <!-- Root DNS Server -->
+  <g id="root_dns_server">
+    <rect x="300" y="100" width="180" height="80" fill="#c8e6c9" stroke="#000"/>
+    <text x="390" y="140" font-size="18" text-anchor="middle" dominant-baseline="middle">Root DNS Server</text>
+  </g>
+
+  <!-- TLD DNS Server -->
+  <g id="tld_dns_server">
+    <rect x="550" y="100" width="180" height="80" fill="#ffccbc" stroke="#000"/>
+    <text x="640" y="140" font-size="18" text-anchor="middle" dominant-baseline="middle">TLD DNS Server</text>
+  </g>
+
+  <!-- Authoritative DNS Server -->
+  <g id="authoritative_dns_server">
+    <rect x="800" y="100" width="200" height="80" fill="#d1c4e9" stroke="#000"/>
+    <text x="900" y="140" font-size="18" text-anchor="middle" dominant-baseline="middle">Authoritative DNS Server</text>
+  </g>
+
+  <!-- Final Answer (IP address) -->
+  <g id="final_answer">
+    <rect x="800" y="300" width="180" height="80" fill="#ffe0b2" stroke="#000"/>
+    <text x="890" y="340" font-size="18" text-anchor="middle" dominant-baseline="middle">IP Address (Answer)</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- User → Resolver -->
+  <line x1="230" y1="340" x2="300" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Resolver → Root -->
+  <line x1="400" y1="300" x2="390" y2="180" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Root → TLD -->
+  <line x1="480" y1="140" x2="550" y2="140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- TLD → Authoritative -->
+  <line x1="730" y1="140" x2="800" y2="140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Authoritative → Resolver (Answer) -->
+  <line x1="900" y1="180" x2="400" y2="300" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Resolver → User (Answer) -->
+  <line x1="300" y1="340" x2="230" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-size="24" fill="#333">Photosynthesis Process</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="100" y="100" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#006064">Light Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="320" y="100" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="410" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#006064">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="540" y="100" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="630" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#006064">Oxygen Release</text>
+  </g>
+
+  <g id="atp_nadph_production">
+    <rect x="760" y="100" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="850" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#006064">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="980" y="100" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="1070" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#006064">Carbon Fixation (Calvin Cycle)</text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect x="980" y="200" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="1070" y="235" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#006064">Glucose Synthesis</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edges">
+    <!-- Light Absorption → Water Splitting -->
+    <line x1="280" y1="135" x2="320" y2="135" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="300" y="125" text-anchor="middle" font-size="12" fill="#000">absorbs light</text>
+
+    <!-- Water Splitting → Oxygen Release -->
+    <line x1="500" y1="135" x2="540" y2="135" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="520" y="125" text-anchor="middle" font-size="12" fill="#000">produces O₂</text>
+
+    <!-- Water Splitting → ATP & NADPH Production -->
+    <line x1="500" y1="135" x2="760" y2="135" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="630" y="125" text-anchor="middle" font-size="12" fill="#000">provides electrons</text>
+
+    <!-- ATP & NADPH Production → Carbon Fixation -->
+    <line x1="940" y1="135" x2="980" y2="135" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="960" y="125" text-anchor="middle" font-size="12" fill="#000">provides energy</text>
+
+    <!-- Carbon Fixation → Glucose Synthesis -->
+    <line x1="1070" y1="135" x2="1070" y2="235" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="1085" y="185" font-size="12" fill="#000">produces glucose</text>
+  </g>
+</svg>

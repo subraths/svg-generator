@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" dominant-baseline="middle"
+        font-family="sans-serif" font-size="24" font-weight="bold">
+    Transformer Architecture
+  </text>
+
+  <!-- Nodes -->
+  <g id="input_embedding">
+    <rect x="40" y="100" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="130" y="135" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Input Embedding</text>
+  </g>
+
+  <g id="positional_encoding">
+    <rect x="260" y="100" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="350" y="135" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Positional Encoding</text>
+  </g>
+
+  <g id="encoder_self_attention">
+    <rect x="480" y="100" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="570" y="135" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Encoder Self‑Attention</text>
+  </g>
+
+  <g id="encoder_feed_forward">
+    <rect x="700" y="100" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="790" y="135" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Encoder Feed‑Forward</text>
+  </g>
+
+  <g id="encoder_output">
+    <rect x="920" y="100" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="1010" y="135" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Encoder Output</text>
+  </g>
+
+  <g id="decoder_self_attention">
+    <rect x="480" y="260" width="180" height="70" fill="#fff3e0" stroke="black"/>
+    <text x="570" y="295" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Decoder Self‑Attention</text>
+  </g>
+
+  <g id="output_projection">
+    <rect x="920" y="260" width="180" height="70" fill="#fff3e0" stroke="black"/>
+    <text x="1010" y="295" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Output Projection</text>
+  </g>
+
+  <!-- Edges -->
+  <line x1="220" y1="135" x2="260" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="440" y1="135" x2="480" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="660" y1="135" x2="700" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="880" y1="135" x2="920" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="1010" y1="170" x2="570" y2="260" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="660" y1="295" x2="920" y2="295" stroke="black" marker-end="url(#arrowhead)"/>
+</svg>

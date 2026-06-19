@@ -1,0 +1,58 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Input Embedding -->
+  <g id="input_embedding">
+    <rect x="50" y="300" width="150" height="80" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+    <text x="125" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Input Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect x="220" y="300" width="150" height="80" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+    <text x="295" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Positional Encoding</text>
+  </g>
+
+  <!-- Encoder Self-Attention -->
+  <g id="encoder_self_attention">
+    <rect x="400" y="250" width="180" height="80" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+    <text x="490" y="290" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Encoder Self‑Attention</text>
+  </g>
+
+  <!-- Encoder Feed-Forward -->
+  <g id="encoder_feed_forward">
+    <rect x="400" y="350" width="180" height="80" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+    <text x="490" y="390" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Encoder Feed‑Forward</text>
+  </g>
+
+  <!-- Decoder Self-Attention -->
+  <g id="decoder_self_attention">
+    <rect x="700" y="250" width="180" height="80" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+    <text x="790" y="290" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Decoder Self‑Attention</text>
+  </g>
+
+  <!-- Decoder Encoder-Attention -->
+  <g id="decoder_encoder_attention">
+    <rect x="700" y="350" width="180" height="80" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+    <text x="790" y="390" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Decoder Encoder‑Attention</text>
+  </g>
+
+  <!-- Output Projection -->
+  <g id="output_projection">
+    <rect x="950" y="300" width="180" height="80" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+    <text x="1040" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Output Projection</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="200" y1="340" x2="220" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="370" y1="340" x2="400" y2="290" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="490" y1="330" x2="490" y2="350" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="490" y1="430" x2="490" y2="450" stroke="none"/> <!-- placeholder for spacing -->
+  <line x1="580" y1="390" x2="700" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="790" y1="330" x2="790" y2="350" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="880" y1="390" x2="950" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

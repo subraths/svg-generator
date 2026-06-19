@@ -1,0 +1,50 @@
+{
+  "timestamp": "20260511_135242",
+  "topic": "Photosynthesis",
+  "model": "openai/gpt-oss-120b",
+  "mode": "v2_planner_agentic",
+  "attempts_used": 2,
+  "max_attempts": 3,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "sunlight",
+      "chlorophyll",
+      "water_split",
+      "oxygen_release",
+      "atp_nadph",
+      "calvin_cycle",
+      "co2_fixation",
+      "glucose",
+      "starch_storage",
+      "edge_sunlight_chlorophyll",
+      "edge_chlorophyll_water_split",
+      "edge_water_split_oxygen_release",
+      "edge_chlorophyll_atp_nadph",
+      "edge_water_split_atp_nadph",
+      "edge_atp_nadph_calvin_cycle",
+      "edge_co2_fixation_calvin_cycle",
+      "edge_calvin_cycle_glucose",
+      "edge_glucose_starch_storage"
+    ],
+    "group_count": 18,
+    "rect_count": 9,
+    "overlap_pairs": [],
+    "line_count": 9,
+    "polyline_count": 0,
+    "path_count": 1,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 10,
+    "has_duplicate_ids": false,
+    "errors": [
+      "No connectors use marker-end arrows."
+    ]
+  },
+  "artifacts": {
+    "svg": "svg/photosynthesis_20260511_135242.svg",
+    "png": "img/photosynthesis_20260511_135242.png",
+    "plan": "reports/photosynthesis_20260511_135242_plan.json"
+  }
+}

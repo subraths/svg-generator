@@ -1,0 +1,94 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 20,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_uptake",
+      "label": "Water Uptake",
+      "x": 240,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_fixation",
+      "label": "Carbon Dioxide Fixation",
+      "x": 460,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "thylakoid_reactions",
+      "label": "Light\u2011Dependent Reactions",
+      "x": 20,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (Light\u2011Independent)",
+      "x": 240,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 460,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 680,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "light_absorption",
+      "to": "thylakoid_reactions",
+      "label": "excites electrons"
+    },
+    {
+      "from": "water_uptake",
+      "to": "thylakoid_reactions",
+      "label": "splits, releases O\u2082"
+    },
+    {
+      "from": "thylakoid_reactions",
+      "to": "calvin_cycle",
+      "label": "ATP & NADPH"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "calvin_cycle",
+      "label": "CO\u2082"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_production",
+      "label": "produces glucose"
+    },
+    {
+      "from": "thylakoid_reactions",
+      "to": "oxygen_release",
+      "label": "O\u2082 released"
+    }
+  ]
+}

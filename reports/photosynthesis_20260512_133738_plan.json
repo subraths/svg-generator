@@ -1,0 +1,120 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 100,
+      "y": 60,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll (Pigment)",
+      "x": 340,
+      "y": 60,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent",
+      "label": "Light\u2011Dependent Reactions",
+      "x": 580,
+      "y": 60,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting (Photolysis)",
+      "x": 580,
+      "y": 160,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP & NADPH Production",
+      "x": 580,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (Light\u2011Independent)",
+      "x": 340,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "co2_fixation",
+      "label": "CO\u2082 Fixation",
+      "x": 340,
+      "y": 460,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose",
+      "label": "Glucose Synthesis",
+      "x": 340,
+      "y": 560,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "O\u2082 Release",
+      "x": 800,
+      "y": 160,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll",
+      "label": "absorbs"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent",
+      "label": "excites"
+    },
+    {
+      "from": "light_dependent",
+      "to": "water_splitting",
+      "label": "drives"
+    },
+    {
+      "from": "light_dependent",
+      "to": "atp_nadph",
+      "label": "produces"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "generates O\u2082"
+    },
+    {
+      "from": "atp_nadph",
+      "to": "calvin_cycle",
+      "label": "provides energy"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "co2_fixation",
+      "label": "incorporates CO\u2082"
+    },
+    {
+      "from": "co2_fixation",
+      "to": "glucose",
+      "label": "forms glucose"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input -->
+  <g id="input">
+    <rect x="50" y="300" width="120" height="60" fill="#e0e0e0" stroke="black"/>
+    <text x="110" y="335" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Input Tokens</text>
+  </g>
+
+  <!-- Embedding -->
+  <g id="embedding">
+    <rect x="200" y="300" width="120" height="60" fill="#e0e0e0" stroke="black"/>
+    <text x="260" y="335" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect x="350" y="300" width="150" height="60" fill="#e0e0e0" stroke="black"/>
+    <text x="425" y="335" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Positional Encoding</text>
+  </g>
+
+  <!-- Encoder Stack -->
+  <g id="encoder">
+    <rect x="550" y="200" width="200" height="200" fill="#f5f5f5" stroke="black"/>
+    <text x="650" y="230" font-family="sans-serif" font-size="18" text-anchor="middle">Encoder</text>
+    <text x="650" y="260" font-family="sans-serif" font-size="14" text-anchor="middle">Multi‑Head Self‑Attention</text>
+    <text x="650" y="290" font-family="sans-serif" font-size="14" text-anchor="middle">Add &amp; Norm</text>
+    <text x="650" y="320" font-family="sans-serif" font-size="14" text-anchor="middle">Feed‑Forward</text>
+    <text x="650" y="350" font-family="sans-serif" font-size="14" text-anchor="middle">Add &amp; Norm</text>
+  </g>
+
+  <!-- Decoder Stack -->
+  <g id="decoder">
+    <rect x="550" y="450" width="200" height="200" fill="#f5f5f5" stroke="black"/>
+    <text x="650" y="480" font-family="sans-serif" font-size="18" text-anchor="middle">Decoder</text>
+    <text x="650" y="510" font-family="sans-serif" font-size="14" text-anchor="middle">Masked Multi‑Head Self‑Attention</text>
+    <text x="650" y="540" font-family="sans-serif" font-size="14" text-anchor="middle">Add &amp; Norm</text>
+    <text x="650" y="570" font-family="sans-serif" font-size="14" text-anchor="middle">Encoder‑Decoder Attention</text>
+    <text x="650" y="600" font-family="sans-serif" font-size="14" text-anchor="middle">Add &amp; Norm</text>
+    <text x="650" y="630" font-family="sans-serif" font-size="14" text-anchor="middle">Feed‑Forward</text>
+    <text x="650" y="660" font-family="sans-serif" font-size="14" text-anchor="middle">Add &amp; Norm</text>
+  </g>
+
+  <!-- Output Projection -->
+  <g id="output_projection">
+    <rect x="800" y="300" width="150" height="60" fill="#e0e0e0" stroke="black"/>
+    <text x="875" y="335" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Linear + Softmax</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="170" y1="330" x2="200" y2="330" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="320" y1="330" x2="350" y2="330" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="500" y1="330" x2="550" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="750" y1="330" x2="800" y2="330" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="750" y1="330" x2="750" y2="450" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="750" y1="450" x2="750" y2="530" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="750" y1="530" x2="800" y2="530" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="950" y1="330" x2="950" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="950" y1="300" x2="950" y2="260" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <text x="960" y="280" font-family="sans-serif" font-size="14">Probabilities</text>
+</svg>

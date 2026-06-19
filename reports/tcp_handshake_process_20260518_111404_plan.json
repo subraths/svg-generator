@@ -1,0 +1,94 @@
+{
+  "diagram_type": "flow",
+  "title": "TCP Handshake Process",
+  "nodes": [
+    {
+      "id": "client_send_syn",
+      "label": "Client: SEND SYN",
+      "x": 520,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "server_receive_syn",
+      "label": "Server: RECEIVE SYN",
+      "x": 520,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "server_send_synack",
+      "label": "Server: SEND SYN\u2011ACK",
+      "x": 520,
+      "y": 220,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "client_receive_synack",
+      "label": "Client: RECEIVE SYN\u2011ACK",
+      "x": 520,
+      "y": 320,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "client_send_ack",
+      "label": "Client: SEND ACK",
+      "x": 520,
+      "y": 420,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "server_receive_ack",
+      "label": "Server: RECEIVE ACK",
+      "x": 520,
+      "y": 520,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "connection_established",
+      "label": "Connection ESTABLISHED",
+      "x": 520,
+      "y": 620,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "client_send_syn",
+      "to": "server_receive_syn",
+      "label": "SYN"
+    },
+    {
+      "from": "server_receive_syn",
+      "to": "server_send_synack",
+      "label": ""
+    },
+    {
+      "from": "server_send_synack",
+      "to": "client_receive_synack",
+      "label": "SYN\u2011ACK"
+    },
+    {
+      "from": "client_receive_synack",
+      "to": "client_send_ack",
+      "label": ""
+    },
+    {
+      "from": "client_send_ack",
+      "to": "server_receive_ack",
+      "label": "ACK"
+    },
+    {
+      "from": "server_receive_ack",
+      "to": "connection_established",
+      "label": ""
+    }
+  ]
+}

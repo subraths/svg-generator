@@ -1,0 +1,86 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "chloroplast",
+      "label": "Chloroplast",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_capture",
+      "label": "Light Capture",
+      "x": 300,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_photolysis",
+      "label": "Water Photolysis",
+      "x": 100,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "O\u2082 Release",
+      "x": 100,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_fixation",
+      "label": "CO\u2082 Fixation (Calvin Cycle)",
+      "x": 300,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_synthesis",
+      "label": "Glucose Synthesis",
+      "x": 300,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "chloroplast",
+      "to": "light_capture",
+      "label": "contains"
+    },
+    {
+      "from": "chloroplast",
+      "to": "water_photolysis",
+      "label": "contains"
+    },
+    {
+      "from": "light_capture",
+      "to": "water_photolysis",
+      "label": "drives"
+    },
+    {
+      "from": "water_photolysis",
+      "to": "oxygen_release",
+      "label": "produces"
+    },
+    {
+      "from": "light_capture",
+      "to": "carbon_fixation",
+      "label": "provides ATP/NADPH"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "glucose_synthesis",
+      "label": "produces"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="sans-serif" font-size="24" fill="black">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="100" y="100" width="180" height="70" fill="#f9f9a9" stroke="black"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Light Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="100" y="200" width="180" height="70" fill="#f9f9a9" stroke="black"/>
+    <text x="190" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="100" y="300" width="180" height="70" fill="#f9f9a9" stroke="black"/>
+    <text x="190" y="335" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Oxygen Release</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect x="500" y="100" width="180" height="70" fill="#c9e6ff" stroke="black"/>
+    <text x="590" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">CO₂ Fixation</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="500" y="200" width="180" height="70" fill="#c9e6ff" stroke="black"/>
+    <text x="590" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Calvin Cycle</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="500" y="300" width="180" height="70" fill="#c9e6ff" stroke="black"/>
+    <text x="590" y="335" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Glucose Production</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- light_absorption -> water_splitting -->
+  <line x1="190" y1="170" x2="190" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="195" y="185" font-family="sans-serif" font-size="14" fill="black">energy</text>
+
+  <!-- water_splitting -> oxygen_release -->
+  <line x1="190" y1="270" x2="190" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="195" y="285" font-family="sans-serif" font-size="14" fill="black">O₂</text>
+
+  <!-- light_absorption -> co2_fixation -->
+  <line x1="280" y1="135" x2="500" y2="135" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="390" y="130" font-family="sans-serif" font-size="14" fill="black">energy</text>
+
+  <!-- co2_fixation -> calvin_cycle -->
+  <line x1="590" y1="170" x2="590" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="595" y="185" font-family="sans-serif" font-size="14" fill="black">CO₂</text>
+
+  <!-- calvin_cycle -> glucose_production -->
+  <line x1="590" y1="270" x2="590" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="595" y="285" font-family="sans-serif" font-size="14" fill="black">C₃ sugars</text>
+</svg>

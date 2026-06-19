@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+            refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold">
+    Blood Flow Through the Heart
+  </text>
+
+  <!-- Nodes -->
+  <g id="vena_cava">
+    <rect x="460" y="165" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="200" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Superior &amp; Inferior Vena Cava</text>
+  </g>
+
+  <g id="right_atrium">
+    <rect x="460" y="265" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="300" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Right Atrium</text>
+  </g>
+
+  <g id="tricuspid_valve">
+    <rect x="460" y="365" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="400" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Tricuspid Valve</text>
+  </g>
+
+  <g id="right_ventricle">
+    <rect x="460" y="465" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="500" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Right Ventricle</text>
+  </g>
+
+  <g id="pulmonary_valve">
+    <rect x="460" y="565" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="600" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Pulmonary Valve</text>
+  </g>
+
+  <g id="pulmonary_artery">
+    <rect x="460" y="665" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="700" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Pulmonary Artery</text>
+  </g>
+
+  <g id="lungs">
+    <rect x="460" y="765" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="830" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Lungs (Capillaries)</text>
+  </g>
+
+  <g id="pulmonary_veins">
+    <rect x="760" y="165" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="850" y="200" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Pulmonary Veins</text>
+  </g>
+
+  <g id="left_atrium">
+    <rect x="760" y="265" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="850" y="300" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Left Atrium</text>
+  </g>
+
+  <g id="mitral_valve">
+    <rect x="760" y="365" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="850" y="400" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Mitral Valve</text>
+  </g>
+
+  <g id="left_ventricle">
+    <rect x="760" y="465" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="850" y="500" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Left Ventricle</text>
+  </g>
+
+  <g id="aortic_valve">
+    <rect x="760" y="565" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="850" y="600" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Aortic Valve</text>
+  </g>
+
+  <g id="aorta">
+    <rect x="760" y="665" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="850" y="700" text-anchor="middle" dominant-baseline="middle"
+          font-family="sans-serif" font-size="14">Aorta</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edges" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+    <!-- vena_cava -> right_atrium -->
+    <line x1="550" y1="235" x2="550" y2="265"/>
+    <text x="560" y="250" font-family="sans-serif" font-size="12">

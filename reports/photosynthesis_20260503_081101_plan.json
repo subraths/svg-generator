@@ -1,0 +1,112 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 100,
+      "y": 80,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting (Photolysis)",
+      "x": 100,
+      "y": 170,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 100,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "electron_transport",
+      "label": "Electron Transport Chain",
+      "x": 320,
+      "y": 170,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_synthesis",
+      "label": "ATP Synthesis",
+      "x": 540,
+      "y": 170,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "nadph_formation",
+      "label": "NADPH Formation",
+      "x": 540,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (Carbon Fixation)",
+      "x": 320,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 540,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "light_absorption",
+      "to": "water_splitting",
+      "label": "light energy"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "O\u2082"
+    },
+    {
+      "from": "water_splitting",
+      "to": "electron_transport",
+      "label": "e\u207b"
+    },
+    {
+      "from": "electron_transport",
+      "to": "atp_synthesis",
+      "label": "proton gradient"
+    },
+    {
+      "from": "electron_transport",
+      "to": "nadph_formation",
+      "label": "e\u207b transfer"
+    },
+    {
+      "from": "atp_synthesis",
+      "to": "calvin_cycle",
+      "label": "ATP"
+    },
+    {
+      "from": "nadph_formation",
+      "to": "calvin_cycle",
+      "label": "NADPH"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_production",
+      "label": "C\u2083 sugar"
+    }
+  ]
+}

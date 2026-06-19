@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Center the whole diagram -->
+  <g transform="translate(-40,-5)">
+
+    <!-- Title -->
+    <text x="600" y="40" font-family="Arial" font-size="28" text-anchor="middle">Water Cycle</text>
+
+    <!-- Nodes -->
+    <g id="evaporation">
+      <rect x="500" y="120" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="590" y="155" font-family="Arial" font-size="16" text-anchor="middle" dominant-baseline="middle">Evaporation</text>
+    </g>
+
+    <g id="transpiration">
+      <rect x="300" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="390" y="235" font-family="Arial" font-size="16" text-anchor="middle" dominant-baseline="middle">Transpiration</text>
+    </g>
+
+    <g id="condensation">
+      <rect x="760" y="360" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="850" y="395" font-family="Arial" font-size="16" text-anchor="middle" dominant-baseline="middle">Condensation</text>
+    </g>
+
+    <g id="precipitation">
+      <rect x="500" y="620" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+      <text x="590" y="655" font-family="Arial

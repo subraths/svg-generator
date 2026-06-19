@@ -1,0 +1,30 @@
+{
+  "timestamp": "20260414_083913",
+  "topic": "TCP 3-way handshake",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1000",
+    "height": "700",
+    "group_ids": [
+      "client",
+      "server",
+      "syn_arrow",
+      "synack_arrow",
+      "ack_arrow",
+      "states"
+    ],
+    "group_count": 6,
+    "rect_count": 8,
+    "overlap_pairs": [],
+    "line_count": 7,
+    "polyline_count": 0,
+    "path_count": 1,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 8,
+    "has_duplicate_ids": false,
+    "errors": []
+  }
+}

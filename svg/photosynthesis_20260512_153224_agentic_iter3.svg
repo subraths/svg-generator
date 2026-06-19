@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L10,3.5 Z" fill="black"/>
+    </marker>
+    <style>
+      .node { fill:#ffffff; stroke:#000000; stroke-width:2; }
+      .label { font-family:Arial,Helvetica,sans-serif; font-size:14px; pointer-events:none; }
+      .edge { fill:none; stroke:#000000; stroke-width:2; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold">Photosynthesis Process</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect class="node" x="100" y="165" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="190" y="200" dominant-baseline="middle" text-anchor="middle">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect class="node" x="320" y="165" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="410" y="200" dominant-baseline="middle" text-anchor="middle">Chlorophyll</text>
+  </g>
+
+  <g id="light_dependent">
+    <rect class="node" x="540" y="165" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="630" y="200" dominant-baseline="middle" text-anchor="middle">Light‑dependent Reactions</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect class="node" x="540" y="265" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="630" y="300" dominant-baseline="middle" text-anchor="middle">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect class="node" x="740" y="265" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="830" y="300" dominant-baseline="middle" text-anchor="middle">Oxygen Release</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect class="node" x="940" y="265" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="1030" y="300" dominant-baseline="middle" text-anchor="middle">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="light_independent">
+    <rect class="node" x="540" y="385" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="630" y="420" dominant-baseline="middle" text-anchor="middle">Light‑independent Reactions (Calvin Cycle)</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect class="node" x="540" y="485" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="630" y="520" dominant-baseline="middle" text-anchor="middle">Carbon Fixation</text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect class="node" x="540" y="585" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="630" y="620" dominant-baseline="middle" text-anchor="middle">Glucose Synthesis</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- sunlight -> chlorophyll -->
+  <path class="edge" d="M280,200 L320,200" marker-end="url(#arrow)"/>
+  <!-- chlorophyll -> light_dependent -->
+  <path class="edge" d="M500,200 L540,200" marker-end="url(#arrow)"/>
+  <!-- light_dependent -> water_splitting -->
+  <path class="edge" d="M630,235 L630,265" marker-end="url(#arrow)"/>
+  <!-- light_dependent -> oxygen_release -->
+  <path class="edge" d="M720,200 L740,300" marker-end="url(#arrow)"/>
+  <!-- light_dependent -> atp_nadph -->
+  <path class="edge" d="M720,200 L940,300" marker-end="url(#arrow)"/>
+  <!-- light_dependent -> light_independent -->
+  <path class="edge" d="M630,235 L630,385" marker-end="url(#arrow)"/>
+  <!-- light_independent -> carbon_fixation -->
+  <path class="edge" d="M630,455 L630,485" marker-end="url(#arrow)"/>
+  <!-- carbon_fixation -> glucose_synthesis -->
+  <path class="edge" d="M630,555 L630,585" marker-end="url(#arrow)"/>
+</svg>

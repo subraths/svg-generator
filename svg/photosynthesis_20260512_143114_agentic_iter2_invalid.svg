@@ -1,0 +1,59 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+    <style>
+      .node { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .label { font-family:Arial,Helvetica,sans-serif; font-size:14px; fill:#000; }
+      .edge { fill:none; stroke:#424242; stroke-width:2; }
+      .edge-label { font-family:Arial,Helvetica,sans-serif; font-size:12px; fill:#000; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" fill="#000">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect class="node" x="250" y="155" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="340" y="190" dominant-baseline="middle" text-anchor="middle">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect class="node" x="490" y="155" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="580" y="190" dominant-baseline="middle" text-anchor="middle">Chlorophyll (pigment)</text>
+  </g>
+
+  <g id="light_dependent">
+    <rect class="node" x="730" y="155" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="820" y="190" dominant-baseline="middle" text-anchor="middle">Light‑dependent Reactions</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect class="node" x="730" y="255" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="820" y="290" dominant-baseline="middle" text-anchor="middle">Water Splitting (H₂O → O₂ + e⁻)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect class="node" x="970" y="255" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="1060" y="290" dominant-baseline="middle" text-anchor="middle">O₂ Release</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect class="node" x="730" y="355" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="820" y="390" dominant-baseline="middle" text-anchor="middle">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect class="node" x="490" y="455" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="580" y="490" dominant-baseline="middle" text-anchor="middle">Calvin Cycle (Light‑independent)</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect class="node" x="490" y="555" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="580" y="590" dominant-baseline="middle" text-anchor="middle">CO₂ Fixation</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect class="node" x="490"

@@ -1,0 +1,78 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .label {font-family:sans-serif; font-size:18px; fill:#000;}
+      .box {stroke:#000; stroke-width:2; fill:#e0f7fa;}
+      .circle {stroke:#000; stroke-width:2; fill:#fff9c4;}
+    </style>
+  </defs>
+
+  <!-- Sun -->
+  <g id="sun_group">
+    <circle class="circle" cx="100" cy="100" r="50"/>
+    <text class="label" x="100" y="170" text-anchor="middle">Sunlight</text>
+  </g>
+
+  <!-- Leaf (chloroplast) -->
+  <g id="leaf_group">
+    <ellipse class="box" cx="600" cy="400" rx="150" ry="80"/>
+    <text class="label" x="600" y="405" text-anchor="middle">Chloroplast</text>
+  </g>
+
+  <!-- Water source -->
+  <g id="water_group">
+    <rect class="box" x="100" y="600" width="80" height="40" rx="5"/>
+    <text class="label" x="140" y="630" text-anchor="middle">H₂O</text>
+  </g>
+
+  <!-- CO₂ source -->
+  <g id="co2_group">
+    <rect class="box" x="1000" y="100" width="80" height="40" rx="5"/>
+    <text class="label" x="1040" y="130" text-anchor="middle">CO₂</text>
+  </g>
+
+  <!-- Oxygen output -->
+  <g id="oxygen_group">
+    <rect class="box" x="1000" y="600" width="80" height="40" rx="5"/>
+    <text class="label" x="1040" y="630" text-anchor="middle">O₂</text>
+  </g>
+
+  <!-- Glucose output -->
+  <g id="glucose_group">
+    <rect class="box" x="950" y="400" width="120" height="40" rx="5"/>
+    <text class="label" x="1010" y="430" text-anchor="middle">C₆H₁₂O₆</text>
+  </g>
+
+  <!-- Light arrow (Sun to Leaf) -->
+  <g id="light_group">
+    <line x1="150" y1="150" x2="460" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text class="label" x="300" y="250" text-anchor="middle">Light energy</text>
+  </g>
+
+  <!-- Water arrow (Water to Leaf) -->
+  <g id="water_flow">
+    <line x1="180" y1="620" x2="460" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text class="label" x="320" y="480" text-anchor="middle">H₂O uptake</text>
+  </g>
+
+  <!-- CO₂ arrow (CO₂ to Leaf) -->
+  <g id="co2_flow">
+    <line x1="960" y1="120" x2="750" y2="350" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text class="label" x="860" y="240" text-anchor="middle">CO₂ intake</text>
+  </g>
+
+  <!-- Oxygen arrow (Leaf to O₂) -->
+  <g id="oxygen_flow">
+    <line x1="750" y1="430" x2="960" y2="620" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text class="label" x="860" y="540" text-anchor="middle">O₂ release</text>
+  </g>
+
+  <!-- Glucose arrow (Leaf to Glucose) -->
+  <g id="glucose_flow">
+    <line x1="750" y1="400" x2="950" y2="420" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text class="label" x="850" y="380" text-anchor="middle">Glucose synthesis</text>
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+    <style>
+      .block { fill:#e0f7ff; stroke:#000; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; text-anchor:middle; dominant-baseline:middle; }
+      .connector { stroke:#000; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- User Wallet -->
+  <g id="user_wallet">
+    <rect class="block" x="510" y="30" width="180" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="70">User Wallet</text>
+  </g>
+
+  <!-- Transaction Creation -->
+  <g id="transaction_creation">
+    <rect class="block" x="510" y="140" width="180" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="180">Create Transaction</text>
+  </g>
+
+  <!-- Broadcast Network -->
+  <g id="broadcast_network">
+    <rect class="block" x="510" y="250" width="180" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="290">Broadcast to Network</text>
+  </g>
+
+  <!-- Miner Validation -->
+  <g id="miner_validation">
+    <rect class="block" x="510" y="360" width="180" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="400">Miner Validation</text>
+  </g>
+
+  <!-- Block Creation -->
+  <g id="block_creation">
+    <rect class="block" x="510" y="470" width="180" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="510">Create Block</text>
+  </g>
+
+  <!-- Blockchain -->
+  <g id="blockchain">
+    <rect class="block" x="510" y="580" width="180" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="620">Add to Blockchain</text>
+  </g>
+
+  <!-- Confirmation -->
+  <g id="confirmation">
+    <rect class="block" x="510" y="690" width="180" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="730">Transaction Confirmed</text>
+  </g>
+
+  <!-- Connectors -->
+  <line class="connector" x1="600" y1="110" x2="600" y2="140" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="600" y1="220" x2="600" y2="250" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="600" y1="330" x2="600" y2="360" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="600" y1="440" x2="600" y2="470" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="600" y1="550" x2="600" y2="580" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="600" y1="660" x2="600" y2="690" marker-end="url(#arrowhead)"/>
+</svg>

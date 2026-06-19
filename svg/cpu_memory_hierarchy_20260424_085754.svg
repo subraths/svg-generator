@@ -1,0 +1,57 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- CPU Core -->
+  <g id="cpu_core">
+    <rect x="350" y="30" width="500" height="60" fill="#e0f7fa" stroke="black"/>
+    <text x="600" y="70" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">CPU Core</text>
+  </g>
+
+  <!-- Registers -->
+  <g id="registers">
+    <rect x="350" y="120" width="500" height="60" fill="#b2ebf2" stroke="black"/>
+    <text x="600" y="160" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">Registers</text>
+  </g>
+
+  <!-- L1 Cache -->
+  <g id="l1_cache">
+    <rect x="350" y="210" width="500" height="60" fill="#80deea" stroke="black"/>
+    <text x="600" y="250" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">L1 Cache</text>
+  </g>
+
+  <!-- L2 Cache -->
+  <g id="l2_cache">
+    <rect x="350" y="300" width="500" height="60" fill="#4dd0e1" stroke="black"/>
+    <text x="600" y="340" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">L2 Cache</text>
+  </g>
+
+  <!-- L3 Cache -->
+  <g id="l3_cache">
+    <rect x="350" y="390" width="500" height="60" fill="#26c6da" stroke="black"/>
+    <text x="600" y="430" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">L3 Cache</text>
+  </g>
+
+  <!-- Main Memory -->
+  <g id="main_memory">
+    <rect x="350" y="480" width="500" height="60" fill="#00bcd4" stroke="black"/>
+    <text x="600" y="520" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">Main Memory (RAM)</text>
+  </g>
+
+  <!-- Secondary Storage -->
+  <g id="secondary_storage">
+    <rect x="350" y="570" width="500" height="60" fill="#0097a7" stroke="black"/>
+    <text x="600" y="610" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">Secondary Storage (SSD/HDD)</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="600" y1="90" x2="600" y2="120" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="180" x2="600" y2="210" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="270" x2="600" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="360" x2="600" y2="390" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="450" x2="600" y2="480" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="540" x2="600" y2="570" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

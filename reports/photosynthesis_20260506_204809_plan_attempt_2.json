@@ -1,0 +1,112 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 40,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll",
+      "x": 260,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_split",
+      "label": "Water Splitting",
+      "x": 480,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent",
+      "label": "Light\u2011Dependent Reactions",
+      "x": 260,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "O\u2082 Release",
+      "x": 480,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP & NADPH",
+      "x": 260,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (Light\u2011Independent)",
+      "x": 480,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose",
+      "label": "Glucose Production",
+      "x": 480,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll",
+      "label": "absorbs"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent",
+      "label": "excites"
+    },
+    {
+      "from": "water_split",
+      "to": "light_dependent",
+      "label": "provides e\u207b"
+    },
+    {
+      "from": "light_dependent",
+      "to": "oxygen_release",
+      "label": "produces O\u2082"
+    },
+    {
+      "from": "light_dependent",
+      "to": "atp_nadph",
+      "label": "generates"
+    },
+    {
+      "from": "atp_nadph",
+      "to": "calvin_cycle",
+      "label": "energy & NADPH"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose",
+      "label": "synthesizes"
+    },
+    {
+      "from": "glucose",
+      "to": "sunlight",
+      "label": "stores energy"
+    }
+  ]
+}

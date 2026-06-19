@@ -1,0 +1,94 @@
+{
+  "diagram_type": "architecture",
+  "title": "Transformer Architecture",
+  "nodes": [
+    {
+      "id": "input_embedding",
+      "label": "Input Embedding",
+      "x": 40,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "positional_encoding",
+      "label": "Positional Encoding",
+      "x": 260,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_self_attention",
+      "label": "Encoder Self\u2011Attention",
+      "x": 480,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_feed_forward",
+      "label": "Encoder Feed\u2011Forward",
+      "x": 480,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_output",
+      "label": "Encoder Output",
+      "x": 700,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "decoder_self_attention",
+      "label": "Decoder Self\u2011Attention",
+      "x": 940,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "decoder_output",
+      "label": "Decoder Output",
+      "x": 940,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "input_embedding",
+      "to": "positional_encoding",
+      "label": ""
+    },
+    {
+      "from": "positional_encoding",
+      "to": "encoder_self_attention",
+      "label": ""
+    },
+    {
+      "from": "encoder_self_attention",
+      "to": "encoder_feed_forward",
+      "label": ""
+    },
+    {
+      "from": "encoder_feed_forward",
+      "to": "encoder_output",
+      "label": ""
+    },
+    {
+      "from": "encoder_output",
+      "to": "decoder_self_attention",
+      "label": "cross\u2011attention"
+    },
+    {
+      "from": "decoder_self_attention",
+      "to": "decoder_output",
+      "label": ""
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "timestamp": "20260425_120039",
+  "batch_stamp": "20260425_115306",
+  "topic": "CPU memory hierarchy",
+  "mode": "v1_direct",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "cpu_registers",
+      "l1_cache",
+      "l2_cache",
+      "l3_cache",
+      "main_memory",
+      "secondary_storage"
+    ],
+    "group_count": 6,
+    "rect_count": 6,
+    "overlap_pairs": [],
+    "line_count": 5,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 5,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/cpu_memory_hierarchy_20260425_115306_v1_direct.svg",
+    "png": "img/cpu_memory_hierarchy_20260425_115306_v1_direct.png",
+    "plan": null
+  }
+}

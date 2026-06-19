@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="32" font-weight="bold">Water Cycle</text>
+
+  <!-- Nodes -->
+  <g id="evaporation">
+    <rect x="600" y="140" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="690" y="180" text-anchor="middle" dominant-baseline="middle" font-size="16">Evaporation</text>
+  </g>
+
+  <g id="transpiration">
+    <rect x="780" y="220" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="870" y="255" text-anchor="middle" dominant-baseline="middle" font-size="16">Transpiration</text>
+  </g>
+
+  <g id="condensation">
+    <rect x="860" y="400" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="950" y="435" text-anchor="middle" dominant-baseline="middle" font-size="16">Condensation</text>
+  </g>
+
+  <g id="precipitation">
+    <rect x="420" y="220" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="510" y="255" text-anchor="middle" dominant-baseline="middle" font-size="16">Precipitation</text>
+  </g>
+
+  <g id="collection">
+    <rect x="600" y="660" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="690" y="695" text-anchor="middle" dominant-baseline="middle" font-size="16">Collection</text>
+  </g>
+
+  <g id="infiltration">
+    <rect x="420" y="580" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="510" y="615" text-anchor="middle" dominant-baseline="middle" font-size="16">Infiltration</text>
+  </g>
+
+  <g id="runoff">
+    <rect x="340" y="400" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="430" y="435" text-anchor="middle" dominant-baseline="middle" font-size="16">Runoff</text>
+  </g>
+
+  <g id="sublimation">
+    <rect x="380" y="140" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="470" y="175" text-anchor="middle" dominant-baseline="middle" font-size="16">Sublimation</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_evaporation_condensation">
+    <line x1="780" y1="175" x2="860" y2="435" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="820" y="305" text-anchor="middle" font-size="12" fill="#000">water vapor rises</text>
+  </g>
+
+  <g id="edge_transpiration_condensation">
+    <line x1="960" y1="255" x2="860" y2="435" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="910" y="345" text-anchor="middle" font-size="12" fill="#000">plant vapor</text>
+  </g>
+
+  <g id="edge_condensation_precipitation">
+    <line x1="860" y1="435" x2="600" y2="255" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="730" y="345" text-anchor="middle" font-size="12" fill="#000">cloud formation</text>
+  </g>
+
+  <g id="edge_precipitation_collection">
+    <line x1="780" y1="255" x2="600" y2="695" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="690" y="475" text-anchor="middle" font-size="12" fill="#000">rain/snow</text>
+  </g>
+
+  <g id="edge_collection_infiltration">
+    <line x1="600" y1="695" x2="600" y2="615" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="610" y="655" text-anchor="start" font-size="12" fill="#000">water enters soil</text>
+  </g>
+
+  <g id="edge_infiltration_runoff">
+    <line x1="420" y1="615" x2="520" y2="435" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="470" y="525" text-anchor="middle" font-size="12" fill="#000">groundwater flow</text>
+  </g>
+
+  <g id="edge_runoff_evaporation">
+    <line x1="520" y1="435" x2="600" y2="175" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="560" y="305" text-anchor="middle" font-size="12" fill="#000">returns to atmosphere</text>
+  </g>
+
+  <g id="edge_sublimation_evaporation">
+    <line x1="560" y1="175" x2="600" y2="175" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="580" y="165" text-anchor="middle" font-size="12" fill="#000">ice to vapor</text>
+  </g>
+</svg>

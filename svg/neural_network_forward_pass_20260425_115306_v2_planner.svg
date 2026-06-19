@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="14">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold">Neural Network Forward Pass</text>
+
+  <!-- Nodes -->
+  <g id="input_layer">
+    <rect x="20" y="100" width="180" height="70" fill="white" stroke="black"/>
+    <text x="110" y="135" text-anchor="middle" dominant-baseline="middle">Input Layer</text>
+  </g>
+
+  <g id="hidden1_layer">
+    <rect x="220" y="100" width="180" height="70" fill="white" stroke="black"/>
+    <text x="310" y="135" text-anchor="middle" dominant-baseline="middle">Hidden Layer 1</text>
+  </g>
+
+  <g id="hidden2_layer">
+    <rect x="420" y="100" width="180" height="70" fill="white" stroke="black"/>
+    <text x="510" y="135" text-anchor="middle" dominant-baseline="middle">Hidden Layer 2</text>
+  </g>
+
+  <g id="output_layer">
+    <rect x="620" y="100" width="180" height="70" fill="white" stroke="black"/>
+    <text x="710" y="135" text-anchor="middle" dominant-baseline="middle">Output Layer</text>
+  </g>
+
+  <g id="loss_calc">
+    <rect x="820" y="100" width="180" height="70" fill="white" stroke="black"/>
+    <text x="910" y="135" text-anchor="middle" dominant-baseline="middle">Loss Calculation</text>
+  </g>
+
+  <g id="prediction">
+    <rect x="1020" y="100" width="180" height="70" fill="white" stroke="black"/>
+    <text x="1110" y="135" text-anchor="middle" dominant-baseline="middle">Predicted Class</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_input_to_hidden1">
+    <line x1="200" y1="135" x2="220" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="210" y="125" text-anchor="middle" dominant-baseline="middle">weights</text>
+  </g>
+
+  <g id="edge_hidden1_to_hidden2">
+    <line x1="400" y1="135" x2="420" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="410" y="125" text-anchor="middle" dominant-baseline="middle">weights</text>
+  </g>
+
+  <g id="edge_hidden2_to_output">
+    <line x1="600" y1="135" x2="620" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="610" y="125" text-anchor="middle" dominant-baseline="middle">weights</text>
+  </g>
+
+  <g id="edge_output_to_loss">
+    <line x1="800" y1="135" x2="820" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="810" y="125" text-anchor="middle" dominant-baseline="middle">loss</text>
+  </g>
+
+  <g id="edge_output_to_prediction">
+    <line x1="800" y1="135" x2="1020" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="910" y="125" text-anchor="middle" dominant-baseline="middle">prediction</text>
+  </g>
+</svg>

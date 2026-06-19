@@ -1,0 +1,146 @@
+{
+  "timestamp": "20260425_203305",
+  "csv": "reports/batch_compare_20260425_115306.csv",
+  "overall": {
+    "total_topics": 20,
+    "passed": 20,
+    "failed": 0,
+    "pass_rate": 100.0,
+    "avg_attempts": 1.5,
+    "avg_connectors": 5.3,
+    "avg_overlaps": 0,
+    "avg_errors": 0,
+    "avg_group_count": 7.5,
+    "failed_topics": []
+  },
+  "by_mode": {
+    "v1_direct": {
+      "total_topics": 10,
+      "passed": 10,
+      "failed": 0,
+      "pass_rate": 100.0,
+      "avg_attempts": 1.9,
+      "avg_connectors": 4.7,
+      "avg_overlaps": 0,
+      "avg_errors": 0,
+      "avg_group_count": 6.2,
+      "failed_topics": []
+    },
+    "v2_planner": {
+      "total_topics": 10,
+      "passed": 10,
+      "failed": 0,
+      "pass_rate": 100.0,
+      "avg_attempts": 1.1,
+      "avg_connectors": 5.9,
+      "avg_overlaps": 0,
+      "avg_errors": 0,
+      "avg_group_count": 8.8,
+      "failed_topics": []
+    }
+  },
+  "delta_v2_minus_v1": {
+    "pass_rate_delta_v2_minus_v1": 0.0,
+    "avg_attempts_delta_v2_minus_v1": -0.8,
+    "avg_errors_delta_v2_minus_v1": 0,
+    "avg_overlaps_delta_v2_minus_v1": 0
+  },
+  "paired_topic_comparison": {
+    "paired_topics": 10,
+    "v2_wins": 5,
+    "v1_wins": 0,
+    "ties": 5,
+    "comparisons": [
+      {
+        "topic": "TCP 3-way handshake",
+        "v1_passed": true,
+        "v2_passed": true,
+        "attempts_delta_v2_minus_v1": -1,
+        "errors_delta_v2_minus_v1": 0,
+        "overlaps_delta_v2_minus_v1": 0,
+        "winner": "v2_planner"
+      },
+      {
+        "topic": "Transformer architecture",
+        "v1_passed": true,
+        "v2_passed": true,
+        "attempts_delta_v2_minus_v1": 0,
+        "errors_delta_v2_minus_v1": 0,
+        "overlaps_delta_v2_minus_v1": 0,
+        "winner": "tie"
+      },
+      {
+        "topic": "Cell structure",
+        "v1_passed": true,
+        "v2_passed": true,
+        "attempts_delta_v2_minus_v1": -4,
+        "errors_delta_v2_minus_v1": 0,
+        "overlaps_delta_v2_minus_v1": 0,
+        "winner": "v2_planner"
+      },
+      {
+        "topic": "DNS resolution flow",
+        "v1_passed": true,
+        "v2_passed": true,
+        "attempts_delta_v2_minus_v1": -1,
+        "errors_delta_v2_minus_v1": 0,
+        "overlaps_delta_v2_minus_v1": 0,
+        "winner": "v2_planner"
+      },
+      {
+        "topic": "Photosynthesis process",
+        "v1_passed": true,
+        "v2_passed": true,
+        "attempts_delta_v2_minus_v1": -1,
+        "errors_delta_v2_minus_v1": 0,
+        "overlaps_delta_v2_minus_v1": 0,
+        "winner": "v2_planner"
+      },
+      {
+        "topic": "HTTP request lifecycle",
+        "v1_passed": true,
+        "v2_passed": true,
+        "attempts_delta_v2_minus_v1": 0,
+        "errors_delta_v2_minus_v1": 0,
+        "overlaps_delta_v2_minus_v1": 0,
+        "winner": "tie"
+      },
+      {
+        "topic": "Neural network forward pass",
+        "v1_passed": true,
+        "v2_passed": true,
+        "attempts_delta_v2_minus_v1": 0,
+        "errors_delta_v2_minus_v1": 0,
+        "overlaps_delta_v2_minus_v1": 0,
+        "winner": "tie"
+      },
+      {
+        "topic": "CPU memory hierarchy",
+        "v1_passed": true,
+        "v2_passed": true,
+        "attempts_delta_v2_minus_v1": 0,
+        "errors_delta_v2_minus_v1": 0,
+        "overlaps_delta_v2_minus_v1": 0,
+        "winner": "tie"
+      },
+      {
+        "topic": "Kubernetes pod lifecycle",
+        "v1_passed": true,
+        "v2_passed": true,
+        "attempts_delta_v2_minus_v1": -1,
+        "errors_delta_v2_minus_v1": 0,
+        "overlaps_delta_v2_minus_v1": 0,
+        "winner": "v2_planner"
+      },
+      {
+        "topic": "Blockchain transaction flow",
+        "v1_passed": true,
+        "v2_passed": true,
+        "attempts_delta_v2_minus_v1": 0,
+        "errors_delta_v2_minus_v1": 0,
+        "overlaps_delta_v2_minus_v1": 0,
+        "winner": "tie"
+      }
+    ]
+  }
+}

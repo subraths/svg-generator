@@ -1,0 +1,117 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll (Pigment)",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_energy_absorption",
+      "label": "Light Energy Absorption",
+      "x": 340,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting (Photolysis)",
+      "x": 100,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 340,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph_production",
+      "label": "ATP & NADPH Production",
+      "x": 100,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_fixation",
+      "label": "Carbon Dioxide Fixation",
+      "x": 340,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (Light\u2011Independent)",
+      "x": 100,
+      "y": 400,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_synthesis",
+      "label": "Glucose Synthesis",
+      "x": 340,
+      "y": 400,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "chlorophyll",
+      "to": "light_energy_absorption",
+      "label": "absorbs"
+    },
+    {
+      "from": "light_energy_absorption",
+      "to": "water_splitting",
+      "label": "drives"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "produces"
+    },
+    {
+      "from": "water_splitting",
+      "to": "atp_nadph_production",
+      "label": "provides electrons"
+    },
+    {
+      "from": "light_energy_absorption",
+      "to": "atp_nadph_production",
+      "label": "powers"
+    },
+    {
+      "from": "atp_nadph_production",
+      "to": "carbon_fixation",
+      "label": "provides energy"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "calvin_cycle",
+      "label": "feeds"
+    },
+    {
+      "from": "atp_nadph_production",
+      "to": "calvin_cycle",
+      "label": "supplies ATP/NADPH"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_synthesis",
+      "label": "produces"
+    }
+  ]
+}

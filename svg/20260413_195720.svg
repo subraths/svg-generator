@@ -1,0 +1,47 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+    <style>
+      .block { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; fill:#000; }
+      .arrow { stroke:#000; stroke-width:2; }
+    </style>
+  </defs>
+
+  <!-- Client block -->
+  <g id="client">
+    <rect x="100" y="250" width="150" height="100" class="block"/>
+    <text x="175" y="310" text-anchor="middle" class="label">Client</text>
+  </g>
+
+  <!-- Server block -->
+  <g id="server">
+    <rect x="750" y="250" width="150" height="100" class="block"/>
+    <text x="825" y="310" text-anchor="middle" class="label">Server</text>
+  </g>
+
+  <!-- SYN arrow -->
+  <g id="syn">
+    <line x1="250" y1="300" x2="750" y2="300" class="arrow" marker-end="url(#arrowhead)"/>
+    <text x="500" y="280" text-anchor="middle" class="label">SYN</text>
+  </g>
+
+  <!-- SYN-ACK arrow -->
+  <g id="syn_ack">
+    <line x1="900" y1="300" x2="100" y2="300" class="arrow" marker-end="url(#arrowhead)"/>
+    <text x="500" y="340" text-anchor="middle" class="label">SYN‑ACK</text>
+  </g>
+
+  <!-- ACK arrow -->
+  <g id="ack">
+    <line x1="250" y1="300" x2="750" y2="300" class="arrow" marker-end="url(#arrowhead)"/>
+    <text x="500" y="380" text-anchor="middle" class="label">ACK</text>
+  </g>
+
+  <!-- Connection established -->
+  <g id="established">
+    <text x="500" y="440" text-anchor="middle" class="label" font-weight="bold">Connection Established</text>
+  </g>
+</svg>

@@ -1,0 +1,99 @@
+{
+  "diagram_type": "flow",
+  "title": "Electric Circuit Basics",
+  "nodes": [
+    {
+      "id": "power_source",
+      "label": "Power Source",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "conductors",
+      "label": "Conductors",
+      "x": 320,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "switch",
+      "label": "Switch",
+      "x": 540,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "load",
+      "label": "Load (Resistor)",
+      "x": 760,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "series_circuit",
+      "label": "Series Circuit",
+      "x": 200,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "parallel_circuit",
+      "label": "Parallel Circuit",
+      "x": 560,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "ohms_law",
+      "label": "Ohm's Law",
+      "x": 380,
+      "y": 380,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "power_source",
+      "to": "conductors",
+      "label": ""
+    },
+    {
+      "from": "conductors",
+      "to": "switch",
+      "label": ""
+    },
+    {
+      "from": "switch",
+      "to": "load",
+      "label": ""
+    },
+    {
+      "from": "load",
+      "to": "series_circuit",
+      "label": ""
+    },
+    {
+      "from": "load",
+      "to": "parallel_circuit",
+      "label": ""
+    },
+    {
+      "from": "series_circuit",
+      "to": "ohms_law",
+      "label": ""
+    },
+    {
+      "from": "parallel_circuit",
+      "to": "ohms_law",
+      "label": ""
+    }
+  ]
+}

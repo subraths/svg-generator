@@ -1,0 +1,147 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_photolysis",
+      "label": "Water Photolysis",
+      "x": 340,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "O\u2082 Release",
+      "x": 580,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_fixation",
+      "label": "CO\u2082 Fixation (Calvin Cycle)",
+      "x": 100,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 340,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chloroplast_structure",
+      "label": "Chloroplast Structure",
+      "x": 580,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "energy_carriers",
+      "label": "ATP & NADPH",
+      "x": 100,
+      "y": 380,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "stroma",
+      "label": "Stroma (Calvin Cycle Site)",
+      "x": 340,
+      "y": 380,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "light_absorption",
+      "to": "water_photolysis",
+      "label": "drives"
+    },
+    {
+      "from": "light_absorption",
+      "to": "oxygen_release",
+      "label": "produces"
+    },
+    {
+      "from": "light_absorption",
+      "to": "energy_carriers",
+      "label": "generates"
+    },
+    {
+      "from": "water_photolysis",
+      "to": "oxygen_release",
+      "label": "releases"
+    },
+    {
+      "from": "energy_carriers",
+      "to": "carbon_fixation",
+      "label": "powers"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "glucose_production",
+      "label": "produces"
+    },
+    {
+      "from": "glucose_production",
+      "to": "stroma",
+      "label": "synthesized in"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "stroma",
+      "label": "occurs in"
+    },
+    {
+      "from": "energy_carriers",
+      "to": "stroma",
+      "label": "used in"
+    },
+    {
+      "from": "light_absorption",
+      "to": "chloroplast_structure",
+      "label": "occurs in"
+    },
+    {
+      "from": "water_photolysis",
+      "to": "chloroplast_structure",
+      "label": "occurs in"
+    },
+    {
+      "from": "oxygen_release",
+      "to": "chloroplast_structure",
+      "label": "occurs in"
+    },
+    {
+      "from": "glucose_production",
+      "to": "chloroplast_structure",
+      "label": "occurs in"
+    },
+    {
+      "from": "energy_carriers",
+      "to": "chloroplast_structure",
+      "label": "occurs in"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "chloroplast_structure",
+      "label": "occurs in"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold">Photosynthesis Process</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="100" y="100" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="340" y="100" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="430" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14">Chlorophyll</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="580" y="100" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="670" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14">Water Splitting (H₂O → O₂ + e⁻)</text>
+  </g>
+
+  <g id="light_dependent">
+    <rect x="340" y="190" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="430" y="225" text-anchor="middle" dominant-baseline="middle" font-size="14">Light‑Dependent Reactions</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="580" y="190" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="670" y="225" text-anchor="middle" dominant-baseline="middle" font-size="14">O₂ Release</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="340" y="300" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="430" y="335" text-anchor="middle" dominant-baseline="middle" font-size="14">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="340" y="420" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="430" y="455" text-anchor="middle" dominant-baseline="middle" font-size="14">Calvin Cycle (C₃)</text>
+  </g>
+
+  <g id="glucose">
+    <rect x="580" y="420" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="670" y="455" text-anchor="middle" dominant-baseline="middle" font-size="14">Glucose Production</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- sunlight -> chlorophyll -->
+  <path d="M280,135 L340,135" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="310" y="125" font-size="12" text-anchor="middle">absorbs</text>
+
+  <!-- chlorophyll -> light_dependent -->
+  <path d="M430,170 L430,190" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="440" y="180" font-size="12">excites</text>
+
+  <!-- water_splitting -> light_dependent -->
+  <path d="M580,135 C620,135 580,225 520,225" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="550" y="170" font-size="12" text-anchor="middle">provides electrons</text>
+
+  <!-- light_dependent -> oxygen_release -->
+  <path d="M520,225 L580,225" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="550" y="215" font-size="12" text-anchor="middle">produces O₂</text>
+
+  <!-- light_dependent -> atp_nadph -->
+  <path d="M430,260 L430,300" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="440" y="280" font-size="12">generates</text>
+
+  <!-- atp_nadph -> calvin_cycle -->
+  <path d="M430,370 L430,420" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="440" y="395" font-size="12">provides energy</text>
+
+  <!-- calvin_cycle -> glucose -->
+  <path d="M520,455 L580,455" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="550" y="445" font-size="12" text-anchor="middle">synthesizes</text>
+</svg>

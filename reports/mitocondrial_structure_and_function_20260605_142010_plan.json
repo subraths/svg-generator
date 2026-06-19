@@ -1,0 +1,107 @@
+{
+  "diagram_type": "anatomy",
+  "title": "Mitochondrial Structure and Function",
+  "nodes": [
+    {
+      "id": "outer_membrane",
+      "label": "Outer Membrane",
+      "x": 20,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "intermembrane_space",
+      "label": "Intermembrane Space",
+      "x": 20,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "inner_membrane",
+      "label": "Inner Membrane",
+      "x": 20,
+      "y": 220,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "cristae",
+      "label": "Cristae",
+      "x": 20,
+      "y": 320,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "matrix",
+      "label": "Matrix",
+      "x": 20,
+      "y": 420,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "mt_dna",
+      "label": "mtDNA",
+      "x": 20,
+      "y": 520,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "electron_transport_chain",
+      "label": "Electron Transport Chain",
+      "x": 240,
+      "y": 220,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_synthase",
+      "label": "ATP Synthase",
+      "x": 240,
+      "y": 320,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "outer_membrane",
+      "to": "intermembrane_space",
+      "label": "contains"
+    },
+    {
+      "from": "intermembrane_space",
+      "to": "inner_membrane",
+      "label": "encloses"
+    },
+    {
+      "from": "inner_membrane",
+      "to": "cristae",
+      "label": "folds into"
+    },
+    {
+      "from": "cristae",
+      "to": "matrix",
+      "label": "increases SA for"
+    },
+    {
+      "from": "matrix",
+      "to": "mt_dna",
+      "label": "contains"
+    },
+    {
+      "from": "inner_membrane",
+      "to": "electron_transport_chain",
+      "label": "hosts"
+    },
+    {
+      "from": "electron_transport_chain",
+      "to": "atp_synthase",
+      "label": "drives"
+    }
+  ]
+}

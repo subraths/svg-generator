@@ -1,0 +1,45 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+  <text x="600" y="20" text-anchor="middle" font-family="sans-serif" font-size="24">Transformer Architecture</text>
+
+  <g id="input_embedding">
+    <rect x="40" y="40" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="130" y="75" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Input Embedding</text>
+  </g>
+
+  <g id="positional_encoding">
+    <rect x="260" y="40" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="350" y="75" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Positional Encoding</text>
+  </g>
+
+  <g id="encoder_self_attention">
+    <rect x="480" y="40" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="570" y="75" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Multi-Head Self-Attention</text>
+  </g>
+
+  <g id="encoder_feed_forward">
+    <rect x="700" y="40" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="790" y="75" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Feed-Forward Network</text>
+  </g>
+
+  <g id="encoder_norm">
+    <rect x="920" y="40" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="1010" y="75" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Add &amp; Norm</text>
+  </g>
+
+  <g id="encoder_output">
+    <rect x="40" y="200" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="130" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Encoder Output</text>
+  </g>
+
+  <!-- Edges -->
+  <line x1="220" y1="75" x2="260" y2="75" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="440" y1="75" x2="480" y2="75" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="660" y1="75" x2="700" y2="75" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="880" y1="75" x2="920" y2="75" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1010" y1="110" x2="130" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

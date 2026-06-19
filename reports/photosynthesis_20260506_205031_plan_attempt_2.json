@@ -1,0 +1,107 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 40,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll_absorption",
+      "label": "Chlorophyll Absorption",
+      "x": 240,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph_production",
+      "label": "ATP & NADPH Production",
+      "x": 500,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_storage",
+      "label": "Glucose Storage",
+      "x": 740,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting",
+      "x": 40,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 240,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle",
+      "x": 500,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_synthesis",
+      "label": "Glucose Synthesis",
+      "x": 740,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll_absorption",
+      "label": "light energy"
+    },
+    {
+      "from": "chlorophyll_absorption",
+      "to": "atp_nadph_production",
+      "label": "excites electrons"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "produces O\u2082"
+    },
+    {
+      "from": "water_splitting",
+      "to": "atp_nadph_production",
+      "label": "provides electrons"
+    },
+    {
+      "from": "atp_nadph_production",
+      "to": "calvin_cycle",
+      "label": "energy carriers"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_synthesis",
+      "label": "CO\u2082 fixation"
+    },
+    {
+      "from": "glucose_synthesis",
+      "to": "glucose_storage",
+      "label": "stores glucose"
+    }
+  ]
+}

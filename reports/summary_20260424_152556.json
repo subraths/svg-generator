@@ -1,0 +1,48 @@
+{
+  "timestamp": "20260424_152556",
+  "csv": "reports/batch_compare_20260424_122122.csv",
+  "overall": {
+    "total_topics": 5,
+    "passed": 5,
+    "failed": 0,
+    "pass_rate": 100.0,
+    "avg_attempts": 1.6,
+    "avg_connectors": 5.8,
+    "avg_overlaps": 0,
+    "avg_errors": 0,
+    "avg_group_count": 6.8,
+    "failed_topics": []
+  },
+  "by_mode": {
+    "v1_direct": {
+      "total_topics": 3,
+      "passed": 3,
+      "failed": 0,
+      "pass_rate": 100.0,
+      "avg_attempts": 2,
+      "avg_connectors": 6.33,
+      "avg_overlaps": 0,
+      "avg_errors": 0,
+      "avg_group_count": 7,
+      "failed_topics": []
+    },
+    "v2_planner": {
+      "total_topics": 2,
+      "passed": 2,
+      "failed": 0,
+      "pass_rate": 100.0,
+      "avg_attempts": 1,
+      "avg_connectors": 5,
+      "avg_overlaps": 0,
+      "avg_errors": 0,
+      "avg_group_count": 6.5,
+      "failed_topics": []
+    }
+  },
+  "delta_v2_minus_v1": {
+    "pass_rate_delta_v2_minus_v1": 0.0,
+    "avg_attempts_delta_v2_minus_v1": -1,
+    "avg_errors_delta_v2_minus_v1": 0,
+    "avg_overlaps_delta_v2_minus_v1": 0
+  }
+}

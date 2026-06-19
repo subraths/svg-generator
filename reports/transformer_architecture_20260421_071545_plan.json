@@ -1,0 +1,81 @@
+{
+  "diagram_type": "architecture",
+  "title": "Transformer Architecture",
+  "nodes": [
+    {
+      "id": "input_embedding",
+      "label": "Input Embedding",
+      "x": 40,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "positional_encoding",
+      "label": "Positional Encoding",
+      "x": 240,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_stack",
+      "label": "Encoder Stack (N\u00d7)",
+      "x": 460,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "decoder_stack",
+      "label": "Decoder Stack (N\u00d7)",
+      "x": 460,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "output_projection",
+      "label": "Output Projection",
+      "x": 680,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "final_output",
+      "label": "Final Output",
+      "x": 900,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "input_embedding",
+      "to": "positional_encoding",
+      "label": ""
+    },
+    {
+      "from": "positional_encoding",
+      "to": "encoder_stack",
+      "label": ""
+    },
+    {
+      "from": "encoder_stack",
+      "to": "decoder_stack",
+      "label": "Cross\u2011Attention"
+    },
+    {
+      "from": "decoder_stack",
+      "to": "output_projection",
+      "label": ""
+    },
+    {
+      "from": "output_projection",
+      "to": "final_output",
+      "label": ""
+    }
+  ]
+}

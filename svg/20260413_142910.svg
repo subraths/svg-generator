@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .host { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .packet { fill:#fff3e0; stroke:#bf360c; stroke-width:2; }
+      .arrow { stroke:#000; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
+      .label { font-size:18px; fill:#000; }
+    </style>
+  </defs>
+
+  <!-- Client host -->
+  <g id="client">
+    <rect class="host" x="150" y="250" width="200" height="100" rx="10"/>
+    <text class="label" x="250" y="300" text-anchor="middle">Client</text>
+  </g>
+
+  <!-- Server host -->
+  <g id="server">
+    <rect class="host" x="650" y="250" width="200" height="100" rx="10"/>
+    <text class="label" x="750" y="300" text-anchor="middle">Server</text>
+  </g>
+
+  <!-- SYN packet -->
+  <g id="syn">
+    <line class="arrow" x1="350" y1="300" x2="650" y2="300"/>
+    <text class="label" x="500" y="280" text-anchor="middle">SYN (Seq = x)</text>
+  </g>
+
+  <!-- SYN-ACK packet -->
+  <g id="synack">
+    <line class="arrow" x1="650" y1="340" x2="350" y2="340"/>
+    <text class="label" x="500" y="360" text-anchor="middle">SYN‑ACK (Seq = y, Ack = x+1)</text>
+  </g>
+
+  <!-- ACK packet -->
+  <g id="ack">
+    <line class="arrow" x1="350" y1="380" x2="650" y2="380"/>
+    <text class="label" x="500" y="420" text-anchor="middle">ACK (Ack = y+1)</text>
+  </g>
+
+  <!-- Handshake steps description -->
+  <g id="handshake_steps">
+    <text class="label" x="500" y="520" text-anchor="middle">TCP 3‑Way Handshake Steps</text>
+    <text class="label" x="500" y="560" text-anchor="middle">1. Client → Server : SYN</text>
+    <text class="label" x="500" y="590" text-anchor="middle">2. Server → Client : SYN‑ACK</text>
+    <text class="label" x="500" y="620" text-anchor="middle">3. Client → Server : ACK</text>
+  </g>
+</svg>

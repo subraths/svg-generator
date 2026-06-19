@@ -1,0 +1,94 @@
+{
+  "diagram_type": "architecture",
+  "title": "Transformer Architecture",
+  "nodes": [
+    {
+      "id": "input_embedding",
+      "label": "Input Embedding",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "positional_encoding",
+      "label": "Positional Encoding",
+      "x": 100,
+      "y": 180,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_stack",
+      "label": "Encoder Stack (N layers)",
+      "x": 100,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "decoder_stack",
+      "label": "Decoder Stack (N layers)",
+      "x": 100,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "output_projection",
+      "label": "Output Linear + Softmax",
+      "x": 100,
+      "y": 420,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "loss_function",
+      "label": "Loss (Cross\u2011Entropy)",
+      "x": 100,
+      "y": 500,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "training_objective",
+      "label": "Training Objective",
+      "x": 100,
+      "y": 580,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "input_embedding",
+      "to": "positional_encoding",
+      "label": ""
+    },
+    {
+      "from": "positional_encoding",
+      "to": "encoder_stack",
+      "label": ""
+    },
+    {
+      "from": "encoder_stack",
+      "to": "decoder_stack",
+      "label": "Encoder\u2011Decoder Attention"
+    },
+    {
+      "from": "decoder_stack",
+      "to": "output_projection",
+      "label": ""
+    },
+    {
+      "from": "output_projection",
+      "to": "loss_function",
+      "label": ""
+    },
+    {
+      "from": "loss_function",
+      "to": "training_objective",
+      "label": ""
+    }
+  ]
+}

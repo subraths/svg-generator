@@ -1,0 +1,92 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .node rect { fill:#e0f7fa; stroke:#000; stroke-width:2; }
+      .node text { font-family:Arial,Helvetica,sans-serif; font-size:14px; pointer-events:none; }
+      .edge { fill:none; stroke:#000; stroke-width:2; marker-end:url(#arrow); }
+      .edgelabel { font-family:Arial,Helvetica,sans-serif; font-size:12px; fill:#000; pointer-events:none; }
+      .title { font-family:Arial,Helvetica,sans-serif; font-size:24px; font-weight:bold; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" class="title" text-anchor="middle">Photosynthesis Process</text>
+
+  <!-- Diagram group centered -->
+  <g transform="translate(70,305)">
+
+    <!-- Nodes -->
+    <g id="light_absorption" class="node">
+      <rect x="40" y="40" width="180" height="70" rx="5" ry="5"/>
+      <text x="130" y="80" text-anchor="middle" dominant-baseline="middle">Light Absorption</text>
+    </g>
+
+    <g id="water_photolysis" class="node">
+      <rect x="260" y="40" width="180" height="70" rx="5" ry="5"/>
+      <text x="350" y="80" text-anchor="middle" dominant-baseline="middle">Water Splitting (Photolysis)</text>
+    </g>
+
+    <g id="oxygen_release" class="node">
+      <rect x="480" y="40" width="180" height="70" rx="5" ry="5"/>
+      <text x="570" y="80" text-anchor="middle" dominant-baseline="middle">O₂ Release</text>
+    </g>
+
+    <g id="electron_transport" class="node">
+      <rect x="700" y="40" width="180" height="70" rx="5" ry="5"/>
+      <text x="790" y="80" text-anchor="middle" dominant-baseline="middle">Electron Transport Chain</text>
+    </g>
+
+    <g id="ATP_synthesis" class="node">
+      <rect x="920" y="40" width="180" height="70" rx="5" ry="5"/>
+      <text x="1010" y="80" text-anchor="middle" dominant-baseline="middle">ATP Synthesis (Chemiosmosis)</text>
+    </g>
+
+    <g id="Calvin_cycle" class="node">
+      <rect x="40" y="160" width="180" height="70" rx="5" ry="5"/>
+      <text x="130" y="200" text-anchor="middle" dominant-baseline="middle">Carbon Fixation (Calvin Cycle)</text>
+    </g>
+
+    <g id="glucose_production" class="node">
+      <rect x="260" y="160" width="180" height="70" rx="5" ry="5"/>
+      <text x="350" y="200" text-anchor="middle" dominant-baseline="middle">Glucose Production</text>
+    </g>
+
+    <g id="starch_storage" class="node">
+      <rect x="480" y="160" width="180" height="70" rx="5" ry="5"/>
+      <text x="570" y="200" text-anchor="middle" dominant-baseline="middle">Starch Storage</text>
+    </g>
+
+    <!-- Edges -->
+    <!-- light_absorption -> water_photolysis -->
+    <path class="edge" d="M290,80 C290,80 330,80 330,80"/>
+    <text x="310" y="70" class="edgelabel" text-anchor="middle">energy</text>
+
+    <!-- water_photolysis -> oxygen_release -->
+    <path class="edge" d="M510,80 C510,80 550,80 550,80"/>
+    <text x="530" y="70" class="edgelabel" text-anchor="middle">O₂</text>
+
+    <!-- water_photolysis -> electron_transport -->
+    <path class="edge" d="M510,80 C510,80 770,80 770,80"/>
+    <text x="640" y="70" class="edgelabel" text-anchor="middle">e⁻</text>
+
+    <!-- electron_transport -> ATP_synthesis -->
+    <path class="edge" d="M950,80 C950,80 990,80 990,80"/>
+    <text x="970" y="70" class="edgelabel" text-anchor="middle">proton gradient</text>
+
+    <!-- ATP_synthesis -> Calvin_cycle -->
+    <path class="edge" d="M1100,80 C1100,200 110,200 110,200"/>
+    <text x="640" y="150" class="edgelabel" text-anchor="middle">ATP</text>
+
+    <!-- Calvin_cycle -> glucose_production -->
+    <path class="edge" d="M290,200 C290,200 330,200 330,200"/>
+    <text x="310" y="190" class="edgelabel" text-anchor="middle">G3P</text>
+
+    <!-- glucose_production -> starch_storage -->
+    <path class="edge" d="M510,200 C510,200 550,200 550,200"/>
+    <text x="530" y="190" class="edgelabel" text-anchor="middle">store</text>
+
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Input Embedding -->
+  <g id="input_embedding">
+    <rect x="50" y="100" width="150" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="125" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Input Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect x="250" y="100" width="150" height="80" fill="#e8f5e9" stroke="#000"/>
+    <text x="325" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Positional Encoding</text>
+  </g>
+
+  <!-- Self Attention -->
+  <g id="self_attention">
+    <rect x="450" y="100" width="150" height="80" fill="#fff3e0" stroke="#000"/>
+    <text x="525" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Self‑Attention</text>
+  </g>
+
+  <!-- Feed Forward -->
+  <g id="feed_forward">
+    <rect x="650" y="100" width="150" height="80" fill="#f3e5f5" stroke="#000"/>
+    <text x="725" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Feed‑Forward</text>
+  </g>
+
+  <!-- Encoder Output -->
+  <g id="encoder_output">
+    <rect x="850" y="100" width="150" height="80" fill="#ffebee" stroke="#000"/>
+    <text x="925" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Encoder Output</text>
+  </g>
+
+  <!-- Decoder Self Attention -->
+  <g id="decoder_self_attention">
+    <rect x="250" y="300" width="150" height="80" fill="#e0f2f1" stroke="#000"/>
+    <text x="325" y="345" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Decoder Self‑Attention</text>
+  </g>
+
+  <!-- Cross Attention -->
+  <g id="cross_attention">
+    <rect x="450" y="300" width="150" height="80" fill="#e8eaf6" stroke="#000"/>
+    <text x="525" y="345" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Cross‑Attention</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect x="650" y="300" width="150" height="80" fill="#fffde7" stroke="#000"/>
+    <text x="725" y="345" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Output Layer</text>
+  </g>
+
+  <!-- Arrows between blocks -->
+  <path d="M200,140 L250,140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M400,140 L450,140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M600,140 L650,140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M800,140 L850,140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Encoder output down to decoder self-attention -->
+  <path d="M925,180 V260 H325" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Decoder flow arrows -->
+  <path d="M400,340 L450,340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M600,340 L650,340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

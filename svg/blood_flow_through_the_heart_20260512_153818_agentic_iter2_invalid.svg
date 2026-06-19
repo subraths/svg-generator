@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="5"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" fill="#000">Blood Flow Through the Heart</text>
+
+  <!-- Diagram centered -->
+  <g transform="translate(140,130)">
+
+    <!-- Nodes -->
+    <g id="superior_vena_cava">
+      <rect x="20" y="20" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <text x="110" y="55" text-anchor="middle" dominant-baseline="middle" font-size="14">Superior Vena Cava</text>
+    </g>
+
+    <g id="right_atrium">
+      <rect x="20" y="110" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <text x="110" y="145" text-anchor="middle" dominant-baseline="middle" font-size="14">Right Atrium</text>
+    </g>
+
+    <g id="tricuspid_valve">
+      <rect x="20" y="200" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <text x="110" y="235" text-anchor="middle" dominant-baseline="middle" font-size="14">Tricuspid Valve</text>
+    </g>
+
+    <g id="right_ventricle">
+      <rect x="20" y="290" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <text x="110" y="325" text-anchor="middle" dominant-baseline="middle" font-size="14">Right Ventricle</text>
+    </g>
+
+    <g id="pulmonary_valve">
+      <rect x="20" y="380" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <text x="110" y="415" text-anchor="middle" dominant-baseline="middle" font-size="14">Pulmonary Valve</text>
+    </g>
+
+    <g id="pulmonary_artery">
+      <rect x="20" y="470" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <text x="110" y="505" text-anchor="middle" dominant-baseline="middle" font-size="14">Pulmonary Artery</text>
+    </g>
+
+    <g id="lungs">
+      <rect x="260" y="470" width="180" height="70" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+      <text x="350" y="505" text-anchor="middle" dominant-baseline="middle" font-size="14">Lungs</text>
+    </g>
+
+    <g id="pulmonary_veins">
+      <rect x="260" y="380" width="180" height="70" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+      <text x="350" y="415" text-anchor="middle" dominant-baseline="middle" font-size="14">Pulmonary Veins</text>
+    </g>
+
+    <g id="left_atrium">
+      <rect x="260" y="290" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <text x="350" y="325" text-anchor="middle" dominant-baseline="middle" font-size="14">Left Atrium</text>
+    </g>
+
+    <g id="mitral_valve">
+      <rect x="260" y="200" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <text x="350" y="235" text-anchor="middle" dominant-baseline="middle" font-size="14">Mitral Valve</text>
+    </g>
+
+    <g id="left_ventricle">
+      <rect x="260" y="110" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <text x="350" y="145" text-anchor="middle" dominant-baseline="middle" font-size="14">Left Ventricle</text>
+    </g>
+
+    <g id="aortic_valve">
+      <rect x="260" y="20" width="180" height="70" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <text x="350" y="55" text-anchor="middle" dominant-baseline="middle" font-size="14">Aortic Valve</text>
+    </g>
+
+    <g id="aorta">
+      <rect x="500" y="20" width="180" height="70" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+      <text x="590" y="55" text-anchor="middle" dominant-baseline="middle" font-size="14">Aorta</text>
+    </g>
+
+    <g id="systemic_arteries">
+      <rect x="740" y="20" width="180" height="70" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+      <text x="830" y="55" text-anchor="middle" dominant-baseline="middle" font-size="14">Systemic Arteries</text>
+    </g>
+
+    <g id="systemic_veins">
+      <rect x="740" y="110" width="180" height="70" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+      <text x="830" y="145" text-anchor="middle" dominant-baseline="middle" font-size="14">Systemic Veins</text>
+    </g>
+
+    <!-- Edges -->
+    <path d="M110,90 L110,180" stroke="black" fill="none" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M110,180 L110,200" stroke="black" fill="none" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M110,270 L110,290" stroke="black" fill="none" stroke

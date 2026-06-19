@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+  <g transform="translate(60,55)">
+    <!-- Title -->
+    <text x="440" y="30" font-family="sans-serif" font-size="24" text-anchor="middle">Photosynthesis</text>
+    
+    <!-- Nodes -->
+    <g id="sunlight">
+      <rect x="100" y="60" width="180" height="70" fill="#ffeb3b" stroke="#000"/>
+      <text x="190" y="95" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Sunlight</text>
+    </g>
+    <g id="chlorophyll">
+      <rect x="340" y="60" width="180" height="70" fill="#8bc34a" stroke="#000"/>
+      <text x="430" y="95" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Chlorophyll (Pigment)</text>
+    </g>
+    <g id="light_dependent">
+      <rect x="580" y="60" width="180" height="70" fill="#03a9f4" stroke="#000"/>
+      <text x="670" y="95" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Light‑Dependent Reactions</text>
+    </g>
+    <g id="water_splitting">
+      <rect x="580" y="160" width="180" height="70" fill="#ff9800" stroke="#000"/>
+      <text x="670" y="195" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Water Splitting (Photolysis)</text>
+    </g>
+    <g id="atp_nadph">
+      <rect x="580" y="260" width="180" height="70" fill="#9c27b0" stroke="#000"/>
+      <text x="670" y="295" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">ATP &amp; NADPH Production</text>
+    </g>
+    <g id="calvin_cycle">
+      <rect x="340" y="360" width="180" height="70" fill="#cddc39" stroke="#000"/>
+      <text x="430" y="395" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Calvin Cycle (Light‑Independent)</text>
+    </g>
+    <g id="co2_fixation">
+      <rect x="340" y="460" width="180" height="70" fill="#ff5722" stroke="#000"/>
+      <text x="430" y="495" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">CO₂ Fixation</text>
+    </g>
+    <g id="glucose">
+      <rect x="340" y="560" width="180" height="70" fill="#795548" stroke="#000"/>
+      <text x="430" y="595" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Glucose Synthesis</text>
+    </g>
+    <g id="oxygen_release">
+      <rect x="800" y="160" width="180" height="70" fill="#00bcd4" stroke="#000"/>
+      <text x="890" y="195" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">O₂ Release</text>
+    </g>
+    
+    <!-- Edges -->
+    <line x1="280" y1="95" x2="340" y2="95" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="520" y1="95" x2="580" y2="95" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="670" y1="130" x2="670" y2="160" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="670" y1="130" x2="670" y2="260" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="760" y1="195" x2="800" y2="195" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M580,295 C560,295 560,395 520,395" fill="none" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="430" y1="430" x2="430" y2="460" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="430" y1="530" x2="430" y2="560" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+</svg>

@@ -1,0 +1,94 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "overview",
+      "label": "Photosynthesis\nOverview",
+      "x": 500,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_absorption",
+      "label": "Light\nAbsorption",
+      "x": 500,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water\nSplitting\n(H\u2082O \u2192 O\u2082 + e\u207b)",
+      "x": 500,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "electron_transport",
+      "label": "Electron\nTransport\nChain",
+      "x": 500,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP & NADPH\nProduction",
+      "x": 500,
+      "y": 440,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin\nCycle (C\u2083)",
+      "x": 500,
+      "y": 540,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_output",
+      "label": "Glucose\nSynthesis",
+      "x": 500,
+      "y": 640,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "overview",
+      "to": "light_absorption",
+      "label": "starts with"
+    },
+    {
+      "from": "light_absorption",
+      "to": "water_splitting",
+      "label": "drives"
+    },
+    {
+      "from": "water_splitting",
+      "to": "electron_transport",
+      "label": "feeds"
+    },
+    {
+      "from": "electron_transport",
+      "to": "atp_nadph",
+      "label": "produces"
+    },
+    {
+      "from": "atp_nadph",
+      "to": "calvin_cycle",
+      "label": "provides energy"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_output",
+      "label": "creates"
+    }
+  ]
+}

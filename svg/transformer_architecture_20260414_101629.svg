@@ -1,0 +1,38 @@
+<svg width="1000" height="800">
+  <defs>
+    <marker id="arrow_head" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+  </defs>
+  <g id="input_embedding">
+    <rect x="50" y="50" width="200" height="100" fill="#ccc" rx="10"/>
+    <text x="100" y="120" font-size="16" text-anchor="middle">Input Embedding</text>
+  </g>
+  <g id="position_encoding">
+    <rect x="300" y="50" width="200" height="100" fill="#ccc" rx="10"/>
+    <text x="350" y="120" font-size="16" text-anchor="middle">Position Encoding</text>
+  </g>
+  <g id="encoder">
+    <rect x="50" y="200" width="200" height="200" fill="#ccc" rx="10"/>
+    <text x="100" y="320" font-size="16" text-anchor="middle">Encoder</text>
+  </g>
+  <g id="decoder">
+    <rect x="300" y="200" width="200" height="200" fill="#ccc" rx="10"/>
+    <text x="350" y="320" font-size="16" text-anchor="middle">Decoder</text>
+  </g>
+  <g id="self_attention">
+    <rect x="50" y="450" width="200" height="100" fill="#ccc" rx="10"/>
+    <text x="100" y="520" font-size="16" text-anchor="middle">Self-Attention</text>
+  </g>
+  <g id="feed_forward">
+    <rect x="300" y="450" width="200" height="100" fill="#ccc" rx="10"/>
+    <text x="350" y="520" font-size="16" text-anchor="middle">Feed Forward</text>
+  </g>
+  <line x1="250" y1="100" x2="300" y2="100" stroke="#000" stroke-width="2" marker-end="url(#arrow_head)"/>
+  <line x1="250" y1="250" x2="300" y2="250" stroke="#000" stroke-width="2" marker-end="url(#arrow_head)"/>
+  <line x1="100" y1="250" x2="50" y2="400" stroke="#000" stroke-width="2" marker-end="url(#arrow_head)"/>
+  <line x1="350" y1="250" x2="300" y2="400" stroke="#000" stroke-width="2" marker-end="url(#arrow_head)"/>
+  <line x1="100" y1="500" x2="100" y2="450" stroke="#000" stroke-width="2" marker-end="url(#arrow_head)"/>
+  <line x1="350" y1="500" x2="350" y2="450" stroke="#000" stroke-width="2" marker-end="url(#arrow_head)"/>
+  <line x1="250" y1="550" x2="300" y2="550" stroke="#000" stroke-width="2" marker-end="url(#arrow_head)"/>
+</svg>

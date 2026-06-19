@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="14">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold">TCP 3-Way Handshake</text>
+
+  <!-- Nodes -->
+  <g id="client_send_syn">
+    <rect x="100" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle">Client: Send SYN</text>
+  </g>
+
+  <g id="server_receive_syn">
+    <rect x="100" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="190" y="235" text-anchor="middle" dominant-baseline="middle">Server: Receive SYN</text>
+  </g>
+
+  <g id="server_send_synack">
+    <rect x="100" y="300" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="190" y="335" text-anchor="middle" dominant-baseline="middle">Server: Send SYN‑ACK</text>
+  </g>
+
+  <g id="client_receive_synack">
+    <rect x="100" y="400" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="190" y="435" text-anchor="middle" dominant-baseline="middle">Client: Receive SYN‑ACK</text>
+  </g>
+
+  <g id="client_send_ack">
+    <rect x="100" y="500" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="190" y="535" text-anchor="middle" dominant-baseline="middle">Client: Send ACK</text>
+  </g>
+
+  <g id="connection_established">
+    <rect x="100" y="600" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="190" y="635" text-anchor="middle" dominant-baseline="middle">Connection Established</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_client_send_syn_to_server_receive_syn">
+    <line x1="190" y1="170" x2="190" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="190" y="185" text-anchor="middle" dominant-baseline="middle" fill="black">SYN</text>
+  </g>
+
+  <g id="edge_server_receive_syn_to_server_send_synack">
+    <line x1="190" y1="270" x2="190" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="190" y="285" text-anchor="middle" dominant-baseline="middle" fill="black">SYN received</text>
+  </g>
+
+  <g id="edge_server_send_synack_to_client_receive_synack">
+    <line x1="190" y1="370" x2="190" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="190" y="385" text-anchor="middle" dominant-baseline="middle" fill="black">SYN‑ACK</text>
+  </g>
+
+  <g id="edge_client_receive_synack_to_client_send_ack">
+    <line x1="190" y1="470" x2="190" y2="500" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="190" y="485" text-anchor="middle" dominant-baseline="middle" fill="black">SYN‑ACK received</text>
+  </g>
+
+  <g id="edge_client_send_ack_to_connection_established">
+    <line x1="190" y1="570" x2="190" y2="600" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="190" y="585" text-anchor="middle" dominant-baseline="middle" fill="black">ACK</text>
+  </g>
+</svg>

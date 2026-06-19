@@ -1,0 +1,162 @@
+{
+  "timestamp": "20260424_155400",
+  "csv": "reports/batch_compare_20260424_154520.csv",
+  "overall": {
+    "total_topics": 20,
+    "passed": 12,
+    "failed": 8,
+    "pass_rate": 60.0,
+    "avg_attempts": 0.65,
+    "avg_connectors": 3.55,
+    "avg_overlaps": 0,
+    "avg_errors": 0.4,
+    "avg_group_count": 4.4,
+    "failed_topics": [
+      {
+        "topic": "TCP 3-way handshake",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: client_syn vs server_syn_ack; Nodes too close/overlapping: client_syn vs connection_termination; Nodes too close/overlapping: server_syn_ack vs client_ack; Nodes too close/overlapping: server_syn_ack vs connection_termination; Nodes too close/overlapping: client_ack vs connection_established; Nodes too close/overlapping: connection_established vs data_transfer"
+      },
+      {
+        "topic": "Transformer architecture",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: input_embedding vs positional_encoding; Nodes too close/overlapping: encoder_self_attention vs encoder_feed_forward; Nodes too close/overlapping: decoder_self_attention vs decoder_cross_attention; Nodes too close/overlapping: decoder_cross_attention vs decoder_feed_forward"
+      },
+      {
+        "topic": "Cell structure",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: cell_membrane vs cytoplasm; Nodes too close/overlapping: cytoplasm vs nucleus; Nodes too close/overlapping: mitochondria vs endoplasmic_reticulum; Nodes too close/overlapping: ribosome vs golgi_apparatus"
+      },
+      {
+        "topic": "Photosynthesis process",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: light_absorption vs water_splitting; Nodes too close/overlapping: water_splitting vs oxygen_release; Nodes too close/overlapping: oxygen_release vs atp_nadph_production; Nodes too close/overlapping: calvin_cycle vs glucose_synthesis; Nodes too close/overlapping: glucose_synthesis vs starch_storage"
+      },
+      {
+        "topic": "Neural network forward pass",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: input_layer vs hidden1; Nodes too close/overlapping: hidden1 vs activation1; Nodes too close/overlapping: activation1 vs hidden2; Nodes too close/overlapping: hidden2 vs activation2; Nodes too close/overlapping: activation2 vs output_layer; Nodes too close/overlapping: activation2 vs loss; Nodes too close/overlapping: output_layer vs loss"
+      },
+      {
+        "topic": "CPU memory hierarchy",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: registers vs l1_cache; Nodes too close/overlapping: l1_cache vs l2_cache; Nodes too close/overlapping: l2_cache vs l3_cache; Nodes too close/overlapping: l3_cache vs main_memory; Nodes too close/overlapping: main_memory vs secondary_storage"
+      },
+      {
+        "topic": "Kubernetes pod lifecycle",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: pending vs container_creating; Nodes too close/overlapping: container_creating vs running; Nodes too close/overlapping: running vs succeeded; Nodes too close/overlapping: succeeded vs failed; Nodes too close/overlapping: failed vs terminating"
+      },
+      {
+        "topic": "Blockchain transaction flow",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: user_initiates vs transaction_broadcast; Nodes too close/overlapping: transaction_broadcast vs transaction_validation; Nodes too close/overlapping: transaction_validation vs mining_consensus; Nodes too close/overlapping: mining_consensus vs block_added; Nodes too close/overlapping: block_added vs confirmation_to_user"
+      }
+    ]
+  },
+  "by_mode": {
+    "v1_direct": {
+      "total_topics": 10,
+      "passed": 10,
+      "failed": 0,
+      "pass_rate": 100.0,
+      "avg_attempts": 1.1,
+      "avg_connectors": 5.6,
+      "avg_overlaps": 0,
+      "avg_errors": 0,
+      "avg_group_count": 6.8,
+      "failed_topics": []
+    },
+    "v2_planner": {
+      "total_topics": 10,
+      "passed": 2,
+      "failed": 8,
+      "pass_rate": 20.0,
+      "avg_attempts": 0.2,
+      "avg_connectors": 1.5,
+      "avg_overlaps": 0,
+      "avg_errors": 0.8,
+      "avg_group_count": 2,
+      "failed_topics": [
+        {
+          "topic": "TCP 3-way handshake",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: client_syn vs server_syn_ack; Nodes too close/overlapping: client_syn vs connection_termination; Nodes too close/overlapping: server_syn_ack vs client_ack; Nodes too close/overlapping: server_syn_ack vs connection_termination; Nodes too close/overlapping: client_ack vs connection_established; Nodes too close/overlapping: connection_established vs data_transfer"
+        },
+        {
+          "topic": "Transformer architecture",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: input_embedding vs positional_encoding; Nodes too close/overlapping: encoder_self_attention vs encoder_feed_forward; Nodes too close/overlapping: decoder_self_attention vs decoder_cross_attention; Nodes too close/overlapping: decoder_cross_attention vs decoder_feed_forward"
+        },
+        {
+          "topic": "Cell structure",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: cell_membrane vs cytoplasm; Nodes too close/overlapping: cytoplasm vs nucleus; Nodes too close/overlapping: mitochondria vs endoplasmic_reticulum; Nodes too close/overlapping: ribosome vs golgi_apparatus"
+        },
+        {
+          "topic": "Photosynthesis process",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: light_absorption vs water_splitting; Nodes too close/overlapping: water_splitting vs oxygen_release; Nodes too close/overlapping: oxygen_release vs atp_nadph_production; Nodes too close/overlapping: calvin_cycle vs glucose_synthesis; Nodes too close/overlapping: glucose_synthesis vs starch_storage"
+        },
+        {
+          "topic": "Neural network forward pass",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: input_layer vs hidden1; Nodes too close/overlapping: hidden1 vs activation1; Nodes too close/overlapping: activation1 vs hidden2; Nodes too close/overlapping: hidden2 vs activation2; Nodes too close/overlapping: activation2 vs output_layer; Nodes too close/overlapping: activation2 vs loss; Nodes too close/overlapping: output_layer vs loss"
+        },
+        {
+          "topic": "CPU memory hierarchy",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: registers vs l1_cache; Nodes too close/overlapping: l1_cache vs l2_cache; Nodes too close/overlapping: l2_cache vs l3_cache; Nodes too close/overlapping: l3_cache vs main_memory; Nodes too close/overlapping: main_memory vs secondary_storage"
+        },
+        {
+          "topic": "Kubernetes pod lifecycle",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: pending vs container_creating; Nodes too close/overlapping: container_creating vs running; Nodes too close/overlapping: running vs succeeded; Nodes too close/overlapping: succeeded vs failed; Nodes too close/overlapping: failed vs terminating"
+        },
+        {
+          "topic": "Blockchain transaction flow",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: user_initiates vs transaction_broadcast; Nodes too close/overlapping: transaction_broadcast vs transaction_validation; Nodes too close/overlapping: transaction_validation vs mining_consensus; Nodes too close/overlapping: mining_consensus vs block_added; Nodes too close/overlapping: block_added vs confirmation_to_user"
+        }
+      ]
+    }
+  },
+  "delta_v2_minus_v1": {
+    "pass_rate_delta_v2_minus_v1": -80.0,
+    "avg_attempts_delta_v2_minus_v1": -0.9,
+    "avg_errors_delta_v2_minus_v1": 0.8,
+    "avg_overlaps_delta_v2_minus_v1": 0
+  }
+}

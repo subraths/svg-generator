@@ -1,0 +1,88 @@
+{
+  "topic": "Photosynthesis",
+  "iterations": 3,
+  "history": [
+    {
+      "iteration": 1,
+      "svg_path": "svg/photosynthesis_20260511_131955_agentic_iter1_invalid.svg",
+      "png_path": null,
+      "feedback": null,
+      "validation": {
+        "xml_valid": false,
+        "width": null,
+        "height": null,
+        "group_ids": [],
+        "group_count": 0,
+        "rect_count": 0,
+        "overlap_pairs": [],
+        "line_count": 0,
+        "polyline_count": 0,
+        "path_count": 0,
+        "marker_arrow_defined": false,
+        "connector_elements_total": 0,
+        "has_duplicate_ids": false,
+        "errors": [
+          "XML parse error: no element found: line 70, column 65"
+        ]
+      }
+    },
+    {
+      "iteration": 2,
+      "svg_path": "svg/photosynthesis_20260511_131955_agentic_iter2_invalid.svg",
+      "png_path": null,
+      "feedback": null,
+      "validation": {
+        "xml_valid": false,
+        "width": null,
+        "height": null,
+        "group_ids": [],
+        "group_count": 0,
+        "rect_count": 0,
+        "overlap_pairs": [],
+        "line_count": 0,
+        "polyline_count": 0,
+        "path_count": 0,
+        "marker_arrow_defined": false,
+        "connector_elements_total": 0,
+        "has_duplicate_ids": false,
+        "errors": [
+          "XML parse error: unclosed token: line 68, column 2"
+        ]
+      }
+    },
+    {
+      "iteration": 3,
+      "svg_path": "svg/photosynthesis_20260511_131955_agentic_iter3_invalid.svg",
+      "png_path": null,
+      "feedback": null,
+      "validation": {
+        "xml_valid": false,
+        "width": null,
+        "height": null,
+        "group_ids": [],
+        "group_count": 0,
+        "rect_count": 0,
+        "overlap_pairs": [],
+        "line_count": 0,
+        "polyline_count": 0,
+        "path_count": 0,
+        "marker_arrow_defined": false,
+        "connector_elements_total": 0,
+        "has_duplicate_ids": false,
+        "errors": [
+          "XML parse error: unclosed token: line 64, column 2"
+        ]
+      }
+    }
+  ],
+  "final_feedback": {
+    "pass": false,
+    "issues": [
+      {
+        "type": "xml",
+        "detail": "Invalid SVG XML"
+      }
+    ],
+    "summary": "SVG XML invalid; regenerate with strict XML correctness."
+  }
+}

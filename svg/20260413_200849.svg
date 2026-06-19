@@ -1,0 +1,54 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Client/Application -->
+  <g id="client">
+    <rect x="300" y="50" width="200" height="60" fill="#e0f7fa" stroke="#006064"/>
+    <text x="400" y="85" text-anchor="middle" font-size="18" fill="#006064">Client / Application</text>
+  </g>
+
+  <!-- Stub Resolver -->
+  <g id="stub_resolver">
+    <rect x="300" y="150" width="200" height="60" fill="#fff3e0" stroke="#e65100"/>
+    <text x="400" y="185" text-anchor="middle" font-size="18" fill="#e65100">Stub Resolver</text>
+  </g>
+
+  <!-- Recursive Resolver -->
+  <g id="recursive_resolver">
+    <rect x="300" y="250" width="200" height="60" fill="#e8f5e9" stroke="#1b5e20"/>
+    <text x="400" y="285" text-anchor="middle" font-size="18" fill="#1b5e20">Recursive Resolver</text>
+  </g>
+
+  <!-- Root DNS Server -->
+  <g id="root_server">
+    <rect x="300" y="350" width="200" height="60" fill="#f3e5f5" stroke="#4a148c"/>
+    <text x="400" y="385" text-anchor="middle" font-size="18" fill="#4a148c">Root DNS Server</text>
+  </g>
+
+  <!-- TLD DNS Server -->
+  <g id="tld_server">
+    <rect x="300" y="450" width="200" height="60" fill="#fffde7" stroke="#f57f17"/>
+    <text x="400" y="485" text-anchor="middle" font-size="18" fill="#f57f17">TLD DNS Server</text>
+  </g>
+
+  <!-- Authoritative DNS Server -->
+  <g id="authoritative_server">
+    <rect x="300" y="550" width="200" height="60" fill="#ffebee" stroke="#b71c1c"/>
+    <text x="400" y="585" text-anchor="middle" font-size="18" fill="#b71c1c">Authoritative Server</text>
+  </g>
+
+  <!-- Request flow arrows -->
+  <line x1="400" y1="110" x2="400" y2="150" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="210" x2="400" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="310" x2="400" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="410" x2="400" y2="450" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="510" x2="400" y2="550" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Answer flow back to client -->
+  <polyline points="400,610 150,610 150,30 400,30" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="155" y="320" font-size="16" fill="#1565c0">DNS Answer</text>
+</svg>

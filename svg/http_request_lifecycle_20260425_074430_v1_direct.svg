@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Browser (Client) -->
+  <g id="client">
+    <rect x="50" y="360" width="140" height="80" rx="10" fill="#f0f0f0" stroke="#000"/>
+    <text x="120" y="400" text-anchor="middle" dominant-baseline="middle"
+          font-size="18" font-family="sans-serif">Browser (Client)</text>
+  </g>
+
+  <!-- DNS Lookup -->
+  <g id="dns_lookup">
+    <rect x="230" y="360" width="140" height="80" rx="10" fill="#f0f0f0" stroke="#000"/>
+    <text x="300" y="400" text-anchor="middle" dominant-baseline="middle"
+          font-size="18" font-family="sans-serif">DNS Lookup</text>
+  </g>
+
+  <!-- TCP Handshake -->
+  <g id="tcp_handshake">
+    <rect x="410" y="360" width="140" height="80" rx="10" fill="#f0f0f0" stroke="#000"/>
+    <text x="480" y="400" text-anchor="middle" dominant-baseline="middle"
+          font-size="18" font-family="sans-serif">TCP Handshake</text>
+  </g>
+
+  <!-- TLS Handshake -->
+  <g id="tls_handshake">
+    <rect x="590" y="360" width="140" height="80" rx="10" fill="#f0f0f0" stroke="#000"/>
+    <text x="660" y="400" text-anchor="middle" dominant-baseline="middle"
+          font-size="18" font-family="sans-serif">TLS Handshake</text>
+  </g>
+
+  <!-- HTTP Request -->
+  <g id="http_request">
+    <rect x="770" y="360" width="140" height="80" rx="10" fill="#f0f0f0" stroke="#000"/>
+    <text x="840" y="400" text-anchor="middle" dominant-baseline="middle"
+          font-size="18" font-family="sans-serif">HTTP Request</text>
+  </g>
+
+  <!-- Server Processing -->
+  <g id="server_processing">
+    <rect x="950" y="360" width="140" height="80" rx="10" fill="#f0f0f0" stroke="#000"/>
+    <text x="1020" y="400" text-anchor="middle" dominant-baseline="middle"
+          font-size="18" font-family="sans-serif">Server Processing</text>
+  </g>
+
+  <!-- HTTP Response -->
+  <g id="http_response">
+    <rect x="950" y="500" width="140" height="80" rx="10" fill="#f0f0f0" stroke="#000"/>
+    <text x="1020" y="540" text-anchor="middle" dominant-baseline="middle"
+          font-size="18" font-family="sans-serif">HTTP Response</text>
+  </g>
+
+  <!-- Rendering -->
+  <g id="rendering">
+    <rect x="50" y="500" width="140" height="80" rx="10" fill="#f0f0f0" stroke="#000"/>
+    <text x="120" y="540" text-anchor="middle" dominant-baseline="middle"
+          font-size="18" font-family="sans-serif">Render Page</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- Client → DNS -->
+  <line x1="190" y1="400" x2="230" y2="400" stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- DNS → TCP -->
+  <line x1="370" y1="400" x2="410" y2="400" stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- TCP → TLS -->
+  <line x1="550" y1="400" x2="590" y2="400" stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- TLS → HTTP Request -->
+  <line x1="730" y1="400" x2="770" y2="400" stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- HTTP Request → Server -->
+  <line x1="910" y1="400" x2="950" y2="400" stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- Server → HTTP Response (down) -->
+  <line x1="1020" y1="440" x2="1020" y2="500" stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- HTTP Response → Rendering (left, routed) -->
+  <path d="M1020,540 L1020,620 L190,620 L190,540"
+        fill="none" stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead)"/>
+
+</svg>

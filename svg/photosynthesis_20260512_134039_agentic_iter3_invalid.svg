@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="280" y="305" width="180" height="70" fill="#f9f9a9" stroke="#333" />
+    <text x="370" y="345" text-anchor="middle" dominant-baseline="middle" font-size="16">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="500" y="305" width="180" height="70" fill="#a9f9c9" stroke="#333" />
+    <text x="590" y="345" text-anchor="middle" dominant-baseline="middle" font-size="16">Chlorophyll</text>
+  </g>
+
+  <g id="light_dependent_reactions">
+    <rect x="720" y="305" width="180" height="70" fill="#a9c9f9" stroke="#333" />
+    <text x="810" y="345" text-anchor="middle" dominant-baseline="middle" font-size="14">Light‑Dependent Reactions</text>
+  </g>
+
+  <g id="water">
+    <rect x="720" y="405" width="180" height="70" fill="#c9e0ff" stroke="#333" />
+    <text x="810" y="445" text-anchor="middle" dominant-baseline="middle" font-size="14">Water (H₂O)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="940" y="305" width="180" height="70" fill="#ffd9b3" stroke="#333" />
+    <text x="1030" y="345" text-anchor="middle" dominant-baseline="middle" font-size="14">Oxygen Release (O₂)</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="720" y="505" width="180" height="70" fill="#ffb3b3" stroke="#333" />
+    <text x="810" y="545" text-anchor="middle" dominant-baseline="middle" font-size="14">ATP &amp; NADPH</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="720" y="625" width="180" height="70" fill="#b3ffb3" stroke="#333" />
+    <text x="810" y="665" text-anchor="middle" dominant-baseline="middle" font-size="13">Calvin Cycle (Light‑Independent)</text>
+  </g>
+
+  <g id="co2">
+    <rect x="500" y="625" width="180" height="70" fill="#e6e6e6" stroke="#333" />
+    <text x="590" y="665" text-anchor="middle" dominant-baseline="middle" font-size="14">Carbon Dioxide (CO₂)</text>
+  </g>
+
+  <g id="glucose">
+    <rect x="940" y="625" width="180" height="70" fill="#ffeb99" stroke="#333" />
+    <text x="1030" y="665" text-anchor="middle" dominant-baseline="middle" font-size="14">Glucose (C₆H₁₂O₆)</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_sunlight_chlorophyll">
+    <path d="M460,340 L500,340" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="480" y="332" text-anchor="middle" font-size="12">absorbs</text>
+  </g>
+
+  <g id="edge_chlorophyll_light_dependent_reactions">
+    <path d="M680,340 L720,340" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="700" y="332" text-anchor="middle" font-size="12">excites</text>
+  </g>
+
+  <g id="edge_water_light_dependent_reactions">
+    <path d="M810,405 L810,375" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="822" y="390" font-size="12">splits</text>
+  </g>
+
+  <g id="edge_light_dependent_reactions_atp_nadph">
+    <path d="M810,375 L810,505" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="822" y="440" font-size="12">produces</text>
+  </g>
+
+  <g id="edge_light_dependent_reactions_oxygen_release">
+    <path d="M900,340 L940,340" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="920" y="332" text-anchor="middle" font-size="12">releases O₂</text>
+  </g>
+
+  <g id="edge_atp_nadph_calvin_cycle">
+    <path d="M810,575 L810,625" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="822" y="600" font-size="12">provides energy</text>
+  </g>
+
+  <g id="edge_co2_calvin_cycle">
+    <path d="M680,660 L720,660" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="700" y="652" text-anchor="middle" font-size="12">fixes</text>
+  </g>
+
+  <g id="edge_calvin_cycle_glucose">
+    <path d="M900,660 L940,660" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="920"

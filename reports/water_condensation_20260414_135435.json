@@ -1,0 +1,37 @@
+{
+  "timestamp": "20260414_135435",
+  "topic": "Water condensation",
+  "model": "openai/gpt-oss-120b",
+  "mode": "v2_planner",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "water_vapor",
+      "cooling",
+      "saturation_point",
+      "condensation_nuclei",
+      "droplet_formation",
+      "cloud_formation",
+      "precipitation"
+    ],
+    "group_count": 7,
+    "rect_count": 7,
+    "overlap_pairs": [],
+    "line_count": 6,
+    "polyline_count": 0,
+    "path_count": 1,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 7,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/water_condensation_20260414_135435.svg",
+    "png": "img/water_condensation_20260414_135435.png",
+    "plan": "reports/water_condensation_20260414_135435_plan.json"
+  }
+}

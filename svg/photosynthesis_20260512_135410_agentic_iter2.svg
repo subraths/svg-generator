@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="14">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="210" y="275" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="300" y="310" text-anchor="middle" dominant-baseline="middle">Light Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="430" y="275" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="520" y="310" text-anchor="middle" dominant-baseline="middle">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="650" y="275" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="740" y="310" text-anchor="middle" dominant-baseline="middle">Oxygen Release</text>
+  </g>
+
+  <g id="electron_transport">
+    <rect x="430" y="375" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="520" y="410" text-anchor="middle" dominant-baseline="middle">Electron Transport Chain</text>
+  </g>
+
+  <g id="atp_synthesis">
+    <rect x="650" y="375" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="740" y="410" text-anchor="middle" dominant-baseline="middle">ATP Synthesis (Chemiosmosis)</text>
+  </g>
+
+  <g id="nadph_formation">
+    <rect x="850" y="375" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="940" y="410" text-anchor="middle" dominant-baseline="middle">NADPH Formation</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="650" y="495" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="740" y="530" text-anchor="middle" dominant-baseline="middle">Carbon Fixation (Calvin Cycle)</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="850" y="495" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="940" y="530" text-anchor="middle" dominant-baseline="middle">Glucose Production</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_light_absorption_water_splitting">
+    <line x1="390" y1="310" x2="430" y2="310" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="410" y="298" text-anchor="middle" fill="#000" font-size="12">light energy</text>
+  </g>
+
+  <g id="edge_light_absorption_electron_transport">
+    <line x1="300" y1="345" x2="520" y2="375" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="410" y="360" text-anchor="middle" fill="#000" font-size="12">excited electrons</text>
+  </g>
+
+  <g id="edge_water_splitting_oxygen_release">
+    <line x1="610" y1="310" x2="650" y2="310" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="630" y="298" text-anchor="middle" fill="#000" font-size="12">O₂</text>
+  </g>
+
+  <g id="edge_electron_transport_atp_synthesis">
+    <line x1="610" y1="410" x2="650" y2="410" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="630" y="398" text-anchor="middle" fill="#000" font-size="12">proton gradient</text>
+  </g>
+
+  <g id="edge_electron_transport_nadph_formation">
+    <line x1="610" y1="410" x2="850" y2="410" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="730" y="398" text-anchor="middle" fill="#000" font-size="12">e⁻ transfer</text>
+  </g>
+
+  <g id="edge_atp_synthesis_carbon_fixation">
+    <line x1="740" y1="445" x2="740" y2="495" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="752" y="470" text-anchor="start" fill="#000" font-size="12">ATP</text>
+  </g>
+
+  <g id="edge_nadph_formation_carbon_fixation">
+    <line x1="940" y1="445" x2="940" y2="495" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="952" y="470" text-anchor="start" fill="#000" font-size="12">NADPH</text>
+  </g>
+
+  <g id="edge_carbon_fixation_glucose_production">
+    <line x1="830" y1="530" x2="850" y2="530" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="840" y="518" text-anchor="middle" fill="#000" font-size="12">C₃ sugars</text>
+  </g>
+
+</svg>

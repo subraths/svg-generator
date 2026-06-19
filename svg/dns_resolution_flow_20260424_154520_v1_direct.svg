@@ -1,0 +1,53 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Application Request -->
+  <g id="application_request">
+    <rect x="450" y="50" width="300" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="600" y="90" text-anchor="middle" dominant-baseline="middle" font-size="18">Application Request</text>
+  </g>
+
+  <!-- Stub Resolver -->
+  <g id="stub_resolver">
+    <rect x="450" y="180" width="300" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="600" y="220" text-anchor="middle" dominant-baseline="middle" font-size="18">Stub Resolver</text>
+  </g>
+
+  <!-- Recursive Resolver -->
+  <g id="recursive_resolver">
+    <rect x="450" y="310" width="300" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="600" y="350" text-anchor="middle" dominant-baseline="middle" font-size="18">Recursive Resolver</text>
+  </g>
+
+  <!-- Root Name Server -->
+  <g id="root_name_server">
+    <rect x="450" y="440" width="300" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="600" y="480" text-anchor="middle" dominant-baseline="middle" font-size="18">Root Name Server</text>
+  </g>
+
+  <!-- TLD Name Server -->
+  <g id="tld_name_server">
+    <rect x="450" y="570" width="300" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="600" y="610" text-anchor="middle" dominant-baseline="middle" font-size="18">TLD Name Server</text>
+  </g>
+
+  <!-- Authoritative Name Server -->
+  <g id="authoritative_name_server">
+    <rect x="450" y="700" width="300" height="80" fill="#e0f7fa" stroke="#000"/>
+    <text x="600" y="740" text-anchor="middle" dominant-baseline="middle" font-size="18">Authoritative Name Server</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="600" y1="130" x2="600" y2="180" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="260" x2="600" y2="310" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="390" x2="600" y2="440" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="520" x2="600" y2="570" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="650" x2="600" y2="700" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Return arrow to Application -->
+  <line x1="600" y1="780" x2="600" y2="130" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)" stroke-dasharray="5,5"/>
+</svg>

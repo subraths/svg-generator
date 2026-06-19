@@ -1,0 +1,40 @@
+{
+  "timestamp": "20260424_212148",
+  "batch_stamp": "20260424_211833",
+  "topic": "Neural network forward pass",
+  "mode": "v1_direct",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 2,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "input_layer",
+      "hidden_layer1",
+      "hidden_layer2",
+      "output_layer",
+      "weights",
+      "weight1",
+      "weight2",
+      "weight3",
+      "activation_functions"
+    ],
+    "group_count": 9,
+    "rect_count": 7,
+    "overlap_pairs": [],
+    "line_count": 6,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 6,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/neural_network_forward_pass_20260424_211833_v1_direct.svg",
+    "png": "img/neural_network_forward_pass_20260424_211833_v1_direct.png",
+    "plan": null
+  }
+}

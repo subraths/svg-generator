@@ -1,0 +1,107 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 40,
+      "y": 60,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_uptake",
+      "label": "Water Uptake",
+      "x": 40,
+      "y": 160,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "co2_fixation",
+      "label": "CO\u2082 Fixation",
+      "x": 40,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent_reactions",
+      "label": "Light\u2011Dependent Reactions",
+      "x": 260,
+      "y": 80,
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle",
+      "x": 260,
+      "y": 260,
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 260,
+      "y": 180,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 500,
+      "y": 260,
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "energy_carriers",
+      "label": "Energy Carriers (ATP/NADPH)",
+      "x": 500,
+      "y": 80,
+      "w": 200,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "light_absorption",
+      "to": "light_dependent_reactions",
+      "label": "absorbs light"
+    },
+    {
+      "from": "water_uptake",
+      "to": "light_dependent_reactions",
+      "label": "provides electrons"
+    },
+    {
+      "from": "co2_fixation",
+      "to": "calvin_cycle",
+      "label": "CO\u2082 enters"
+    },
+    {
+      "from": "light_dependent_reactions",
+      "to": "oxygen_release",
+      "label": "produces O\u2082"
+    },
+    {
+      "from": "light_dependent_reactions",
+      "to": "energy_carriers",
+      "label": "produces ATP/NADPH"
+    },
+    {
+      "from": "energy_carriers",
+      "to": "calvin_cycle",
+      "label": "provides energy"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_production",
+      "label": "synthesizes glucose"
+    }
+  ]
+}

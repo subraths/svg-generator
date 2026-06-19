@@ -1,0 +1,120 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 20,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll",
+      "x": 240,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent",
+      "label": "Light\u2011dependent Reactions",
+      "x": 460,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting (Photolysis)",
+      "x": 460,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 660,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP & NADPH Production",
+      "x": 860,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_independent",
+      "label": "Light\u2011independent Reactions (Calvin Cycle)",
+      "x": 460,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_fixation",
+      "label": "Carbon Fixation",
+      "x": 460,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_synthesis",
+      "label": "Glucose Synthesis",
+      "x": 460,
+      "y": 440,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll",
+      "label": "absorbs"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent",
+      "label": "excites electrons"
+    },
+    {
+      "from": "light_dependent",
+      "to": "water_splitting",
+      "label": "drives"
+    },
+    {
+      "from": "light_dependent",
+      "to": "oxygen_release",
+      "label": "produces"
+    },
+    {
+      "from": "light_dependent",
+      "to": "atp_nadph",
+      "label": "generates"
+    },
+    {
+      "from": "light_dependent",
+      "to": "light_independent",
+      "label": "provides ATP/NADPH"
+    },
+    {
+      "from": "light_independent",
+      "to": "carbon_fixation",
+      "label": "fixes CO\u2082"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "glucose_synthesis",
+      "label": "produces glucose"
+    }
+  ]
+}

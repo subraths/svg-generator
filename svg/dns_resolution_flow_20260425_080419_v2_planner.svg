@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="14">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-size="24" font-weight="bold">DNS Resolution Flow</text>
+
+  <!-- Nodes -->
+  <g id="client_query">
+    <rect x="100" y="360" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="190" y="395" text-anchor="middle" dominant-baseline="middle">Client Query</text>
+  </g>
+
+  <g id="recursive_resolver">
+    <rect x="460" y="360" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="550" y="395" text-anchor="middle" dominant-baseline="middle">Recursive Resolver</text>
+  </g>
+
+  <g id="root_server">
+    <rect x="460" y="100" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="550" y="135" text-anchor="middle" dominant-baseline="middle">Root DNS Server</text>
+  </g>
+
+  <g id="tld_server">
+    <rect x="460" y="240" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="550" y="275" text-anchor="middle" dominant-baseline="middle">TLD DNS Server</text>
+  </g>
+
+  <g id="authoritative_server">
+    <rect x="800" y="380" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="890" y="415" text-anchor="middle" dominant-baseline="middle">Authoritative DNS Server</text>
+  </g>
+
+  <g id="dns_response">
+    <rect x="100" y="560" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="190" y="595" text-anchor="middle" dominant-baseline="middle">DNS Response</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- client_query -> recursive_resolver -->
+  <line x1="190" y1="395" x2="550" y2="395" stroke="#000" marker-end="url(#arrowhead)"/>
+  <text x="370" y="385" text-anchor="middle">Query</text>
+
+  <!-- recursive_resolver -> root_server -->
+  <line x1="550" y1="395" x2="550" y2="135" stroke="#000" marker-end="url(#arrowhead)"/>
+  <text x="560" y="265" text-anchor="start">Ask</text>
+
+  <!-- root_server -> recursive_resolver -->
+  <line x1="550" y1="135" x2="550" y2="395" stroke="#000" marker-end="url(#arrowhead)"/>
+  <text x="560" y="265" text-anchor="start">Referral</text>
+
+  <!-- recursive_resolver -> tld_server -->
+  <line x1="550" y1="395" x2="550" y2="275" stroke="#000" marker-end="url(#arrowhead)"/>
+  <text x="560" y="335" text-anchor="start">Ask</text>
+
+  <!-- tld_server -> recursive_resolver -->
+  <line x1="550" y1="275" x2="550" y2="395" stroke="#000" marker-end="url(#arrowhead)"/>
+  <text x="560" y="335" text-anchor="start">Referral</text>
+
+  <!-- recursive_resolver -> authoritative_server -->
+  <line x1="550" y1="395" x2="890" y2="415" stroke="#000" marker-end="url(#arrowhead)"/>
+  <text x="720" y="395" text-anchor="middle">Ask</text>
+
+  <!-- authoritative_server -> recursive_resolver -->
+  <line x1="890" y1="415" x2="550" y2="395" stroke="#000" marker-end="url(#arrowhead)"/>
+  <text x="720" y="425" text-anchor="middle">Answer</text>
+
+  <!-- recursive_resolver -> dns_response -->
+  <line x1="550" y1="395" x2="190" y2="595" stroke="#000" marker-end="url(#arrowhead)"/>
+  <text x="370" y="510" text-anchor="middle">Response</text>
+</svg>

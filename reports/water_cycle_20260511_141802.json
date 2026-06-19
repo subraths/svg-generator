@@ -1,0 +1,38 @@
+{
+  "timestamp": "20260511_141802",
+  "topic": "Water Cycle",
+  "model": "openai/gpt-oss-120b",
+  "mode": "v2_planner_agentic",
+  "attempts_used": 1,
+  "max_attempts": 3,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "evaporation",
+      "transpiration",
+      "sublimation",
+      "condensation",
+      "precipitation",
+      "runoff",
+      "collection",
+      "infiltration"
+    ],
+    "group_count": 8,
+    "rect_count": 8,
+    "overlap_pairs": [],
+    "line_count": 0,
+    "polyline_count": 0,
+    "path_count": 10,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 10,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/water_cycle_20260511_141802.svg",
+    "png": "img/water_cycle_20260511_141802.png",
+    "plan": "reports/water_cycle_20260511_141802_plan.json"
+  }
+}

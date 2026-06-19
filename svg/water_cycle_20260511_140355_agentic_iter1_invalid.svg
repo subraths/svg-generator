@@ -1,0 +1,58 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L10,3.5 Z" fill="#000"/>
+    </marker>
+    <style>
+      .node { fill:#e0f7ff; stroke:#000; stroke-width:2; }
+      .edge { fill:none; stroke:#000; stroke-width:2; }
+      .label { font-family:Arial,Helvetica,sans-serif; font-size:14px; pointer-events:none; }
+      .title { font-family:Arial,Helvetica,sans-serif; font-size:32px; font-weight:bold; text-anchor:middle; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" class="title">Water Cycle</text>
+
+  <!-- Nodes -->
+  <g id="evaporation">
+    <rect x="510" y="265" width="180" height="70" class="node"/>
+    <text x="600" y="300" class="label" text-anchor="middle" dominant-baseline="middle">Evaporation</text>
+  </g>
+
+  <g id="transpiration">
+    <rect x="710" y="265" width="180" height="70" class="node"/>
+    <text x="800" y="300" class="label" text-anchor="middle" dominant-baseline="middle">Transpiration</text>
+  </g>
+
+  <g id="sublimation">
+    <rect x="910" y="265" width="180" height="70" class="node"/>
+    <text x="1000" y="300" class="label" text-anchor="middle" dominant-baseline="middle">Sublimation</text>
+  </g>
+
+  <g id="condensation">
+    <rect x="910" y="365" width="180" height="70" class="node"/>
+    <text x="1000" y="400" class="label" text-anchor="middle" dominant-baseline="middle">Condensation</text>
+  </g>
+
+  <g id="precipitation">
+    <rect x="910" y="565" width="180" height="70" class="node"/>
+    <text x="1000" y="600" class="label" text-anchor="middle" dominant-baseline="middle">Precipitation</text>
+  </g>
+
+  <g id="collection">
+    <rect x="710" y="665" width="180" height="70" class="node"/>
+    <text x="800" y="700" class="label" text-anchor="middle" dominant-baseline="middle">Collection (Lakes/Oceans)</text>
+  </g>
+
+  <g id="runoff">
+    <rect x="510" y="665" width="180" height="70" class="node"/>
+    <text x="600" y="700" class="label" text-anchor="middle" dominant-baseline="middle">Runoff</text>
+  </g>
+
+  <g id="infiltration">
+    <rect x="510" y="465" width="180" height="70" class="node"/>
+    <text x="600" y="500" class="label" text-anchor="middle" dominant-baseline="middle">Infiltration</text>
+  </g>
+
+  <g id="

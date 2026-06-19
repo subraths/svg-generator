@@ -1,0 +1,59 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Cell Wall -->
+  <g id="cell_wall">
+    <rect x="50" y="50" width="200" height="100" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="150" y="115" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#006064">Cell Wall</text>
+  </g>
+
+  <!-- Cell Membrane -->
+  <g id="cell_membrane">
+    <rect x="300" y="50" width="200" height="100" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="400" y="115" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#e65100">Cell Membrane</text>
+  </g>
+
+  <!-- Nucleus -->
+  <g id="nucleus">
+    <rect x="550" y="50" width="200" height="100" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+    <text x="650" y="115" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#4a148c">Nucleus</text>
+  </g>
+
+  <!-- Mitochondria -->
+  <g id="mitochondria">
+    <rect x="50" y="250" width="200" height="100" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="150" y="315" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#1b5e20">Mitochondria</text>
+  </g>
+
+  <!-- Chloroplast -->
+  <g id="chloroplast">
+    <rect x="300" y="250" width="200" height="100" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2"/>
+    <text x="400" y="315" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#0d47a1">Chloroplast</text>
+  </g>
+
+  <!-- Endoplasmic Reticulum -->
+  <g id="endoplasmic_reticulum">
+    <rect x="550" y="250" width="250" height="100" fill="#fffde7" stroke="#f57f17" stroke-width="2"/>
+    <text x="675" y="315" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#f57f17">Endoplasmic Reticulum</text>
+  </g>
+
+  <!-- Arrows showing relationships -->
+  <!-- Cell Wall → Cell Membrane -->
+  <line x1="250" y1="100" x2="300" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Cell Membrane → Nucleus -->
+  <line x1="500" y1="100" x2="550" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Cell Membrane → Mitochondria -->
+  <line x1="400" y1="150" x2="150" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Cell Membrane → Chloroplast -->
+  <line x1="400" y1="150" x2="400" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Cell Membrane → Endoplasmic Reticulum -->
+  <line x1="400" y1="150" x2="675" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

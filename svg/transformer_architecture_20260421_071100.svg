@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" font-family="Arial" font-size="24" text-anchor="middle">Transformer Architecture</text>
+
+  <!-- Nodes -->
+  <g id="input_embedding">
+    <rect x="40" y="200" width="180" height="70" fill="#cce5ff" stroke="black"/>
+    <text x="130" y="235" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle">Input Embedding</text>
+  </g>
+
+  <g id="positional_encoding">
+    <rect x="260" y="200" width="180" height="70" fill="#cce5ff" stroke="black"/>
+    <text x="350" y="235" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle">Positional Encoding</text>
+  </g>
+
+  <g id="encoder_self_attention">
+    <rect x="480" y="200" width="180" height="70" fill="#cce5ff" stroke="black"/>
+    <text x="570" y="235" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle">Multi-Head Self-Attention</text>
+  </g>
+
+  <g id="encoder_feed_forward">
+    <rect x="700" y="200" width="180" height="70" fill="#cce5ff" stroke="black"/>
+    <text x="790" y="235" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle">Feed-Forward Network</text>
+  </g>
+
+  <g id="encoder_output">
+    <rect x="920" y="200" width="180" height="70" fill="#cce5ff" stroke="black"/>
+    <text x="1010" y="235" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle">Encoder Output</text>
+  </g>
+
+  <g id="decoder_stack">
+    <rect x="720" y="340" width="180" height="70" fill="#ffebcc" stroke="black"/>
+    <text x="810" y="375" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle">Decoder Stack</text>
+  </g>
+
+  <g id="output_logits">
+    <rect x="920" y="340" width="180" height="70" fill="#ffebcc" stroke="black"/>
+    <text x="1010" y="375" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle">Output (Logits)</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- input_embedding -> positional_encoding -->
+  <line x1="220" y1="235" x2="260" y2="235" stroke="black" marker-end="url(#arrowhead)"/>
+
+  <!-- positional_encoding -> encoder_self_attention -->
+  <line x1="440" y1="235" x2="480" y2="235" stroke="black" marker-end="url(#arrowhead)"/>
+
+  <!-- encoder_self_attention -> encoder_feed_forward -->
+  <line x1="660" y1="235" x2="700" y2="235" stroke="black" marker-end="url(#arrowhead)"/>
+
+  <!-- encoder_feed_forward -> encoder_output -->
+  <line x1="880" y1="235" x2="920" y2="235" stroke="black" marker-end="url(#arrowhead)"/>
+
+  <!-- encoder_output -> decoder_stack -->
+  <line x1="1100" y1="235" x2="720" y2="375" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="910" y="300" font-family="Arial" font-size="12" text-anchor="middle" dominant-baseline="middle">Encoder-Decoder Attention</text>
+
+  <!-- decoder_stack -> output_logits -->
+  <line x1="900" y1="375" x2="920" y2="375" stroke="black" marker-end="url(#arrowhead)"/>
+</svg>

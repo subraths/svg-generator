@@ -1,0 +1,172 @@
+{
+  "diagram_type": "flow",
+  "title": "Blood Flow Through the Heart",
+  "nodes": [
+    {
+      "id": "vena_cava",
+      "label": "Superior & Inferior Vena Cava",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "right_atrium",
+      "label": "Right Atrium",
+      "x": 100,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "tricuspid_valve",
+      "label": "Tricuspid Valve",
+      "x": 100,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "right_ventricle",
+      "label": "Right Ventricle",
+      "x": 100,
+      "y": 400,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "pulmonary_valve",
+      "label": "Pulmonary Valve",
+      "x": 100,
+      "y": 500,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "pulmonary_artery",
+      "label": "Pulmonary Artery",
+      "x": 100,
+      "y": 600,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "lungs",
+      "label": "Lungs (Capillaries)",
+      "x": 100,
+      "y": 700,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "pulmonary_veins",
+      "label": "Pulmonary Veins",
+      "x": 400,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "left_atrium",
+      "label": "Left Atrium",
+      "x": 400,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "mitral_valve",
+      "label": "Mitral Valve",
+      "x": 400,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "left_ventricle",
+      "label": "Left Ventricle",
+      "x": 400,
+      "y": 400,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "aortic_valve",
+      "label": "Aortic Valve",
+      "x": 400,
+      "y": 500,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "aorta",
+      "label": "Aorta",
+      "x": 400,
+      "y": 600,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "vena_cava",
+      "to": "right_atrium",
+      "label": "deoxygenated blood"
+    },
+    {
+      "from": "right_atrium",
+      "to": "tricuspid_valve",
+      "label": "through"
+    },
+    {
+      "from": "tricuspid_valve",
+      "to": "right_ventricle",
+      "label": ""
+    },
+    {
+      "from": "right_ventricle",
+      "to": "pulmonary_valve",
+      "label": ""
+    },
+    {
+      "from": "pulmonary_valve",
+      "to": "pulmonary_artery",
+      "label": ""
+    },
+    {
+      "from": "pulmonary_artery",
+      "to": "lungs",
+      "label": ""
+    },
+    {
+      "from": "lungs",
+      "to": "pulmonary_veins",
+      "label": ""
+    },
+    {
+      "from": "pulmonary_veins",
+      "to": "left_atrium",
+      "label": ""
+    },
+    {
+      "from": "left_atrium",
+      "to": "mitral_valve",
+      "label": "through"
+    },
+    {
+      "from": "mitral_valve",
+      "to": "left_ventricle",
+      "label": ""
+    },
+    {
+      "from": "left_ventricle",
+      "to": "aortic_valve",
+      "label": ""
+    },
+    {
+      "from": "aortic_valve",
+      "to": "aorta",
+      "label": ""
+    }
+  ]
+}

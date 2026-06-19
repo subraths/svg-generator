@@ -1,0 +1,94 @@
+{
+  "diagram_type": "architecture",
+  "title": "Transformer Architecture",
+  "nodes": [
+    {
+      "id": "input_embedding",
+      "label": "Input Embedding",
+      "x": 40,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "positional_encoding",
+      "label": "Positional Encoding",
+      "x": 260,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_self_attention",
+      "label": "Multi-Head Self-Attention",
+      "x": 480,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_feed_forward",
+      "label": "Feed-Forward Network",
+      "x": 700,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "encoder_output",
+      "label": "Encoder Output",
+      "x": 920,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "decoder_stack",
+      "label": "Decoder Stack",
+      "x": 720,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "output_logits",
+      "label": "Output (Logits)",
+      "x": 920,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "input_embedding",
+      "to": "positional_encoding",
+      "label": ""
+    },
+    {
+      "from": "positional_encoding",
+      "to": "encoder_self_attention",
+      "label": ""
+    },
+    {
+      "from": "encoder_self_attention",
+      "to": "encoder_feed_forward",
+      "label": ""
+    },
+    {
+      "from": "encoder_feed_forward",
+      "to": "encoder_output",
+      "label": ""
+    },
+    {
+      "from": "encoder_output",
+      "to": "decoder_stack",
+      "label": "Encoder-Decoder Attention"
+    },
+    {
+      "from": "decoder_stack",
+      "to": "output_logits",
+      "label": ""
+    }
+  ]
+}

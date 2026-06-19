@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <g id="client_send_syn">
+    <rect x="370" y="355" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="460" y="390" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Client: SEND SYN</text>
+  </g>
+
+  <g id="server_recv_syn">
+    <rect x="610" y="355" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="700" y="390" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Server: RECV SYN</text>
+  </g>
+
+  <g id="server_send_synack">
+    <rect x="850" y="355" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="940" y="390" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Server: SEND SYN‑ACK</text>
+  </g>
+
+  <g id="client_recv_synack">
+    <rect x="370" y="455" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="460" y="490" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Client: RECV SYN‑ACK</text>
+  </g>
+
+  <g id="client_send_ack">
+    <rect x="610" y="455" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="700" y="490" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Client: SEND ACK</text>
+  </g>
+
+  <g id="server_recv_ack">
+    <rect x="850" y="455" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="940" y="490" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Server: RECV ACK</text>
+  </g>
+
+  <g id="connection_established">
+    <rect x="610" y="575" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="700" y="610" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Connection Established</text>
+  </g>
+
+  <!-- Edges -->
+  <path d="M550,390 L610,390" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M790,390 L850,390" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M1030,390 L1030,490 L370,490" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M550,490 L610,490" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M790,490 L850,490" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M1030,490 L1030,610 L700,610" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Edge Labels -->
+  <text x="580" y="380" text-anchor="middle" font-family="sans-serif" font-size="12">SYN</text>
+  <text x="720" y="380" text-anchor="middle" font-family="sans-serif" font-size="12">process</text>
+  <text x="690" y="440" text-anchor="middle" font-family="sans-serif" font-size="12">SYN‑ACK</text>
+  <text x="580" y="480" text-anchor="middle" font-family="sans-serif" font-size="12">process</text>
+  <text x="720" y="480" text-anchor="middle" font-family="sans-serif" font-size="12">ACK</text>
+  <text x="720" y="560" text-anchor="middle" font-family="sans-serif" font-size="12">established</text>
+</svg>

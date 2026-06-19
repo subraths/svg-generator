@@ -1,0 +1,81 @@
+{
+  "diagram_type": "flow",
+  "title": "Neural Network Forward Pass",
+  "nodes": [
+    {
+      "id": "input_layer",
+      "label": "Input Layer",
+      "x": 20,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "hidden1_layer",
+      "label": "Hidden Layer 1",
+      "x": 220,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "hidden2_layer",
+      "label": "Hidden Layer 2",
+      "x": 420,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "output_layer",
+      "label": "Output Layer",
+      "x": 620,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "loss_calc",
+      "label": "Loss Calculation",
+      "x": 820,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "prediction",
+      "label": "Predicted Class",
+      "x": 1020,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "input_layer",
+      "to": "hidden1_layer",
+      "label": "weights"
+    },
+    {
+      "from": "hidden1_layer",
+      "to": "hidden2_layer",
+      "label": "weights"
+    },
+    {
+      "from": "hidden2_layer",
+      "to": "output_layer",
+      "label": "weights"
+    },
+    {
+      "from": "output_layer",
+      "to": "loss_calc",
+      "label": "loss"
+    },
+    {
+      "from": "output_layer",
+      "to": "prediction",
+      "label": "prediction"
+    }
+  ]
+}

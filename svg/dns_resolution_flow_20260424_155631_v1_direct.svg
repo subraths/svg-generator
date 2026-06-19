@@ -1,0 +1,72 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Application request -->
+  <g id="application">
+    <rect x="500" y="50" width="200" height="80" fill="white" stroke="black"/>
+    <text x="600" y="90" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">
+      Application Request
+    </text>
+  </g>
+
+  <!-- Stub resolver -->
+  <g id="stub_resolver">
+    <rect x="500" y="170" width="200" height="80" fill="white" stroke="black"/>
+    <text x="600" y="210" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">
+      Stub Resolver
+    </text>
+  </g>
+
+  <!-- Recursive resolver -->
+  <g id="recursive_resolver">
+    <rect x="500" y="290" width="200" height="80" fill="white" stroke="black"/>
+    <text x="600" y="330" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">
+      Recursive Resolver
+    </text>
+  </g>
+
+  <!-- Root name server -->
+  <g id="root_server">
+    <rect x="500" y="410" width="200" height="80" fill="white" stroke="black"/>
+    <text x="600" y="450" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">
+      Root Name Server
+    </text>
+  </g>
+
+  <!-- TLD name server -->
+  <g id="tld_server">
+    <rect x="500" y="530" width="200" height="80" fill="white" stroke="black"/>
+    <text x="600" y="570" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">
+      TLD Name Server
+    </text>
+  </g>
+
+  <!-- Authoritative name server -->
+  <g id="authoritative_server">
+    <rect x="500" y="650" width="200" height="80" fill="white" stroke="black"/>
+    <text x="600" y="690" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">
+      Authoritative Server
+    </text>
+  </g>
+
+  <!-- Final response -->
+  <g id="final_response">
+    <rect x="500" y="770" width="200" height="0" fill="none" stroke="none"/>
+    <!-- This group is only for labeling the final arrow; no visible box needed -->
+    <text x="600" y="795" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">
+      Response to Application
+    </text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="600" y1="130" x2="600" y2="170" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="250" x2="600" y2="290" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="370" x2="600" y2="410" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="490" x2="600" y2="530" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="610" x2="600" y2="650" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="730" x2="600" y2="770" stroke="black" marker-end="url(#arrowhead)"/>
+</svg>

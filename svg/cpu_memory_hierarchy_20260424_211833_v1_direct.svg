@@ -1,0 +1,48 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <g id="title">
+    <text x="600" y="30" text-anchor="middle" font-size="28" font-weight="bold" fill="black">CPU Memory Hierarchy</text>
+  </g>
+
+  <g id="registers">
+    <rect x="400" y="50" width="400" height="80" fill="#cce5ff" stroke="black" stroke-width="2"/>
+    <text x="600" y="95" text-anchor="middle" font-size="20" fill="black">Registers</text>
+  </g>
+
+  <g id="l1_cache">
+    <rect x="400" y="170" width="400" height="80" fill="#d4edda" stroke="black" stroke-width="2"/>
+    <text x="600" y="215" text-anchor="middle" font-size="20" fill="black">L1 Cache</text>
+  </g>
+
+  <g id="l2_cache">
+    <rect x="400" y="290" width="400" height="80" fill="#c3e6cb" stroke="black" stroke-width="2"/>
+    <text x="600" y="335" text-anchor="middle" font-size="20" fill="black">L2 Cache</text>
+  </g>
+
+  <g id="l3_cache">
+    <rect x="400" y="410" width="400" height="80" fill="#b8daff" stroke="black" stroke-width="2"/>
+    <text x="600" y="455" text-anchor="middle" font-size="20" fill="black">L3 Cache</text>
+  </g>
+
+  <g id="main_memory">
+    <rect x="400" y="530" width="400" height="80" fill="#fff3cd" stroke="black" stroke-width="2"/>
+    <text x="600" y="575" text-anchor="middle" font-size="20" fill="black">Main Memory (RAM)</text>
+  </g>
+
+  <g id="secondary_storage">
+    <rect x="400" y="650" width="400" height="80" fill="#f8d7da" stroke="black" stroke-width="2"/>
+    <text x="600" y="695" text-anchor="middle" font-size="20" fill="black">Secondary Storage (SSD/HDD)</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="600" y1="130" x2="600" y2="170" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="250" x2="600" y2="290" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="370" x2="600" y2="410" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="490" x2="600" y2="530" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="610" x2="600" y2="650" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

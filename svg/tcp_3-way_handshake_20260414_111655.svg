@@ -1,0 +1,46 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Client box -->
+  <g id="client_box">
+    <rect x="100" y="300" width="200" height="100" fill="white" stroke="black"/>
+    <text x="200" y="360" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Client</text>
+  </g>
+
+  <!-- Server box -->
+  <g id="server_box">
+    <rect x="900" y="300" width="200" height="100" fill="white" stroke="black"/>
+    <text x="1000" y="360" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Server</text>
+  </g>
+
+  <!-- SYN arrow -->
+  <g id="syn_arrow">
+    <line x1="300" y1="350" x2="900" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="600" y="330" font-family="sans-serif" font-size="18" text-anchor="middle">SYN</text>
+  </g>
+
+  <!-- SYN-ACK arrow -->
+  <g id="synack_arrow">
+    <line x1="900" y1="400" x2="300" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="600" y="420" font-family="sans-serif" font-size="18" text-anchor="middle">SYN‑ACK</text>
+  </g>
+
+  <!-- ACK arrow -->
+  <g id="ack_arrow">
+    <line x1="300" y1="450" x2="900" y2="450" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="600" y="470" font-family="sans-serif" font-size="18" text-anchor="middle">ACK</text>
+  </g>
+
+  <!-- Established state box -->
+  <g id="established_box">
+    <rect x="500" y="550" width="200" height="80" fill="white" stroke="black"/>
+    <text x="600" y="590" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Connection Established</text>
+    <!-- Lines from client and server to established state -->
+    <line x1="200" y1="400" x2="600" y2="550" stroke="black" stroke-width="1"/>
+    <line x1="1100" y1="400" x2="600" y2="550" stroke="black" stroke-width="1"/>
+  </g>
+</svg>

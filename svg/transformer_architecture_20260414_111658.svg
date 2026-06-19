@@ -1,0 +1,57 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Embedding -->
+  <g id="input_embedding">
+    <rect x="100" y="50" width="200" height="80" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="200" y="95" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Input Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect x="100" y="150" width="200" height="80" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="200" y="195" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Positional Encoding</text>
+  </g>
+
+  <!-- Encoder Self-Attention -->
+  <g id="encoder_self_attention">
+    <rect x="100" y="250" width="200" height="80" fill="#fff3e0" stroke="#000" stroke-width="2"/>
+    <text x="200" y="295" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Encoder Self‑Attention</text>
+  </g>
+
+  <!-- Encoder Feed-Forward -->
+  <g id="encoder_feed_forward">
+    <rect x="100" y="350" width="200" height="80" fill="#fff3e0" stroke="#000" stroke-width="2"/>
+    <text x="200" y="395" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Encoder Feed‑Forward</text>
+  </g>
+
+  <!-- Decoder Self-Attention -->
+  <g id="decoder_self_attention">
+    <rect x="500" y="250" width="200" height="80" fill="#e8f5e9" stroke="#000" stroke-width="2"/>
+    <text x="600" y="295" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Decoder Self‑Attention</text>
+  </g>
+
+  <!-- Decoder Cross-Attention -->
+  <g id="decoder_cross_attention">
+    <rect x="500" y="350" width="200" height="80" fill="#e8f5e9" stroke="#000" stroke-width="2"/>
+    <text x="600" y="395" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Decoder Cross‑Attention</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect x="500" y="450" width="200" height="80" fill="#f3e5f5" stroke="#000" stroke-width="2"/>
+    <text x="600" y="495" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Output Linear + Softmax</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="300" y1="90" x2="100" y2="190" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="300" y1="190" x2="100" y2="290" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="300" y1="290" x2="100" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="300" y1="390" x2="500" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="290" x2="500" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="390" x2="500" y2="490" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

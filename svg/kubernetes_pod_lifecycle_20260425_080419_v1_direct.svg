@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrow_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .block { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; fill:#000; text-anchor:middle; dominant-baseline:middle; }
+    </style>
+  </defs>
+
+  <!-- Pending -->
+  <g id="pod_pending">
+    <rect class="block" x="500" y="100" width="200" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="140">Pending</text>
+  </g>
+
+  <!-- Running -->
+  <g id="pod_running">
+    <rect class="block" x="500" y="250" width="200" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="290">Running</text>
+  </g>
+
+  <!-- Succeeded -->
+  <g id="pod_succeeded">
+    <rect class="block" x="250" y="400" width="200" height="80" rx="8" ry="8"/>
+    <text class="label" x="350" y="440">Succeeded</text>
+  </g>
+
+  <!-- Failed -->
+  <g id="pod_failed">
+    <rect class="block" x="750" y="400" width="200" height="80" rx="8" ry="8"/>
+    <text class="label" x="850" y="440">Failed</text>
+  </g>
+
+  <!-- Unknown -->
+  <g id="pod_unknown">
+    <rect class="block" x="500" y="550" width="200" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="590">Unknown</text>
+  </g>
+
+  <!-- Terminated -->
+  <g id="pod_termination">
+    <rect class="block" x="500" y="700" width="200" height="80" rx="8" ry="8"/>
+    <text class="label" x="600" y="740">Terminated</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="600" y1="180" x2="600" y2="250" stroke="#000" stroke-width="2" marker-end="url(#arrow_marker)"/>
+  <line x1="600" y1="330" x2="350" y2="400" stroke="#000" stroke-width="2" marker-end="url(#arrow_marker)"/>
+  <line x1="600" y1="330" x2="850" y2="400" stroke="#000" stroke-width="2" marker-end="url(#arrow_marker)"/>
+  <line x1="600" y1="330" x2="600" y2="550" stroke="#000" stroke-width="2" marker-end="url(#arrow_marker)"/>
+  <line x1="350" y1="480" x2="600" y2="700" stroke="#000" stroke-width="2" marker-end="url(#arrow_marker)"/>
+  <line x1="850" y1="480" x2="600" y2="700" stroke="#000" stroke-width="2" marker-end="url(#arrow_marker)"/>
+  <line x1="600" y1="630" x2="600" y2="700" stroke="#000" stroke-width="2" marker-end="url(#arrow_marker)"/>
+</svg>

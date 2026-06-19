@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L10,3.5 Z" fill="black"/>
+    </marker>
+    <style>
+      .concept-rect { stroke:#333; stroke-width:2; fill:#e0f7fa; }
+      .sun-rect { fill:#ffeb3b; }
+      .light-rect { fill:#fff9c4; }
+      .water-rect { fill:#b3e5fc; }
+      .co2-rect { fill:#c8e6c9; }
+      .chloroplast-rect { fill:#a5d6a7; }
+      .glucose-rect { fill:#ffe0b2; }
+      .oxygen-rect { fill:#ffccbc; }
+      text { font-family:sans-serif; font-size:20px; fill:#000; }
+    </style>
+  </defs>
+
+  <!-- Sun -->
+  <g id="sun">
+    <rect class="concept-rect sun-rect" x="50" y="50" width="150" height="80" rx="10"/>
+    <text x="75" y="95">Sun</text>
+  </g>
+
+  <!-- Light Energy -->
+  <g id="light_energy">
+    <rect class="concept-rect light-rect" x="250" y="50" width="180" height="80" rx="10"/>
+    <text x="270" y="95">Light Energy</text>
+  </g>
+
+  <!-- Water -->
+  <g id="water">
+    <rect class="concept-rect water-rect" x="50" y="180" width="150" height="80" rx="10"/>
+    <text x="70" y="225">H₂O (Water)</text>
+  </g>
+
+  <!-- CO2 -->
+  <g id="co2">
+    <rect class="concept-rect co2-rect" x="250" y="180" width="180" height="80" rx="10"/>
+    <text x="270" y="225">CO₂</text>
+  </g>
+
+  <!-- Chloroplast -->
+  <g id="chloroplast">
+    <rect class="concept-rect chloroplast-rect" x="500" y="120" width="250" height="120" rx="10"/>
+    <text x="540" y="180">Chloroplast (Leaf)</text>
+  </g>
+
+  <!-- Glucose -->
+  <g id="glucose">
+    <rect class="concept-rect glucose-rect" x="800" y="150" width="200" height="80" rx="10"/>
+    <text x="820" y="195">Glucose (C₆H₁₂O₆)</text>
+  </g>
+
+  <!-- Oxygen -->
+  <g id="oxygen">
+    <rect class="concept-rect oxygen-rect" x="800" y="260" width="200" height="80" rx="10"/>
+    <text x="860" y="305">O₂ (Oxygen)</text>
+  </g>
+
+  <!-- Arrows -->
+  <!-- Sun to Light Energy -->
+  <line x1="200" y1="90" x2="250" y2="90" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Light Energy to Chloroplast -->
+  <line x1="340" y1="130" x2="625" y2="120" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Water to Chloroplast -->
+  <line x1="125" y1="260" x2="625" y2="120" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- CO2 to Chloroplast -->
+  <line x1="340" y1="260" x2="625" y2="120" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Chloroplast to Glucose -->
+  <line x1="750" y1="180" x2="800" y2="190" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Chloroplast to Oxygen -->
+  <line x1="750" y1="240" x2="900" y2="260" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

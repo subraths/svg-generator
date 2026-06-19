@@ -1,0 +1,39 @@
+{
+  "timestamp": "20260503_081101",
+  "topic": "Photosynthesis",
+  "model": "openai/gpt-oss-120b",
+  "mode": "v2_planner",
+  "attempts_used": 2,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "light_absorption",
+      "water_split",
+      "oxygen_release",
+      "electron_transport",
+      "nadph_formation",
+      "atp_synthesis",
+      "carbon_fixation",
+      "glucose_production",
+      "edges"
+    ],
+    "group_count": 9,
+    "rect_count": 8,
+    "overlap_pairs": [],
+    "line_count": 8,
+    "polyline_count": 0,
+    "path_count": 1,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 9,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/photosynthesis_20260503_081101.svg",
+    "png": "img/photosynthesis_20260503_081101.png",
+    "plan": "reports/photosynthesis_20260503_081101_plan.json"
+  }
+}

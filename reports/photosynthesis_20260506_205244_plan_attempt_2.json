@@ -1,0 +1,107 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 20,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll",
+      "x": 240,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent",
+      "label": "Light\u2011Dependent Reactions",
+      "x": 460,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting (Photolysis)",
+      "x": 460,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "O\u2082 Release",
+      "x": 680,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_dioxide",
+      "label": "CO\u2082 Intake",
+      "x": 240,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (Light\u2011Independent)",
+      "x": 460,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 680,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll",
+      "label": "absorbs"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent",
+      "label": "excites"
+    },
+    {
+      "from": "light_dependent",
+      "to": "water_splitting",
+      "label": "drives"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "produces O\u2082"
+    },
+    {
+      "from": "light_dependent",
+      "to": "calvin_cycle",
+      "label": "produces ATP/NADPH"
+    },
+    {
+      "from": "carbon_dioxide",
+      "to": "calvin_cycle",
+      "label": "CO\u2082 input"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_production",
+      "label": "produces glucose"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L10,3.5 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="sans-serif" font-size="24">Water Condensation</text>
+
+  <!-- Nodes -->
+  <g id="water_vapor">
+    <rect x="100" y="100" width="180" height="70" fill="lightblue" stroke="black"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Water Vapor</text>
+  </g>
+
+  <g id="cooling">
+    <rect x="100" y="190" width="180" height="70" fill="lightblue" stroke="black"/>
+    <text x="190" y="225" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Cooling</text>
+  </g>
+
+  <g id="saturation_point">
+    <rect x="100" y="280" width="180" height="70" fill="lightblue" stroke="black"/>
+    <text x="190" y="315" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Saturation Point</text>
+  </g>
+
+  <g id="condensation_nuclei">
+    <rect x="100" y="370" width="180" height="70" fill="lightblue" stroke="black"/>
+    <text x="190" y="405" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Condensation Nuclei</text>
+  </g>
+
+  <g id="droplet_formation">
+    <rect x="100" y="460" width="180" height="70" fill="lightblue" stroke="black"/>
+    <text x="190" y="495" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Droplet Formation</text>
+  </g>
+
+  <g id="cloud_formation">
+    <rect x="100" y="550" width="180" height="70" fill="lightblue" stroke="black"/>
+    <text x="190" y="585" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Cloud Formation</text>
+  </g>
+
+  <g id="precipitation">
+    <rect x="100" y="640" width="180" height="70" fill="lightblue" stroke="black"/>
+    <text x="190" y="675" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Precipitation</text>
+  </g>
+
+  <!-- Edges -->
+  <line x1="190" y1="170" x2="190" y2="190" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="190" y1="260" x2="190" y2="280" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="190" y1="350" x2="190" y2="370" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="190" y1="440" x2="190" y2="460" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="190" y1="530" x2="190" y2="550" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="190" y1="620" x2="190" y2="640" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

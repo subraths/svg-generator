@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .node { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .label { font-family:Arial,Helvetica,sans-serif; font-size:16px; fill:#000; pointer-events:none; }
+      .edge { stroke:#000; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="28" fill="#000">Water Cycle</text>
+
+  <!-- Nodes -->
+  <g id="evaporation">
+    <rect class="node" x="860" y="360" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="950" y="395" dominant-baseline="middle" text-anchor="middle">Evaporation</text>
+  </g>
+
+  <g id="transpiration">
+    <rect class="node" x="860" y="200" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="950" y="235" dominant-baseline="middle" text-anchor="middle">Transpiration</text>
+  </g>
+
+  <g id="condensation">
+    <rect class="node" x="520" y="120" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="610" y="155" dominant-baseline="middle" text-anchor="middle">Condensation</text>
+  </g>
+
+  <g id="precipitation">
+    <rect class="node" x="160" y="360" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="250" y="395" dominant-baseline="middle" text-anchor="middle">Precipitation</text>
+  </g>
+
+  <g id="collection">
+    <rect class="node" x="520" y="620" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="610" y="655" dominant-baseline="middle" text-anchor="middle">Collection</text>
+  </g>
+
+  <g id="runoff">
+    <rect class="node" x="860" y="660" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="950" y="695" dominant-baseline="middle" text-anchor="middle">Runoff</text>
+  </g>
+
+  <g id="infiltration">
+    <rect class="node" x="160" y="660" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="250" y="695" dominant-baseline="middle" text-anchor="middle">Infiltration</text>
+  </g>
+
+  <!-- Edges -->
+  <path class="edge" d="M860,395 L700,155" marker-end="url(#arrow)"/>
+  <path class="edge" d="M520,155 L340,395" marker-end="url(#arrow)"/>
+  <path class="edge" d="M340,395 L520,655" marker-end="url(#arrow)"/>
+  <path class="edge" d="M700,655 L860,695" marker-end="url(#arrow)"/>
+  <path class="edge" d="M520,655 L340,695" marker-end="url(#arrow)"/>
+  <path class="edge" d="M950,660 L950,430" marker-end="url(#arrow)"/>
+  <path class="edge" d="M340,695 L860,395" marker-end="url(#arrow)"/>
+  <path class="edge" d="M860,235 L700,155" marker-end="url(#arrow)"/>
+  <path class="edge" d="M950,270 L950,360" marker-end="url(#arrow)"/>
+
+  <!-- Edge Labels (optional, placed near midpoints) -->
+  <text class="label" x="780" y="275" text-anchor="middle" font-size="12">water vapor rises</text>
+  <text class="label" x="430" y="275" text-anchor="middle" font-size="12">cloud formation</text>
+  <text class="label" x="430" y="525" text-anchor="middle" font-size="12">rain/snow falls</text>
+  <text class="label" x="780" y="675" text-anchor="middle" font-size="12">surface flow</text>
+  <text class="label" x="430" y="675" text-anchor="middle" font-size="12">ground absorption</text>
+  <text class="label" x="950" y="545" text-anchor="middle" font-size="12">return to atmosphere</text>
+  <text class="label" x="600" y="525" text-anchor="middle" font-size="12">groundwater evaporation</text>
+  <text class="label" x="780" y="195" text-anchor="middle" font-size="12">plant moisture</text>
+  <text class="label" x="950" y="315" text-anchor="middle" font-size="12">adds vapor</text>
+</svg>

@@ -1,0 +1,107 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "chlorophyll_role",
+      "label": "Chlorophyll Role",
+      "x": 0,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 200,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_uptake",
+      "label": "Water Uptake",
+      "x": 200,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "stomata_opening",
+      "label": "Stomata Opening",
+      "x": 0,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_dioxide_fixation",
+      "label": "CO\u2082 Fixation (Calvin Cycle)",
+      "x": 200,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "energy_conversion",
+      "label": "Energy Conversion",
+      "x": 200,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 200,
+      "y": 440,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 200,
+      "y": 540,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "chlorophyll_role",
+      "to": "light_absorption",
+      "label": "captures light"
+    },
+    {
+      "from": "light_absorption",
+      "to": "water_uptake",
+      "label": "provides energy"
+    },
+    {
+      "from": "water_uptake",
+      "to": "carbon_dioxide_fixation",
+      "label": "supplies electrons"
+    },
+    {
+      "from": "stomata_opening",
+      "to": "carbon_dioxide_fixation",
+      "label": "CO\u2082 entry"
+    },
+    {
+      "from": "carbon_dioxide_fixation",
+      "to": "energy_conversion",
+      "label": "Calvin Cycle"
+    },
+    {
+      "from": "energy_conversion",
+      "to": "glucose_production",
+      "label": "produces glucose"
+    },
+    {
+      "from": "glucose_production",
+      "to": "oxygen_release",
+      "label": "by\u2011product O\u2082"
+    }
+  ]
+}

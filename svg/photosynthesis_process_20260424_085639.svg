@@ -1,0 +1,70 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+    <style>
+      .block { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; fill:#000; }
+      .connector { stroke:#000; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- Sunlight -->
+  <g id="sunlight">
+    <rect class="block" x="50" y="50" width="200" height="80" rx="10"/>
+    <text class="label" x="150" y="90" text-anchor="middle" dominant-baseline="middle">Sunlight</text>
+  </g>
+
+  <!-- Chlorophyll -->
+  <g id="chlorophyll">
+    <rect class="block" x="350" y="50" width="200" height="80" rx="10"/>
+    <text class="label" x="450" y="90" text-anchor="middle" dominant-baseline="middle">Chlorophyll</text>
+  </g>
+
+  <!-- Water -->
+  <g id="water">
+    <rect class="block" x="50" y="200" width="200" height="80" rx="10"/>
+    <text class="label" x="150" y="240" text-anchor="middle" dominant-baseline="middle">Water (H₂O)</text>
+  </g>
+
+  <!-- Carbon Dioxide -->
+  <g id="carbon_dioxide">
+    <rect class="block" x="950" y="200" width="200" height="80" rx="10"/>
+    <text class="label" x="1050" y="240" text-anchor="middle" dominant-baseline="middle">Carbon Dioxide (CO₂)</text>
+  </g>
+
+  <!-- Light Dependent Reactions -->
+  <g id="light_dependent">
+    <rect class="block" x="350" y="200" width="200" height="80" rx="10"/>
+    <text class="label" x="450" y="240" text-anchor="middle" dominant-baseline="middle">Light‑Dependent Reactions</text>
+  </g>
+
+  <!-- Oxygen -->
+  <g id="oxygen">
+    <rect class="block" x="600" y="200" width="200" height="80" rx="10"/>
+    <text class="label" x="700" y="240" text-anchor="middle" dominant-baseline="middle">Oxygen (O₂)</text>
+  </g>
+
+  <!-- Calvin Cycle -->
+  <g id="calvin_cycle">
+    <rect class="block" x="350" y="350" width="200" height="80" rx="10"/>
+    <text class="label" x="450" y="390" text-anchor="middle" dominant-baseline="middle">Calvin Cycle</text>
+  </g>
+
+  <!-- Glucose -->
+  <g id="glucose">
+    <rect class="block" x="600" y="350" width="200" height="80" rx="10"/>
+    <text class="label" x="700" y="390" text-anchor="middle" dominant-baseline="middle">Glucose (C₆H₁₂O₆)</text>
+  </g>
+
+  <!-- Connectors -->
+  <line class="connector" x1="150" y1="130" x2="350" y2="90" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="450" y1="130" x2="450" y2="200" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="150" y1="280" x2="350" y2="240" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="1050" y1="280" x2="550" y2="340" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="550" y1="280" x2="600" y2="240" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="550" y1="280" x2="450" y2="350" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="450" y1="430" x2="700" y2="390" marker-end="url(#arrowhead)"/>
+  <line class="connector" x1="700" y1="430" x2="700" y2="430" marker-end="url(#arrowhead)"/>
+</svg>

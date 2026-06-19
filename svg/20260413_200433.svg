@@ -1,0 +1,57 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Evaporation -->
+  <g id="evaporation">
+    <rect x="150" y="100" width="200" height="80" fill="#a0c4ff" stroke="#000" stroke-width="2"/>
+    <text x="250" y="140" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#000">Evaporation</text>
+  </g>
+
+  <!-- Condensation -->
+  <g id="condensation">
+    <rect x="650" y="100" width="200" height="80" fill="#bde0fe" stroke="#000" stroke-width="2"/>
+    <text x="750" y="140" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#000">Condensation</text>
+  </g>
+
+  <!-- Precipitation -->
+  <g id="precipitation">
+    <rect x="650" y="300" width="200" height="80" fill="#90e0ef" stroke="#000" stroke-width="2"/>
+    <text x="750" y="340" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#000">Precipitation</text>
+  </g>
+
+  <!-- Collection -->
+  <g id="collection">
+    <rect x="650" y="500" width="200" height="80" fill="#caf0f8" stroke="#000" stroke-width="2"/>
+    <text x="750" y="540" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#000">Collection</text>
+  </g>
+
+  <!-- Infiltration -->
+  <g id="infiltration">
+    <rect x="150" y="300" width="200" height="80" fill="#ade8f4" stroke="#000" stroke-width="2"/>
+    <text x="250" y="340" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#000">Infiltration</text>
+  </g>
+
+  <!-- Runoff -->
+  <g id="runoff">
+    <rect x="150" y="500" width="200" height="80" fill="#48cae4" stroke="#000" stroke-width="2"/>
+    <text x="250" y="540" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#000">Runoff</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- Evaporation → Condensation -->
+  <line x1="350" y1="140" x2="650" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Condensation ↓ Precipitation -->
+  <line x1="750" y1="180" x2="750" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Precipitation ↓ Collection -->
+  <line x1="750" y1="380" x2="750" y2="500" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Collection ← Runoff -->
+  <line x1="650" y1="540" x2="350" y2="540" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Runoff ↑ Infiltration -->
+  <line x1="250" y1="500" x2="250" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Infiltration ↑ Evaporation -->
+  <line x1="250" y1="380" x2="250" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

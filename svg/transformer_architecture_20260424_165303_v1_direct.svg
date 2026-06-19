@@ -1,0 +1,65 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Embedding -->
+  <g id="input_embedding">
+    <rect x="50" y="340" width="150" height="80" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="125" y="385" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#006064">Input Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect x="250" y="340" width="150" height="80" fill="#fff9c4" stroke="#f57f17" stroke-width="2"/>
+    <text x="325" y="385" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#f57f17">Positional Encoding</text>
+  </g>
+
+  <!-- Encoder Stack -->
+  <g id="encoder_stack">
+    <rect x="450" y="260" width="200" height="200" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="550" y="340" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#1b5e20">Encoder Stack</text>
+    <text x="550" y="370" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#1b5e20">Multi‑Head Self‑Attention</text>
+    <text x="550" y="400" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#1b5e20">Add &amp; Norm</text>
+    <text x="550" y="430" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#1b5e20">Feed‑Forward</text>
+    <text x="550" y="460" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#1b5e20">Add &amp; Norm</text>
+  </g>
+
+  <!-- Decoder Stack -->
+  <g id="decoder_stack">
+    <rect x="750" y="260" width="200" height="200" fill="#ffebee" stroke="#b71c1c" stroke-width="2"/>
+    <text x="850" y="340" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#b71c1c">Decoder Stack</text>
+    <text x="850" y="370" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#b71c1c">Masked Multi‑Head Self‑Attention</text>
+    <text x="850" y="400" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#b71c1c">Add &amp; Norm</text>
+    <text x="850" y="430" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#b71c1c">Encoder‑Decoder Attention</text>
+    <text x="850" y="460" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#b71c1c">Add &amp; Norm</text>
+    <text x="850" y="490" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#b71c1c">Feed‑Forward</text>
+    <text x="850" y="520" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#b71c1c">Add &amp; Norm</text>
+  </g>
+
+  <!-- Output Projection -->
+  <g id="output_projection">
+    <rect x="1000" y="340" width="150" height="80" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+    <text x="1075" y="385" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#4a148c">Linear + Softmax</text>
+  </g>
+
+  <!-- Connections -->
+  <g id="connections">
+    <!-- Input → Positional -->
+    <line x1="200" y1="380" x2="250" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- Positional → Encoder -->
+    <line x1="400" y1="380" x2="450" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- Encoder → Decoder -->
+    <line x1="650" y1="380" x2="750" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- Decoder → Output -->
+    <line x1="950" y1="380" x2="1000" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Encoder‑Decoder Attention Arrow -->
+  <g id="enc_dec_attention">
+    <line x1="550" y1="460" x2="850" y2="260" stroke="#b71c1c" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="700" y="350" font-family="sans-serif" font-size="16" fill="#b71c1c" transform="rotate(-45 700,350)">Encoder‑Decoder Attention</text>
+  </g>
+</svg>

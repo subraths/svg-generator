@@ -1,0 +1,69 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L9,3.5 z" fill="#000"/>
+    </marker>
+    <style>
+      .box { fill:#e0f7fa; stroke:#000; stroke-width:2; }
+      .arrow { stroke:#000; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
+      .label { font-family:sans-serif; font-size:18px; text-anchor:middle; dominant-baseline:middle; }
+      .small-label { font-family:sans-serif; font-size:16px; text-anchor:middle; dominant-baseline:middle; }
+    </style>
+  </defs>
+
+  <!-- Sunlight -->
+  <g id="sunlight">
+    <rect class="box" x="50" y="100" width="150" height="80" rx="10"/>
+    <text class="label" x="125" y="140">Sunlight</text>
+  </g>
+
+  <!-- Water -->
+  <g id="water">
+    <rect class="box" x="50" y="250" width="150" height="80" rx="10"/>
+    <text class="label" x="125" y="290">Water (H₂O)</text>
+  </g>
+
+  <!-- Carbon Dioxide -->
+  <g id="carbon_dioxide">
+    <rect class="box" x="50" y="400" width="150" height="80" rx="10"/>
+    <text class="label" x="125" y="440">CO₂</text>
+  </g>
+
+  <!-- Light‑Dependent Reactions -->
+  <g id="light_dependent">
+    <rect class="box" x="300" y="200" width="200" height="120" rx="10"/>
+    <text class="label" x="400" y="260">Light‑Dependent Reactions</text>
+  </g>
+
+  <!-- Chlorophyll (inside Light‑Dependent) -->
+  <g id="chlorophyll">
+    <circle cx="400" cy="260" r="15" fill="#66bb6a" stroke="#000" stroke-width="1"/>
+    <text class="small-label" x="400" y="285">Chlorophyll</text>
+  </g>
+
+  <!-- Calvin Cycle -->
+  <g id="calvin_cycle">
+    <rect class="box" x="600" y="250" width="200" height="120" rx="10"/>
+    <text class="label" x="700" y="310">Calvin Cycle</text>
+  </g>
+
+  <!-- Glucose -->
+  <g id="glucose">
+    <rect class="box" x="850" y="150" width="120" height="80" rx="10"/>
+    <text class="label" x="910" y="190">Glucose (C₆H₁₂O₆)</text>
+  </g>
+
+  <!-- Oxygen -->
+  <g id="oxygen">
+    <rect class="box" x="850" y="350" width="120" height="80" rx="10"/>
+    <text class="label" x="910" y="390">O₂</text>
+  </g>
+
+  <!-- Arrows -->
+  <line class="arrow" x1="200" y1="140" x2="300" y2="260"/>
+  <line class="arrow" x1="200" y1="290" x2="300" y2="260"/>
+  <line class="arrow" x1="200" y1="440" x2="600" y2="310"/>
+  <line class="arrow" x1="500" y1="260" x2="600" y2="310"/>
+  <line class="arrow" x1="800" y1="310" x2="850" y2="190"/>
+  <line class="arrow" x1="800" y1="310" x2="850" y2="390"/>
+</svg>

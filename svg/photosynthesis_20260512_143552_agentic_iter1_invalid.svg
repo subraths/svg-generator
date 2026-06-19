@@ -1,0 +1,56 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .node-rect { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .node-text { font-family:sans-serif; font-size:14px; fill:#004d40; pointer-events:none; }
+      .edge-path { fill:none; stroke:#000; stroke-width:1.5; }
+      .edge-label { font-family:sans-serif; font-size:12px; fill:#000; pointer-events:none; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold" fill="#212121">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect class="node-rect" x="180" y="275" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="270" y="310" dominant-baseline="middle" text-anchor="middle">Light Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect class="node-rect" x="180" y="365" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="270" y="400" dominant-baseline="middle" text-anchor="middle">Water Splitting</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect class="node-rect" x="180" y="455" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="270" y="490" dominant-baseline="middle" text-anchor="middle">CO₂ Fixation (Rubisco)</text>
+  </g>
+
+  <g id="thylakoid_membrane">
+    <rect class="node-rect" x="400" y="275" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="490" y="310" dominant-baseline="middle" text-anchor="middle">Thylakoid Membrane</text>
+  </g>
+
+  <g id="stroma">
+    <rect class="node-rect" x="400" y="365" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="490" y="400" dominant-baseline="middle" text-anchor="middle">Stroma</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect class="node-rect" x="620" y="365" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="710" y="400" dominant-baseline="middle" text-anchor="middle">Calvin Cycle</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect class="node-rect" x="840" y="275" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="930" y="310" dominant-baseline="middle" text-anchor="middle">Glucose Production</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect class="node-rect" x="840" y="375" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="930" y="410" dominant-baseline="middle" text-anchor="middle">Oxygen Release</text>
+  </g>

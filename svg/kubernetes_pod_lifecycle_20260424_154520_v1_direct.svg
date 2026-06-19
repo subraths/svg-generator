@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Unknown State -->
+  <g id="unknown">
+    <rect x="100" y="150" width="180" height="80" rx="10" ry="10" fill="#fff3e0" stroke="#000"/>
+    <text x="190" y="190" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Unknown</text>
+  </g>
+
+  <!-- Pending State -->
+  <g id="pending">
+    <rect x="100" y="350" width="180" height="80" rx="10" ry="10" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="390" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Pending</text>
+  </g>
+
+  <!-- Running State -->
+  <g id="running">
+    <rect x="350" y="350" width="180" height="80" rx="10" ry="10" fill="#e8f5e9" stroke="#000"/>
+    <text x="440" y="390" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Running</text>
+  </g>
+
+  <!-- Succeeded State -->
+  <g id="succeeded">
+    <rect x="600" y="200" width="180" height="80" rx="10" ry="10" fill="#e3f2fd" stroke="#000"/>
+    <text x="690" y="240" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Succeeded</text>
+  </g>
+
+  <!-- Failed State -->
+  <g id="failed">
+    <rect x="600" y="500" width="180" height="80" rx="10" ry="10" fill="#ffebee" stroke="#000"/>
+    <text x="690" y="540" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Failed</text>
+  </g>
+
+  <!-- Terminating State -->
+  <g id="terminating">
+    <rect x="850" y="350" width="180" height="80" rx="10" ry="10" fill="#f3e5f5" stroke="#000"/>
+    <text x="940" y="390" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Terminating</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- Unknown → Pending -->
+  <line x1="190" y1="230" x2="190" y2="350" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Pending → Running -->
+  <line x1="280" y1="390" x2="350" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Running → Succeeded -->
+  <line x1="440" y1="350" x2="690" y2="280" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Running → Failed -->
+  <line x1="440" y1="430" x2="690" y2="500" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Running → Terminating -->
+  <line x1="530" y1="390" x2="850" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

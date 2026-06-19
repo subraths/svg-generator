@@ -1,0 +1,107 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 40,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_photolysis",
+      "label": "Water Splitting (Photolysis)",
+      "x": 260,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "O\u2082 Release",
+      "x": 480,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "electron_transport",
+      "label": "Electron Transport Chain",
+      "x": 700,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "ATP_synthesis",
+      "label": "ATP Synthesis (Chemiosmosis)",
+      "x": 920,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "Calvin_cycle",
+      "label": "Carbon Fixation (Calvin Cycle)",
+      "x": 40,
+      "y": 160,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 260,
+      "y": 160,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "starch_storage",
+      "label": "Starch Storage",
+      "x": 480,
+      "y": 160,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "light_absorption",
+      "to": "water_photolysis",
+      "label": "energy"
+    },
+    {
+      "from": "water_photolysis",
+      "to": "oxygen_release",
+      "label": "O\u2082"
+    },
+    {
+      "from": "water_photolysis",
+      "to": "electron_transport",
+      "label": "e\u207b"
+    },
+    {
+      "from": "electron_transport",
+      "to": "ATP_synthesis",
+      "label": "proton gradient"
+    },
+    {
+      "from": "ATP_synthesis",
+      "to": "Calvin_cycle",
+      "label": "ATP"
+    },
+    {
+      "from": "Calvin_cycle",
+      "to": "glucose_production",
+      "label": "G3P"
+    },
+    {
+      "from": "glucose_production",
+      "to": "starch_storage",
+      "label": "store"
+    }
+  ]
+}

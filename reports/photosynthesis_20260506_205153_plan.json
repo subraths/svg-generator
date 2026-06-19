@@ -1,0 +1,94 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll Pigments",
+      "x": 20,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 240,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "energy_conversion",
+      "label": "Energy Conversion (ATP/NADPH)",
+      "x": 460,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_uptake",
+      "label": "Water Uptake",
+      "x": 680,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 900,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_fixation",
+      "label": "Carbon Fixation (Calvin Cycle)",
+      "x": 240,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 460,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "chlorophyll",
+      "to": "light_absorption",
+      "label": "contains"
+    },
+    {
+      "from": "light_absorption",
+      "to": "energy_conversion",
+      "label": "produces"
+    },
+    {
+      "from": "energy_conversion",
+      "to": "carbon_fixation",
+      "label": "provides ATP/NADPH"
+    },
+    {
+      "from": "water_uptake",
+      "to": "oxygen_release",
+      "label": "splits to O\u2082"
+    },
+    {
+      "from": "water_uptake",
+      "to": "energy_conversion",
+      "label": "supplies electrons"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "glucose_production",
+      "label": "produces"
+    }
+  ]
+}

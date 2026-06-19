@@ -1,0 +1,61 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L10,3.5 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="280" y="305" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="370" y="340" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="500" y="305" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="590" y="340" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Chlorophyll</text>
+  </g>
+
+  <g id="light_dependent_reactions">
+    <rect x="720" y="305" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="810" y="340" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Light‑Dependent Reactions</text>
+  </g>
+
+  <g id="water">
+    <rect x="720" y="405" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="810" y="440" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Water (H₂O)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="940" y="305" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="1030" y="340" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Oxygen Release (O₂)</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="720" y="505" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="810" y="540" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">ATP &amp; NADPH</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="720" y="625" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="810" y="660" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Calvin Cycle (Light‑Independent)</text>
+  </g>
+
+  <g id="co2">
+    <rect x="500" y="625" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="590" y="660" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Carbon Dioxide (CO₂)</text>
+  </g>
+
+  <g id="glucose">
+    <rect x="940" y="625" width="180" height="70" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="1030" y="660" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Glucose (C₆H₁₂O₆)</text>
+  </g>
+
+  <!-- Edges -->
+  <path d="M460,340 L500,340" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="480" y="330" font-family="Arial" font-size="12" text-anchor="middle">absorbs</text>
+
+  <path d="M680,340 L720,340

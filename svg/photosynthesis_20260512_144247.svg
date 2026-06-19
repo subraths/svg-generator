@@ -1,0 +1,64 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="230" y="205" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="320" y="240" dominant-baseline="middle" text-anchor="middle" font-size="14">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="430" y="205" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="520" y="240" dominant-baseline="middle" text-anchor="middle" font-size="14">Chlorophyll</text>
+  </g>
+
+  <g id="light_dependent">
+    <rect x="630" y="205" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="720" y="240" dominant-baseline="middle" text-anchor="middle" font-size="14">Light‑dependent Reactions</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="630" y="295" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="720" y="330" dominant-baseline="middle" text-anchor="middle" font-size="14">Water Splitting (H₂O → O₂ + e⁻)</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="830" y="295" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="920" y="330" dominant-baseline="middle" text-anchor="middle" font-size="14">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="630" y="385" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="720" y="420" dominant-baseline="middle" text-anchor="middle" font-size="14">O₂ Release</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="830" y="385" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="920" y="420" dominant-baseline="middle" text-anchor="middle" font-size="14">Calvin Cycle (Light‑independent)</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="830" y="475" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="920" y="510" dominant-baseline="middle" text-anchor="middle" font-size="14">CO₂ Fixation</text>
+  </g>
+
+  <g id="glucose">
+    <rect x="830" y="565" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="920" y="600" dominant-baseline="middle" text-anchor="middle" font-size="14">Glucose Synthesis</text>
+  </g>
+
+  <!-- Edges -->
+  <path d="M410,240 L430,240" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M610,240 L630,240" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M720,275 L720,295" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M720,240 L830,330" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M720,365 L720,385" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M920,365 L920,385" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M920,455 L920,475" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M920,545 L920,565" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+</svg>

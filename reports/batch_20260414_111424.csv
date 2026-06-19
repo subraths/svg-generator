@@ -1,0 +1,7 @@
+timestamp,topic,model,attempts_used,xml_valid,group_count,rect_count,connector_elements_total,overlap_count,error_count,passed
+20260414_111424,TCP 3-way handshake,openai/gpt-oss-120b,1,True,7,2,3,0,0,True
+20260414_111427,Transformer architecture,openai/gpt-oss-120b,3,True,8,8,8,0,0,True
+20260414_111439,Cell structure,openai/gpt-oss-120b,2,True,6,2,4,0,0,True
+20260414_111448,DNS resolution flow,openai/gpt-oss-120b,1,True,7,7,6,0,0,True
+20260414_111508,Photosynthesis process,openai/gpt-oss-120b,2,True,8,8,6,0,0,True
+20260414_111539,HTTP request lifecycle,openai/gpt-oss-120b,1,True,7,7,6,0,0,True

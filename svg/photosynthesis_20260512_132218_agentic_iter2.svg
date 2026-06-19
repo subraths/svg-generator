@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#000">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="chloroplast_structure">
+    <rect x="630" y="115" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="720" y="150" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Chloroplast</text>
+  </g>
+
+  <g id="light_absorption">
+    <rect x="390" y="115" width="180" height="70" fill="#fff9c4" stroke="#000"/>
+    <text x="480" y="150" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Light Absorption</text>
+  </g>
+
+  <g id="water_uptake">
+    <rect x="390" y="215" width="180" height="70" fill="#fff9c4" stroke="#000"/>
+    <text x="480" y="250" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Water Uptake (H₂O)</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect x="390" y="315" width="180" height="70" fill="#fff9c4" stroke="#000"/>
+    <text x="480" y="350" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">CO₂ Fixation</text>
+  </g>
+
+  <g id="energy_carriers">
+    <rect x="630" y="315" width="180" height="70" fill="#c8e6c9" stroke="#000"/>
+    <text x="720" y="350" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">ATP &amp; NADPH</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="390" y="415" width="180" height="70" fill="#ffe0b2" stroke="#000"/>
+    <text x="480" y="450" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Calvin Cycle</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="390" y="515" width="180" height="70" fill="#ffe0b2" stroke="#000"/>
+    <text x="480" y="550" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Glucose Production</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="390" y="615" width="180" height="70" fill="#ffe0b2" stroke="#000"/>
+    <text x="480" y="650" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">O₂ Release</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- chloroplast_structure -> light_absorption -->
+  <path d="M630,150 L570,150" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- chloroplast_structure -> water_uptake -->
+  <path d="M630,150 C610,200 590,250 570,250" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- chloroplast_structure -> co2_fixation -->
+  <path d="M630,150 C610,250 590,350 570,350" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- light_absorption -> energy_carriers -->
+  <path d="M570,150 C590,200 610,300 630,350" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- light_absorption -> water_uptake -->
+  <path d="M480,185 L480,215" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- water_uptake -> oxygen_release -->
+  <path d="M480,285 L480,615" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- energy_carriers -> calvin_cycle -->
+  <path d="M630,350 C610,400 590,450 570,450" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- co2_fixation -> calvin_cycle -->
+  <path d="M480,385 L480,415" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- calvin_cycle -> glucose_production -->
+  <path d="M480,485 L480,515" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+</svg>

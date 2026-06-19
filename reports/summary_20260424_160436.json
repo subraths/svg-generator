@@ -1,0 +1,177 @@
+{
+  "timestamp": "20260424_160436",
+  "csv": "reports/batch_compare_20260424_155631.csv",
+  "overall": {
+    "total_topics": 20,
+    "passed": 11,
+    "failed": 9,
+    "pass_rate": 55.0,
+    "avg_attempts": 0.65,
+    "avg_connectors": 3.35,
+    "avg_overlaps": 0,
+    "avg_errors": 0.45,
+    "avg_group_count": 4.1,
+    "failed_topics": [
+      {
+        "topic": "Cell structure",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: cell_membrane vs cytoplasm"
+      },
+      {
+        "topic": "Photosynthesis process",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: light_absorption vs water_splitting; Nodes too close/overlapping: water_splitting vs oxygen_release; Nodes too close/overlapping: oxygen_release vs atp_nadph_production; Nodes too close/overlapping: calvin_cycle vs glucose_synthesis; Nodes too close/overlapping: glucose_synthesis vs starch_storage"
+      },
+      {
+        "topic": "Neural network forward pass",
+        "mode": "v1_direct",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 5328, Requested 2841. Please try again in 1.2675s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      },
+      {
+        "topic": "Neural network forward pass",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: input_layer vs hidden_layer_1; Nodes too close/overlapping: hidden_layer_1 vs activation_1; Nodes too close/overlapping: activation_1 vs hidden_layer_2; Nodes too close/overlapping: hidden_layer_2 vs activation_2; Nodes too close/overlapping: activation_2 vs output_layer; Nodes too close/overlapping: output_layer vs loss_calculation"
+      },
+      {
+        "topic": "CPU memory hierarchy",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198266, Requested 2237. Please try again in 3m37.296s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      },
+      {
+        "topic": "Kubernetes pod lifecycle",
+        "mode": "v1_direct",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198266, Requested 2812. Please try again in 7m45.696s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      },
+      {
+        "topic": "Kubernetes pod lifecycle",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198265, Requested 2237. Please try again in 3m36.864s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      },
+      {
+        "topic": "Blockchain transaction flow",
+        "mode": "v1_direct",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198265, Requested 2591. Please try again in 6m9.792s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      },
+      {
+        "topic": "Blockchain transaction flow",
+        "mode": "v2_planner",
+        "error_count": 1,
+        "attempts_used": 0,
+        "fatal_error": "Planner failed after 3 tries: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198265, Requested 2237. Please try again in 3m36.864s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      }
+    ]
+  },
+  "by_mode": {
+    "v1_direct": {
+      "total_topics": 10,
+      "passed": 7,
+      "failed": 3,
+      "pass_rate": 70.0,
+      "avg_attempts": 0.9,
+      "avg_connectors": 4.4,
+      "avg_overlaps": 0,
+      "avg_errors": 0.3,
+      "avg_group_count": 5,
+      "failed_topics": [
+        {
+          "topic": "Neural network forward pass",
+          "mode": "v1_direct",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 5328, Requested 2841. Please try again in 1.2675s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "topic": "Kubernetes pod lifecycle",
+          "mode": "v1_direct",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198266, Requested 2812. Please try again in 7m45.696s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "topic": "Blockchain transaction flow",
+          "mode": "v1_direct",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198265, Requested 2591. Please try again in 6m9.792s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+        }
+      ]
+    },
+    "v2_planner": {
+      "total_topics": 10,
+      "passed": 4,
+      "failed": 6,
+      "pass_rate": 40.0,
+      "avg_attempts": 0.4,
+      "avg_connectors": 2.3,
+      "avg_overlaps": 0,
+      "avg_errors": 0.6,
+      "avg_group_count": 3.2,
+      "failed_topics": [
+        {
+          "topic": "Cell structure",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: cell_membrane vs cytoplasm"
+        },
+        {
+          "topic": "Photosynthesis process",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: light_absorption vs water_splitting; Nodes too close/overlapping: water_splitting vs oxygen_release; Nodes too close/overlapping: oxygen_release vs atp_nadph_production; Nodes too close/overlapping: calvin_cycle vs glucose_synthesis; Nodes too close/overlapping: glucose_synthesis vs starch_storage"
+        },
+        {
+          "topic": "Neural network forward pass",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Invalid plan: Nodes too close/overlapping: input_layer vs hidden_layer_1; Nodes too close/overlapping: hidden_layer_1 vs activation_1; Nodes too close/overlapping: activation_1 vs hidden_layer_2; Nodes too close/overlapping: hidden_layer_2 vs activation_2; Nodes too close/overlapping: activation_2 vs output_layer; Nodes too close/overlapping: output_layer vs loss_calculation"
+        },
+        {
+          "topic": "CPU memory hierarchy",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198266, Requested 2237. Please try again in 3m37.296s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "topic": "Kubernetes pod lifecycle",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198265, Requested 2237. Please try again in 3m36.864s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+        },
+        {
+          "topic": "Blockchain transaction flow",
+          "mode": "v2_planner",
+          "error_count": 1,
+          "attempts_used": 0,
+          "fatal_error": "Planner failed after 3 tries: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jpvqkbcbfmdresv7mg06zjtx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198265, Requested 2237. Please try again in 3m36.864s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+        }
+      ]
+    }
+  },
+  "delta_v2_minus_v1": {
+    "pass_rate_delta_v2_minus_v1": -30.0,
+    "avg_attempts_delta_v2_minus_v1": -0.5,
+    "avg_errors_delta_v2_minus_v1": 0.3,
+    "avg_overlaps_delta_v2_minus_v1": 0
+  }
+}

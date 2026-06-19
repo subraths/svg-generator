@@ -1,0 +1,38 @@
+{
+  "timestamp": "20260425_074521",
+  "batch_stamp": "20260425_074430",
+  "topic": "DNS resolution flow",
+  "mode": "v1_direct",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "application",
+      "stub_resolver",
+      "recursive_resolver",
+      "root_server",
+      "tld_server",
+      "authoritative_server",
+      "connectors"
+    ],
+    "group_count": 7,
+    "rect_count": 6,
+    "overlap_pairs": [],
+    "line_count": 7,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 7,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/dns_resolution_flow_20260425_074430_v1_direct.svg",
+    "png": "img/dns_resolution_flow_20260425_074430_v1_direct.png",
+    "plan": null
+  }
+}

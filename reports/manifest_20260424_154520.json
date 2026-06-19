@@ -1,0 +1,28 @@
+{
+  "batch_stamp": "20260424_154520",
+  "started_at": "2026-04-24T10:15:20.874735Z",
+  "finished_at": "2026-04-24T10:23:12.601245Z",
+  "model": "openai/gpt-oss-120b",
+  "max_attempts": 5,
+  "canvas": {
+    "width": 1200,
+    "height": 800
+  },
+  "topics": [
+    "TCP 3-way handshake",
+    "Transformer architecture",
+    "Cell structure",
+    "DNS resolution flow",
+    "Photosynthesis process",
+    "HTTP request lifecycle",
+    "Neural network forward pass",
+    "CPU memory hierarchy",
+    "Kubernetes pod lifecycle",
+    "Blockchain transaction flow"
+  ],
+  "modes": [
+    "v1_direct",
+    "v2_planner"
+  ],
+  "output_csv": "reports/batch_compare_20260424_154520.csv"
+}

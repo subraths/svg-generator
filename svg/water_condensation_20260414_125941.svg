@@ -1,0 +1,50 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Water Vapor -->
+  <g id="water_vapor">
+    <rect x="100" y="100" width="200" height="100" fill="#e0f7ff" stroke="#000" stroke-width="2"/>
+    <text x="200" y="155" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">Water Vapor</text>
+  </g>
+
+  <!-- Cooling -->
+  <g id="cooling">
+    <rect x="400" y="100" width="200" height="100" fill="#e0f7ff" stroke="#000" stroke-width="2"/>
+    <text x="500" y="155" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">Cooling</text>
+  </g>
+
+  <!-- Condensation -->
+  <g id="condensation">
+    <rect x="700" y="100" width="200" height="100" fill="#e0f7ff" stroke="#000" stroke-width="2"/>
+    <text x="800" y="155" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">Condensation</text>
+  </g>
+
+  <!-- Cloud Formation -->
+  <g id="cloud_formation">
+    <rect x="400" y="300" width="200" height="100" fill="#e0f7ff" stroke="#000" stroke-width="2"/>
+    <text x="500" y="355" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">Cloud Formation</text>
+  </g>
+
+  <!-- Droplets -->
+  <g id="droplets">
+    <rect x="700" y="300" width="200" height="100" fill="#e0f7ff" stroke="#000" stroke-width="2"/>
+    <text x="800" y="355" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">Droplets</text>
+  </g>
+
+  <!-- Precipitation -->
+  <g id="precipitation">
+    <rect x="950" y="300" width="200" height="100" fill="#e0f7ff" stroke="#000" stroke-width="2"/>
+    <text x="1050" y="355" font-family="sans-serif" font-size="20" text-anchor="middle" dominant-baseline="middle">Precipitation</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="300" y1="150" x2="400" y2="150" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="150" x2="700" y2="150" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="800" y1="200" x2="500" y2="300" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="350" x2="700" y2="350" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="900" y1="350" x2="950" y2="350" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

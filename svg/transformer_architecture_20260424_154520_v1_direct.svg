@@ -1,0 +1,67 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+    <style>
+      .block { stroke:#333; stroke-width:2; rx:8; ry:8; }
+      .label { font-family:sans-serif; font-size:18px; fill:#000; text-anchor:middle; dominant-baseline:middle; }
+    </style>
+  </defs>
+
+  <!-- Input Embedding -->
+  <g id="input_embedding">
+    <rect class="block" x="100" y="300" width="180" height="60" fill="#cce5ff"/>
+    <text class="label" x="190" y="330">Input Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect class="block" x="100" y="400" width="180" height="60" fill="#cce5ff"/>
+    <text class="label" x="190" y="430">Positional Encoding</text>
+  </g>
+
+  <!-- Encoder Self-Attention -->
+  <g id="encoder_self_attention">
+    <rect class="block" x="350" y="250" width="200" height="80" fill="#d4edda"/>
+    <text class="label" x="450" y="290">Encoder<br/>Self‑Attention</text>
+  </g>
+
+  <!-- Encoder Feed Forward -->
+  <g id="encoder_feed_forward">
+    <rect class="block" x="350" y="380" width="200" height="80" fill="#d4edda"/>
+    <text class="label" x="450" y="420">Encoder<br/>Feed‑Forward</text>
+  </g>
+
+  <!-- Decoder Self-Attention -->
+  <g id="decoder_self_attention">
+    <rect class="block" x="650" y="250" width="200" height="80" fill="#f8d7da"/>
+    <text class="label" x="750" y="290">Decoder<br/>Masked Self‑Attention</text>
+  </g>
+
+  <!-- Decoder Encoder‑Decoder Attention -->
+  <g id="decoder_enc_dec_attention">
+    <rect class="block" x="650" y="380" width="200" height="80" fill="#f8d7da"/>
+    <text class="label" x="750" y="420">Encoder‑Decoder<br/>Attention</text>
+  </g>
+
+  <!-- Output Projection -->
+  <g id="output_projection">
+    <rect class="block" x="950" y="315" width="200" height="80" fill="#e2e3e5"/>
+    <text class="label" x="1050" y="355">Linear + Softmax<br/>Output</text>
+  </g>
+
+  <!-- Arrows -->
+  <!-- Input Embedding -> Positional Encoding -->
+  <line x1="190" y1="360" x2="190" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Positional Encoding -> Encoder Self-Attention -->
+  <line x1="190" y1="430" x2="350" y2="290" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Encoder Self-Attention -> Encoder Feed Forward -->
+  <line x1="450" y1="330" x2="450" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Encoder Feed Forward -> Decoder Self-Attention -->
+  <line x1="450" y1="460" x2="650" y2="290" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Decoder Self-Attention -> Decoder Encoder-Decoder Attention -->
+  <line x1="750" y1="330" x2="750" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Decoder Encoder-Decoder Attention -> Output Projection -->
+  <line x1="850" y1="420" x2="950" y2="355" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

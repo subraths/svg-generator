@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold">
+    HTTP Request Lifecycle
+  </text>
+
+  <!-- Nodes -->
+  <g id="client_initiates_request">
+    <rect x="20" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="110" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+      Client Initiates Request
+    </text>
+  </g>
+
+  <g id="dns_lookup">
+    <rect x="240" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="330" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+      DNS Lookup
+    </text>
+  </g>
+
+  <g id="tcp_handshake">
+    <rect x="460" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+      TCP Handshake
+    </text>
+  </g>
+
+  <g id="send_http_request">
+    <rect x="680" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="770" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+      Send HTTP Request
+    </text>
+  </g>
+
+  <g id="server_processes_request">
+    <rect x="900" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="990" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+      Server Processes Request
+    </text>
+  </g>
+
+  <g id="generate_response">
+    <rect x="900" y="240" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="990" y="275" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+      Generate Response
+    </text>
+  </g>
+
+  <g id="send_http_response">
+    <rect x="680" y="380" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="770" y="415" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+      Send HTTP Response
+    </text>
+  </g>
+
+  <g id="client_receives_response">
+    <rect x="460" y="380" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="415" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">
+      Client Receives Response
+    </text>
+  </g>
+
+  <!-- Edges -->
+  <!-- client_initiates_request -> dns_lookup -->
+  <line x1="200" y1="135" x2="240" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="220" y="125" text-anchor="middle" font-family="sans-serif" font-size="12">resolve domain</text>
+
+  <!-- dns_lookup -> tcp_handshake -->
+  <line x1="420" y1="135" x2="460" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="440" y="125" text-anchor="middle" font-family="sans-serif" font-size="12">establish TCP</text>
+
+  <!-- tcp_handshake -> send_http_request -->
+  <line x1="640" y1="135" x2="680" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="660" y="125" text-anchor="middle" font-family="sans-serif" font-size="12">request</text>
+
+  <!-- send_http_request -> server_processes_request -->
+  <line x1="860" y1="135" x2="900" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="880" y="125" text-anchor="middle" font-family="sans-serif" font-size="12">process</text>
+
+  <!-- server_processes_request -> generate_response -->
+  <line x1="990" y1="170" x2="990" y2="240" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="1005" y="205" text-anchor="start" font-family="sans-serif" font-size="12">create response</text>
+
+  <!-- generate_response -> send_http_response -->
+  <line x1="990" y1="310" x2="770" y2="380" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="880" y="340" text-anchor="middle" font-family="sans-serif" font-size="12">send</text>
+
+  <!-- send_http_response -> client_receives_response -->
+  <line x1="680" y1="415" x2="640" y2="415" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="660" y="405" text-anchor="middle" font-family="sans-serif" font-size="12">deliver</text>
+
+  <!-- client_receives_response -> client_initiates_request -->
+  <line x1="550" y1="450" x2="110" y2="100" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="330" y="270" text-anchor="middle" font-family="sans-serif" font-size="12">next request</text>
+</svg>

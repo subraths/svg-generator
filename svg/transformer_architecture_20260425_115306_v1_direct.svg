@@ -1,0 +1,64 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Embedding -->
+  <g id="input_embedding">
+    <rect x="100" y="50" width="200" height="60" fill="#e0f7fa" stroke="#006064"/>
+    <text x="200" y="85" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#006064">Input Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect x="100" y="140" width="200" height="60" fill="#e8f5e9" stroke="#1b5e20"/>
+    <text x="200" y="175" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1b5e20">Positional Encoding</text>
+  </g>
+
+  <!-- Encoder Multi‑Head Attention -->
+  <g id="enc_multi_head_attention">
+    <rect x="100" y="230" width="200" height="60" fill="#fff3e0" stroke="#e65100"/>
+    <text x="200" y="265" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#e65100">Encoder MHA</text>
+  </g>
+
+  <!-- Encoder Feed‑Forward -->
+  <g id="enc_feed_forward">
+    <rect x="100" y="320" width="200" height="60" fill="#f3e5f5" stroke="#4a148c"/>
+    <text x="200" y="355" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#4a148c">Encoder FFN</text>
+  </g>
+
+  <!-- Decoder Self‑Attention -->
+  <g id="dec_self_attention">
+    <rect x="100" y="410" width="200" height="60" fill="#e1f5fe" stroke="#01579b"/>
+    <text x="200" y="445" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#01579b">Decoder Self‑Att.</text>
+  </g>
+
+  <!-- Decoder Encoder‑Attention -->
+  <g id="dec_enc_attention">
+    <rect x="100" y="500" width="200" height="60" fill="#fffde7" stroke="#f57f17"/>
+    <text x="200" y="535" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#f57f17">Decoder‑Encoder Att.</text>
+  </g>
+
+  <!-- Decoder Feed‑Forward -->
+  <g id="dec_feed_forward">
+    <rect x="100" y="590" width="200" height="60" fill="#f1f8e9" stroke="#33691e"/>
+    <text x="200" y="625" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#33691e">Decoder FFN</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect x="100" y="680" width="200" height="60" fill="#ffebee" stroke="#b71c1c"/>
+    <text x="200" y="715" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#b71c1c">Output (Softmax)</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="200" y1="110" x2="200" y2="140" stroke="black" marker-end="url(#arrowhead_marker)"/>
+  <line x1="200" y1="200" x2="200" y2="230" stroke="black" marker-end="url(#arrowhead_marker)"/>
+  <line x1="200" y1="290" x2="200" y2="320" stroke="black" marker-end="url(#arrowhead_marker)"/>
+  <line x1="200" y1="380" x2="200" y2="410" stroke="black" marker-end="url(#arrowhead_marker)"/>
+  <line x1="200" y1="470" x2="200" y2="500" stroke="black" marker-end="url(#arrowhead_marker)"/>
+  <line x1="200" y1="560" x2="200" y2="590" stroke="black" marker-end="url(#arrowhead_marker)"/>
+  <line x1="200" y1="650" x2="200" y2="680" stroke="black" marker-end="url(#arrowhead_marker)"/>
+</svg>

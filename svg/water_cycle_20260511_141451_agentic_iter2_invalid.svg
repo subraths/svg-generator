@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold">Water Cycle</text>
+
+  <!-- Nodes -->
+  <g id="evaporation">
+    <rect x="500" y="120" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="590" y="155" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Evaporation</text>
+  </g>
+
+  <g id="transpiration">
+    <rect x="300" y="200" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="390" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Transpiration</text>
+  </g>
+
+  <g id="condensation">
+    <rect x="760" y="360" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="850" y="395" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Condensation</text>
+  </g>
+
+  <g id="precipitation">
+    <rect x="500" y="620" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="590" y="655" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Precipitation</text>
+  </g>
+
+  <g id="collection">
+    <rect x="260" y="360" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="340" y="395" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Collection</text>
+  </g>
+
+  <g id="runoff">
+    <rect x="900" y="500" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="990" y="535" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Runoff</text>
+  </g>
+
+  <g id="infiltration">
+    <rect x="200" y="500" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="290" y="535" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Infiltration</text>
+  </g>
+
+  <g id="groundwater">
+    <rect x="620" y="240" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="710" y="275" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Groundwater</text>
+  </g>
+
+  <g id="sublimation">
+    <rect x="900" y="120" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="990" y="155" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Sublimation</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge-evaporation-condensation">
+    <path d="M590,190 L850,360" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="720" y="275" text-anchor="middle" font-family="sans-serif" font-size="12">vapor rises</text>
+  </g>
+
+  <g id="edge-transpiration-condensation">
+    <path d="M480,235 L760,395" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="620" y="315" text-anchor="middle" font-family="sans-serif" font-size="12">water vapor</text>
+  </g>
+
+  <g id="edge-condensation-precipitation">
+    <path d="M850,430 L590,620" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="720" y="525" text-anchor="middle" font-family="sans-serif" font-size="12">clouds</text>
+  </g>
+
+  <g id="edge-precipitation-collection">
+    <path d="M500,655 L440,395

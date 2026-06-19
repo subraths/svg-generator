@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L9,3.5 z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold">Water Condensation Process</text>
+
+  <!-- Nodes -->
+  <g id="air_cooling">
+    <rect x="200" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="290" y="135" text-anchor="middle" dominant-baseline="middle" font-size="16">Air Cooling</text>
+  </g>
+
+  <g id="dew_point_reached">
+    <rect x="200" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="290" y="235" text-anchor="middle" dominant-baseline="middle" font-size="16">Dew Point Reached</text>
+  </g>
+
+  <g id="condensation_nuclei">
+    <rect x="200" y="300" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="290" y="335" text-anchor="middle" dominant-baseline="middle" font-size="16">Condensation Nuclei</text>
+  </g>
+
+  <g id="droplet_formation">
+    <rect x="200" y="400" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="290" y="435" text-anchor="middle" dominant-baseline="middle" font-size="16">Droplet Formation</text>
+  </g>
+
+  <g id="cloud_development">
+    <rect x="200" y="500" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="290" y="535" text-anchor="middle" dominant-baseline="middle" font-size="16">Cloud Development</text>
+  </g>
+
+  <g id="precipitation">
+    <rect x="200" y="600" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="290" y="635" text-anchor="middle" dominant-baseline="middle" font-size="16">Precipitation</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_air_cooling_to_dew_point_reached">
+    <line x1="290" y1="170" x2="290" y2="200" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="290" y="185" text-anchor="middle" dominant-baseline="middle" font-size="12" fill="#000">temperature drops</text>
+  </g>
+
+  <g id="edge_dew_point_reached_to_condensation_nuclei">
+    <line x1="290" y1="270" x2="290" y2="300" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="290" y="285" text-anchor="middle" dominant-baseline="middle" font-size="12" fill="#000">saturation</text>
+  </g>
+
+  <g id="edge_condensation_nuclei_to_droplet_formation">
+    <line x1="290" y1="370" x2="290" y2="400" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="290" y="385" text-anchor="middle" dominant-baseline="middle" font-size="12" fill="#000">water vapor condenses</text>
+  </g>
+
+  <g id="edge_droplet_formation_to_cloud_development">
+    <line x1="290" y1="470" x2="290" y2="500" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="290" y="485" text-anchor="middle" dominant-baseline="middle" font-size="12" fill="#000">droplets coalesce</text>
+  </g>
+
+  <g id="edge_cloud_development_to_precipitation">
+    <line x1="290" y1="570" x2="290" y2="600" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="290" y="585" text-anchor="middle" dominant-baseline="middle" font-size="12" fill="#000">gravity pulls</text>
+  </g>
+</svg>

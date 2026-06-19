@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+    <style>
+      .node { fill:#e0f7ff; stroke:#000; stroke-width:1.5; }
+      .edge { fill:none; stroke:#000; stroke-width:1.2; }
+      .label { font-family:Arial,Helvetica,sans-serif; font-size:14px; pointer-events:none; }
+    </style>
+  </defs>
+
+  <text x="600" y="50" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold">Water Cycle</text>
+
+  <!-- Nodes -->
+  <g id="evaporation">
+    <rect class="node" x="510" y="265" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="600" y="300" dominant-baseline="middle" text-anchor="middle">Evaporation</text>
+  </g>
+
+  <g id="transpiration">
+    <rect class="node" x="710" y="265" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="800" y="300" dominant-baseline="middle" text-anchor="middle">Transpiration</text>
+  </g>
+
+  <g id="sublimation">
+    <rect class="node" x="910" y="265" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="1000" y="300" dominant-baseline="middle" text-anchor="middle">Sublimation</text>
+  </g>
+
+  <g id="condensation">
+    <rect class="node" x="910" y="365" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="1000" y="400" dominant-baseline="middle" text-anchor="middle">Condensation</text>
+  </g>
+
+  <g id="precipitation">
+    <rect class="node" x="910" y="565" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="1000" y="600" dominant-baseline="middle" text-anchor="middle">Precipitation</text>
+  </g>
+
+  <g id="collection">
+    <rect class="node" x="710" y="665" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="800" y="700" dominant-baseline="middle" text-anchor="middle">Collection (Lakes/Oceans)</text>
+  </g>
+
+  <g id="runoff">
+    <rect class="node" x="510" y="665" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="600" y="700" dominant-baseline="middle" text-anchor="middle">Runoff</text>
+  </g>
+
+  <g id="infiltration">
+    <rect class="node" x="510" y="465" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="600" y="500" dominant-baseline="middle" text-anchor="middle">Infiltration</text>
+  </g>
+
+  <g id="groundwater">
+    <rect class="node" x="710" y="465" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="800" y="500" dominant-baseline="middle" text-anchor="middle">Groundwater</text>
+  </g>
+
+  <!-- Edges -->
+  <path class="edge" d="M690,300 L910,400" marker-end="url(#arrow)"/>
+  <path class="edge" d="M890,300 L910,400" marker-end="url(#arrow)"/>
+  <path class="edge" d="M1000,335 L1000,365" marker-end="url(#arrow)"/>
+  <path class="edge" d="M1000,435 L1000,565" marker-end="url(#arrow)"/>
+  <path class="edge" d="M910,600 L890,700" marker-end="url(#arrow)"/>
+  <path class="edge" d="M710,700 L690,300" marker-end="url(#arrow)"/>
+  <path class="edge" d="M690,700 L710,700" marker-end="url(#arrow)"/>
+  <path class="edge" d="M600,665 L600,535" marker-end="url(#arrow)"/>
+  <path class="edge" d="M690,500 L710,500" marker-end="url(#arrow)"/>
+  <path class="edge" d="M800,535 L800,665" marker-end="url(#arrow)"/>
+
+</svg>

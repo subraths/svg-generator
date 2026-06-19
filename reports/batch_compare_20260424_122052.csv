@@ -1,0 +1,2 @@
+timestamp,batch_stamp,topic,mode,model,attempts_used,xml_valid,group_count,rect_count,connector_elements_total,overlap_count,error_count,passed,plan_path,svg_path,png_path
+20260424_122052,20260424_122052,TCP 3-way handshake,v1_direct,openai/gpt-oss-120b,2,True,6,2,3,0,0,True,,svg/tcp_3-way_handshake_20260424_122052_v1_direct.svg,img/tcp_3-way_handshake_20260424_122052_v1_direct.png

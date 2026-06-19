@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L10,3.5 Z" fill="#000"/>
+    </marker>
+    <style>
+      .node-rect { fill:#e0f7fa; stroke:#000; stroke-width:1.5; }
+      .node-text { font-family:sans-serif; font-size:14px; fill:#000; }
+      .edge-path { stroke:#000; stroke-width:1.2; fill:none; }
+      .edge-label { font-family:sans-serif; font-size:12px; fill:#000; background:#fff; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#000">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="chlorophyll">
+    <rect class="node-rect" x="100" y="100" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="190" y="135" text-anchor="middle" dominant-baseline="middle">Chlorophyll (Pigment)</text>
+  </g>
+
+  <g id="light_energy_absorption">
+    <rect class="node-rect" x="340" y="100" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="430" y="135" text-anchor="middle" dominant-baseline="middle">Light Energy Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect class="node-rect" x="100" y="200" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="190" y="235" text-anchor="middle" dominant-baseline="middle">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect class="node-rect" x="340" y="200" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="430" y="235" text-anchor="middle" dominant-baseline="middle">Oxygen Release</text>
+  </g>
+
+  <g id="atp_nadph_production">
+    <rect class="node-rect" x="100" y="300" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="190" y="335" text-anchor="middle" dominant-baseline="middle">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect class="node-rect" x="340" y="300" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="430" y="335" text-anchor="middle" dominant-baseline="middle">Carbon Dioxide Fixation</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect class="node-rect" x="100" y="400" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="190" y="435" text-anchor="middle" dominant-baseline="middle">Calvin Cycle (Light‑Independent)</text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect class="node-rect" x="340" y="400" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="430" y="435" text-anchor="middle" dominant-baseline="middle">Glucose Synthesis</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- chlorophyll -> light_energy_absorption -->
+  <path class="edge-path" d="M280,135 L340,135" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="310" y="128" text-anchor="middle">absorbs</text>
+
+  <!-- light_energy_absorption -> water_splitting -->
+  <path class="edge-path" d="M340,135 L280,235" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="310" y="185" text-anchor="middle">drives</text>
+
+  <!-- water_splitting -> oxygen_release -->
+  <path class="edge-path" d="M280,235 L340,235" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="310" y="228" text-anchor="middle">produces</text>
+
+  <!-- water_splitting -> atp_nadph_production -->
+  <path class="edge-path" d="M190,270 L190,300" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="190" y="285" text-anchor="middle">provides electrons</text>
+
+  <!-- light_energy_absorption -> atp_nadph_production (curved) -->
+  <path class="edge-path" d="M430,170 C500,170 500,250 190,300" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="310" y="230" text-anchor="middle">powers

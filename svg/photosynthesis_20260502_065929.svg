@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="100" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14">Light Absorption</text>
+  </g>
+
+  <g id="chlorophyll_role">
+    <rect x="320" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="410" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14">Chlorophyll</text>
+  </g>
+
+  <g id="water_uptake">
+    <rect x="100" y="190" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="225" text-anchor="middle" dominant-baseline="middle" font-size="14">Water Uptake</text>
+  </g>
+
+  <g id="carbon_dioxide_fixation">
+    <rect x="100" y="280" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="315" text-anchor="middle" dominant-baseline="middle" font-size="14">CO₂ Fixation</text>
+  </g>
+
+  <g id="energy_conversion">
+    <rect x="100" y="370" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="405" text-anchor="middle" dominant-baseline="middle" font-size="14">Energy Conversion (ATP/NADPH)</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="100" y="460" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="495" text-anchor="middle" dominant-baseline="middle" font-size="14">Glucose Production</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="100" y="550" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="585" text-anchor="middle" dominant-baseline="middle" font-size="14">O₂ Release</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edges">
+    <!-- chlorophyll_role → light_absorption -->
+    <line x1="410" y1="135" x2="190" y2="135" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="300" y="125" text-anchor="middle" font-size="12">captures light</text>
+
+    <!-- light_absorption → water_uptake -->
+    <line x1="190" y1="135" x2="190" y2="225" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="200" y="180" font-size="12">provides energy</text>
+
+    <!-- water_uptake → carbon_dioxide_fixation -->
+    <line x1="190" y1="225" x2="190" y2="315" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="200" y="270" font-size="12">supplies H₂O</text>
+
+    <!-- carbon_dioxide_fixation → energy_conversion -->
+    <line x1="190" y1="315" x2="190" y2="405" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="200" y="360" font-size="12">CO₂ fixed</text>
+
+    <!-- energy_conversion → glucose_production -->
+    <line x1="190" y1="405" x2="190" y2="495" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="200" y="450" font-size="12">produces glucose</text>
+
+    <!-- glucose_production → oxygen_release -->
+    <line x1="190" y1="495" x2="190" y2="585" stroke="#000" marker-end="url(#arrow)"/>
+    <text x="200" y="540" font-size="12">releases O₂</text>
+  </g>
+</svg>

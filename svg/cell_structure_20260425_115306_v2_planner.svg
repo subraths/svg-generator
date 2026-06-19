@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold">Cell Structure</text>
+
+  <!-- Nodes -->
+  <g id="cell_membrane">
+    <rect x="500" y="40" width="180" height="70" fill="none" stroke="black"/>
+    <text x="590" y="75" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Cell Membrane</text>
+  </g>
+
+  <g id="cytoplasm">
+    <rect x="500" y="130" width="180" height="70" fill="none" stroke="black"/>
+    <text x="590" y="165" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Cytoplasm</text>
+  </g>
+
+  <g id="nucleus">
+    <rect x="720" y="130" width="180" height="70" fill="none" stroke="black"/>
+    <text x="810" y="165" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Nucleus</text>
+  </g>
+
+  <g id="mitochondria">
+    <rect x="280" y="130" width="180" height="70" fill="none" stroke="black"/>
+    <text x="370" y="165" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Mitochondria</text>
+  </g>
+
+  <g id="ribosome">
+    <rect x="500" y="220" width="180" height="70" fill="none" stroke="black"/>
+    <text x="590" y="255" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Ribosome</text>
+  </g>
+
+  <g id="endoplasmic_reticulum">
+    <rect x="500" y="310" width="180" height="70" fill="none" stroke="black"/>
+    <text x="590" y="345" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Endoplasmic Reticulum</text>
+  </g>
+
+  <g id="golgi_apparatus">
+    <rect x="720" y="310" width="180" height="70" fill="none" stroke="black"/>
+    <text x="810" y="345" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16">Golgi Apparatus</text>
+  </g>
+
+  <!-- Edges -->
+  <line x1="590" y1="110" x2="590" y2="130" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="680" y1="165" x2="720" y2="165" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="165" x2="460" y2="165" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="590" y1="200" x2="590" y2="220" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="590" y1="200" x2="590" y2="310" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="680" y1="345" x2="720" y2="345" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

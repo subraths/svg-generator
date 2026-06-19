@@ -1,0 +1,53 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Sunlight -->
+  <g id="sunlight">
+    <rect x="50" y="50" width="180" height="80" fill="#FFEB3B" stroke="#000" stroke-width="2"/>
+    <text x="140" y="100" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#000">Sunlight</text>
+  </g>
+
+  <!-- Water -->
+  <g id="water">
+    <rect x="50" y="200" width="180" height="80" fill="#90CAF9" stroke="#000" stroke-width="2"/>
+    <text x="140" y="250" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#000">Water (H₂O)</text>
+  </g>
+
+  <!-- Carbon Dioxide -->
+  <g id="carbon_dioxide">
+    <rect x="50" y="350" width="180" height="80" fill="#C8E6C9" stroke="#000" stroke-width="2"/>
+    <text x="140" y="400" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#000">Carbon Dioxide (CO₂)</text>
+  </g>
+
+  <!-- Chlorophyll (Leaf) -->
+  <g id="chlorophyll">
+    <rect x="500" y="200" width="200" height="120" fill="#A5D6A7" stroke="#000" stroke-width="2"/>
+    <text x="600" y="250" font-family="sans-serif" font-size="22" text-anchor="middle" fill="#000">Chlorophyll</text>
+    <text x="600" y="280" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Leaf</text>
+  </g>
+
+  <!-- Glucose -->
+  <g id="glucose">
+    <rect x="950" y="100" width="200" height="80" fill="#FFCC80" stroke="#000" stroke-width="2"/>
+    <text x="1050" y="150" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#000">Glucose (C₆H₁₂O₆)</text>
+  </g>
+
+  <!-- Oxygen -->
+  <g id="oxygen">
+    <rect x="950" y="300" width="200" height="80" fill="#B3E5FC" stroke="#000" stroke-width="2"/>
+    <text x="1050" y="350" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#000">Oxygen (O₂)</text>
+  </g>
+
+  <!-- Arrows from inputs to chlorophyll -->
+  <line x1="230" y1="90" x2="500" y2="260" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="230" y1="240" x2="500" y2="260" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="230" y1="390" x2="500" y2="260" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrows from chlorophyll to outputs -->
+  <line x1="700" y1="260" x2="950" y2="140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="320" x2="950" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

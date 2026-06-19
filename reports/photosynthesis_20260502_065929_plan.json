@@ -1,0 +1,94 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll_role",
+      "label": "Chlorophyll",
+      "x": 320,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_uptake",
+      "label": "Water Uptake",
+      "x": 100,
+      "y": 190,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_dioxide_fixation",
+      "label": "CO\u2082 Fixation",
+      "x": 100,
+      "y": 280,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "energy_conversion",
+      "label": "Energy Conversion (ATP/NADPH)",
+      "x": 100,
+      "y": 370,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 100,
+      "y": 460,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "O\u2082 Release",
+      "x": 100,
+      "y": 550,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "chlorophyll_role",
+      "to": "light_absorption",
+      "label": "captures light"
+    },
+    {
+      "from": "light_absorption",
+      "to": "water_uptake",
+      "label": "provides energy"
+    },
+    {
+      "from": "water_uptake",
+      "to": "carbon_dioxide_fixation",
+      "label": "supplies H\u2082O"
+    },
+    {
+      "from": "carbon_dioxide_fixation",
+      "to": "energy_conversion",
+      "label": "CO\u2082 fixed"
+    },
+    {
+      "from": "energy_conversion",
+      "to": "glucose_production",
+      "label": "produces glucose"
+    },
+    {
+      "from": "glucose_production",
+      "to": "oxygen_release",
+      "label": "releases O\u2082"
+    }
+  ]
+}

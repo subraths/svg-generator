@@ -1,0 +1,64 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Client Hello -->
+  <g id="client_hello">
+    <rect x="100" y="50" width="250" height="50" fill="#f0f0f0" stroke="#000"/>
+    <text x="225" y="83" font-size="18" text-anchor="middle">ClientHello</text>
+  </g>
+
+  <!-- Server Hello -->
+  <g id="server_hello">
+    <rect x="600" y="50" width="250" height="50" fill="#f0f0f0" stroke="#000"/>
+    <text x="725" y="83" font-size="18" text-anchor="middle">ServerHello</text>
+  </g>
+
+  <!-- Server Certificate -->
+  <g id="server_certificate">
+    <rect x="600" y="130" width="250" height="50" fill="#f0f0f0" stroke="#000"/>
+    <text x="725" y="163" font-size="18" text-anchor="middle">ServerCertificate</text>
+  </g>
+
+  <!-- Server Key Exchange -->
+  <g id="server_key_exchange">
+    <rect x="600" y="210" width="250" height="50" fill="#f0f0f0" stroke="#000"/>
+    <text x="725" y="243" font-size="18" text-anchor="middle">ServerKeyExchange</text>
+  </g>
+
+  <!-- Server Hello Done -->
+  <g id="server_hello_done">
+    <rect x="600" y="290" width="250" height="50" fill="#f0f0f0" stroke="#000"/>
+    <text x="725" y="323" font-size="18" text-anchor="middle">ServerHelloDone</text>
+  </g>
+
+  <!-- Client Key Exchange -->
+  <g id="client_key_exchange">
+    <rect x="100" y="370" width="250" height="50" fill="#f0f0f0" stroke="#000"/>
+    <text x="225" y="403" font-size="18" text-anchor="middle">ClientKeyExchange</text>
+  </g>
+
+  <!-- Change Cipher Spec -->
+  <g id="change_cipher_spec">
+    <rect x="350" y="450" width="300" height="50" fill="#f0f0f0" stroke="#000"/>
+    <text x="500" y="483" font-size="18" text-anchor="middle">ChangeCipherSpec</text>
+  </g>
+
+  <!-- Finished -->
+  <g id="finished">
+    <rect x="350" y="530" width="300" height="50" fill="#f0f0f0" stroke="#000"/>
+    <text x="500" y="563" font-size="18" text-anchor="middle">Finished</text>
+  </g>
+
+  <!-- Arrows showing flow -->
+  <path d="M350 75 L600 75" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M725 100 L725 130" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M725 180 L725 210" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M725 260 L725 290" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M725 340 L350 340" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M225 400 L350 475" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M500 500 L500 530" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+</svg>

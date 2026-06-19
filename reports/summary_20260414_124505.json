@@ -1,0 +1,14 @@
+{
+  "timestamp": "20260414_124505",
+  "csv": "reports/batch_20260414_111655.csv",
+  "total_topics": 10,
+  "passed": 10,
+  "failed": 0,
+  "pass_rate": 100.0,
+  "avg_attempts": 1.4,
+  "avg_connectors": 7,
+  "avg_overlaps": 0,
+  "avg_errors": 0,
+  "avg_group_count": 7,
+  "failed_topics": []
+}

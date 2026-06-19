@@ -1,0 +1,35 @@
+{
+  "timestamp": "20260414_111938",
+  "topic": "Blockchain transaction flow",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "user_wallet",
+      "transaction_creation",
+      "broadcast_network",
+      "miner_validation",
+      "block_inclusion",
+      "confirmation"
+    ],
+    "group_count": 6,
+    "rect_count": 6,
+    "overlap_pairs": [],
+    "line_count": 5,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 5,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/blockchain_transaction_flow_20260414_111938.svg",
+    "png": "img/blockchain_transaction_flow_20260414_111938.png",
+    "csv": "reports/batch_20260414_111655.csv"
+  }
+}

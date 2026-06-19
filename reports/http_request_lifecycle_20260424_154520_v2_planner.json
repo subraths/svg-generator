@@ -1,0 +1,39 @@
+{
+  "timestamp": "20260424_154922",
+  "batch_stamp": "20260424_154520",
+  "topic": "HTTP request lifecycle",
+  "mode": "v2_planner",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "client_initiates_request",
+      "dns_lookup",
+      "tcp_handshake",
+      "send_http_request",
+      "server_processes_request",
+      "generate_response",
+      "send_http_response",
+      "client_receives_response"
+    ],
+    "group_count": 8,
+    "rect_count": 8,
+    "overlap_pairs": [],
+    "line_count": 8,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 8,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/http_request_lifecycle_20260424_154520_v2_planner.svg",
+    "png": "img/http_request_lifecycle_20260424_154520_v2_planner.png",
+    "plan": "reports/http_request_lifecycle_20260424_154520_v2_planner_plan.json"
+  }
+}

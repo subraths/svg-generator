@@ -1,0 +1,94 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_absorption",
+      "label": "Water (H\u2082O) uptake",
+      "x": 100,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_dioxide",
+      "label": "CO\u2082 intake",
+      "x": 100,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent",
+      "label": "Light\u2011dependent reactions",
+      "x": 340,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin cycle (light\u2011independent)",
+      "x": 580,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose (C\u2086H\u2081\u2082O\u2086) produced",
+      "x": 820,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen (O\u2082) released",
+      "x": 820,
+      "y": 320,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "light_dependent",
+      "label": "provides energy"
+    },
+    {
+      "from": "water_absorption",
+      "to": "light_dependent",
+      "label": "splits (photolysis)"
+    },
+    {
+      "from": "light_dependent",
+      "to": "calvin_cycle",
+      "label": "produces ATP/NADPH"
+    },
+    {
+      "from": "carbon_dioxide",
+      "to": "calvin_cycle",
+      "label": "CO\u2082 fixation"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_production",
+      "label": "synthesizes glucose"
+    },
+    {
+      "from": "light_dependent",
+      "to": "oxygen_release",
+      "label": "releases O\u2082"
+    }
+  ]
+}

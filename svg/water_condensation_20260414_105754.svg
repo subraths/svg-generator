@@ -1,0 +1,50 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Water Vapor -->
+  <g id="water_vapor">
+    <rect x="100" y="200" width="180" height="80" fill="#e0f7fa" stroke="black"/>
+    <text x="190" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18">Water Vapor</text>
+  </g>
+
+  <!-- Cooling -->
+  <g id="cooling">
+    <rect x="320" y="200" width="180" height="80" fill="#e0f7fa" stroke="black"/>
+    <text x="410" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18">Cooling</text>
+  </g>
+
+  <!-- Condensation Nuclei -->
+  <g id="condensation_nuclei">
+    <rect x="540" y="200" width="180" height="80" fill="#e0f7fa" stroke="black"/>
+    <text x="630" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18">Condensation Nuclei</text>
+  </g>
+
+  <!-- Droplet Formation -->
+  <g id="droplet_formation">
+    <rect x="760" y="200" width="180" height="80" fill="#e0f7fa" stroke="black"/>
+    <text x="850" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18">Droplet Formation</text>
+  </g>
+
+  <!-- Clouds -->
+  <g id="clouds">
+    <rect x="980" y="200" width="180" height="80" fill="#e0f7fa" stroke="black"/>
+    <text x="1070" y="240" text-anchor="middle" dominant-baseline="middle" font-size="18">Clouds</text>
+  </g>
+
+  <!-- Precipitation -->
+  <g id="precipitation">
+    <rect x="980" y="350" width="180" height="80" fill="#e0f7fa" stroke="black"/>
+    <text x="1070" y="390" text-anchor="middle" dominant-baseline="middle" font-size="18">Precipitation</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="280" y1="240" x2="320" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="240" x2="540" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="720" y1="240" x2="760" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="940" y1="240" x2="980" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1070" y1="280" x2="1070" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

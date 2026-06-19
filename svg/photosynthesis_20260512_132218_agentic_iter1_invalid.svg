@@ -1,0 +1,55 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+    <style>
+      .node { fill:#e0f7fa; stroke:#1565c0; stroke-width:2; }
+      .edge { stroke:#424242; stroke-width:2; fill:none; }
+      .title { font-family:sans-serif; font-size:36px; font-weight:bold; text-anchor:middle; fill:#212121; }
+      .label { font-family:sans-serif; font-size:16px; fill:#212121; pointer-events:none; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" class="title">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect class="node" x="490" y="215" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="580" y="250" text-anchor="middle" dominant-baseline="middle">Light Absorption</text>
+  </g>
+
+  <g id="water_uptake">
+    <rect class="node" x="490" y="315" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="580" y="350" text-anchor="middle" dominant-baseline="middle">Water Uptake (H₂O)</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect class="node" x="490" y="415" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="580" y="450" text-anchor="middle" dominant-baseline="middle">CO₂ Fixation</text>
+  </g>
+
+  <g id="chloroplast_structure">
+    <rect class="node" x="730" y="215" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="820" y="250" text-anchor="middle" dominant-baseline="middle">Chloroplast</text>
+  </g>
+
+  <g id="energy_carriers">
+    <rect class="node" x="730" y="415" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="820" y="450" text-anchor="middle" dominant-baseline="middle">ATP &amp; NADPH</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect class="node" x="490" y="515" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="580" y="550" text-anchor="middle" dominant-baseline="middle">Calvin Cycle</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect class="node" x="490" y="615" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="580" y="650" text-anchor="middle" dominant-baseline="middle">Glucose Production</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect class="node" x="490" y="715" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="580"

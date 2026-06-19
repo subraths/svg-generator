@@ -1,0 +1,86 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" font-size="24" text-anchor="middle" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="100" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="140" font-size="14" text-anchor="middle" dominant-baseline="middle">Light Absorption</text>
+  </g>
+
+  <g id="water_split">
+    <rect x="100" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="240" font-size="14" text-anchor="middle" dominant-baseline="middle">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="100" y="300" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="340" font-size="14" text-anchor="middle" dominant-baseline="middle">O₂ Release</text>
+  </g>
+
+  <g id="electron_transport">
+    <rect x="100" y="400" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="440" font-size="14" text-anchor="middle" dominant-baseline="middle">Electron Transport Chain</text>
+  </g>
+
+  <g id="nadph_formation">
+    <rect x="100" y="500" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="540" font-size="14" text-anchor="middle" dominant-baseline="middle">NADPH Formation</text>
+  </g>
+
+  <g id="atp_synthesis">
+    <rect x="100" y="600" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="640" font-size="14" text-anchor="middle" dominant-baseline="middle">ATP Synthesis</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="500" y="260" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="590" y="300" font-size="14" text-anchor="middle" dominant-baseline="middle">Carbon Fixation (Calvin Cycle)</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="500" y="460" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="590" y="500" font-size="14" text-anchor="middle" dominant-baseline="middle">Glucose Production</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edges">
+    <!-- light_absorption -> water_split -->
+    <line x1="190" y1="170" x2="190" y2="200" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="200" y="185" font-size="12" text-anchor="start" dominant-baseline="middle">absorbs light</text>
+
+    <!-- water_split -> oxygen_release -->
+    <line x1="190" y1="270" x2="190" y2="300" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="200" y="285" font-size="12" text-anchor="start" dominant-baseline="middle">produces O₂</text>
+
+    <!-- water_split -> electron_transport -->
+    <line x1="190" y1="270" x2="190" y2="400" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="200" y="335" font-size="12" text-anchor="start" dominant-baseline="middle">e⁻ to ETC</text>
+
+    <!-- electron_transport -> nadph_formation -->
+    <line x1="190" y1="470" x2="190" y2="500" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="200" y="485" font-size="12" text-anchor="start" dominant-baseline="middle">reduces NADP⁺</text>
+
+    <!-- electron_transport -> atp_synthesis -->
+    <line x1="190" y1="470" x2="190" y2="600" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="200" y="535" font-size="12" text-anchor="start" dominant-baseline="middle">generates ATP</text>
+
+    <!-- nadph_formation -> carbon_fixation -->
+    <line x1="280" y1="535" x2="500" y2="295" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="390" y="415" font-size="12" text-anchor="middle" dominant-baseline="middle">provides NADPH</text>
+
+    <!-- atp_synthesis -> carbon_fixation -->
+    <line x1="280" y1="635" x2="500" y2="295" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="390" y="465" font-size="12" text-anchor="middle" dominant-baseline="middle">provides ATP</text>
+
+    <!-- carbon_fixation -> glucose_production -->
+    <line x1="590" y1="330" x2="590" y2="460" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="600" y="395" font-size="12" text-anchor="start" dominant-baseline="middle">produces glucose</text>
+  </g>
+</svg>

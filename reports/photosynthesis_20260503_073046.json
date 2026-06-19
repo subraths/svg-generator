@@ -1,0 +1,37 @@
+{
+  "timestamp": "20260503_073046",
+  "topic": "Photosynthesis",
+  "model": "openai/gpt-oss-120b",
+  "mode": "v2_planner",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "chlorophyll",
+      "light_absorption",
+      "water_photolysis",
+      "oxygen_release",
+      "energy_storage",
+      "carbon_fixation",
+      "glucose_synthesis"
+    ],
+    "group_count": 7,
+    "rect_count": 7,
+    "overlap_pairs": [],
+    "line_count": 6,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 6,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/photosynthesis_20260503_073046.svg",
+    "png": "img/photosynthesis_20260503_073046.png",
+    "plan": "reports/photosynthesis_20260503_073046_plan.json"
+  }
+}

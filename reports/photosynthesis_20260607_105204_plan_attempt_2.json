@@ -1,0 +1,81 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Overview",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 200,
+      "y": 60,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll",
+      "x": 200,
+      "y": 160,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "light_dependent",
+      "label": "Light Dependent\nReactions",
+      "x": 200,
+      "y": 260,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP &\nNADPH\nProduction",
+      "x": 200,
+      "y": 360,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle",
+      "x": 200,
+      "y": 460,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "glucose",
+      "label": "Glucose\nSynthesis",
+      "x": 200,
+      "y": 560,
+      "w": 180,
+      "h": 80
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll",
+      "label": "absorbs"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent",
+      "label": "drives"
+    },
+    {
+      "from": "light_dependent",
+      "to": "atp_nadph",
+      "label": "produces"
+    },
+    {
+      "from": "atp_nadph",
+      "to": "calvin_cycle",
+      "label": "provides"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose",
+      "label": "creates"
+    }
+  ]
+}

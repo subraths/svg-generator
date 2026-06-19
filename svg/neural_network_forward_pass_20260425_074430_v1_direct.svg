@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+    <style>
+      .neuron { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .bias { fill:#fff3e0; stroke:#bf360c; stroke-width:2; }
+      .layer_label { font-size:18px; font-weight:bold; fill:#212121; }
+      .text_label { font-size:16px; fill:#212121; }
+      .arrow { stroke:#424242; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- Input Layer -->
+  <g id="input_layer">
+    <text x="150" y="120" class="layer_label" text-anchor="middle">Input Layer</text>
+    <circle cx="150" cy="200" r="30" class="neuron"/>
+    <text x="150" y="205" class="text_label" text-anchor="middle">x₁</text>
+    <circle cx="150" cy="300" r="30" class="neuron"/>
+    <text x="150" y="305" class="text_label" text-anchor="middle">x₂</text>
+    <circle cx="150" cy="400" r="30" class="neuron"/>
+    <text x="150" y="405" class="text_label" text-anchor="middle">x₃</text>
+  </g>
+
+  <!-- Hidden Layer -->
+  <g id="hidden_layer">
+    <text x="550" y="80" class="layer_label" text-anchor="middle">Hidden Layer</text>
+    <circle cx="550" cy="150" r="30" class="neuron"/>
+    <text x="550" y="155" class="text_label" text-anchor="middle">h₁</text>
+    <circle cx="550" cy="250" r="30" class="neuron"/>
+    <text x="550" y="255" class="text_label" text-anchor="middle">h₂</text>
+    <circle cx="550" cy="350" r="30" class="neuron"/>
+    <text x="550" y="355" class="text_label" text-anchor="middle">h₃</text>
+    <circle cx="550" cy="450" r="30" class="neuron"/>
+    <text x="550" y="455" class="text_label" text-anchor="middle">h₄</text>
+    <!-- Bias for hidden layer -->
+    <g id="bias_hidden">
+      <circle cx="470" cy="300" r="20" class="bias"/>
+      <text x="470" y="305" class="text_label" text-anchor="middle">bₕ</text>
+      <line x1="470" y1="320" x2="540" y2="150" class="arrow" marker-end="url(#arrowhead)"/>
+      <line x1="470" y1="320" x2="540" y2="250" class="arrow" marker-end="url(#arrowhead)"/>
+      <line x1="470" y1="320" x2="540" y2="350" class="arrow" marker-end="url(#arrowhead)"/>
+      <line x1="470" y1="320" x2="540" y2="450" class="arrow" marker-end="url(#arrowhead)"/>
+    </g>
+    <!-- Activation label -->
+    <text x="550" y="520" class="text_label" text-anchor="middle">ReLU</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <text x="950" y="120" class="layer_label" text-anchor="middle">Output Layer</text>
+    <circle cx="950" cy="250" r="30" class="neuron"/>
+    <text x="950" y="255" class="text_label" text-anchor="middle">y₁</text>
+    <circle cx="950" cy="350" r="30" class="neuron"/>
+    <text x="950" y="355" class="text_label" text-anchor="middle">y₂</text>
+    <!-- Bias for output layer -->
+    <g id="bias_output">
+      <circle cx="870" cy="300" r="20" class="bias"/>
+      <text x="870" y="305" class="text_label" text-anchor="middle">bₒ</text>
+      <line x1="870" y1="320" x2="940" y2="250" class="arrow" marker-end="url(#arrowhead)"/>
+      <line x1="870" y1="320" x2="940" y2="350" class="arrow" marker-end="url(#arrowhead)"/>
+    </g>
+    <!-- Activation label -->
+    <text x="950" y="420" class="text_label" text-anchor="middle">Softmax</text>
+  </g>
+
+  <!-- Weight Connections -->
+  <g id="weight_connections">
+    <!-- Input to Hidden -->
+    <line x1="180" y1="200" x2="520" y2="150" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="200" x2="520" y2="250" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="200" x2="520" y2="350" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="200" x2="520" y2="450" class="arrow" marker-end="url(#arrowhead)"/>
+
+    <line x1="180" y1="300" x2="520" y2="150" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="300" x2="520" y2="250" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="300" x2="520" y2="350" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="300" x2="520" y2="450" class="arrow" marker-end="url(#arrowhead)"/>
+
+    <line x1="180" y1="400" x2="520" y2="150" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="400" x2="520" y2="250" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="400" x2="520" y2="350" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="400" x2="520" y2="450" class="arrow" marker-end="url(#arrowhead)"/>
+
+    <!-- Hidden to Output -->
+    <line x1="580" y1="150" x2="920" y2="250" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="580" y1="150" x2="920" y2="350" class="arrow" marker-end="url(#arrowhead)"/>
+
+    <line x1="580" y1="250" x2="920" y2="250" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="580" y1="250" x2="920" y2="350" class="arrow" marker-end="url(#arrowhead)"/>
+
+    <line x1="580" y1="350" x2="920" y2="250" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="580" y1="350" x2="920" y2="350" class="arrow" marker-end="url(#arrowhead)"/>
+
+    <line x1="580" y1="450" x2="920" y2="250" class="arrow" marker-end="url(#arrowhead)"/>
+    <line x1="580" y1="450" x2="920" y2="350" class="arrow" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Overall Flow Description -->
+  <g id="flow_description">
+    <text x="600" y="750" class="text_label" text-anchor="middle">
+      Forward Pass: Input → Weighted Sum + Bias → Activation → Output
+    </text>
+  </g>
+</svg>

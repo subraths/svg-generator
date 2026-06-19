@@ -1,0 +1,58 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-family="sans-serif">Photosynthesis Process</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="460" y="290" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="330" text-anchor="middle" dominant-baseline="middle" font-size="14" font-family="sans-serif">Light Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="460" y="380" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="415" text-anchor="middle" dominant-baseline="middle" font-size="14" font-family="sans-serif">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="460" y="470" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="505" text-anchor="middle" dominant-baseline="middle" font-size="14" font-family="sans-serif">Oxygen Release</text>
+  </g>
+
+  <g id="energy_carriers">
+    <rect x="460" y="560" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="550" y="595" text-anchor="middle" dominant-baseline="middle" font-size="14" font-family="sans-serif">Energy Carriers (ATP, NADPH)</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect x="760" y="380" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="850" y="415" text-anchor="middle" dominant-baseline="middle" font-size="14" font-family="sans-serif">CO₂ Fixation (Calvin Cycle)</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="760" y="470" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="850" y="505" text-anchor="middle" dominant-baseline="middle" font-size="14" font-family="sans-serif">Glucose Production</text>
+  </g>
+
+  <g id="starch_storage">
+    <rect x="760" y="560" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="850" y="595" text-anchor="middle" dominant-baseline="middle" font-size="14" font-family="sans-serif">Starch Storage</text>
+  </g>
+
+  <!-- Edges -->
+  <path d="M550,360 L550,380" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="550" y="365" text-anchor="middle" font-size="12" font-family="sans-serif">energy</text>
+
+  <path d="M550,360 L550,560" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="550" y="460" text-anchor="middle" font-size="12" font-family="sans-serif">produces</text>
+
+  <path d="M550,450 L550,470" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="550" y="460" text-anchor="middle" font-size="12" font-family="sans-serif">O₂</text>
+
+  <path d="M550,450 L550,560" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <text x="550" y="505

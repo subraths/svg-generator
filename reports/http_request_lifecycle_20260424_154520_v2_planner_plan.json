@@ -1,0 +1,112 @@
+{
+  "diagram_type": "flow",
+  "title": "HTTP Request Lifecycle",
+  "nodes": [
+    {
+      "id": "client_initiates_request",
+      "label": "Client Initiates Request",
+      "x": 20,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "dns_lookup",
+      "label": "DNS Lookup",
+      "x": 240,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "tcp_handshake",
+      "label": "TCP Handshake",
+      "x": 460,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "send_http_request",
+      "label": "Send HTTP Request",
+      "x": 680,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "server_processes_request",
+      "label": "Server Processes Request",
+      "x": 900,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "generate_response",
+      "label": "Generate Response",
+      "x": 900,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "send_http_response",
+      "label": "Send HTTP Response",
+      "x": 680,
+      "y": 380,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "client_receives_response",
+      "label": "Client Receives Response",
+      "x": 460,
+      "y": 380,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "client_initiates_request",
+      "to": "dns_lookup",
+      "label": "resolve domain"
+    },
+    {
+      "from": "dns_lookup",
+      "to": "tcp_handshake",
+      "label": "establish TCP"
+    },
+    {
+      "from": "tcp_handshake",
+      "to": "send_http_request",
+      "label": "request"
+    },
+    {
+      "from": "send_http_request",
+      "to": "server_processes_request",
+      "label": "process"
+    },
+    {
+      "from": "server_processes_request",
+      "to": "generate_response",
+      "label": "create response"
+    },
+    {
+      "from": "generate_response",
+      "to": "send_http_response",
+      "label": "send"
+    },
+    {
+      "from": "send_http_response",
+      "to": "client_receives_response",
+      "label": "deliver"
+    },
+    {
+      "from": "client_receives_response",
+      "to": "client_initiates_request",
+      "label": "next request"
+    }
+  ]
+}

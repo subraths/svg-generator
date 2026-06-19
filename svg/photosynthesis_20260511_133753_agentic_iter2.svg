@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="14">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="40" y="60" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="130" y="95" text-anchor="middle" dominant-baseline="middle">Light Absorption</text>
+  </g>
+
+  <g id="water_uptake">
+    <rect x="40" y="160" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="130" y="195" text-anchor="middle" dominant-baseline="middle">Water Uptake</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect x="40" y="260" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="130" y="295" text-anchor="middle" dominant-baseline="middle">CO₂ Fixation</text>
+  </g>
+
+  <g id="light_dependent_reactions">
+    <rect x="260" y="80" width="200" height="70" fill="#fff9c4" stroke="#000"/>
+    <text x="360" y="115" text-anchor="middle" dominant-baseline="middle">Light‑Dependent Reactions</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="260" y="260" width="200" height="70" fill="#fff9c4" stroke="#000"/>
+    <text x="360" y="295" text-anchor="middle" dominant-baseline="middle">Calvin Cycle</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="260" y="180" width="180" height="70" fill="#fff9c4" stroke="#000"/>
+    <text x="350" y="215" text-anchor="middle" dominant-baseline="middle">Oxygen Release</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="500" y="260" width="200" height="70" fill="#c8e6c9" stroke="#000"/>
+    <text x="600" y="295" text-anchor="middle" dominant-baseline="middle">Glucose Production</text>
+  </g>
+
+  <g id="energy_carriers">
+    <rect x="500" y="80" width="200" height="70" fill="#c8e6c9" stroke="#000"/>
+    <text x="600" y="115" text-anchor="middle" dominant-baseline="middle">Energy Carriers (ATP/NADPH)</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_light_absorption_to_light_dependent_reactions">
+    <path d="M220,95 L260,115" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="240" y="105" text-anchor="middle" dominant-baseline="middle" font-size="12">absorbs light</text>
+  </g>
+
+  <g id="edge_water_uptake_to_light_dependent_reactions">
+    <path d="M220,195 L260,115" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="240" y="155" text-anchor="middle" dominant-baseline="middle" font-size="12">provides electrons</text>
+  </g>
+
+  <g id="edge_co2_fixation_to_calvin_cycle">
+    <path d="M220,295 L260,295" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="240" y="295" text-anchor="middle" dominant-baseline="middle" font-size="12">CO₂ enters</text>
+  </g>
+
+  <g id="edge_light_dependent_reactions_to_oxygen_release">
+    <path d="M360,150 L350,180" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="355" y="165" text-anchor="middle" dominant-baseline="middle" font-size="12">produces O₂</text>
+  </g>
+
+  <g id="edge_light_dependent_reactions_to_energy_carriers">
+    <path d="M460,115 L500,115" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="480" y="115" text-anchor="middle" dominant-baseline="middle" font-size="12">produces ATP/NADPH</text>
+  </g>
+
+  <g id="edge_energy_carriers_to_calvin_cycle">
+    <path d="M600,150 L360,260" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="480" y="205" text-anchor="middle" dominant-baseline="middle" font-size="12">provides energy</text>
+  </g>
+
+  <g id="edge_calvin_cycle_to_glucose_production">
+    <path d="M460,295 L500,295" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="480" y="295" text-anchor="middle" dominant-baseline="middle" font-size="12">synthesizes glucose</text>
+  </g>
+</svg>

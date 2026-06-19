@@ -1,0 +1,37 @@
+{
+  "timestamp": "20260414_111508",
+  "topic": "Photosynthesis process",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 2,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "sun_light",
+      "water",
+      "co2",
+      "leaf",
+      "light_dependent",
+      "calvin_cycle",
+      "glucose",
+      "oxygen"
+    ],
+    "group_count": 8,
+    "rect_count": 8,
+    "overlap_pairs": [],
+    "line_count": 6,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 6,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/photosynthesis_process_20260414_111508.svg",
+    "png": "img/photosynthesis_process_20260414_111508.png",
+    "csv": "reports/batch_20260414_111424.csv"
+  }
+}

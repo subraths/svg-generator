@@ -1,0 +1,125 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 100,
+      "y": 80,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting (Photolysis)",
+      "x": 100,
+      "y": 180,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release (O\u2082)",
+      "x": 100,
+      "y": 280,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "electron_transport",
+      "label": "Electron Transport Chain",
+      "x": 320,
+      "y": 180,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_synthesis",
+      "label": "ATP Synthesis",
+      "x": 320,
+      "y": 280,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "nadph_formation",
+      "label": "NADPH Formation",
+      "x": 540,
+      "y": 280,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle",
+      "x": 540,
+      "y": 380,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_fixation",
+      "label": "Carbon Fixation (CO\u2082)",
+      "x": 540,
+      "y": 480,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 540,
+      "y": 580,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "light_absorption",
+      "to": "water_splitting",
+      "label": "photolysis"
+    },
+    {
+      "from": "light_absorption",
+      "to": "electron_transport",
+      "label": "excites electrons"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "O\u2082"
+    },
+    {
+      "from": "electron_transport",
+      "to": "atp_synthesis",
+      "label": "ATP"
+    },
+    {
+      "from": "electron_transport",
+      "to": "nadph_formation",
+      "label": "NADPH"
+    },
+    {
+      "from": "atp_synthesis",
+      "to": "calvin_cycle",
+      "label": "energy"
+    },
+    {
+      "from": "nadph_formation",
+      "to": "calvin_cycle",
+      "label": "reducing power"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "carbon_fixation",
+      "label": "CO\u2082 fixation"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "glucose_production",
+      "label": "glucose"
+    }
+  ]
+}

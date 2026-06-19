@@ -1,0 +1,157 @@
+{
+  "topic": "Photosynthesis",
+  "iterations": 5,
+  "history": [
+    {
+      "iteration": 1,
+      "svg_path": "svg/photosynthesis_20260512_153224_agentic_iter1_invalid.svg",
+      "png_path": null,
+      "feedback": null,
+      "validation": {
+        "xml_valid": false,
+        "width": null,
+        "height": null,
+        "group_ids": [],
+        "group_count": 0,
+        "rect_count": 0,
+        "overlap_pairs": [],
+        "line_count": 0,
+        "polyline_count": 0,
+        "path_count": 0,
+        "marker_arrow_defined": false,
+        "connector_elements_total": 0,
+        "has_duplicate_ids": false,
+        "errors": [
+          "XML parse error: no element found: line 58, column 36"
+        ]
+      }
+    },
+    {
+      "iteration": 2,
+      "svg_path": "svg/photosynthesis_20260512_153224_agentic_iter2_invalid.svg",
+      "png_path": null,
+      "feedback": null,
+      "validation": {
+        "xml_valid": false,
+        "width": null,
+        "height": null,
+        "group_ids": [],
+        "group_count": 0,
+        "rect_count": 0,
+        "overlap_pairs": [],
+        "line_count": 0,
+        "polyline_count": 0,
+        "path_count": 0,
+        "marker_arrow_defined": false,
+        "connector_elements_total": 0,
+        "has_duplicate_ids": false,
+        "errors": [
+          "XML parse error: no element found: line 66, column 102"
+        ]
+      }
+    },
+    {
+      "iteration": 3,
+      "svg_path": "svg/photosynthesis_20260512_153224_agentic_iter3.svg",
+      "png_path": "img/photosynthesis_20260512_153224_agentic_iter3.png",
+      "feedback": {
+        "pass": false,
+        "issues": [
+          {
+            "type": "arrows",
+            "detail": "Arrow from 'Light-dependent Reactions' to 'ATP & NADPH Production' endpoint inside node boundary"
+          },
+          {
+            "type": "arrows",
+            "detail": "Arrow from 'Water Splitting (Photolysis)' to 'Light-independent Reactions (Calvin Cycle)' endpoint inside node boundary"
+          }
+        ],
+        "summary": "Arrow endpoints not properly aligned with node boundaries"
+      },
+      "validation": {
+        "xml_valid": true,
+        "width": "1200",
+        "height": "800",
+        "group_ids": [
+          "sunlight",
+          "chlorophyll",
+          "light_dependent",
+          "water_splitting",
+          "oxygen_release",
+          "atp_nadph",
+          "light_independent",
+          "carbon_fixation",
+          "glucose_synthesis"
+        ],
+        "group_count": 9,
+        "rect_count": 9,
+        "overlap_pairs": [],
+        "line_count": 0,
+        "polyline_count": 0,
+        "path_count": 9,
+        "marker_arrow_defined": true,
+        "connector_elements_total": 9,
+        "has_duplicate_ids": false,
+        "errors": []
+      }
+    },
+    {
+      "iteration": 4,
+      "svg_path": "svg/photosynthesis_20260512_153224_agentic_iter4_invalid.svg",
+      "png_path": null,
+      "feedback": null,
+      "validation": {
+        "xml_valid": false,
+        "width": null,
+        "height": null,
+        "group_ids": [],
+        "group_count": 0,
+        "rect_count": 0,
+        "overlap_pairs": [],
+        "line_count": 0,
+        "polyline_count": 0,
+        "path_count": 0,
+        "marker_arrow_defined": false,
+        "connector_elements_total": 0,
+        "has_duplicate_ids": false,
+        "errors": [
+          "XML parse error: unclosed token: line 38, column 2"
+        ]
+      }
+    },
+    {
+      "iteration": 5,
+      "svg_path": "svg/photosynthesis_20260512_153224_agentic_iter5_invalid.svg",
+      "png_path": null,
+      "feedback": null,
+      "validation": {
+        "xml_valid": false,
+        "width": null,
+        "height": null,
+        "group_ids": [],
+        "group_count": 0,
+        "rect_count": 0,
+        "overlap_pairs": [],
+        "line_count": 0,
+        "polyline_count": 0,
+        "path_count": 0,
+        "marker_arrow_defined": false,
+        "connector_elements_total": 0,
+        "has_duplicate_ids": false,
+        "errors": [
+          "XML parse error: unclosed token: line 55, column 4"
+        ]
+      }
+    }
+  ],
+  "final_feedback": {
+    "pass": false,
+    "issues": [
+      {
+        "type": "xml",
+        "detail": "Invalid SVG XML"
+      }
+    ],
+    "summary": "SVG XML invalid; regenerate with strict XML correctness."
+  }
+}

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" font-family="sans-serif" font-size="24" text-anchor="middle" dominant-baseline="middle">TCP 3-Way Handshake</text>
+
+  <!-- Nodes -->
+  <g id="client_send_syn">
+    <rect x="100" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="135" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Client: Send SYN</text>
+  </g>
+
+  <g id="server_receive_syn">
+    <rect x="100" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="235" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Server: Receive SYN</text>
+  </g>
+
+  <g id="server_send_synack">
+    <rect x="100" y="300" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="335" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Server: Send SYN‑ACK</text>
+  </g>
+
+  <g id="client_receive_synack">
+    <rect x="100" y="400" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="435" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Client: Receive SYN‑ACK</text>
+  </g>
+
+  <g id="client_send_ack">
+    <rect x="100" y="500" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="535" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Client: Send ACK</text>
+  </g>
+
+  <g id="connection_established">
+    <rect x="100" y="600" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="635" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Connection Established</text>
+  </g>
+
+  <!-- Edges -->
+  <line x1="190" y1="170" x2="190" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="195" y="185" font-family="sans-serif" font-size="14" dominant-baseline="middle">SYN</text>
+
+  <line x1="190" y1="270" x2="190" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="195" y="285" font-family="sans-serif" font-size="14" dominant-baseline="middle">SYN‑ACK</text>
+
+  <line x1="190" y1="370" x2="190" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="195" y="385" font-family="sans-serif" font-size="14" dominant-baseline="middle">SYN‑ACK</text>
+
+  <line x1="190" y1="470" x2="190" y2="500" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="195" y="485" font-family="sans-serif" font-size="14" dominant-baseline="middle">ACK</text>
+
+  <line x1="190" y1="570" x2="190" y2="600" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="195" y="585" font-family="sans-serif" font-size="14" dominant-baseline="middle">Established</text>
+</svg>

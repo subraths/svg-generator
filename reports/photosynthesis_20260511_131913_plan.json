@@ -1,0 +1,94 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 500,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_uptake",
+      "label": "Water Uptake (H\u2082O)",
+      "x": 500,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "energy_storage",
+      "label": "Energy Storage (ATP, NADPH)",
+      "x": 500,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "co2_fixation",
+      "label": "CO\u2082 Fixation",
+      "x": 500,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle",
+      "x": 500,
+      "y": 480,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 500,
+      "y": 600,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release (O\u2082)",
+      "x": 500,
+      "y": 720,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "water_uptake",
+      "to": "light_absorption",
+      "label": "provides electrons"
+    },
+    {
+      "from": "light_absorption",
+      "to": "energy_storage",
+      "label": "produces ATP/NADPH"
+    },
+    {
+      "from": "light_absorption",
+      "to": "oxygen_release",
+      "label": "releases O\u2082"
+    },
+    {
+      "from": "energy_storage",
+      "to": "calvin_cycle",
+      "label": "powers"
+    },
+    {
+      "from": "co2_fixation",
+      "to": "calvin_cycle",
+      "label": "feeds"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_production",
+      "label": "produces"
+    }
+  ]
+}

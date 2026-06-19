@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Layer -->
+  <g id="input_layer">
+    <rect x="100" y="250" width="120" height="200" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="160" y="240" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#006064">Input Layer</text>
+    <text x="160" y="300" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#006064">Input Neurons</text>
+  </g>
+
+  <!-- Hidden Layer 1 -->
+  <g id="hidden_layer1">
+    <rect x="300" y="200" width="120" height="250" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="360" y="190" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#e65100">Hidden Layer 1</text>
+    <text x="360" y="260" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#e65100">Neurons</text>
+  </g>
+
+  <!-- Hidden Layer 2 -->
+  <g id="hidden_layer2">
+    <rect x="500" y="200" width="120" height="250" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="560" y="190" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#e65100">Hidden Layer 2</text>
+    <text x="560" y="260" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#e65100">Neurons</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect x="700" y="250" width="120" height="200" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="760" y="240" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1b5e20">Output Layer</text>
+    <text x="760" y="300" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1b5e20">Output Neurons</text>
+  </g>
+
+  <!-- Connections -->
+  <g id="connections">
+    <line x1="220" y1="350" x2="300" y2="325" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="420" y1="325" x2="500" y2="325" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="620" y1="325" x2="700" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Weights -->
+  <g id="weights">
+    <text x="260" y="340" font-family="sans-serif" font-size="16" fill="black">Weights</text>
+    <text x="460" y="340" font-family="sans-serif" font-size="16" fill="black">Weights</text>
+    <text x="660" y="340" font-family="sans-serif" font-size="16" fill="black">Weights</text>
+  </g>
+
+  <!-- Activation Functions -->
+  <g id="activation_functions">
+    <text x="360" y="470" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#e65100">Activation (ReLU)</text>
+    <text x="560" y="470" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#e65100">Activation (ReLU)</text>
+  </g>
+
+  <!-- Loss Function -->
+  <g id="loss_function">
+    <text x="760" y="470" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1b5e20">Loss (Cross‑Entropy)</text>
+  </g>
+</svg>

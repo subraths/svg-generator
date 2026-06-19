@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-size="24" font-weight="bold">Photosynthesis Overview</text>
+
+  <!-- Nodes -->
+  <g id="sunlight_energy">
+    <rect x="20" y="200" width="140" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="90" y="240" text-anchor="middle" dominant-baseline="middle" font-size="14">
+      <tspan x="90" dy="-0.6em">Sunlight</tspan>
+      <tspan x="90" dy="1.2em">Energy</tspan>
+    </text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="180" y="200" width="140" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="250" y="240" text-anchor="middle" dominant-baseline="middle" font-size="14">
+      <tspan x="250" dy="-0.6em">Chlorophyll</tspan>
+      <tspan x="250" dy="1.2em">Pigments</tspan>
+    </text>
+  </g>
+
+  <g id="light_dependent">
+    <rect x="340" y="200" width="140" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="410" y="240" text-anchor="middle" dominant-baseline="middle" font-size="14">
+      <tspan x="410" dy="-0.6em">Light‑dependent</tspan>
+      <tspan x="410" dy="1.2em">Reactions</tspan>
+    </text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="500" y="200" width="140" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="570" y="240" text-anchor="middle" dominant-baseline="middle" font-size="14">
+      <tspan x="570" dy="-0.6em">ATP &amp; NADPH</tspan>
+      <tspan x="570" dy="1.2em">Production</tspan>
+    </text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="660" y="200" width="140" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="730" y="240" text-anchor="middle" dominant-baseline="middle" font-size="14">
+      <tspan x="730" dy="-0.6em">Calvin Cycle</tspan>
+      <tspan x="730" dy="1.2em">CO₂</tspan>
+      <tspan x="730" dy="1.2em">Fixation</tspan>
+    </text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect x="820" y="200" width="140" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="890" y="240" text-anchor="middle" dominant-baseline="middle" font-size="14">
+      <tspan x="890" dy="-0.6em">Glucose</tspan>
+      <tspan x="890" dy="1.2em">Synthesis</tspan>
+    </text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="340" y="80" width="140" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="410" y="120" text-anchor="middle" dominant-baseline="middle" font-size="14">
+      <tspan x="410" dy="-0.6em">Oxygen</tspan>
+      <tspan x="410" dy="1.2em">Release</tspan>
+    </text>
+  </g>
+
+  <!-- Edges -->
+  <!-- Sunlight -> Chlorophyll -->
+  <path d="M160,240 L180,240" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="170" y="230" font-size="12" text-anchor="middle">absorbed by</text>
+
+  <!-- Chlorophyll -> Light-dependent -->
+  <path d="M320,240 L340,240" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="330" y="230" font-size="12" text-anchor="middle">drives</text>
+
+  <!-- Light-dependent -> ATP/NADPH -->
+  <path d="M480,240 L500,240" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="490" y="230" font-size="12" text-anchor="middle">produces</text>
+
+  <!-- ATP/NADPH -> Calvin Cycle -->
+  <path d="M640,240 L660,240" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="650" y="230" font-size="12" text-anchor="middle">used in</text>
+
+  <!-- Calvin Cycle -> Glucose Synthesis -->
+  <path d="M800,240 L820,240" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="810" y="230" font-size="12" text-anchor="middle">makes</text>
+
+  <!-- Light-dependent -> Oxygen Release (vertical) -->
+  <path d="M410,200 L410,160" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="420" y="180" font-size="12">releases</text>
+</svg>

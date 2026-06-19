@@ -1,0 +1,203 @@
+{
+  "diagram_type": "flow",
+  "title": "Blood Flow Through the Heart",
+  "nodes": [
+    {
+      "id": "superior_vena_cava",
+      "label": "Superior Vena Cava",
+      "x": 20,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "right_atrium",
+      "label": "Right Atrium",
+      "x": 20,
+      "y": 110,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "tricuspid_valve",
+      "label": "Tricuspid Valve",
+      "x": 20,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "right_ventricle",
+      "label": "Right Ventricle",
+      "x": 20,
+      "y": 290,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "pulmonary_valve",
+      "label": "Pulmonary Valve",
+      "x": 20,
+      "y": 380,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "pulmonary_artery",
+      "label": "Pulmonary Artery",
+      "x": 20,
+      "y": 470,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "lungs",
+      "label": "Lungs",
+      "x": 260,
+      "y": 470,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "pulmonary_veins",
+      "label": "Pulmonary Veins",
+      "x": 260,
+      "y": 380,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "left_atrium",
+      "label": "Left Atrium",
+      "x": 260,
+      "y": 290,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "mitral_valve",
+      "label": "Mitral Valve",
+      "x": 260,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "left_ventricle",
+      "label": "Left Ventricle",
+      "x": 260,
+      "y": 110,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "aortic_valve",
+      "label": "Aortic Valve",
+      "x": 260,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "aorta",
+      "label": "Aorta",
+      "x": 500,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "systemic_arteries",
+      "label": "Systemic Arteries",
+      "x": 740,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "systemic_veins",
+      "label": "Systemic Veins",
+      "x": 740,
+      "y": 110,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "superior_vena_cava",
+      "to": "right_atrium",
+      "label": "blood"
+    },
+    {
+      "from": "right_atrium",
+      "to": "tricuspid_valve",
+      "label": "blood"
+    },
+    {
+      "from": "tricuspid_valve",
+      "to": "right_ventricle",
+      "label": "blood"
+    },
+    {
+      "from": "right_ventricle",
+      "to": "pulmonary_valve",
+      "label": "blood"
+    },
+    {
+      "from": "pulmonary_valve",
+      "to": "pulmonary_artery",
+      "label": "blood"
+    },
+    {
+      "from": "pulmonary_artery",
+      "to": "lungs",
+      "label": "blood"
+    },
+    {
+      "from": "lungs",
+      "to": "pulmonary_veins",
+      "label": "blood"
+    },
+    {
+      "from": "pulmonary_veins",
+      "to": "left_atrium",
+      "label": "blood"
+    },
+    {
+      "from": "left_atrium",
+      "to": "mitral_valve",
+      "label": "blood"
+    },
+    {
+      "from": "mitral_valve",
+      "to": "left_ventricle",
+      "label": "blood"
+    },
+    {
+      "from": "left_ventricle",
+      "to": "aortic_valve",
+      "label": "blood"
+    },
+    {
+      "from": "aortic_valve",
+      "to": "aorta",
+      "label": "blood"
+    },
+    {
+      "from": "aorta",
+      "to": "systemic_arteries",
+      "label": "blood"
+    },
+    {
+      "from": "systemic_arteries",
+      "to": "systemic_veins",
+      "label": "blood"
+    },
+    {
+      "from": "systemic_veins",
+      "to": "superior_vena_cava",
+      "label": "blood"
+    }
+  ]
+}

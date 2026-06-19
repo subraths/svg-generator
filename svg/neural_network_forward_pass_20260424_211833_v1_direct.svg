@@ -1,0 +1,71 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Layer -->
+  <g id="input_layer">
+    <rect x="100" y="300" width="150" height="200" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="175" y="380" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#006064">Input</text>
+    <text x="175" y="410" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#006064">Layer</text>
+  </g>
+
+  <!-- Hidden Layer 1 -->
+  <g id="hidden_layer1">
+    <rect x="350" y="200" width="150" height="200" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="425" y="280" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#e65100">Hidden</text>
+    <text x="425" y="310" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#e65100">Layer 1</text>
+  </g>
+
+  <!-- Hidden Layer 2 -->
+  <g id="hidden_layer2">
+    <rect x="600" y="200" width="150" height="200" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="675" y="280" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#e65100">Hidden</text>
+    <text x="675" y="310" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#e65100">Layer 2</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect x="850" y="300" width="150" height="200" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="925" y="380" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#1b5e20">Output</text>
+    <text x="925" y="410" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#1b5e20">Layer</text>
+  </g>
+
+  <!-- Weights -->
+  <g id="weights">
+    <g id="weight1">
+      <rect x="275" y="340" width="50" height="120" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+      <text x="300" y="410" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#4a148c">W₁</text>
+    </g>
+    <g id="weight2">
+      <rect x="525" y="240" width="50" height="120" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+      <text x="550" y="310" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#4a148c">W₂</text>
+    </g>
+    <g id="weight3">
+      <rect x="775" y="340" width="50" height="120" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+      <text x="800" y="410" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#4a148c">W₃</text>
+    </g>
+  </g>
+
+  <!-- Activation Functions -->
+  <g id="activation_functions">
+    <text x="425" y="180" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">ReLU</text>
+    <text x="675" y="180" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">ReLU</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- Input -> Weight1 -->
+  <line x1="250" y1="400" x2="275" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Weight1 -> Hidden1 -->
+  <line x1="325" y1="400" x2="350" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Hidden1 -> Weight2 -->
+  <line x1="500" y1="300" x2="525" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Weight2 -> Hidden2 -->
+  <line x1="575" y1="300" x2="600" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Hidden2 -> Weight3 -->
+  <line x1="750" y1="400" x2="775" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Weight3 -> Output -->
+  <line x1="825" y1="400" x2="850" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

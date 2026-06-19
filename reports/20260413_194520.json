@@ -1,0 +1,25 @@
+{
+  "timestamp": "20260413_194520",
+  "topic": "Ecosystem food web",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 1,
+  "max_attempts": 3,
+  "validation": {
+    "xml_valid": true,
+    "width": "1000",
+    "height": "700",
+    "group_ids": [
+      "sun",
+      "plants",
+      "herbivore_rabbit",
+      "omnivore_bear",
+      "carnivore_fox",
+      "decomposer_bacteria"
+    ],
+    "group_count": 6,
+    "rect_count": 5,
+    "overlap_pairs": [],
+    "has_duplicate_ids": false,
+    "errors": []
+  }
+}

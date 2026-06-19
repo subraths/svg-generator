@@ -1,0 +1,87 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+    <style>
+      .node-rect { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .node-text { font-family:Arial,Helvetica,sans-serif; font-size:14px; fill:#004d40; }
+      .edge-line { stroke:#000; stroke-width:2; fill:none; }
+      .edge-label { font-family:Arial,Helvetica,sans-serif; font-size:12px; fill:#000; }
+      .title { font-family:Arial,Helvetica,sans-serif; font-size:24px; font-weight:bold; fill:#212121; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" class="title">Photosynthesis Process</text>
+
+  <!-- Nodes -->
+  <g id="chlorophyll_role">
+    <rect class="node-rect" x="0" y="40" width="180" height="70"/>
+    <text class="node-text" x="90" y="75" text-anchor="middle" dominant-baseline="middle">Chlorophyll Role</text>
+  </g>
+
+  <g id="light_absorption">
+    <rect class="node-rect" x="200" y="40" width="180" height="70"/>
+    <text class="node-text" x="290" y="75" text-anchor="middle" dominant-baseline="middle">Light Absorption</text>
+  </g>
+
+  <g id="water_uptake">
+    <rect class="node-rect" x="200" y="140" width="180" height="70"/>
+    <text class="node-text" x="290" y="175" text-anchor="middle" dominant-baseline="middle">Water Uptake</text>
+  </g>
+
+  <g id="stomata_opening">
+    <rect class="node-rect" x="0" y="240" width="180" height="70"/>
+    <text class="node-text" x="90" y="275" text-anchor="middle" dominant-baseline="middle">Stomata Opening</text>
+  </g>
+
+  <g id="carbon_dioxide_fixation">
+    <rect class="node-rect" x="200" y="240" width="180" height="70"/>
+    <text class="node-text" x="290" y="275" text-anchor="middle" dominant-baseline="middle">CO₂ Fixation (Calvin Cycle)</text>
+  </g>
+
+  <g id="energy_conversion">
+    <rect class="node-rect" x="200" y="340" width="180" height="70"/>
+    <text class="node-text" x="290" y="375" text-anchor="middle" dominant-baseline="middle">Energy Conversion</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect class="node-rect" x="200" y="440" width="180" height="70"/>
+    <text class="node-text" x="290" y="475" text-anchor="middle" dominant-baseline="middle">Glucose Production</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect class="node-rect" x="200" y="540" width="180" height="70"/>
+    <text class="node-text" x="290" y="575" text-anchor="middle" dominant-baseline="middle">Oxygen Release</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- chlorophyll_role -> light_absorption -->
+  <line class="edge-line" x1="180" y1="75" x2="200" y2="75" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="190" y="65" text-anchor="middle">captures light</text>
+
+  <!-- light_absorption -> water_uptake -->
+  <line class="edge-line" x1="290" y1="110" x2="290" y2="140" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="300" y="125" text-anchor="start">provides energy</text>
+
+  <!-- water_uptake -> carbon_dioxide_fixation -->
+  <line class="edge-line" x1="290" y1="210" x2="290" y2="240" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="300" y="225" text-anchor="start">supplies electrons</text>
+
+  <!-- stomata_opening -> carbon_dioxide_fixation -->
+  <line class="edge-line" x1="180" y1="275" x2="200" y2="275" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="190" y="265" text-anchor="middle">CO₂ entry</text>
+
+  <!-- carbon_dioxide_fixation -> energy_conversion -->
+  <line class="edge-line" x1="290" y1="310" x2="290" y2="340" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="300" y="325" text-anchor="start">Calvin Cycle</text>
+
+  <!-- energy_conversion -> glucose_production -->
+  <line class="edge-line" x1="290" y1="410" x2="290" y2="440" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="300" y="425" text-anchor="start">produces glucose</text>
+
+  <!-- glucose_production -> oxygen_release -->
+  <line class="edge-line" x1="290" y1="510" x2="290" y2="540" marker-end="url(#arrowhead)"/>
+  <text class="edge-label" x="300" y="525" text-anchor="start">by‑product O₂</text>
+</svg>

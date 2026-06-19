@@ -1,0 +1,94 @@
+{
+  "diagram_type": "anatomy",
+  "title": "Cell Structure",
+  "nodes": [
+    {
+      "id": "cell_membrane",
+      "label": "Cell Membrane",
+      "x": 500,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "cytoplasm",
+      "label": "Cytoplasm",
+      "x": 500,
+      "y": 130,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "nucleus",
+      "label": "Nucleus",
+      "x": 720,
+      "y": 130,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "mitochondria",
+      "label": "Mitochondria",
+      "x": 280,
+      "y": 130,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "ribosome",
+      "label": "Ribosome",
+      "x": 500,
+      "y": 220,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "endoplasmic_reticulum",
+      "label": "Endoplasmic Reticulum",
+      "x": 500,
+      "y": 310,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "golgi_apparatus",
+      "label": "Golgi Apparatus",
+      "x": 720,
+      "y": 310,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "cell_membrane",
+      "to": "cytoplasm",
+      "label": ""
+    },
+    {
+      "from": "cytoplasm",
+      "to": "nucleus",
+      "label": ""
+    },
+    {
+      "from": "cytoplasm",
+      "to": "mitochondria",
+      "label": ""
+    },
+    {
+      "from": "cytoplasm",
+      "to": "ribosome",
+      "label": ""
+    },
+    {
+      "from": "cytoplasm",
+      "to": "endoplasmic_reticulum",
+      "label": ""
+    },
+    {
+      "from": "endoplasmic_reticulum",
+      "to": "golgi_apparatus",
+      "label": ""
+    }
+  ]
+}

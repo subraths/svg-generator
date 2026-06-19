@@ -1,0 +1,75 @@
+{
+  "mode": "tutor",
+  "title": "Mitochondrial Structure and Function",
+  "learning_goals": [
+    "Identify the main structural components of a mitochondrion.",
+    "Explain the function of each mitochondrial component.",
+    "Describe how the structure supports oxidative phosphorylation and ATP production."
+  ],
+  "segments": [
+    {
+      "seg_id": "seg_001",
+      "text": "Let's start with an overview of the mitochondrion, the cell's power plant.",
+      "highlights": [
+        {
+          "target_id": "overview",
+          "style": "outline"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_002",
+      "text": "The outer membrane encloses the organelle and controls the entry of molecules.",
+      "highlights": [
+        {
+          "target_id": "outer_membrane",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_003",
+      "text": "Between the two membranes lies the intermembrane space, where protons accumulate during electron transport.",
+      "highlights": [
+        {
+          "target_id": "intermembrane_space",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_004",
+      "text": "The inner membrane, folded into cristae, hosts the proteins of the electron transport chain.",
+      "highlights": [
+        {
+          "target_id": "inner_membrane",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_005",
+      "text": "Inside the inner membrane is the matrix, containing mitochondrial DNA and enzymes for the Krebs cycle.",
+      "highlights": [
+        {
+          "target_id": "matrix",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_006",
+      "text": "Together, these structures enable oxidative phosphorylation, producing ATP in the mitochondrion.",
+      "highlights": [
+        {
+          "target_id": "atp_production",
+          "style": "pulse"
+        },
+        {
+          "target_id": "inner_membrane",
+          "style": "outline"
+        }
+      ]
+    }
+  ]
+}

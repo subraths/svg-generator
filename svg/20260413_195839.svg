@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Embedding -->
+  <g id="input_embedding">
+    <rect x="50" y="300" width="150" height="60" fill="#e0f7fa" stroke="black"/>
+    <text x="125" y="335" font-size="18" text-anchor="middle" dominant-baseline="middle">Input Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect x="250" y="300" width="150" height="60" fill="#e8f5e9" stroke="black"/>
+    <text x="325" y="335" font-size="18" text-anchor="middle" dominant-baseline="middle">Positional Encoding</text>
+  </g>
+
+  <!-- Encoder -->
+  <g id="encoder">
+    <rect x="450" y="200" width="200" height="200" fill="#fff3e0" stroke="black"/>
+    <text x="550" y="220" font-size="20" text-anchor="middle">Encoder</text>
+  </g>
+
+  <!-- Multi-Head Attention inside Encoder -->
+  <g id="multi_head_attention">
+    <rect x="470" y="250" width="160" height="50" fill="#ffecb3" stroke="black"/>
+    <text x="550" y="280" font-size="16" text-anchor="middle" dominant-baseline="middle">Multi‑Head Attention</text>
+  </g>
+
+  <!-- Feed Forward inside Encoder -->
+  <g id="feed_forward">
+    <rect x="470" y="320" width="160" height="50" fill="#c8e6c9" stroke="black"/>
+    <text x="550" y="350" font-size="16" text-anchor="middle" dominant-baseline="middle">Feed‑Forward</text>
+  </g>
+
+  <!-- Decoder -->
+  <g id="decoder">
+    <rect x="700" y="200" width="200" height="200" fill="#f3e5f5" stroke="black"/>
+    <text x="800" y="220" font-size="20" text-anchor="middle">Decoder</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect x="450" y="460" width="200" height="60" fill="#ffebee" stroke="black"/>
+    <text x="550" y="495" font-size="18" text-anchor="middle" dominant-baseline="middle">Output Layer</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- Input Embedding -> Positional Encoding -->
+  <line x1="200" y1="330" x2="250" y2="330" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Positional Encoding -> Encoder -->
+  <line x1="400" y1="330" x2="450" y2="330" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Encoder -> Decoder -->
+  <line x1="650" y1="300" x2="700" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Decoder -> Output Layer -->
+  <line x1="800" y1="400" x2="800" y2="460" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Inside Encoder flow: Multi-Head Attention -> Feed Forward -->
+  <line x1="550" y1="300" x2="550" y2="320" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+</svg>

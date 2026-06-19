@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+            refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+    <style>
+      .node-rect { fill:#f9f9b1; stroke:#333; stroke-width:2; rx:8; ry:8; }
+      .node-text { font-family:Arial,Helvetica,sans-serif; font-size:16px; fill:#000; pointer-events:none; }
+      .edge-line { stroke:#333; stroke-width:2; fill:none; }
+      .edge-label { font-family:Arial,Helvetica,sans-serif; font-size:14px; fill:#000; background:#fff; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="Arial,Helvetica,sans-serif"
+        font-size="28" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect class="node-rect" x="100" y="100" width="180" height="70"/>
+    <text class="node-text" x="190" y="135" dominant-baseline="middle" text-anchor="middle">Sunlight</text>
+  </g>
+
+  <g id="water">
+    <rect class="node-rect" x="100" y="200" width="180" height="70"/>
+    <text class="node-text" x="190" y="235" dominant-baseline="middle" text-anchor="middle">Water (H₂O)</text>
+  </g>
+
+  <g id="carbon_dioxide">
+    <rect class="node-rect" x="100" y="300" width="180" height="70"/>
+    <text class="node-text" x="190" y="335" dominant-baseline="middle" text-anchor="middle">Carbon Dioxide (CO₂)</text>
+  </g>
+
+  <g id="light_dependent_reactions">
+    <rect class="node-rect" x="340" y="150" width="180" height="70"/>
+    <text class="node-text" x="430" y="185" dominant-baseline="middle" text-anchor="middle">Light‑Dependent Reactions</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect class="node-rect" x="580" y="250" width="180" height="70"/>
+    <text class="node-text" x="670" y="285" dominant-baseline="middle" text-anchor="middle">Calvin Cycle (Light‑Independent)</text>
+  </g>
+
+  <g id="glucose">
+    <rect class="node-rect" x="820" y="250" width="180" height="70"/>
+    <text class="node-text" x="910" y="285" dominant-baseline="middle" text-anchor="middle">Glucose (C₆H₁₂O₆)</text>
+  </g>
+
+  <g id="oxygen">
+    <rect class="node-rect" x="820" y="150" width="180" height="70"/>
+    <text class="node-text" x="910" y="185" dominant-baseline="middle" text-anchor="middle">Oxygen (O₂)</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edges">
+    <!-- Sunlight → Light‑Dependent Reactions -->
+    <line class="edge-line" x1="280" y1="135" x2="340" y2="185" marker-end="url(#arrowhead)"/>
+    <text class="edge-label" x="310" y="160" text-anchor="middle" dominant-baseline="middle">sunlight</text>
+
+    <!-- Water → Light‑Dependent Reactions -->
+    <line class="edge-line" x1="280" y1="235" x2="340" y2="185" marker-end="url(#arrowhead)"/>
+    <text class="edge-label" x="310" y="210" text-anchor="middle" dominant-baseline="middle">H₂O</text>
+
+    <!-- Light‑Dependent Reactions → Oxygen -->
+    <line class="edge-line" x1="520" y1="185" x2="820" y2="185" marker-end="url(#arrowhead)"/>
+    <text class="edge-label" x="670" y="185" text-anchor="middle" dominant-baseline="middle">O₂</text>
+
+    <!-- Light‑Dependent Reactions → Calvin Cycle -->
+    <line class="edge-line" x1="520" y1="185" x2="580" y2="285" marker-end="url(#arrowhead)"/>
+    <text class="edge-label" x="550" y="235" text-anchor="middle" dominant-baseline="middle">ATP/NADPH</text>
+
+    <!-- Carbon Dioxide → Calvin Cycle -->
+    <line class="edge-line" x1="280" y1="335" x2="580" y2="285" marker-end="url(#arrowhead)"/>
+    <text class="edge-label" x="430" y="310" text-anchor="middle" dominant-baseline="middle">CO₂</text>
+
+    <!-- Calvin Cycle → Glucose -->
+    <line class="edge-line" x1="760" y1="285" x2="820" y2="285" marker-end="url(#arrowhead)"/>
+    <text class="edge-label" x="790" y="285" text-anchor="middle" dominant-baseline="middle">C₆H₁₂O₆</text>
+  </g>
+</svg>

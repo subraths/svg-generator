@@ -12,6 +12,6 @@ wheels/
 .cache
 
 # reports, svgs, and other generated files
-reports/
-svg/
+# reports/
+# svg/
 img/

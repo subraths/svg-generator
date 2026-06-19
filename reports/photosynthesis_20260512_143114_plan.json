@@ -1,0 +1,133 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 100,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll (pigment)",
+      "x": 340,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent",
+      "label": "Light\u2011dependent Reactions",
+      "x": 580,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting (H\u2082O \u2192 O\u2082 + e\u207b)",
+      "x": 580,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "O\u2082 Release",
+      "x": 820,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP & NADPH Production",
+      "x": 580,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (Light\u2011independent)",
+      "x": 340,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "co2_fixation",
+      "label": "CO\u2082 Fixation",
+      "x": 340,
+      "y": 440,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 340,
+      "y": 540,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "stroma",
+      "label": "Stroma (site)",
+      "x": 580,
+      "y": 440,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll",
+      "label": "provides energy"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent",
+      "label": "absorbs light"
+    },
+    {
+      "from": "light_dependent",
+      "to": "water_splitting",
+      "label": "drives"
+    },
+    {
+      "from": "light_dependent",
+      "to": "atp_nadph",
+      "label": "produces"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "releases O\u2082"
+    },
+    {
+      "from": "atp_nadph",
+      "to": "calvin_cycle",
+      "label": "supplies ATP/NADPH"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "co2_fixation",
+      "label": "incorporates CO\u2082"
+    },
+    {
+      "from": "co2_fixation",
+      "to": "glucose_production",
+      "label": "forms glucose"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "stroma",
+      "label": "occurs in"
+    }
+  ]
+}

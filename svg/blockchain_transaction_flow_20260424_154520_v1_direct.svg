@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- User Wallet -->
+  <g id="user_wallet">
+    <rect x="55" y="360" width="140" height="80" fill="#f0f0f0" stroke="black"/>
+    <text x="125" y="400" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">User Wallet</text>
+  </g>
+
+  <!-- Create Transaction -->
+  <g id="create_transaction">
+    <rect x="245" y="360" width="140" height="80" fill="#f0f0f0" stroke="black"/>
+    <text x="315" y="400" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Create Transaction</text>
+  </g>
+
+  <!-- Broadcast to Network -->
+  <g id="broadcast_network">
+    <rect x="435" y="360" width="140" height="80" fill="#f0f0f0" stroke="black"/>
+    <text x="505" y="400" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Broadcast to Network</text>
+  </g>
+
+  <!-- Miner Validation -->
+  <g id="miner_validation">
+    <rect x="625" y="360" width="140" height="80" fill="#f0f0f0" stroke="black"/>
+    <text x="695" y="400" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Miner Validation</text>
+  </g>
+
+  <!-- Block Creation -->
+  <g id="block_creation">
+    <rect x="815" y="360" width="140" height="80" fill="#f0f0f0" stroke="black"/>
+    <text x="885" y="400" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Block Creation</text>
+  </g>
+
+  <!-- Add to Blockchain -->
+  <g id="add_to_blockchain">
+    <rect x="1005" y="360" width="140" height="80" fill="#f0f0f0" stroke="black"/>
+    <text x="1075" y="400" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Add to Blockchain</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="195" y1="400" x2="245" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="385" y1="400" x2="435" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="575" y1="400" x2="625" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="765" y1="400" x2="815" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="955" y1="400" x2="1005" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

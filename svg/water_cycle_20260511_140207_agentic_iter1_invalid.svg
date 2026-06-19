@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="sans-serif" font-size="32" fill="black">Water Cycle</text>
+
+  <!-- Nodes -->
+  <g id="evaporation">
+    <rect x="860" y="360" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="950" y="395" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Evaporation</text>
+  </g>
+
+  <g id="transpiration">
+    <rect x="860" y="200" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="950" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Transpiration</text>
+  </g>
+
+  <g id="condensation">
+    <rect x="520" y="120" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="610" y="155" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Condensation</text>
+  </g>
+
+  <g id="precipitation">
+    <rect x="160" y="360" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="250" y="395" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Precipitation</text>
+  </g>
+
+  <g id="collection">
+    <rect x="520" y="620" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="610" y="655" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Collection</text>
+  </g>
+
+  <g id="runoff">
+    <rect x="860" y="660" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="950" y="695" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Runoff</text>
+  </g>
+
+  <g id="infiltration">
+    <rect x="160" y="660" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="250" y="695" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="16" fill="black">Infiltration</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- Evaporation -> Condensation -->
+  <path d="M860,395 C860,300 700,250 700,155" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Condensation -> Precipitation -->
+  <path d="M700,155 C700,250 160,300 160,395" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Precipitation -> Collection -->
+  <path d="M250,430 C250,500 610,550 610,620" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Collection -> Runoff -->
+  <path d="M700,655 C750,660 810,690 860,695" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Collection -> Infiltration -->
+  <path d="M520,655 C470,660 390,690 340,695" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Runoff -> Evaporation -->
+  <line x1="950" y1="660" x2="950" y2="430" stroke="black" marker-end="url(#arrowhead)"/>
+
+  <!-- Infiltration -> Evaporation -->
+  <path d="M250,660 C250,560 950,530 950,430" stroke="black" fill="none

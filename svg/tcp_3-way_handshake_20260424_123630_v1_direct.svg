@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Client Box -->
+  <g id="client_box">
+    <rect x="200" y="150" width="200" height="100" fill="white" stroke="black"/>
+    <text x="300" y="210" font-family="sans-serif" font-size="20" text-anchor="middle">Client</text>
+  </g>
+
+  <!-- Server Box -->
+  <g id="server_box">
+    <rect x="800" y="150" width="200" height="100" fill="white" stroke="black"/>
+    <text x="900" y="210" font-family="sans-serif" font-size="20" text-anchor="middle">Server</text>
+  </g>
+
+  <!-- SYN Message -->
+  <g id="syn_message">
+    <line x1="400" y1="200" x2="800" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="600" y="180" font-family="sans-serif" font-size="20" text-anchor="middle">SYN</text>
+  </g>
+
+  <!-- SYN-ACK Message -->
+  <g id="synack_message">
+    <line x1="800" y1="250" x2="400" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="600" y="270" font-family="sans-serif" font-size="20" text-anchor="middle">SYN‑ACK</text>
+  </g>
+
+  <!-- ACK Message -->
+  <g id="ack_message">
+    <line x1="400" y1="300" x2="800" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="600" y="280" font-family="sans-serif" font-size="20" text-anchor="middle">ACK</text>
+  </g>
+
+  <!-- Sequence Numbers Explanation -->
+  <g id="sequence_numbers">
+    <rect x="500" y="350" width="200" height="100" fill="white" stroke="black"/>
+    <text x="600" y="380" font-family="sans-serif" font-size="18" text-anchor="middle">Sequence Numbers</text>
+    <text x="600" y="410" font-family="sans-serif" font-size="16" text-anchor="middle">Initial = x, x+1, x+2 …</text>
+  </g>
+
+  <!-- Connection Established -->
+  <g id="connection_established">
+    <text x="600" y="500" font-family="sans-serif" font-size="24" text-anchor="middle" fill="green">Connection Established</text>
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="sans-serif" font-size="24" fill="black">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="310" y="275" width="180" height="70" fill="#e0f7ff" stroke="black"/>
+    <text x="400" y="310" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Light Absorption</text>
+  </g>
+
+  <g id="water_uptake">
+    <rect x="530" y="275" width="180" height="70" fill="#e0f7ff" stroke="black"/>
+    <text x="620" y="310" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Water Uptake</text>
+  </g>
+
+  <g id="co2_entry">
+    <rect x="750" y="275" width="180" height="70" fill="#e0f7ff" stroke="black"/>
+    <text x="840" y="310" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">CO₂ Entry</text>
+  </g>
+
+  <g id="photolysis">
+    <rect x="310" y="375" width="180" height="70" fill="#e0f7ff" stroke="black"/>
+    <text x="400" y="410" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="12">Photolysis (H₂O → O₂ + H⁺ + e⁻)</text>
+  </g>
+
+  <g id="electron_transport">
+    <rect x="530" y="375" width="180" height="70" fill="#e0f7ff" stroke="black"/>
+    <text x="620" y="410" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Electron Transport Chain</text>
+  </g>
+
+  <g id="atp_nadph_production">
+    <rect x="750" y="375" width="180" height="70" fill="#e0f7ff" stroke="black"/>
+    <text x="840" y="410" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="530" y="495" width="180" height="70" fill="#e0f7ff" stroke="black"/>
+    <text x="620" y="530" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Calvin Cycle</text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect x="750" y="495" width="180" height="70" fill="#e0f7ff" stroke="black"/>
+    <text x="840" y="530" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Glucose Synthesis</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="310" y="495" width="180" height="70" fill="#e0f7ff" stroke="black"/>
+    <text x="400" y="530" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Oxygen Release</text>
+  </g>
+
+  <!-- Edges -->
+  <path d="M400,345 L400,375" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <path d="M490,310 L530,410" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <path d="M530,310 L490,410" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <path d="M750,310 L710,530" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <path d="M400,445 L400,495" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <path d="M710,410 L750,410" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <path d="M750,410 L710,530" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <path d="M710,530 L750,530" stroke="black" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Edge Labels (optional, placed near midpoints) -->
+  <text x="445" y="360" font-family="sans-serif" font-size="12" fill="black" text-anchor="middle">drives</text>
+  <text x="510" y="360" font-family="sans-serif" font-size="12" fill="black" text-anchor="middle">excites</text>
+  <text x="510" y="360" font-family="sans-serif" font-size="12" fill="black" text-anchor="middle">provides H₂O</text>
+  <text x="730" y="420" font-family="sans-serif" font-size="12" fill="black" text-anchor="middle">provides CO₂</text>
+  <text x="445" y="470" font-family="sans-serif" font-size="12" fill="black" text-anchor="middle">produces O₂</text>
+  <text x="730" y="410" font-family="sans-serif" font-size="12" fill="black" text-anchor="middle">generates</text>
+  <text x="730" y="470" font-family="sans-serif" font-size="12" fill="black" text-anchor="middle">supplies energy</text>
+  <text x="730" y="530" font-family="sans-serif" font-size="12" fill="black" text-anchor="middle">produces glucose</text>
+</svg>

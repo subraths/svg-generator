@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .node-rect { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .node-text { font-family:Arial,Helvetica,sans-serif; font-size:14px; fill:#000; pointer-events:none; }
+      .edge-path { fill:none; stroke:#424242; stroke-width:2; marker-end:url(#arrow); }
+      .edge-label { font-family:Arial,Helvetica,sans-serif; font-size:12px; fill:#000; pointer-events:none; }
+    </style>
+  </defs>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect class="node-rect" x="250" y="350" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="340" y="390" text-anchor="middle" dominant-baseline="middle">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll_absorption">
+    <rect class="node-rect" x="450" y="350" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="540" y="390" text-anchor="middle" dominant-baseline="middle">Chlorophyll absorbs light</text>
+  </g>
+
+  <g id="water_photolysis">
+    <rect class="node-rect" x="650" y="350" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="740" y="390" text-anchor="middle" dominant-baseline="middle">Water splitting (photolysis)</text>
+  </g>
+
+  <g id="atp_nadph_production">
+    <rect class="node-rect" x="850" y="350" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="940" y="390" text-anchor="middle" dominant-baseline="middle">ATP &amp; NADPH production</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect class="node-rect" x="250" y="460" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="340" y="500" text-anchor="middle" dominant-baseline="middle">Carbon fixation (Calvin Cycle)</text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect class="node-rect" x="450" y="460" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="540" y="500" text-anchor="middle" dominant-baseline="middle">Glucose synthesis</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect class="node-rect" x="650" y="460" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="740" y="500" text-anchor="middle" dominant-baseline="middle">Oxygen release</text>
+  </g>
+
+  <g id="stomata_co2_intake">
+    <rect class="node-rect" x="850" y="460" width="180" height="70" rx="5" ry="5"/>
+    <text class="node-text" x="940" y="500" text-anchor="middle" dominant-baseline="middle">CO&#8322; intake (stomata)</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_sunlight_chlorophyll_absorption">
+    <path class="edge-path" d="M430,385 L450,385"/>
+    <text class="edge-label" x="440" y="375" text-anchor="middle">light energy</text>
+  </g>
+
+  <g id="edge_chlorophyll_absorption_water_photolysis">
+    <path class="edge-path" d="M630,385 L650,385"/>
+    <text class="edge-label" x="640" y="375" text-anchor="middle">excites electrons</text>
+  </g>
+
+  <g id="edge_water_photolysis_atp_nadph_production">
+    <path class="edge-path" d="M830,385 L850,385"/>
+    <text class="edge-label" x="840" y="375" text-anchor="middle">provides electrons &amp; H&#8315;</text>
+  </g>

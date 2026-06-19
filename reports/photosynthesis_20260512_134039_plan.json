@@ -1,0 +1,120 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll",
+      "x": 320,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent_reactions",
+      "label": "Light\u2011Dependent Reactions",
+      "x": 540,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water",
+      "label": "Water (H\u2082O)",
+      "x": 540,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release (O\u2082)",
+      "x": 760,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP & NADPH",
+      "x": 540,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (Light\u2011Independent)",
+      "x": 540,
+      "y": 420,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "co2",
+      "label": "Carbon Dioxide (CO\u2082)",
+      "x": 320,
+      "y": 420,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose",
+      "label": "Glucose (C\u2086H\u2081\u2082O\u2086)",
+      "x": 760,
+      "y": 420,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll",
+      "label": "absorbs"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent_reactions",
+      "label": "excites"
+    },
+    {
+      "from": "water",
+      "to": "light_dependent_reactions",
+      "label": "splits"
+    },
+    {
+      "from": "light_dependent_reactions",
+      "to": "atp_nadph",
+      "label": "produces"
+    },
+    {
+      "from": "light_dependent_reactions",
+      "to": "oxygen_release",
+      "label": "releases O\u2082"
+    },
+    {
+      "from": "atp_nadph",
+      "to": "calvin_cycle",
+      "label": "provides energy"
+    },
+    {
+      "from": "co2",
+      "to": "calvin_cycle",
+      "label": "fixes"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose",
+      "label": "synthesizes"
+    }
+  ]
+}

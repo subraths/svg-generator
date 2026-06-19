@@ -1,0 +1,54 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+    <style>
+      .block { stroke:#333; stroke-width:2; rx:8; ry:8; }
+      .label { font-family:sans-serif; font-size:18px; fill:#000; pointer-events:none; }
+    </style>
+  </defs>
+
+  <!-- User -->
+  <g id="user">
+    <rect class="block" x="75" y="360" width="150" height="80" fill="#e0f7fa"/>
+    <text class="label" x="150" y="405" text-anchor="middle">User</text>
+  </g>
+
+  <!-- Transaction -->
+  <g id="transaction">
+    <rect class="block" x="255" y="360" width="150" height="80" fill="#fff3e0"/>
+    <text class="label" x="330" y="405" text-anchor="middle">Create Transaction</text>
+  </g>
+
+  <!-- Broadcast -->
+  <g id="broadcast">
+    <rect class="block" x="435" y="360" width="150" height="80" fill="#e8f5e9"/>
+    <text class="label" x="510" y="405" text-anchor="middle">Broadcast to Network</text>
+  </g>
+
+  <!-- Miner -->
+  <g id="miner">
+    <rect class="block" x="615" y="360" width="150" height="80" fill="#f3e5f5"/>
+    <text class="label" x="690" y="405" text-anchor="middle">Miner (Validate &amp; Pack)</text>
+  </g>
+
+  <!-- Block -->
+  <g id="block">
+    <rect class="block" x="795" y="360" width="150" height="80" fill="#ffebee"/>
+    <text class="label" x="870" y="405" text-anchor="middle">New Block</text>
+  </g>
+
+  <!-- Chain -->
+  <g id="chain">
+    <rect class="block" x="975" y="360" width="150" height="80" fill="#e0f2f1"/>
+    <text class="label" x="1050" y="405" text-anchor="middle">Add to Blockchain</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="225" y1="400" x2="255" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="405" y1="400" x2="435" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="585" y1="400" x2="615" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="765" y1="400" x2="795" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="945" y1="400" x2="975" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

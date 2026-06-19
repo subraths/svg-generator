@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerUnits="strokeWidth" viewBox="0 0 10 10"
+            refX="0" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-size="24" font-family="sans-serif">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="chlorophyll">
+    <rect x="100" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle"
+          font-size="14" font-family="sans-serif">Chlorophyll (Pigment)</text>
+  </g>
+
+  <g id="light_energy_absorption">
+    <rect x="340" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="430" y="135" text-anchor="middle" dominant-baseline="middle"
+          font-size="14" font-family="sans-serif">Light Energy Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="100" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="235" text-anchor="middle" dominant-baseline="middle"
+          font-size="14" font-family="sans-serif">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="340" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="430" y="235" text-anchor="middle" dominant-baseline="middle"
+          font-size="14" font-family="sans-serif">Oxygen Release</text>
+  </g>
+
+  <g id="atp_nadph_production">
+    <rect x="100" y="300" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="335" text-anchor="middle" dominant-baseline="middle"
+          font-size="14" font-family="sans-serif">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="340" y="300" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="430" y="335" text-anchor="middle" dominant-baseline="middle"
+          font-size="14" font-family="sans-serif">Carbon Dioxide Fixation</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="100" y="400" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="435" text-anchor="middle" dominant-baseline="middle"
+          font-size="14" font-family="sans-serif">Calvin Cycle (Light‑Independent)</text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect x="340" y="400" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="430" y="435" text-anchor="middle" dominant-baseline="middle"
+          font-size="14" font-family="sans-serif">Glucose Synthesis</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- chlorophyll -> light_energy_absorption -->
+  <path d="M280,135 L340,135" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="310" y="125" text-anchor="middle" font-size="12" font-family="sans-serif">absorbs</text>
+
+  <!-- light_energy_absorption -> water_splitting -->
+  <path d="M430,170 L190,200" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="310" y="185" text-anchor="middle" font-size="12" font-family="sans-serif">drives</text>
+
+  <!-- water_splitting -> oxygen_release -->
+  <path d="M280,235 L340,235" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="310" y="225" text-anchor="middle" font-size="12" font-family="sans-serif">produces</text>
+
+  <!-- water_splitting -> atp_nadph_production -->
+  <path d="M190,270 L190,300" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="200" y="285" text-anchor="start" font-size="12" font-family="sans-serif">provides electrons</text>
+
+  <!-- light_energy_absorption -> atp_nadph_production -->
+  <path d="M430,170 C430,200 190,250 190,300" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="310" y="235" text-anchor="middle" font-size="12" font-family="sans-serif">powers</text>
+
+  <!-- atp_nadph_production -> carbon_fixation -->
+  <path d="M280,335 L340,335" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="310" y="325" text-anchor="middle" font-size="12" font-family="sans-serif">provides energy</text>
+
+  <!-- carbon_fixation -> calvin_cycle -->
+  <path d="M430,370 L190,400" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="310" y="385" text-anchor="middle" font-size="12" font-family="sans-serif">feeds</text>
+
+  <!-- atp_nadph_production -> calvin_cycle -->
+  <path d="M190,370 L190,400" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="200" y="385" text-anchor="start" font-size="12" font-family="sans-serif">supplies ATP/NADPH</text>
+
+  <!-- calvin_cycle -> glucose_synthesis -->
+  <path d="M280,435 L340,435" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <

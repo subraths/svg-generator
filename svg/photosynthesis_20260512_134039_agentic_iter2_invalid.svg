@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold" fill="black">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="180" y="205" width="180" height="70" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+    <text x="270" y="245" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="black">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="400" y="205" width="180" height="70" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+    <text x="490" y="245" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="black">Chlorophyll</text>
+  </g>
+
+  <g id="light_dependent_reactions">
+    <rect x="620" y="205" width="180" height="70" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+    <text x="710" y="245" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="black">Light‑Dependent Reactions</text>
+  </g>
+
+  <g id="water">
+    <rect x="620" y="305" width="180" height="70" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+    <text x="710" y="345" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="black">Water (H₂O)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="840" y="205" width="180" height="70" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+    <text x="930" y="245" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="black">Oxygen Release (O₂)</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="620" y="405" width="180" height="70" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+    <text x="710" y="445" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="black">ATP &amp; NADPH</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="620" y="525" width="180" height="70" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+    <text x="710" y="565" text-anchor="middle" dominant-baseline="middle" font-size="13" fill="black">Calvin Cycle (Light‑Independent)</text>
+  </g>
+
+  <g id="co2">
+    <rect x="400" y="525" width="180" height="70" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+    <text x="490" y="565" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="black">Carbon Dioxide (CO₂)</text>
+  </g>
+
+  <g id="glucose">
+    <rect x="840" y="525" width="180" height="70" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+    <text x="930" y="565" text-anchor="middle" dominant-baseline="middle" font-size="13" fill="black">Glucose (C₆H₁₂O₆)</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- sunlight → chlorophyll -->
+  <line x1="360" y1="240" x2="400" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="380" y="235" text-anchor="middle" font-size="12" fill="black">absorbs</text>
+
+  <!-- chlorophyll → light_dependent_reactions -->
+  <line x1="580" y1="240" x2="620" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="600" y="235" text-anchor="middle" font-size="12" fill="black">excites</text>
+
+  <!-- water → light_dependent_reactions -->
+  <line x1="710" y1="305" x2="710" y2="275" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="715" y="290" font-size="12" fill="black">splits</text>
+
+  <!-- light_dependent_reactions → atp_nadph -->
+  <line x1="710" y1="275" x2="710" y2="405" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="715" y="340" font-size="12" fill="black">produces</text>
+
+  <!-- light_dependent_reactions → oxygen_release -->
+  <line x1="800" y1="240" x2="840" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="820" y="235" text-anchor="middle" font-size="12" fill="black">releases O₂</text>
+
+  <!-- atp_nadph → calvin_cycle -->
+  <line x1="710" y1="475" x2="710" y2="525" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="715" y="500" font-size="12" fill="black">provides energy</text>
+
+  <!-- co2 → calvin_cycle -->
+  <line x1="580" y1="560" x2="620" y2="560" stroke="black" stroke-width

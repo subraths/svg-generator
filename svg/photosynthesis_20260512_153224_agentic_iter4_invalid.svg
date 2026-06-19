@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L10,3.5 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold">Photosynthesis Process</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="110" y="175" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="200" y="210" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="330" y="175" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="420" y="210" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Chlorophyll</text>
+  </g>
+
+  <g id="light_dependent">
+    <rect x="550" y="175" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="640" y="210" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Light‑dependent Reactions</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="550" y="275" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="640" y="310" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="750" y="275" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="840" y="310" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Oxygen Release</text>
+  </g>
+
+  <g id="

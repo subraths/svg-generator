@@ -1,0 +1,81 @@
+{
+  "diagram_type": "flow",
+  "title": "Water Condensation Process",
+  "nodes": [
+    {
+      "id": "air_cooling",
+      "label": "Air Cooling",
+      "x": 200,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "dew_point_reached",
+      "label": "Dew Point Reached",
+      "x": 200,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "condensation_nuclei",
+      "label": "Condensation Nuclei",
+      "x": 200,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "droplet_formation",
+      "label": "Droplet Formation",
+      "x": 200,
+      "y": 400,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "cloud_development",
+      "label": "Cloud Development",
+      "x": 200,
+      "y": 500,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "precipitation",
+      "label": "Precipitation",
+      "x": 200,
+      "y": 600,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "air_cooling",
+      "to": "dew_point_reached",
+      "label": "temperature drops"
+    },
+    {
+      "from": "dew_point_reached",
+      "to": "condensation_nuclei",
+      "label": "saturation"
+    },
+    {
+      "from": "condensation_nuclei",
+      "to": "droplet_formation",
+      "label": "water vapor condenses"
+    },
+    {
+      "from": "droplet_formation",
+      "to": "cloud_development",
+      "label": "droplets coalesce"
+    },
+    {
+      "from": "cloud_development",
+      "to": "precipitation",
+      "label": "gravity pulls"
+    }
+  ]
+}

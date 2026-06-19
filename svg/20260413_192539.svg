@@ -1,0 +1,47 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .block { fill:#f0f0f0; stroke:#000; stroke-width:2; }
+      .arrow { stroke:#000; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
+      .label { font-size:18px; fill:#000; }
+    </style>
+  </defs>
+
+  <!-- Client block -->
+  <g id="client">
+    <rect class="block" x="100" y="250" width="150" height="100" rx="10"/>
+    <text x="175" y="310" text-anchor="middle" class="label">Client</text>
+  </g>
+
+  <!-- Server block -->
+  <g id="server">
+    <rect class="block" x="750" y="250" width="150" height="100" rx="10"/>
+    <text x="825" y="310" text-anchor="middle" class="label">Server</text>
+  </g>
+
+  <!-- SYN packet -->
+  <g id="syn">
+    <line class="arrow" x1="250" y1="300" x2="750" y2="300"/>
+    <text x="500" y="280" text-anchor="middle" class="label">SYN, Seq = x</text>
+  </g>
+
+  <!-- SYN-ACK packet -->
+  <g id="synack">
+    <line class="arrow" x1="750" y1="350" x2="250" y2="350"/>
+    <text x="500" y="370" text-anchor="middle" class="label">SYN‑ACK, Ack = x+1, Seq = y</text>
+  </g>
+
+  <!-- ACK packet -->
+  <g id="ack">
+    <line class="arrow" x1="250" y1="400" x2="750" y2="400"/>
+    <text x="500" y="380" text-anchor="middle" class="label">ACK, Ack = y+1</text>
+  </g>
+
+  <!-- Flow description -->
+  <g id="flow_description">
+    <text x="500" y="470" text-anchor="middle" class="label" font-size="20">TCP 3‑Way Handshake</text>
+  </g>
+</svg>

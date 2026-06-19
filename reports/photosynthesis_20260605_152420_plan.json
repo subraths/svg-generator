@@ -1,0 +1,94 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Overview",
+  "nodes": [
+    {
+      "id": "sunlight_energy",
+      "label": "Sunlight\nEnergy",
+      "x": 20,
+      "y": 200,
+      "w": 140,
+      "h": 80
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll\nPigments",
+      "x": 180,
+      "y": 200,
+      "w": 140,
+      "h": 80
+    },
+    {
+      "id": "light_dependent",
+      "label": "Light\u2011dependent\nReactions",
+      "x": 340,
+      "y": 200,
+      "w": 140,
+      "h": 80
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP & NADPH\nProduction",
+      "x": 500,
+      "y": 200,
+      "w": 140,
+      "h": 80
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle\nCO\u2082\nFixation",
+      "x": 660,
+      "y": 200,
+      "w": 140,
+      "h": 80
+    },
+    {
+      "id": "glucose_synthesis",
+      "label": "Glucose\nSynthesis",
+      "x": 820,
+      "y": 200,
+      "w": 140,
+      "h": 80
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen\nRelease",
+      "x": 340,
+      "y": 80,
+      "w": 140,
+      "h": 80
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight_energy",
+      "to": "chlorophyll",
+      "label": "absorbed by"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent",
+      "label": "drives"
+    },
+    {
+      "from": "light_dependent",
+      "to": "atp_nadph",
+      "label": "produces"
+    },
+    {
+      "from": "atp_nadph",
+      "to": "calvin_cycle",
+      "label": "used in"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_synthesis",
+      "label": "makes"
+    },
+    {
+      "from": "light_dependent",
+      "to": "oxygen_release",
+      "label": "releases"
+    }
+  ]
+}

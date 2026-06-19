@@ -1,0 +1,62 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+    <style>
+      .concept { fill:#cceeff; stroke:#333; stroke-width:2; }
+      .text { font-family:sans-serif; font-size:18px; fill:#000; pointer-events:none; }
+      .arrow { stroke:#333; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- Evaporation -->
+  <g id="evaporation">
+    <rect class="concept" x="100" y="100" width="180" height="80" rx="10"/>
+    <text class="text" x="190" y="150" text-anchor="middle">Evaporation</text>
+  </g>
+
+  <!-- Rising Air -->
+  <g id="rising_air">
+    <rect class="concept" x="350" y="100" width="180" height="80" rx="10"/>
+    <text class="text" x="440" y="150" text-anchor="middle">Rising Air</text>
+  </g>
+
+  <!-- Cooling -->
+  <g id="cooling">
+    <rect class="concept" x="600" y="100" width="180" height="80" rx="10"/>
+    <text class="text" x="690" y="150" text-anchor="middle">Cooling</text>
+  </g>
+
+  <!-- Condensation -->
+  <g id="condensation">
+    <rect class="concept" x="850" y="100" width="180" height="80" rx="10"/>
+    <text class="text" x="940" y="150" text-anchor="middle">Condensation</text>
+  </g>
+
+  <!-- Cloud Formation -->
+  <g id="cloud_formation">
+    <rect class="concept" x="850" y="250" width="180" height="80" rx="10"/>
+    <text class="text" x="940" y="300" text-anchor="middle">Cloud Formation</text>
+  </g>
+
+  <!-- Droplet Growth -->
+  <g id="droplet_growth">
+    <rect class="concept" x="850" y="400" width="180" height="80" rx="10"/>
+    <text class="text" x="940" y="450" text-anchor="middle">Droplet Growth</text>
+  </g>
+
+  <!-- Precipitation -->
+  <g id="precipitation">
+    <rect class="concept" x="850" y="600" width="180" height="80" rx="10"/>
+    <text class="text" x="940" y="650" text-anchor="middle">Precipitation</text>
+  </g>
+
+  <!-- Arrows -->
+  <line class="arrow" x1="280" y1="140" x2="350" y2="140" marker-end="url(#arrowhead)"/>
+  <line class="arrow" x1="530" y1="140" x2="600" y2="140" marker-end="url(#arrowhead)"/>
+  <line class="arrow" x1="780" y1="140" x2="850" y2="140" marker-end="url(#arrowhead)"/>
+  <line class="arrow" x1="940" y1="180" x2="940" y2="250" marker-end="url(#arrowhead)"/>
+  <line class="arrow" x1="940" y1="330" x2="940" y2="400" marker-end="url(#arrowhead)"/>
+  <line class="arrow" x1="940" y1="480" x2="940" y2="600" marker-end="url(#arrowhead)"/>
+</svg>

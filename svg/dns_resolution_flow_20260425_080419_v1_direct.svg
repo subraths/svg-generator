@@ -1,0 +1,55 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+    <style>
+      .block { fill:#f0f8ff; stroke:#333; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; fill:#000; pointer-events:none; }
+    </style>
+  </defs>
+
+  <!-- User Application -->
+  <g id="user_application">
+    <rect class="block" x="50" y="300" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="150" y="345" text-anchor="middle">User Application</text>
+  </g>
+
+  <!-- Recursive Resolver -->
+  <g id="recursive_resolver">
+    <rect class="block" x="300" y="300" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="400" y="345" text-anchor="middle">Recursive Resolver</text>
+  </g>
+
+  <!-- Root Name Server -->
+  <g id="root_name_server">
+    <rect class="block" x="550" y="100" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="650" y="145" text-anchor="middle">Root Name Server</text>
+  </g>
+
+  <!-- TLD Name Server -->
+  <g id="tld_name_server">
+    <rect class="block" x="550" y="300" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="650" y="345" text-anchor="middle">TLD Name Server</text>
+  </g>
+
+  <!-- Authoritative Name Server -->
+  <g id="authoritative_name_server">
+    <rect class="block" x="550" y="500" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="650" y="545" text-anchor="middle">Authoritative Name Server</text>
+  </g>
+
+  <!-- Final Answer -->
+  <g id="final_answer">
+    <rect class="block" x="850" y="300" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="950" y="345" text-anchor="middle">Final Answer</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="250" y1="340" x2="300" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="340" x2="550" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="340" x2="550" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="750" y1="340" x2="550" y2="540" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="750" y1="540" x2="500" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="340" x2="850" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

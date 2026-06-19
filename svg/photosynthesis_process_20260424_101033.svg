@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Sunlight -->
+  <g id="sunlight">
+    <rect x="50" y="50" width="180" height="80" fill="#FFEB99" stroke="#000" stroke-width="2"/>
+    <text x="140" y="95" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Sunlight</text>
+  </g>
+
+  <!-- CO2 -->
+  <g id="co2">
+    <rect x="970" y="50" width="180" height="80" fill="#CCCCCC" stroke="#000" stroke-width="2"/>
+    <text x="1060" y="95" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">CO₂</text>
+  </g>
+
+  <!-- Water -->
+  <g id="water">
+    <rect x="50" y="250" width="180" height="80" fill="#99CCFF" stroke="#000" stroke-width="2"/>
+    <text x="140" y="295" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Water (H₂O)</text>
+  </g>
+
+  <!-- Chlorophyll -->
+  <g id="chlorophyll">
+    <rect x="500" y="250" width="200" height="80" fill="#99FF99" stroke="#000" stroke-width="2"/>
+    <text x="600" y="295" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Chlorophyll</text>
+  </g>
+
+  <!-- Glucose -->
+  <g id="glucose">
+    <rect x="970" y="250" width="180" height="80" fill="#FFCCCC" stroke="#000" stroke-width="2"/>
+    <text x="1060" y="295" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Glucose (C₆H₁₂O₆)</text>
+  </g>
+
+  <!-- Oxygen -->
+  <g id="oxygen">
+    <rect x="970" y="450" width="180" height="80" fill="#FFCC99" stroke="#000" stroke-width="2"/>
+    <text x="1060" y="495" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Oxygen (O₂)</text>
+  </g>
+
+  <!-- Arrows -->
+  <!-- Sunlight to Chlorophyll -->
+  <line x1="230" y1="90" x2="500" y2="290" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- CO2 to Chlorophyll -->
+  <line x1="970" y1="90" x2="700" y2="290" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Water to Chlorophyll -->
+  <line x1="230" y1="290" x2="500" y2="290" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Chlorophyll to Glucose -->
+  <line x1="700" y1="290" x2="970" y2="290" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Glucose to Oxygen -->
+  <line x1="1060" y1="330" x2="1060" y2="450" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

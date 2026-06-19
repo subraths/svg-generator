@@ -1,0 +1,38 @@
+{
+  "timestamp": "20260605_142010",
+  "topic": "Mitocondrial structure and function",
+  "model": "openai/gpt-oss-120b",
+  "mode": "v2_planner",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "outer_membrane",
+      "intermembrane_space",
+      "inner_membrane",
+      "cristae",
+      "matrix",
+      "mt_dna",
+      "electron_transport_chain",
+      "atp_synthase"
+    ],
+    "group_count": 8,
+    "rect_count": 8,
+    "overlap_pairs": [],
+    "line_count": 7,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 7,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/mitocondrial_structure_and_function_20260605_142010.svg",
+    "png": "img/mitocondrial_structure_and_function_20260605_142010.png",
+    "plan": "reports/mitocondrial_structure_and_function_20260605_142010_plan.json"
+  }
+}

@@ -1,0 +1,54 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Client block -->
+  <g id="client">
+    <rect x="100" y="250" width="150" height="100" fill="#e0f7fa" stroke="#000"/>
+    <text x="175" y="310" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#000">Client</text>
+  </g>
+
+  <!-- Server block -->
+  <g id="server">
+    <rect x="600" y="250" width="150" height="100" fill="#ffe0b2" stroke="#000"/>
+    <text x="675" y="310" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#000">Server</text>
+  </g>
+
+  <!-- SYN label -->
+  <g id="syn">
+    <rect x="300" y="200" width="80" height="30" fill="#fff3e0" stroke="#000"/>
+    <text x="340" y="222" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#000">SYN</text>
+  </g>
+
+  <!-- SYN-ACK label -->
+  <g id="synack">
+    <rect x="300" y="300" width="100" height="30" fill="#fff3e0" stroke="#000"/>
+    <text x="350" y="322" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#000">SYN‑ACK</text>
+  </g>
+
+  <!-- ACK label -->
+  <g id="ack">
+    <rect x="300" y="400" width="80" height="30" fill="#fff3e0" stroke="#000"/>
+    <text x="340" y="422" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#000">ACK</text>
+  </g>
+
+  <!-- Connection Established label -->
+  <g id="established">
+    <rect x="350" y="500" width="120" height="30" fill="#e8f5e9" stroke="#000"/>
+    <text x="410" y="522" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#000">Connection Established</text>
+  </g>
+
+  <!-- Arrows for handshake -->
+  <!-- SYN: Client → Server -->
+  <line x1="250" y1="300" x2="600" y2="300" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- SYN‑ACK: Server → Client -->
+  <line x1="600" y1="320" x2="250" y2="320" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- ACK: Client → Server -->
+  <line x1="250" y1="340" x2="600" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

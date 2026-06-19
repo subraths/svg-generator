@@ -1,0 +1,130 @@
+{
+  "diagram_type": "cycle",
+  "title": "Water Cycle",
+  "nodes": [
+    {
+      "id": "evaporation",
+      "label": "Evaporation",
+      "x": 520,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "transpiration",
+      "label": "Transpiration",
+      "x": 520,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "condensation",
+      "label": "Condensation",
+      "x": 960,
+      "y": 300,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "precipitation",
+      "label": "Precipitation",
+      "x": 960,
+      "y": 560,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "collection",
+      "label": "Collection",
+      "x": 520,
+      "y": 560,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "runoff",
+      "label": "Runoff",
+      "x": 200,
+      "y": 560,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "infiltration",
+      "label": "Infiltration",
+      "x": 200,
+      "y": 380,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "groundwater",
+      "label": "Groundwater Flow",
+      "x": 200,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "sublimation",
+      "label": "Sublimation",
+      "x": 200,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "evaporation",
+      "to": "condensation",
+      "label": "water vapor rises"
+    },
+    {
+      "from": "transpiration",
+      "to": "evaporation",
+      "label": "adds moisture"
+    },
+    {
+      "from": "condensation",
+      "to": "precipitation",
+      "label": "cloud formation"
+    },
+    {
+      "from": "precipitation",
+      "to": "collection",
+      "label": "rain/snow"
+    },
+    {
+      "from": "collection",
+      "to": "runoff",
+      "label": "surface flow"
+    },
+    {
+      "from": "runoff",
+      "to": "infiltration",
+      "label": "water seeps"
+    },
+    {
+      "from": "infiltration",
+      "to": "groundwater",
+      "label": "recharge"
+    },
+    {
+      "from": "groundwater",
+      "to": "evaporation",
+      "label": "seepage evaporates"
+    },
+    {
+      "from": "sublimation",
+      "to": "condensation",
+      "label": "ice to vapor"
+    },
+    {
+      "from": "sublimation",
+      "to": "precipitation",
+      "label": "direct deposition"
+    }
+  ]
+}

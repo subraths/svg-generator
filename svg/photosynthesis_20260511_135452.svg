@@ -1,0 +1,76 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="sans-serif" font-size="24">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="90" y="205" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="180" y="240" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="310" y="205" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="400" y="240" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Chlorophyll (light absorber)</text>
+  </g>
+
+  <g id="light_dependent">
+    <rect x="530" y="205" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="620" y="240" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Light‑dependent Reactions</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="750" y="205" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="840" y="240" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="970" y="205" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="1060" y="240" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">O₂ Release</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="750" y="325" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="840" y="360" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect x="310" y="445" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="400" y="480" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">CO₂ Fixation</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="530" y="445" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="620" y="480" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Calvin Cycle (Light‑independent)</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="750" y="565" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="840" y="600" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Glucose Production</text>
+  </g>
+
+  <!-- Edges -->
+  <path d="M270,240 L310,240" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M490,240 L530,240" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M710,240 L750,240" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M930,240 L970,240" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M620,275 L840,325" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M750,360 L710,480" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M490,480 L530,480" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M620,515 L840,565" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Edge Labels (optional, placed near midpoints) -->
+  <text x="290" y="230" font-family="sans-serif" font-size="12" text-anchor="middle">light</text>
+  <text x="510" y="230" font-family="sans-serif" font-size="12" text-anchor="middle">absorbs</text>
+  <text x="730" y="230" font-family="sans-serif" font-size="12" text-anchor="middle">splits H₂O</text>
+  <text x="950" y="230" font-family="sans-serif" font-size="12" text-anchor="middle">O₂</text>
+  <text x="730" y="300" font-family="sans-serif" font-size="12" text-anchor="middle">produces ATP/NADPH</text>
+  <text x="730" y="420" font-family="sans-serif" font-size="12" text-anchor="middle">energy carriers</text>
+  <text x="510" y="470" font-family="sans-serif" font-size="12" text-anchor="middle">CO₂</text>
+  <text x="730" y="540" font-family="sans-serif" font-size="12" text-anchor="middle">glucose</text>
+</svg>

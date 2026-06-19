@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .node { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .edge { fill:none; stroke:#424242; stroke-width:2; }
+      .label { font-family:Arial,Helvetica,sans-serif; font-size:14px; fill:#212121; }
+      .edgelabel { font-family:Arial,Helvetica,sans-serif; font-size:12px; fill:#424242; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" class="label" font-size="24">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect class="node" x="250" y="155" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="340" y="190" text-anchor="middle" dominant-baseline="middle">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect class="node" x="490" y="155" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="580" y="190" text-anchor="middle" dominant-baseline="middle">Chlorophyll (pigment)</text>
+  </g>
+
+  <g id="light_dependent">
+    <rect class="node" x="730" y="155" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="820" y="190" text-anchor="middle" dominant-baseline="middle">Light‑dependent Reactions</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect class="node" x="730" y="255" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="820" y="290" text-anchor="middle" dominant-baseline="middle">Water Splitting (H₂O → O₂ + e⁻)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect class="node" x="970" y="255" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="1060" y="290" text-anchor="middle" dominant-baseline="middle">O₂ Release</text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect class="node" x="730" y="355" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="820" y="390" text-anchor="middle" dominant-baseline="middle">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect class="node" x="490" y="455" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="580" y="490" text-anchor="middle" dominant-baseline="middle">Calvin Cycle (Light‑independent)</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect class="node" x="490" y="555" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="580" y="590" text-anchor="middle" dominant-baseline="middle">CO₂ Fixation</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect class="node" x="490" y="655" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="580" y="690" text-anchor="middle" dominant-baseline="middle">Glucose Production</text>
+  </g>
+
+  <g id="stroma">
+    <rect class="node" x="730" y="555" width="180" height="70" rx="8" ry="8"/>
+    <text class="label" x="820" y="590" text-anchor="middle" dominant-baseline="middle">Stroma (site)</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_sunlight_chlorophyll">
+    <path class="edge" d="M430,190 L490,190" marker-end="url(#arrow)"/>
+    <text class="edgelabel" x="460" y="175">provides energy</text>
+  </g>
+
+  <g id="edge_chlorophyll_light_dependent">
+    <path class="edge" d="M670,190 L730,190" marker-end="url(#arrow)"/>
+    <text class="edgelabel" x="700" y="175">absorbs light</text>
+  </g>
+
+  <g id="edge_light_dependent_water_splitting">
+    <path class="edge" d="M820,225 L820,255" marker-end="url(#arrow)"/>
+    <text class="edgelabel" x="835" y="240">drives</text>
+  </g>

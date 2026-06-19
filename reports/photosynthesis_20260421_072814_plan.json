@@ -1,0 +1,94 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 80,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water",
+      "label": "Water (H\u2082O)",
+      "x": 80,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_dioxide",
+      "label": "CO\u2082",
+      "x": 80,
+      "y": 220,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent_reactions",
+      "label": "Light\u2011Dependent Reactions",
+      "x": 340,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle",
+      "x": 580,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose",
+      "label": "Glucose (C\u2086H\u2081\u2082O\u2086)",
+      "x": 820,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen",
+      "label": "Oxygen (O\u2082)",
+      "x": 820,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "light_dependent_reactions",
+      "label": ""
+    },
+    {
+      "from": "water",
+      "to": "light_dependent_reactions",
+      "label": ""
+    },
+    {
+      "from": "light_dependent_reactions",
+      "to": "oxygen",
+      "label": "O\u2082"
+    },
+    {
+      "from": "light_dependent_reactions",
+      "to": "calvin_cycle",
+      "label": "ATP/NADPH"
+    },
+    {
+      "from": "carbon_dioxide",
+      "to": "calvin_cycle",
+      "label": ""
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose",
+      "label": "C\u2086H\u2081\u2082O\u2086"
+    }
+  ]
+}

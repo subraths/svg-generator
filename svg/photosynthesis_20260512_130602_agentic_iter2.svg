@@ -1,0 +1,76 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="220" y="295" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="310" y="330" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Light Absorption</text>
+  </g>
+
+  <g id="water_uptake">
+    <rect x="220" y="395" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="310" y="430" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Water Uptake</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="220" y="515" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="310" y="550" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Carbon Fixation (CO₂)</text>
+  </g>
+
+  <g id="thylakoid_reactions">
+    <rect x="440" y="355" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="530" y="390" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Light–Dependent Reactions</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="660" y="455" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="750" y="490" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Calvin Cycle (Light–Independent)</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="880" y="395" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="970" y="430" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Glucose Production</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="880" y="515" width="180" height="70" fill="#cce5ff" stroke="#000"/>
+    <text x="970" y="550" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">O₂ Release</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_light_absorption_to_thylakoid_reactions">
+    <line x1="400" y1="330" x2="440" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="420" y="360" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#000">photons</text>
+  </g>
+
+  <g id="edge_water_uptake_to_thylakoid_reactions">
+    <line x1="400" y1="430" x2="440" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="420" y="410" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#000">H₂O</text>
+  </g>
+
+  <g id="edge_thylakoid_reactions_to_calvin_cycle">
+    <line x1="620" y1="390" x2="660" y2="490" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="640" y="440" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#000">ATP/NADPH</text>
+  </g>
+
+  <g id="edge_carbon_fixation_to_calvin_cycle">
+    <line x1="400" y1="550" x2="660" y2="490" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="530" y="520" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#000">CO₂</text>
+  </g>
+
+  <g id="edge_calvin_cycle_to_glucose_production">
+    <line x1="840" y1="490" x2="880" y2="430" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="860" y="460" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#000">C₆H₁₂O₆</text>
+  </g>
+
+  <g id="edge_calvin_cycle_to_oxygen_release">
+    <line x1="840" y1="490" x2="880" y2="550" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="860" y="520" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#000">O₂</text>
+  </g>
+</svg>

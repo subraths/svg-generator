@@ -1,0 +1,38 @@
+{
+  "timestamp": "20260424_154611",
+  "batch_stamp": "20260424_154520",
+  "topic": "Cell structure",
+  "mode": "v1_direct",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 2,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "cell_membrane",
+      "nucleus",
+      "mitochondria",
+      "endoplasmic_reticulum",
+      "golgi_apparatus",
+      "lysosome",
+      "ribosome"
+    ],
+    "group_count": 7,
+    "rect_count": 7,
+    "overlap_pairs": [],
+    "line_count": 6,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 6,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/cell_structure_20260424_154520_v1_direct.svg",
+    "png": "img/cell_structure_20260424_154520_v1_direct.png",
+    "plan": null
+  }
+}

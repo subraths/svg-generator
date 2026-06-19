@@ -1,0 +1,4 @@
+timestamp,batch_stamp,topic,mode,model,attempts_used,xml_valid,group_count,rect_count,connector_elements_total,overlap_count,error_count,passed,plan_path,svg_path,png_path,failure_type,failure_detail,fatal_error
+20260424_210931,20260424_210931,TCP 3-way handshake,v1_direct,openai/gpt-oss-120b,0,False,0,0,0,0,1,False,,,,fatal_error,'Groq' object has no attribute 'chat_completion_with_failover','Groq' object has no attribute 'chat_completion_with_failover'
+20260424_210936,20260424_210931,TCP 3-way handshake,v2_planner,openai/gpt-oss-120b,0,False,0,0,0,0,1,False,,,,fatal_error,'Groq' object has no attribute 'chat_completion_with_failover','Groq' object has no attribute 'chat_completion_with_failover'
+20260424_210936,20260424_210931,Transformer architecture,v1_direct,openai/gpt-oss-120b,0,False,0,0,0,0,1,False,,,,fatal_error,'Groq' object has no attribute 'chat_completion_with_failover','Groq' object has no attribute 'chat_completion_with_failover'

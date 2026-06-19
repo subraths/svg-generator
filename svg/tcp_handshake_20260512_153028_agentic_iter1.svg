@@ -1,0 +1,69 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L10,3.5 Z" fill="#000"/>
+    </marker>
+    <style>
+      .node-rect { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .node-label { font-family:sans-serif; font-size:14px; fill:#000; text-anchor:middle; dominant-baseline:middle; }
+      .edge-line { stroke:#000; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
+      .edge-label { font-family:sans-serif; font-size:13px; fill:#000; text-anchor:middle; dominant-baseline:middle; }
+      .title { font-family:sans-serif; font-size:24px; fill:#000; text-anchor:middle; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" class="title">TCP Handshake</text>
+
+  <!-- Nodes -->
+  <g id="client_syn">
+    <rect x="350" y="385" width="180" height="70" class="node-rect"/>
+    <text x="440" y="420" class="node-label">Client: SYN</text>
+  </g>
+
+  <g id="server_syn_ack">
+    <rect x="550" y="385" width="180" height="70" class="node-rect"/>
+    <text x="640" y="420" class="node-label">Server: SYN‑ACK</text>
+  </g>
+
+  <g id="client_ack">
+    <rect x="750" y="385" width="180" height="70" class="node-rect"/>
+    <text x="840" y="420" class="node-label">Client: ACK</text>
+  </g>
+
+  <g id="connection_established">
+    <rect x="350" y="545" width="180" height="70" class="node-rect"/>
+    <text x="440" y="580" class="node-label">Connection Established</text>
+  </g>
+
+  <g id="data_transfer">
+    <rect x="550" y="545" width="180" height="70" class="node-rect"/>
+    <text x="640" y="580" class="node-label">Data Transfer</text>
+  </g>
+
+  <g id="connection_termination">
+    <rect x="750" y="545" width="180" height="70" class="node-rect"/>
+    <text x="840" y="580" class="node-label">Connection Termination</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- client_syn -> server_syn_ack -->
+  <line x1="530" y1="420" x2="550" y2="420" class="edge-line"/>
+  <text x="540" y="410" class="edge-label">SYN</text>
+
+  <!-- server_syn_ack -> client_ack -->
+  <line x1="730" y1="420" x2="750" y2="420" class="edge-line"/>
+  <text x="740" y="410" class="edge-label">SYN‑ACK</text>
+
+  <!-- client_ack -> connection_established -->
+  <path d="M840,455 V545 H440" class="edge-line"/>
+  <text x="685" y="535" class="edge-label">ACK</text>
+
+  <!-- connection_established -> data_transfer -->
+  <line x1="530" y1="580" x2="550" y2="580" class="edge-line"/>
+  <text x="540" y="570" class="edge-label">establish</text>
+
+  <!-- data_transfer -> connection_termination -->
+  <line x1="730" y1="580" x2="750" y2="580" class="edge-line"/>
+  <text x="740" y="570" class="edge-label">FIN</text>
+</svg>

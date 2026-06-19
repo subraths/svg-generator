@@ -1,0 +1,55 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+    <style>
+      .box { fill:#f0f0f0; stroke:#000; stroke-width:2; }
+      .arrow { stroke:#000; stroke-width:2; fill:none; }
+      .label { font-family:sans-serif; font-size:18px; fill:#000; }
+      .title { font-family:sans-serif; font-size:24px; font-weight:bold; fill:#000; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <g id="title">
+    <text x="600" y="60" text-anchor="middle" class="title">TCP 3‑Way Handshake</text>
+  </g>
+
+  <!-- Client box -->
+  <g id="client_box">
+    <rect x="100" y="300" width="200" height="100" class="box"/>
+    <text x="200" y="340" text-anchor="middle" class="label">Client</text>
+    <text x="200" y="370" text-anchor="middle" class="label">CLOSED → SYN_SENT</text>
+  </g>
+
+  <!-- Server box -->
+  <g id="server_box">
+    <rect x="900" y="300" width="200" height="100" class="box"/>
+    <text x="1000" y="340" text-anchor="middle" class="label">Server</text>
+    <text x="1000" y="370" text-anchor="middle" class="label">LISTEN → SYN_RCVD</text>
+  </g>
+
+  <!-- SYN message -->
+  <g id="syn_msg">
+    <line x1="300" y1="350" x2="900" y2="350" class="arrow" marker-end="url(#arrowhead)"/>
+    <text x="600" y="330" text-anchor="middle" class="label">SYN, seq = x</text>
+  </g>
+
+  <!-- SYN‑ACK message -->
+  <g id="synack_msg">
+    <line x1="900" y1="400" x2="300" y2="400" class="arrow" marker-end="url(#arrowhead)"/>
+    <text x="600" y="380" text-anchor="middle" class="label">SYN‑ACK, ack = x+1, seq = y</text>
+  </g>
+
+  <!-- ACK message -->
+  <g id="ack_msg">
+    <line x1="300" y1="450" x2="900" y2="450" class="arrow" marker-end="url(#arrowhead)"/>
+    <text x="600" y="430" text-anchor="middle" class="label">ACK, ack = y+1</text>
+  </g>
+
+  <!-- Connection Established note -->
+  <g id="connection_established">
+    <text x="600" y="560" text-anchor="middle" class="label">Connection Established (ESTABLISHED state)</text>
+  </g>
+</svg>

@@ -1,0 +1,94 @@
+{
+  "diagram_type": "flow",
+  "title": "Water Condensation",
+  "nodes": [
+    {
+      "id": "water_vapor",
+      "label": "Water Vapor",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "cooling",
+      "label": "Cooling",
+      "x": 100,
+      "y": 190,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "saturation_point",
+      "label": "Saturation Point",
+      "x": 100,
+      "y": 280,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "condensation_nuclei",
+      "label": "Condensation Nuclei",
+      "x": 100,
+      "y": 370,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "droplet_formation",
+      "label": "Droplet Formation",
+      "x": 100,
+      "y": 460,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "cloud_formation",
+      "label": "Cloud Formation",
+      "x": 100,
+      "y": 550,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "precipitation",
+      "label": "Precipitation",
+      "x": 100,
+      "y": 640,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "water_vapor",
+      "to": "cooling",
+      "label": ""
+    },
+    {
+      "from": "cooling",
+      "to": "saturation_point",
+      "label": ""
+    },
+    {
+      "from": "saturation_point",
+      "to": "condensation_nuclei",
+      "label": ""
+    },
+    {
+      "from": "condensation_nuclei",
+      "to": "droplet_formation",
+      "label": ""
+    },
+    {
+      "from": "droplet_formation",
+      "to": "cloud_formation",
+      "label": ""
+    },
+    {
+      "from": "cloud_formation",
+      "to": "precipitation",
+      "label": ""
+    }
+  ]
+}

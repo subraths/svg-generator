@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Input Embedding -->
+  <g id="input_embedding">
+    <rect x="50" y="350" width="180" height="80" fill="#e0f7fa" stroke="#000" stroke-width="2"/>
+    <text x="140" y="395" font-size="18" text-anchor="middle" dominant-baseline="middle">Input Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect x="300" y="350" width="200" height="80" fill="#fff9c4" stroke="#000" stroke-width="2"/>
+    <text x="400" y="395" font-size="18" text-anchor="middle" dominant-baseline="middle">Positional Encoding</text>
+  </g>
+
+  <!-- Multi‑Head Attention -->
+  <g id="multi_head_attention">
+    <rect x="560" y="250" width="220" height="80" fill="#c8e6c9" stroke="#000" stroke-width="2"/>
+    <text x="670" y="290" font-size="18" text-anchor="middle" dominant-baseline="middle">Multi‑Head Attention</text>
+  </g>
+
+  <!-- Feed Forward -->
+  <g id="feed_forward">
+    <rect x="560" y="450" width="200" height="80" fill="#ffccbc" stroke="#000" stroke-width="2"/>
+    <text x="660" y="490" font-size="18" text-anchor="middle" dominant-baseline="middle">Feed Forward</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect x="860" y="350" width="180" height="80" fill="#d1c4e9" stroke="#000" stroke-width="2"/>
+    <text x="950" y="395" font-size="18" text-anchor="middle" dominant-baseline="middle">Output Layer</text>
+  </g>
+
+  <!-- Softmax -->
+  <g id="softmax">
+    <rect x="1080" y="350" width="140" height="80" fill="#ffe0b2" stroke="#000" stroke-width="2"/>
+    <text x="1150" y="395" font-size="18" text-anchor="middle" dominant-baseline="middle">Softmax</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- Input → Positional -->
+  <line x1="230" y1="390" x2="300" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <!-- Positional → Multi‑Head Attention -->
+  <line x1="500" y1="390" x2="560" y2="290" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <!-- Multi‑Head Attention → Feed Forward -->
+  <line x1="780" y1="290" x2="560" y2="490" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <!-- Feed Forward → Output Layer -->
+  <line x1="760" y1="490" x2="860" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <!-- Output Layer → Softmax -->
+  <line x1="1040" y1="390" x2="1080" y2="390" stroke="#000" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

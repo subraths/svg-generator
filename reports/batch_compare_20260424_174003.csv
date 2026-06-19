@@ -1,0 +1,1 @@
+timestamp,batch_stamp,topic,mode,model,attempts_used,xml_valid,group_count,rect_count,connector_elements_total,overlap_count,error_count,passed,plan_path,svg_path,png_path,failure_type,failure_detail,fatal_error

@@ -1,0 +1,64 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Client Browser -->
+  <g id="client_browser">
+    <rect x="450" y="50" width="300" height="60" fill="#f0f0f0" stroke="#333"/>
+    <text x="600" y="88" text-anchor="middle" font-size="18" fill="#000">Client Browser</text>
+  </g>
+
+  <!-- DNS Lookup -->
+  <g id="dns_lookup">
+    <rect x="450" y="140" width="300" height="60" fill="#f0f0f0" stroke="#333"/>
+    <text x="600" y="178" text-anchor="middle" font-size="18" fill="#000">DNS Lookup</text>
+  </g>
+
+  <!-- TCP Handshake -->
+  <g id="tcp_handshake">
+    <rect x="450" y="230" width="300" height="60" fill="#f0f0f0" stroke="#333"/>
+    <text x="600" y="268" text-anchor="middle" font-size="18" fill="#000">TCP Handshake</text>
+  </g>
+
+  <!-- TLS Handshake -->
+  <g id="tls_handshake">
+    <rect x="450" y="320" width="300" height="60" fill="#f0f0f0" stroke="#333"/>
+    <text x="600" y="358" text-anchor="middle" font-size="18" fill="#000">TLS Handshake (optional)</text>
+  </g>
+
+  <!-- HTTP Request -->
+  <g id="http_request">
+    <rect x="450" y="410" width="300" height="60" fill="#f0f0f0" stroke="#333"/>
+    <text x="600" y="448" text-anchor="middle" font-size="18" fill="#000">HTTP Request Sent</text>
+  </g>
+
+  <!-- Server Processing -->
+  <g id="server_processing">
+    <rect x="450" y="500" width="300" height="60" fill="#f0f0f0" stroke="#333"/>
+    <text x="600" y="538" text-anchor="middle" font-size="18" fill="#000">Server Processing</text>
+  </g>
+
+  <!-- HTTP Response -->
+  <g id="http_response">
+    <rect x="450" y="590" width="300" height="60" fill="#f0f0f0" stroke="#333"/>
+    <text x="600" y="628" text-anchor="middle" font-size="18" fill="#000">HTTP Response Sent</text>
+  </g>
+
+  <!-- Rendering -->
+  <g id="rendering">
+    <rect x="450" y="680" width="300" height="60" fill="#f0f0f0" stroke="#333"/>
+    <text x="600" y="718" text-anchor="middle" font-size="18" fill="#000">Browser Rendering</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="600" y1="110" x2="600" y2="140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="200" x2="600" y2="230" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="290" x2="600" y2="320" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="380" x2="600" y2="410" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="470" x2="600" y2="500" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="560" x2="600" y2="590" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="650" x2="600" y2="680" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

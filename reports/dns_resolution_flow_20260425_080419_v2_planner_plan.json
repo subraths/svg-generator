@@ -1,0 +1,96 @@
+{
+  "diagram_type": "flow",
+  "title": "DNS Resolution Flow",
+  "nodes": [
+    {
+      "id": "client_query",
+      "label": "Client Query",
+      "x": 100,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "recursive_resolver",
+      "label": "Recursive Resolver",
+      "x": 460,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "root_server",
+      "label": "Root DNS Server",
+      "x": 460,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "tld_server",
+      "label": "TLD DNS Server",
+      "x": 460,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "authoritative_server",
+      "label": "Authoritative DNS Server",
+      "x": 800,
+      "y": 380,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "dns_response",
+      "label": "DNS Response",
+      "x": 100,
+      "y": 560,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "client_query",
+      "to": "recursive_resolver",
+      "label": "Query"
+    },
+    {
+      "from": "recursive_resolver",
+      "to": "root_server",
+      "label": "Ask"
+    },
+    {
+      "from": "root_server",
+      "to": "recursive_resolver",
+      "label": "Referral"
+    },
+    {
+      "from": "recursive_resolver",
+      "to": "tld_server",
+      "label": "Ask"
+    },
+    {
+      "from": "tld_server",
+      "to": "recursive_resolver",
+      "label": "Referral"
+    },
+    {
+      "from": "recursive_resolver",
+      "to": "authoritative_server",
+      "label": "Ask"
+    },
+    {
+      "from": "authoritative_server",
+      "to": "recursive_resolver",
+      "label": "Answer"
+    },
+    {
+      "from": "recursive_resolver",
+      "to": "dns_response",
+      "label": "Response"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Client -->
+  <g id="client">
+    <rect x="50" y="100" width="150" height="80" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="125" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#006064">Client (Browser)</text>
+  </g>
+
+  <!-- DNS Lookup -->
+  <g id="dns_lookup">
+    <rect x="250" y="100" width="150" height="80" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="325" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#e65100">DNS Lookup</text>
+  </g>
+
+  <!-- TCP Handshake -->
+  <g id="tcp_handshake">
+    <rect x="450" y="100" width="150" height="80" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="525" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#1b5e20">TCP Handshake</text>
+  </g>
+
+  <!-- TLS Handshake -->
+  <g id="tls_handshake">
+    <rect x="650" y="100" width="150" height="80" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+    <text x="725" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#4a148c">TLS Handshake</text>
+  </g>
+
+  <!-- HTTP Request -->
+  <g id="http_request">
+    <rect x="850" y="100" width="150" height="80" fill="#fffde7" stroke="#f57f17" stroke-width="2"/>
+    <text x="925" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#f57f17">HTTP Request</text>
+  </g>
+
+  <!-- Server Processing -->
+  <g id="server_processing">
+    <rect x="850" y="300" width="150" height="80" fill="#e1f5fe" stroke="#01579b" stroke-width="2"/>
+    <text x="925" y="345" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#01579b">Server Processing</text>
+  </g>
+
+  <!-- HTTP Response -->
+  <g id="http_response">
+    <rect x="650" y="500" width="150" height="80" fill="#ffebee" stroke="#b71c1c" stroke-width="2"/>
+    <text x="725" y="545" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#b71c1c">HTTP Response</text>
+  </g>
+
+  <!-- Rendering -->
+  <g id="rendering">
+    <rect x="450" y="500" width="150" height="80" fill="#e8eaf6" stroke="#1a237e" stroke-width="2"/>
+    <text x="525" y="545" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#1a237e">Rendering</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="200" y1="140" x2="250" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="140" x2="450" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="140" x2="650" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="800" y1="140" x2="850" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="925" y1="220" x2="925" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="850" y1="340" x2="800" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="725" y1="620" x2="525" y2="500" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="525" y1="540" x2="200" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

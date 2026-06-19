@@ -1,0 +1,36 @@
+{
+  "timestamp": "20260424_101303",
+  "topic": "Kubernetes pod lifecycle",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "pending",
+      "scheduling",
+      "container_creating",
+      "running",
+      "succeeded",
+      "failed",
+      "terminating"
+    ],
+    "group_count": 7,
+    "rect_count": 7,
+    "overlap_pairs": [],
+    "line_count": 7,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 7,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/kubernetes_pod_lifecycle_20260424_101303.svg",
+    "png": "img/kubernetes_pod_lifecycle_20260424_101303.png",
+    "csv": "reports/batch_20260424_100906.csv"
+  }
+}

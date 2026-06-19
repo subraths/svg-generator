@@ -1,0 +1,104 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 100,
+      "y": 60,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting (Photolysis)",
+      "x": 100,
+      "y": 150,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 100,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "energy_carriers",
+      "label": "Energy Carriers (ATP, NADPH)",
+      "x": 100,
+      "y": 330,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "co2_fixation",
+      "label": "CO\u2082 Fixation (Calvin Cycle)",
+      "x": 400,
+      "y": 150,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 400,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "starch_storage",
+      "label": "Starch Storage",
+      "x": 400,
+      "y": 330,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "light_absorption",
+      "to": "water_splitting",
+      "label": "energy"
+    },
+    {
+      "from": "light_absorption",
+      "to": "energy_carriers",
+      "label": "produces"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "O\u2082"
+    },
+    {
+      "from": "water_splitting",
+      "to": "energy_carriers",
+      "label": "ATP/NADPH"
+    },
+    {
+      "from": "energy_carriers",
+      "to": "co2_fixation",
+      "label": "provides ATP/NADPH"
+    },
+    {
+      "from": "co2_fixation",
+      "to": "glucose_production",
+      "label": "produces"
+    },
+    {
+      "from": "glucose_production",
+      "to": "starch_storage",
+      "label": "stores"
+    },
+    {
+      "from": "light_absorption",
+      "to": "co2_fixation",
+      "label": "drives"
+    }
+  ]
+}

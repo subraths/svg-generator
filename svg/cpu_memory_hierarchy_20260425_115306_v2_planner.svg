@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="14">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="20" text-anchor="middle" font-size="24" font-weight="bold">CPU Memory Hierarchy</text>
+
+  <!-- Nodes -->
+  <g id="cpu_registers">
+    <rect x="500" y="40" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="590" y="75" text-anchor="middle" dominant-baseline="middle">CPU Registers</text>
+  </g>
+
+  <g id="l1_cache">
+    <rect x="500" y="140" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="590" y="175" text-anchor="middle" dominant-baseline="middle">L1 Cache</text>
+  </g>
+
+  <g id="l2_cache">
+    <rect x="500" y="240" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="590" y="275" text-anchor="middle" dominant-baseline="middle">L2 Cache</text>
+  </g>
+
+  <g id="l3_cache">
+    <rect x="500" y="340" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="590" y="375" text-anchor="middle" dominant-baseline="middle">L3 Cache</text>
+  </g>
+
+  <g id="main_memory">
+    <rect x="500" y="440" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="590" y="475" text-anchor="middle" dominant-baseline="middle">Main Memory (RAM)</text>
+  </g>
+
+  <g id="secondary_storage">
+    <rect x="500" y="540" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="590" y="575" text-anchor="middle" dominant-baseline="middle">Secondary Storage (SSD/HDD)</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_cpu_registers_to_l1_cache">
+    <line x1="590" y1="110" x2="590" y2="140" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="590" y="125" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="12">fastest</text>
+  </g>
+
+  <g id="edge_l1_cache_to_l2_cache">
+    <line x1="590" y1="210" x2="590" y2="240" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="590" y="225" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="12">faster</text>
+  </g>
+
+  <g id="edge_l2_cache_to_l3_cache">
+    <line x1="590" y1="310" x2="590" y2="340" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="590" y="325" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="12">fast</text>
+  </g>
+
+  <g id="edge_l3_cache_to_main_memory">
+    <line x1="590" y1="410" x2="590" y2="440" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="590" y="425" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="12">slower</text>
+  </g>
+
+  <g id="edge_main_memory_to_secondary_storage">
+    <line x1="590" y1="510" x2="590" y2="540" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="590" y="525" text-anchor="middle" dominant-baseline="middle" fill="black" font-size="12">slowest</text>
+  </g>
+</svg>

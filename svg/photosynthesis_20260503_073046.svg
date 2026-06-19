@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="20" text-anchor="middle" font-size="24" font-weight="bold" fill="black">Photosynthesis Process</text>
+
+  <!-- Nodes -->
+  <g id="chlorophyll">
+    <rect x="500" y="40" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="590" y="75" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="black">Chlorophyll</text>
+  </g>
+
+  <g id="light_absorption">
+    <rect x="500" y="140" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="590" y="175" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="black">Light Absorption</text>
+  </g>
+
+  <g id="water_photolysis">
+    <rect x="260" y="260" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="350" y="295" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="black">Water Photolysis</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="260" y="360" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="350" y="395" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="black">O₂ Release</text>
+  </g>
+
+  <g id="energy_storage">
+    <rect x="740" y="260" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="830" y="295" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="black">ATP &amp; NADPH</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="740" y="360" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="830" y="395" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="black">CO₂ Fixation</text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect x="500" y="460" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="590" y="495" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="black">Glucose Synthesis</text>
+  </g>
+
+  <!-- Edges -->
+  <line x1="590" y1="75" x2="590" y2="175" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="595" y="125" font-size="12" fill="black">absorbs light</text>
+
+  <line x1="590" y1="175" x2="350" y2="295" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="470" y="235" font-size="12" fill="black">drives</text>
+
+  <line x1="590" y1="175" x2="830" y2="295" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="710" y="235" font-size="12" fill="black">produces ATP/NADPH</text>
+
+  <line x1="350" y1="295" x2="350" y2="395" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="355" y="345" font-size="12" fill="black">releases O₂</text>
+
+  <line x1="830" y1="295" x2="830" y2="395" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="835" y="345" font-size="12" fill="black">powers</text>
+
+  <line x1="830" y1="395" x2="590" y2="495" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="710" y="445" font-size="12" fill="black">forms glucose</text>
+</svg>

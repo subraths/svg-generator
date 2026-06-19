@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="100" y="40" width="180" height="70" fill="white" stroke="black"/>
+    <text x="190" y="80" text-anchor="middle" dominant-baseline="middle" font-size="14">Light Energy Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="100" y="130" width="180" height="70" fill="white" stroke="black"/>
+    <text x="190" y="170" text-anchor="middle" dominant-baseline="middle" font-size="14">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="100" y="220" width="180" height="70" fill="white" stroke="black"/>
+    <text x="190" y="260" text-anchor="middle" dominant-baseline="middle" font-size="14">Oxygen Release</text>
+  </g>
+
+  <g id="electron_transport">
+    <rect x="100" y="310" width="180" height="70" fill="white" stroke="black"/>
+    <text x="190" y="350" text-anchor="middle" dominant-baseline="middle" font-size="14">Electron Transport Chain</text>
+  </g>
+
+  <g id="atp_synthesis">
+    <rect x="100" y="400" width="180" height="70" fill="white" stroke="black"/>
+    <text x="190" y="440" text-anchor="middle" dominant-baseline="middle" font-size="14">ATP Synthesis (Photophosphorylation)</text>
+  </g>
+
+  <g id="nadph_formation">
+    <rect x="100" y="490" width="180" height="70" fill="white" stroke="black"/>
+    <text x="190" y="530" text-anchor="middle" dominant-baseline="middle" font-size="14">NADPH Formation</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="100" y="580" width="180" height="70" fill="white" stroke="black"/>
+    <text x="190" y="620" text-anchor="middle" dominant-baseline="middle" font-size="14">Calvin Cycle (Carbon Fixation)</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="100" y="670" width="180" height="70" fill="white" stroke="black"/>
+    <text x="190" y="710" text-anchor="middle" dominant-baseline="middle" font-size="14">Glucose Production</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- light_absorption -> water_splitting -->
+  <g id="edge_light_absorption_water_splitting">
+    <line x1="190" y1="110" x2="190" y2="130" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="200" y="120" font-size="12" dominant-baseline="middle">photons</text>
+  </g>
+
+  <!-- water_splitting -> oxygen_release -->
+  <g id="edge_water_splitting_oxygen_release">
+    <line x1="190" y1="200" x2="190" y2="220" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="200" y="210" font-size="12" dominant-baseline="middle">O₂</text>
+  </g>
+
+  <!-- water_splitting -> electron_transport -->
+  <g id="edge_water_splitting_electron_transport">
+    <line x1="190" y1="200" x2="190" y2="310" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="200" y="255" font-size="12" dominant-baseline="middle">e⁻</text>
+  </g>
+
+  <!-- electron_transport -> atp_synthesis -->
+  <g id="edge_electron_transport_atp_synthesis">
+    <line x1="190" y1="380" x2="190" y2="400" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="200" y="390" font-size="12" dominant-baseline="middle">proton gradient</text>
+  </g>
+
+  <!-- electron_transport -> nadph_formation -->
+  <g id="edge_electron_transport_nadph_formation">
+    <line x1="190" y1="380" x2="190" y2="490" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="200" y="435" font-size="12" dominant-baseline="middle">e⁻ to NADP⁺</text>
+  </g>
+
+  <!-- atp_synthesis -> calvin_cycle -->
+  <g id="edge_atp_synthesis_calvin_cycle">
+    <line x1="190" y1="470" x2="190" y2="580" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="200" y="525" font-size="12" dominant-baseline="middle">ATP</text>
+  </g>
+
+  <!-- nadph_formation -> calvin_cycle -->
+  <g id="edge_nadph_formation_calvin_cycle">
+    <line x1="190" y1="560" x2="190" y2="580" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="200" y="570" font-size="12" dominant-baseline="middle">NADPH</text>
+  </g>
+
+  <!-- calvin_cycle -> glucose_production -->
+  <g id="edge_calvin_cycle_glucose_production">
+    <line x1="190" y1="650" x2="190" y2="670" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="200" y="660" font-size="12" dominant-baseline="middle">C₆H₁₂O₆</text>
+  </g>
+</svg>

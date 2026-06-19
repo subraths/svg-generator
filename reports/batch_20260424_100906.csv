@@ -1,0 +1,11 @@
+timestamp,topic,model,attempts_used,xml_valid,group_count,rect_count,connector_elements_total,overlap_count,error_count,passed
+20260424_100906,TCP 3-way handshake,openai/gpt-oss-120b,1,True,6,2,3,0,0,True
+20260424_100910,Transformer architecture,openai/gpt-oss-120b,2,True,6,5,5,0,0,True
+20260424_100921,Cell structure,openai/gpt-oss-120b,4,True,7,4,3,0,0,True
+20260424_101021,DNS resolution flow,openai/gpt-oss-120b,1,True,7,7,6,0,0,True
+20260424_101033,Photosynthesis process,openai/gpt-oss-120b,4,True,6,6,6,0,0,True
+20260424_101147,HTTP request lifecycle,openai/gpt-oss-120b,2,True,8,8,7,0,0,True
+20260424_101223,Neural network forward pass,openai/gpt-oss-120b,1,True,7,4,4,0,0,True
+20260424_101245,CPU memory hierarchy,openai/gpt-oss-120b,1,True,7,7,6,0,0,True
+20260424_101303,Kubernetes pod lifecycle,openai/gpt-oss-120b,1,True,7,7,7,0,0,True
+20260424_101317,Blockchain transaction flow,openai/gpt-oss-120b,1,True,7,7,6,0,0,True

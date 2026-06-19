@@ -1,0 +1,106 @@
+{
+  "mode": "tutor",
+  "title": "Photosynthesis",
+  "learning_goals": [
+    "Identify the main stages of photosynthesis and their order.",
+    "Explain how sunlight energy is captured and converted into chemical energy.",
+    "Describe the role of ATP and NADPH in the Calvin Cycle.",
+    "Summarize how glucose is produced from carbon dioxide."
+  ],
+  "segments": [
+    {
+      "seg_id": "seg_001",
+      "text": "Let's explore the overall flow of photosynthesis, starting with the source of energy at the top of the diagram.",
+      "highlights": [
+        {
+          "target_id": "sunlight",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_002",
+      "text": "Sunlight is captured by chlorophyll, the green pigment that absorbs light energy.",
+      "highlights": [
+        {
+          "target_id": "sunlight",
+          "style": "pulse"
+        },
+        {
+          "target_id": "chlorophyll",
+          "style": "pulse"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_003",
+      "text": "The absorbed energy powers the splitting of water molecules, releasing electrons and oxygen.",
+      "highlights": [
+        {
+          "target_id": "chlorophyll",
+          "style": "outline"
+        },
+        {
+          "target_id": "water_splitting",
+          "style": "outline"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_004",
+      "text": "Electrons from water drive the light‑dependent reactions, generating a flow of energy.",
+      "highlights": [
+        {
+          "target_id": "water_splitting",
+          "style": "glow"
+        },
+        {
+          "target_id": "light_dependent",
+          "style": "glow"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_005",
+      "text": "These light‑dependent reactions produce the energy carriers ATP and NADPH.",
+      "highlights": [
+        {
+          "target_id": "light_dependent",
+          "style": "pulse"
+        },
+        {
+          "target_id": "atp_nadph",
+          "style": "pulse"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_006",
+      "text": "ATP and NADPH then feed into the Calvin Cycle, where carbon dioxide is fixed into sugars.",
+      "highlights": [
+        {
+          "target_id": "atp_nadph",
+          "style": "outline"
+        },
+        {
+          "target_id": "calvin_cycle",
+          "style": "outline"
+        }
+      ]
+    },
+    {
+      "seg_id": "seg_007",
+      "text": "Finally, the Calvin Cycle produces glucose, the stored chemical energy that fuels the plant.",
+      "highlights": [
+        {
+          "target_id": "calvin_cycle",
+          "style": "glow"
+        },
+        {
+          "target_id": "glucose",
+          "style": "glow"
+        }
+      ]
+    }
+  ]
+}

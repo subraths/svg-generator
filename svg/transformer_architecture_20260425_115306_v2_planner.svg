@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <g id="input_embedding">
+    <rect x="100" y="100" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Input Embedding</text>
+  </g>
+
+  <g id="positional_encoding">
+    <rect x="300" y="100" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="390" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Positional Encoding</text>
+  </g>
+
+  <g id="encoder_stack">
+    <rect x="500" y="100" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="590" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Encoder Stack</text>
+  </g>
+
+  <g id="decoder_stack">
+    <rect x="500" y="200" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="590" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Decoder Stack</text>
+  </g>
+
+  <g id="output_projection">
+    <rect x="700" y="200" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="790" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Output Projection</text>
+  </g>
+
+  <g id="loss_function">
+    <rect x="900" y="200" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="990" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Loss Function</text>
+  </g>
+
+  <g id="training_objective">
+    <rect x="900" y="300" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="990" y="335" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Training Objective</text>
+  </g>
+
+  <!-- Edges -->
+  <line x1="280" y1="135" x2="300" y2="135" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="480" y1="135" x2="500" y2="135" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="590" y1="170" x2="590" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="680" y1="235" x2="700" y2="235" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="880" y1="235" x2="900" y2="235" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="990" y1="270" x2="990" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

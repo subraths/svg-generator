@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800"
+     xmlns="http://www.w3.org/2000/svg"
+     font-family="sans-serif" font-size="14">
+  <title>Photosynthesis</title>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+            refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L10,3.5 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="280" y="375" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="370" y="410" text-anchor="middle" dominant-baseline="middle">Light Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="280" y="465" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="370" y="500" text-anchor="middle" dominant-baseline="middle">Water Splitting</text>
+  </g>
+
+  <g id="co2_fixation">
+    <rect x="280" y="555" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="370" y="590" text-anchor="middle" dominant-baseline="middle">CO₂ Fixation (Rubisco)</text>
+  </g>
+
+  <g id="thylakoid_membrane">
+    <rect x="500" y="375" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="590" y="410" text-anchor="middle" dominant-baseline="middle">Thylakoid Membrane</text>
+  </g>
+
+  <g id="stroma">
+    <rect x="500" y="465" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="590" y="500" text-anchor="middle" dominant-baseline="middle">Stroma</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="720" y="465" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="810" y="500" text-anchor="middle" dominant-baseline="middle">Calvin Cycle</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="940" y="375" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="1030" y="410" text-anchor="middle" dominant-baseline="middle">Glucose Production</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="940" y="475" width="180" height="70" fill="#e0f7fa" stroke="#006064"/>
+    <text x="1030" y="545" text-anchor="middle" dominant-baseline="middle">Oxygen Release</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- light_absorption -> water_splitting -->
+  <path d="M370,445 L370,465" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="370" y="452" text-anchor="middle" fill="black">drives</text>
+
+  <!-- light_absorption -> thylakoid_membrane -->
+  <path d="M460,410 L500,410" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="480" y="405" text-anchor="middle" fill="black">occurs in</text>
+
+  <!-- thylakoid_membrane -> water_splitting -->
+  <path d="M500,410 C520,430 440,480 460,500" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="480" y="455" text-anchor="middle" fill="black">contains</text>
+
+  <!-- water_splitting -> oxygen_release -->
+  <path d="M460,500 L940,545" stroke="black" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="700" y="522" text-anchor="middle" fill="black">produces O₂</text>
+
+  <!-- water_splitting -> calvin_cycle -->
+  <path d="M460,500 L720,500" stroke="black" fill="none" marker-end="url(#arrow

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Layer -->
+  <g id="input_layer">
+    <rect x="100" y="300" width="150" height="200" fill="#cce5ff" stroke="black"/>
+    <text x="175" y="380" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Input Layer</text>
+  </g>
+
+  <!-- Hidden Layer 1 -->
+  <g id="hidden_layer1">
+    <rect x="350" y="200" width="150" height="200" fill="#cce5ff" stroke="black"/>
+    <text x="425" y="280" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Hidden Layer 1</text>
+  </g>
+
+  <!-- Activation for Hidden Layer 1 -->
+  <g id="activation_hidden1">
+    <circle cx="425" cy="150" r="30" fill="#d4edda" stroke="black"/>
+    <text x="425" y="155" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">ReLU</text>
+  </g>
+
+  <!-- Hidden Layer 2 -->
+  <g id="hidden_layer2">
+    <rect x="600" y="200" width="150" height="200" fill="#cce5ff" stroke="black"/>
+    <text x="675" y="280" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Hidden Layer 2</text>
+  </g>
+
+  <!-- Activation for Hidden Layer 2 -->
+  <g id="activation_hidden2">
+    <circle cx="675" cy="150" r="30" fill="#d4edda" stroke="black"/>
+    <text x="675" y="155" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">ReLU</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect x="850" y="300" width="150" height="200" fill="#cce5ff" stroke="black"/>
+    <text x="925" y="380" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Output Layer</text>
+  </g>
+
+  <!-- Connections -->
+  <line x1="250" y1="400" x2="350" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="300" x2="600" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="750" y1="300" x2="850" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Labels for arrows (optional) -->
+  <text x="300" y="350" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">Weights + Bias</text>
+  <text x="550" y="260" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">Weights + Bias</text>
+  <text x="800" y="350" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">Weights + Bias</text>
+</svg>

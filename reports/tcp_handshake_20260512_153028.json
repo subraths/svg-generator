@@ -1,0 +1,38 @@
+{
+  "timestamp": "20260512_153028",
+  "topic": "TCP handshake",
+  "model": "openai/gpt-oss-120b",
+  "mode": "v2_planner_agentic",
+  "attempts_used": 2,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "client_syn",
+      "server_syn_ack",
+      "client_ack",
+      "connection_established",
+      "data_transfer",
+      "connection_termination"
+    ],
+    "group_count": 6,
+    "rect_count": 6,
+    "overlap_pairs": [],
+    "line_count": 5,
+    "polyline_count": 0,
+    "path_count": 1,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 6,
+    "has_duplicate_ids": false,
+    "errors": [
+      "No connectors use marker-end arrows."
+    ]
+  },
+  "artifacts": {
+    "svg": "svg/tcp_handshake_20260512_153028.svg",
+    "png": "img/tcp_handshake_20260512_153028.png",
+    "plan": "reports/tcp_handshake_20260512_153028_plan.json"
+  }
+}

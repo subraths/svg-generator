@@ -1,0 +1,70 @@
+{
+  "mode": "tutor",
+  "title": "Photosynthesis",
+  "learning_goals": [
+    "Identify how sunlight is captured and converted into chemical energy.",
+    "Explain the light‑dependent reactions and their products (O₂, ATP, NADPH).",
+    "Describe how the Calvin Cycle uses that energy to produce glucose."
+  ],
+  "segments": [
+    {
+      "seg_id": "seg_001",
+      "text": "This diagram shows the overall process of photosynthesis in a plant cell.",
+      "highlights": [
+        { "target_id": "sunlight", "style": "glow" }
+      ]
+    },
+    {
+      "seg_id": "seg_002",
+      "text": "Sunlight is captured by chlorophyll, the green pigment in the thylakoid membranes.",
+      "highlights": [
+        { "target_id": "chlorophyll", "style": "glow" }
+      ]
+    },
+    {
+      "seg_id": "seg_003",
+      "text": "The absorbed energy excites chlorophyll and initiates the light‑dependent reactions.",
+      "highlights": [
+        { "target_id": "light_dependent", "style": "pulse" }
+      ]
+    },
+    {
+      "seg_id": "seg_004",
+      "text": "Water is split during these reactions, providing electrons and releasing oxygen as a by‑product.",
+      "highlights": [
+        { "target_id": "water_splitting", "style": "pulse" },
+        { "target_id": "oxygen_release", "style": "outline" }
+      ]
+    },
+    {
+      "seg_id": "seg_005",
+      "text": "The light‑dependent reactions also generate the energy carriers ATP and NADPH.",
+      "highlights": [
+        { "target_id": "atp_nadph", "style": "glow" }
+      ]
+    },
+    {
+      "seg_id": "seg_006",
+      "text": "ATP and NADPH feed into the Calvin Cycle, providing the energy and reducing power needed for carbon fixation.",
+      "highlights": [
+        { "target_id": "calvin_cycle", "style": "pulse" }
+      ]
+    },
+    {
+      "seg_id": "seg_007",
+      "text": "Within the Calvin Cycle, CO₂ is converted into glucose, the plant’s primary sugar.",
+      "highlights": [
+        { "target_id": "glucose", "style": "glow" }
+      ]
+    },
+    {
+      "seg_id": "seg_008",
+      "text": "In summary, sunlight captured by chlorophyll drives water splitting and the production of O₂, ATP, and NADPH, which power the Calvin Cycle to synthesize glucose.",
+      "highlights": [
+        { "target_id": "sunlight", "style": "outline" },
+        { "target_id": "atp_nadph", "style": "outline" },
+        { "target_id": "glucose", "style": "outline" }
+      ]
+    }
+  ]
+}

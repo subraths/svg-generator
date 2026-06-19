@@ -1,0 +1,67 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+    <style>
+      .block { fill:#ffffff; stroke:#000000; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:16px; text-anchor:middle; dominant-baseline:middle; }
+      .connector { stroke:#000000; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- Application -->
+  <g id="application">
+    <rect class="block" x="100" y="50" width="200" height="80" rx="5" ry="5"/>
+    <text class="label" x="200" y="90">Application</text>
+  </g>
+
+  <!-- Stub Resolver -->
+  <g id="stub_resolver">
+    <rect class="block" x="100" y="170" width="200" height="80" rx="5" ry="5"/>
+    <text class="label" x="200" y="210">Stub Resolver</text>
+  </g>
+
+  <!-- Recursive Resolver -->
+  <g id="recursive_resolver">
+    <rect class="block" x="100" y="290" width="200" height="80" rx="5" ry="5"/>
+    <text class="label" x="200" y="330">Recursive Resolver</text>
+  </g>
+
+  <!-- Root Name Server -->
+  <g id="root_server">
+    <rect class="block" x="100" y="410" width="200" height="80" rx="5" ry="5"/>
+    <text class="label" x="200" y="450">Root Name Server</text>
+  </g>
+
+  <!-- TLD Name Server -->
+  <g id="tld_server">
+    <rect class="block" x="100" y="530" width="200" height="80" rx="5" ry="5"/>
+    <text class="label" x="200" y="570">TLD Name Server</text>
+  </g>
+
+  <!-- Authoritative Name Server -->
+  <g id="authoritative_server">
+    <rect class="block" x="100" y="650" width="200" height="80" rx="5" ry="5"/>
+    <text class="label" x="200" y="690">Authoritative Server</text>
+  </g>
+
+  <!-- Connectors (request flow) -->
+  <g id="connectors">
+    <!-- Application → Stub -->
+    <line class="connector" x1="200" y1="130" x2="200" y2="170" marker-end="url(#arrowhead)"/>
+    <!-- Stub → Recursive -->
+    <line class="connector" x1="200" y1="250" x2="200" y2="290" marker-end="url(#arrowhead)"/>
+    <!-- Recursive → Root -->
+    <line class="connector" x1="200" y1="370" x2="200" y2="410" marker-end="url(#arrowhead)"/>
+    <!-- Root → TLD -->
+    <line class="connector" x1="200" y1="490" x2="200" y2="530" marker-end="url(#arrowhead)"/>
+    <!-- TLD → Authoritative -->
+    <line class="connector" x1="200" y1="610" x2="200" y2="650" marker-end="url(#arrowhead)"/>
+
+    <!-- Response flow (Authoritative → Recursive) -->
+    <line class="connector" x1="300" y1="690" x2="300" y2="330" marker-end="url(#arrowhead)"/>
+    <!-- Recursive → Application -->
+    <line class="connector" x1="300" y1="330" x2="300" y2="90" marker-end="url(#arrowhead)"/>
+  </g>
+</svg>

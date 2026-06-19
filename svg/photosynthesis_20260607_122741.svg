@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold" style="white-space:pre;">Photosynthesis Overview</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="500" y="60" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="100" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll">
+    <rect x="500" y="160" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="190" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">Chlorophyll</tspan>
+      <tspan x="600" dy="1.2em">absorbs light</tspan>
+    </text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="500" y="260" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="290" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">Water</tspan>
+      <tspan x="600" dy="1.2em">Splitting (H&#8322;O → O&#8322; + e&#8315;)</tspan>
+    </text>
+  </g>
+
+  <g id="light_dependent">
+    <rect x="500" y="360" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="390" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">Light‑Dependent</tspan>
+      <tspan x="600" dy="1.2em">Reactions</tspan>
+    </text>
+  </g>
+
+  <g id="atp_nadph">
+    <rect x="500" y="460" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="490" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">ATP &amp; NADPH</tspan>
+      <tspan x="600" dy="1.2em">Production</tspan>
+    </text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="500" y="560" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="590" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">Calvin Cycle</tspan>
+      <tspan x="600" dy="1.2em">(C&#8323;)</tspan>
+    </text>
+  </g>
+
+  <g id="glucose">
+    <rect x="500" y="660" width="200" height="80" fill="#f9f9f9" stroke="#000"/>
+    <text x="600" y="690" text-anchor="middle" dominant-baseline="middle" font-size="14" style="white-space:pre;">
+      <tspan x="600" dy="0">Glucose</tspan>
+      <tspan x="600" dy="1.2em">Synthesis</tspan>
+    </text>
+  </g>
+
+  <!-- Edges -->
+  <!-- Sunlight -> Chlorophyll -->
+  <path d="M600,140 L600,160" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:1px;"/>
+  <text x="600" y="150" text-anchor="middle" font-size="12" style="white-space:pre;">absorbs</text>
+
+  <!-- Chlorophyll -> Water Splitting -->
+  <path d="M600,240 L600,260" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:1px;"/>
+  <text x="600" y="250" text-anchor="middle" font-size="12" style="white-space:pre;">provides energy</text>
+
+  <!-- Water Splitting -> Light-Dependent -->
+  <path d="M600,340 L600,360" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:1px;"/>
+  <text x="600" y="350" text-anchor="middle" font-size="12" style="white-space:pre;">electrons</text>
+
+  <!-- Light-Dependent -> ATP/NADPH -->
+  <path d="M600,440 L600,460" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:1px;"/>
+  <text x="600" y="450" text-anchor="middle" font-size="12" style="white-space:pre;">produces</text>
+
+  <!-- ATP/NADPH -> Calvin Cycle -->
+  <path d="M600,540 L600,560" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:1px;"/>
+  <text x="600" y="550" text-anchor="middle" font-size="12" style="white-space:pre;">provides ATP/NADPH</text>
+
+  <!-- Calvin Cycle -> Glucose -->
+  <path d="M600,640 L600,660" stroke="#000" fill="none" marker-end="url(#arrowhead)" style="stroke-width:1px;"/>
+  <text x="600" y="650" text-anchor="middle" font-size="12" style="white-space:pre;">produces</text>
+</svg>

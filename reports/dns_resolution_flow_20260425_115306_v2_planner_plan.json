@@ -1,0 +1,99 @@
+{
+  "diagram_type": "flow",
+  "title": "DNS Resolution Flow",
+  "nodes": [
+    {
+      "id": "client_application",
+      "label": "Client Application",
+      "x": 100,
+      "y": 60,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "dns_resolver_cache",
+      "label": "Resolver Cache",
+      "x": 100,
+      "y": 160,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "recursive_resolver",
+      "label": "Recursive Resolver",
+      "x": 100,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "root_name_server",
+      "label": "Root Name Server",
+      "x": 100,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "tld_name_server",
+      "label": "TLD Name Server",
+      "x": 100,
+      "y": 460,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "authoritative_name_server",
+      "label": "Authoritative Server",
+      "x": 100,
+      "y": 560,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "response_to_client",
+      "label": "Response to Client",
+      "x": 100,
+      "y": 660,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "client_application",
+      "to": "dns_resolver_cache",
+      "label": "query"
+    },
+    {
+      "from": "dns_resolver_cache",
+      "to": "recursive_resolver",
+      "label": "miss"
+    },
+    {
+      "from": "recursive_resolver",
+      "to": "root_name_server",
+      "label": "query ."
+    },
+    {
+      "from": "root_name_server",
+      "to": "tld_name_server",
+      "label": "referral"
+    },
+    {
+      "from": "tld_name_server",
+      "to": "authoritative_name_server",
+      "label": "referral"
+    },
+    {
+      "from": "authoritative_name_server",
+      "to": "response_to_client",
+      "label": "answer"
+    },
+    {
+      "from": "response_to_client",
+      "to": "client_application",
+      "label": "response"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "light_absorption",
+      "label": "Light Absorption",
+      "x": 100,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water Splitting",
+      "x": 100,
+      "y": 190,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "co2_fixation",
+      "label": "CO\u2082 Fixation (Rubisco)",
+      "x": 100,
+      "y": 280,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "thylakoid_membrane",
+      "label": "Thylakoid Membrane",
+      "x": 320,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "stroma",
+      "label": "Stroma",
+      "x": 320,
+      "y": 190,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle",
+      "x": 540,
+      "y": 190,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose Production",
+      "x": 760,
+      "y": 100,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen Release",
+      "x": 760,
+      "y": 200,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "light_absorption",
+      "to": "water_splitting",
+      "label": "drives"
+    },
+    {
+      "from": "light_absorption",
+      "to": "thylakoid_membrane",
+      "label": "occurs in"
+    },
+    {
+      "from": "thylakoid_membrane",
+      "to": "water_splitting",
+      "label": "contains"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "produces O\u2082"
+    },
+    {
+      "from": "water_splitting",
+      "to": "calvin_cycle",
+      "label": "provides electrons"
+    },
+    {
+      "from": "co2_fixation",
+      "to": "calvin_cycle",
+      "label": "feeds"
+    },
+    {
+      "from": "stroma",
+      "to": "calvin_cycle",
+      "label": "site of"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose_production",
+      "label": "produces"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "oxygen_release",
+      "label": "releases O\u2082"
+    },
+    {
+      "from": "light_absorption",
+      "to": "calvin_cycle",
+      "label": "provides ATP/NADPH"
+    }
+  ]
+}

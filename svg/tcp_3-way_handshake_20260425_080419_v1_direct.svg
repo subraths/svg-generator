@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+    <style>
+      .box { fill:#f0f0f0; stroke:#000; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; text-anchor:middle; dominant-baseline:middle; }
+      .arrow { stroke:#000; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- Client -->
+  <g id="client_box">
+    <rect class="box" x="100" y="300" width="200" height="150" rx="10" ry="10"/>
+    <text class="label" x="200" y="375">Client</text>
+  </g>
+
+  <!-- Server -->
+  <g id="server_box">
+    <rect class="box" x="700" y="300" width="200" height="150" rx="10" ry="10"/>
+    <text class="label" x="800" y="375">Server</text>
+  </g>
+
+  <!-- SYN Message -->
+  <g id="syn_msg">
+    <line class="arrow" x1="300" y1="375" x2="700" y2="375" marker-end="url(#arrowhead)"/>
+    <text class="label" x="500" y="350">SYN</text>
+  </g>
+
+  <!-- SYN-ACK Message -->
+  <g id="synack_msg">
+    <line class="arrow" x1="700" y1="375" x2="300" y2="375" marker-end="url(#arrowhead)"/>
+    <text class="label" x="500" y="400">SYN‑ACK</text>
+  </g>
+
+  <!-- ACK Message -->
+  <g id="ack_msg">
+    <line class="arrow" x1="300" y1="425" x2="700" y2="425" marker-end="url(#arrowhead)"/>
+    <text class="label" x="500" y="460">ACK</text>
+  </g>
+
+  <!-- Connection Established State -->
+  <g id="connection_state">
+    <rect class="box" x="500" y="600" width="200" height="80" rx="10" ry="10"/>
+    <text class="label" x="600" y="640">Connection Established</text>
+  </g>
+
+  <!-- Arrow from ACK to Established state -->
+  <g id="established_arrow">
+    <line class="arrow" x1="500" y1="425" x2="600" y2="600" marker-end="url(#arrowhead)"/>
+  </g>
+</svg>

@@ -1,0 +1,88 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+    <style>
+      .node { fill:#f0f8ff; stroke:#333; stroke-width:2; }
+      .edge { fill:none; stroke:#333; stroke-width:2; }
+      .label { font-size:14px; fill:#000; }
+      .title { font-size:28px; font-weight:bold; fill:#000; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" class="title">Water Cycle</text>
+
+  <!-- Nodes -->
+  <g id="sun">
+    <rect class="node" x="790" y="155" width="180" height="70" rx="8"/>
+    <text class="label" x="880" y="200" text-anchor="middle" dominant-baseline="middle">Sun (energy)</text>
+  </g>
+
+  <g id="evaporation">
+    <rect class="node" x="790" y="255" width="180" height="70" rx="8"/>
+    <text class="label" x="880" y="300" text-anchor="middle" dominant-baseline="middle">Evaporation</text>
+  </g>
+
+  <g id="transpiration">
+    <rect class="node" x="1010" y="255" width="180" height="70" rx="8"/>
+    <text class="label" x="1100" y="300" text-anchor="middle" dominant-baseline="middle">Transpiration</text>
+  </g>
+
+  <g id="condensation">
+    <rect class="node" x="790" y="375" width="180" height="70" rx="8"/>
+    <text class="label" x="880" y="420" text-anchor="middle" dominant-baseline="middle">Condensation</text>
+  </g>
+
+  <g id="precipitation">
+    <rect class="node" x="790" y="495" width="180" height="70" rx="8"/>
+    <text class="label" x="880" y="540" text-anchor="middle" dominant-baseline="middle">Precipitation</text>
+  </g>
+
+  <g id="collection">
+    <rect class="node" x="790" y="615" width="180" height="70" rx="8"/>
+    <text class="label" x="880" y="660" text-anchor="middle" dominant-baseline="middle">Collection (lakes/oceans)</text>
+  </g>
+
+  <g id="infiltration_runoff">
+    <rect class="node" x="570" y="615" width="180" height="70" rx="8"/>
+    <text class="label" x="660" y="660" text-anchor="middle" dominant-baseline="middle">Infiltration / Runoff</text>
+  </g>
+
+  <g id="groundwater_flow">
+    <rect class="node" x="570" y="495" width="180" height="70" rx="8"/>
+    <text class="label" x="660" y="540" text-anchor="middle" dominant-baseline="middle">Groundwater Flow</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- Sun -> Evaporation -->
+  <path class="edge" d="M880,225 L880,255" marker-end="url(#arrow)"/>
+  <text class="label" x="880" y="240" text-anchor="middle" dominant-baseline="middle">heat</text>
+
+  <!-- Sun -> Transpiration -->
+  <path class="edge" d="M880,225 L1010,255" marker-end="url(#arrow)"/>
+  <text class="label" x="945" y="240" text-anchor="middle" dominant-baseline="middle">energy</text>
+
+  <!-- Evaporation -> Condensation -->
+  <path class="edge" d="M880,325 L880,375" marker-end="url(#arrow)"/>
+  <text class="label" x="880" y="350" text-anchor="middle" dominant-baseline="middle">water vapor rises</text>
+
+  <!-- Transpiration -> Condensation -->
+  <path class="edge" d="M1010,325 L970,375" marker-end="url(#arrow)"/>
+  <text class="label" x="990" y="350" text-anchor="middle" dominant-baseline="middle">water vapor</text>
+
+  <!-- Condensation -> Precipitation -->
+  <path class="edge" d="M880,445 L880,495" marker-end="url(#arrow)"/>
+  <text class="label" x="880" y="470" text-anchor="middle" dominant-baseline="middle">cloud formation</text>
+
+  <!-- Precipitation -> Collection -->
+  <path class="edge" d="M880,565 L880,615" marker-end="url(#arrow)"/>
+  <text class="label" x="880" y="590" text-anchor="middle" dominant-baseline="middle">rainfall</text>
+
+  <!-- Collection -> Infiltration / Runoff -->
+  <path class="edge" d="M790,650 L750,650" marker-end="url(#arrow)"/>
+  <text class="label" x="770" y="640" text-anchor="middle" dominant-baseline="middle">water enters ground</text>
+
+  <!-- Infiltration / Runoff -> Groundwater Flow -->
+  <path class="edge" d="M660,615 L660

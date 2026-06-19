@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="14">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="sunlight">
+    <rect x="40" y="40" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="130" y="75" text-anchor="middle" dominant-baseline="middle">Sunlight</text>
+  </g>
+
+  <g id="chlorophyll_absorption">
+    <rect x="240" y="40" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="330" y="75" text-anchor="middle" dominant-baseline="middle">Chlorophyll Absorption</text>
+  </g>
+
+  <g id="atp_nadph_production">
+    <rect x="500" y="40" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="590" y="75" text-anchor="middle" dominant-baseline="middle">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="glucose_storage">
+    <rect x="740" y="40" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="830" y="75" text-anchor="middle" dominant-baseline="middle">Glucose Storage</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="40" y="140" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="130" y="175" text-anchor="middle" dominant-baseline="middle">Water Splitting</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="240" y="140" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="330" y="175" text-anchor="middle" dominant-baseline="middle">Oxygen Release</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="500" y="140" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="590" y="175" text-anchor="middle" dominant-baseline="middle">Calvin Cycle</text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect x="740" y="140" width="180" height="70" fill="#f9f9f9" stroke="#000"/>
+    <text x="830" y="175" text-anchor="middle" dominant-baseline="middle">Glucose Synthesis</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- Sunlight → Chlorophyll Absorption -->
+  <line x1="220" y1="75" x2="240" y2="75" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="230" y="65" text-anchor="middle" font-size="12">light energy</text>
+
+  <!-- Chlorophyll Absorption → ATP & NADPH Production -->
+  <line x1="420" y1="75" x2="500" y2="75" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="460" y="65" text-anchor="middle" font-size="12">excites electrons</text>
+
+  <!-- Water Splitting → Oxygen Release -->
+  <line x1="220" y1="175" x2="240" y2="175" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="230" y="165" text-anchor="middle" font-size="12">produces O₂</text>
+
+  <!-- Water Splitting → ATP & NADPH Production -->
+  <line x1="220" y1="175" x2="500" y2="175" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="360" y="165" text-anchor="middle" font-size="12">provides electrons</text>
+
+  <!-- ATP & NADPH Production → Calvin Cycle -->
+  <line x1="590" y1="110" x2="590" y2="140" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="600" y="125" font-size="12">energy carriers</text>
+
+  <!-- Calvin Cycle → Glucose Synthesis -->
+  <line x1="680" y1="175" x2="740" y2="175" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="710" y="165" text-anchor="middle" font-size="12">CO₂ fixation</text>
+
+  <!-- Glucose Synthesis → Glucose Storage -->
+  <line x1="830" y1="210" x2="830" y2="110" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="840" y="160" font-size="12">stores glucose</text>
+</svg>

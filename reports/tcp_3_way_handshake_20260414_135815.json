@@ -1,0 +1,41 @@
+{
+  "timestamp": "20260414_135815",
+  "topic": "TCP 3 way handshake",
+  "model": "openai/gpt-oss-120b",
+  "mode": "v2_planner",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "client_send_syn",
+      "server_receive_syn",
+      "server_send_synack",
+      "client_receive_synack",
+      "client_send_ack",
+      "connection_established",
+      "edge_client_send_syn_to_server_receive_syn",
+      "edge_server_receive_syn_to_server_send_synack",
+      "edge_server_send_synack_to_client_receive_synack",
+      "edge_client_receive_synack_to_client_send_ack",
+      "edge_client_send_ack_to_connection_established"
+    ],
+    "group_count": 11,
+    "rect_count": 6,
+    "overlap_pairs": [],
+    "line_count": 5,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 5,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/tcp_3_way_handshake_20260414_135815.svg",
+    "png": "img/tcp_3_way_handshake_20260414_135815.png",
+    "plan": "reports/tcp_3_way_handshake_20260414_135815_plan.json"
+  }
+}

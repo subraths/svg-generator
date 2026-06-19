@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Layer -->
+  <g id="input_layer">
+    <text x="150" y="120" font-size="18" text-anchor="middle">Input Layer</text>
+    <circle cx="150" cy="200" r="30" fill="#e0f7fa" stroke="black"/>
+    <circle cx="150" cy="300" r="30" fill="#e0f7fa" stroke="black"/>
+    <circle cx="150" cy="400" r="30" fill="#e0f7fa" stroke="black"/>
+    <text x="150" y="205" font-size="16" text-anchor="middle">x₁</text>
+    <text x="150" y="305" font-size="16" text-anchor="middle">x₂</text>
+    <text x="150" y="405" font-size="16" text-anchor="middle">x₃</text>
+  </g>
+
+  <!-- Hidden Layer -->
+  <g id="hidden_layer">
+    <text x="600" y="80" font-size="18" text-anchor="middle">Hidden Layer</text>
+    <circle cx="600" cy="150" r="30" fill="#fff9c4" stroke="black"/>
+    <circle cx="600" cy="250" r="30" fill="#fff9c4" stroke="black"/>
+    <circle cx="600" cy="350" r="30" fill="#fff9c4" stroke="black"/>
+    <circle cx="600" cy="450" r="30" fill="#fff9c4" stroke="black"/>
+    <text x="600" y="155" font-size="16" text-anchor="middle">h₁</text>
+    <text x="600" y="255" font-size="16" text-anchor="middle">h₂</text>
+    <text x="600" y="355" font-size="16" text-anchor="middle">h₃</text>
+    <text x="600" y="455" font-size="16" text-anchor="middle">h₄</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <text x="950" y="120" font-size="18" text-anchor="middle">Output Layer</text>
+    <circle cx="950" cy="300" r="30" fill="#ffe0b2" stroke="black"/>
+    <text x="950" y="305" font-size="16" text-anchor="middle">ŷ</text>
+  </g>
+
+  <!-- Connections Input → Hidden -->
+  <g id="connections_input_hidden" stroke="black" stroke-width="2">
+    <!-- From each input neuron to each hidden neuron -->
+    <line x1="180" y1="200" x2="570" y2="150" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="200" x2="570" y2="250" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="200" x2="570" y2="350" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="200" x2="570" y2="450" marker-end="url(#arrowhead)"/>
+
+    <line x1="180" y1="300" x2="570" y2="150" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="300" x2="570" y2="250" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="300" x2="570" y2="350" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="300" x2="570" y2="450" marker-end="url(#arrowhead)"/>
+
+    <line x1="180" y1="400" x2="570" y2="150" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="400" x2="570" y2="250" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="400" x2="570" y2="350" marker-end="url(#arrowhead)"/>
+    <line x1="180" y1="400" x2="570" y2="450" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Connections Hidden → Output -->
+  <g id="connections_hidden_output" stroke="black" stroke-width="2">
+    <line x1="630" y1="150" x2="920" y2="300" marker-end="url(#arrowhead)"/>
+    <line x1="630" y1="250" x2="920" y2="300" marker-end="url(#arrowhead)"/>
+    <line x1="630" y1="350" x2="920" y2="300" marker-end="url(#arrowhead)"/>
+    <line x1="630" y1="450" x2="920" y2="300" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Bias and Activation (Hidden) -->
+  <g id="bias_activation_hidden" font-size="16">
+    <text x="600" y="520" text-anchor="middle">+ b_h → σ(·)</text>
+  </g>
+
+  <!-- Bias and Activation (Output) -->
+  <g id="bias_activation_output" font-size="16">
+    <text x="950" y="380" text-anchor="middle">+ b_o → σ(·) (or linear)</text>
+  </g>
+
+  <!-- Weights label -->
+  <g id="weights_label" font-size="16">
+    <text x="380" y="260" text-anchor="middle">Weights (W)</text>
+  </g>
+</svg>

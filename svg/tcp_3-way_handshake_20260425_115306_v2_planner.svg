@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="20" text-anchor="middle" font-size="24" font-weight="bold">TCP 3-Way Handshake</text>
+
+  <!-- Nodes -->
+  <g id="client_syn">
+    <rect x="520" y="40" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="610" y="80" text-anchor="middle" font-size="16" dominant-baseline="middle">Client: SYN</text>
+  </g>
+
+  <g id="server_syn_ack">
+    <rect x="520" y="140" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="610" y="180" text-anchor="middle" font-size="16" dominant-baseline="middle">Server: SYN-ACK</text>
+  </g>
+
+  <g id="client_ack">
+    <rect x="520" y="240" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="610" y="280" text-anchor="middle" font-size="16" dominant-baseline="middle">Client: ACK</text>
+  </g>
+
+  <g id="connection_established">
+    <rect x="520" y="340" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="610" y="380" text-anchor="middle" font-size="16" dominant-baseline="middle">Connection Established</text>
+  </g>
+
+  <g id="data_transfer">
+    <rect x="520" y="440" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="610" y="480" text-anchor="middle" font-size="16" dominant-baseline="middle">Data Transfer</text>
+  </g>
+
+  <g id="connection_termination">
+    <rect x="520" y="540" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="610" y="580" text-anchor="middle" font-size="16" dominant-baseline="middle">Connection Termination</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_client_syn_server_syn_ack">
+    <line x1="610" y1="110" x2="610" y2="140" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="610" y="125" text-anchor="middle" font-size="14" fill="#000">SYN</text>
+  </g>
+
+  <g id="edge_server_syn_ack_client_ack">
+    <line x1="610" y1="210" x2="610" y2="240" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="610" y="225" text-anchor="middle" font-size="14" fill="#000">SYN-ACK</text>
+  </g>
+
+  <g id="edge_client_ack_connection_established">
+    <line x1="610" y1="310" x2="610" y2="340" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="610" y="325" text-anchor="middle" font-size="14" fill="#000">ACK</text>
+  </g>
+
+  <g id="edge_connection_established_data_transfer">
+    <line x1="610" y1="410" x2="610" y2="440" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="610" y="425" text-anchor="middle" font-size="14" fill="#000">Data</text>
+  </g>
+
+  <g id="edge_data_transfer_connection_termination">
+    <line x1="610" y1="510" x2="610" y2="540" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="610" y="525" text-anchor="middle" font-size="14" fill="#000">FIN</text>
+  </g>
+</svg>

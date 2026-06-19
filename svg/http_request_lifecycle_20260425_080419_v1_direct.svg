@@ -1,0 +1,65 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+    <style>
+      .block { fill:#f0f8ff; stroke:#333; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; fill:#000; pointer-events:none; }
+    </style>
+  </defs>
+
+  <!-- Client Browser -->
+  <g id="client_browser">
+    <rect class="block" x="40" y="300" width="140" height="80" rx="8" ry="8"/>
+    <text class="label" x="110" y="345" text-anchor="middle">Browser (Client)</text>
+  </g>
+
+  <!-- DNS Lookup -->
+  <g id="dns_lookup">
+    <rect class="block" x="200" y="300" width="140" height="80" rx="8" ry="8"/>
+    <text class="label" x="270" y="345" text-anchor="middle">DNS Lookup</text>
+  </g>
+
+  <!-- TCP Handshake -->
+  <g id="tcp_handshake">
+    <rect class="block" x="360" y="300" width="140" height="80" rx="8" ry="8"/>
+    <text class="label" x="430" y="345" text-anchor="middle">TCP Handshake</text>
+  </g>
+
+  <!-- HTTP Request -->
+  <g id="http_request">
+    <rect class="block" x="520" y="300" width="140" height="80" rx="8" ry="8"/>
+    <text class="label" x="590" y="345" text-anchor="middle">HTTP Request</text>
+  </g>
+
+  <!-- Server Processing -->
+  <g id="server_processing">
+    <rect class="block" x="680" y="300" width="140" height="80" rx="8" ry="8"/>
+    <text class="label" x="750" y="345" text-anchor="middle">Server Processing</text>
+  </g>
+
+  <!-- HTTP Response -->
+  <g id="http_response">
+    <rect class="block" x="840" y="300" width="140" height="80" rx="8" ry="8"/>
+    <text class="label" x="910" y="345" text-anchor="middle">HTTP Response</text>
+  </g>
+
+  <!-- Browser Rendering -->
+  <g id="browser_render">
+    <rect class="block" x="1000" y="300" width="140" height="80" rx="8" ry="8"/>
+    <text class="label" x="1070" y="345" text-anchor="middle">Render Page</text>
+  </g>
+
+  <!-- Arrows showing flow -->
+  <line x1="180" y1="340" x2="200" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="340" y1="340" x2="360" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="340" x2="520" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="660" y1="340" x2="680" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="820" y1="340" x2="840" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="980" y1="340" x2="1000" y2="340" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Optional loop back arrow (response) -->
+  <line x1="940" y1="380" x2="60" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text class="label" x="500" y="410" text-anchor="middle">Response travels back</text>
+</svg>

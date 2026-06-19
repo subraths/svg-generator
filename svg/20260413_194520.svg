@@ -1,0 +1,79 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+    <style>
+      .box { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:18px; fill:#000; }
+      .arrow { stroke:#000; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
+    </style>
+  </defs>
+
+  <!-- Sun -->
+  <g id="sun">
+    <circle cx="500" cy="80" r="40" fill="#ffeb3b" stroke="#f57f17" stroke-width="2"/>
+    <text x="500" y="85" class="label" text-anchor="middle">Sun</text>
+  </g>
+
+  <!-- Plants (producers) -->
+  <g id="plants">
+    <rect x="400" y="150" width="200" height="60" class="box"/>
+    <text x="500" y="180" class="label" text-anchor="middle">Plants (producers)</text>
+  </g>
+
+  <!-- Herbivore (e.g., Rabbit) -->
+  <g id="herbivore_rabbit">
+    <rect x="200" y="260" width="180" height="60" class="box"/>
+    <text x="290" y="285" class="label" text-anchor="middle">
+      <tspan x="290" dy="0">Herbivore</tspan>
+      <tspan x="290" dy="1.2em">(Rabbit)</tspan>
+    </text>
+  </g>
+
+  <!-- Omnivore (e.g., Bear) -->
+  <g id="omnivore_bear">
+    <rect x="620" y="260" width="180" height="60" class="box"/>
+    <text x="710" y="285" class="label" text-anchor="middle">
+      <tspan x="710" dy="0">Omnivore</tspan>
+      <tspan x="710" dy="1.2em">(Bear)</tspan>
+    </text>
+  </g>
+
+  <!-- Carnivore (e.g., Fox) -->
+  <g id="carnivore_fox">
+    <rect x="400" y="380" width="200" height="60" class="box"/>
+    <text x="500" y="410" class="label" text-anchor="middle">
+      <tspan x="500" dy="0">Carnivore</tspan>
+      <tspan x="500" dy="1.2em">(Fox)</tspan>
+    </text>
+  </g>
+
+  <!-- Decomposer (e.g., Bacteria) -->
+  <g id="decomposer_bacteria">
+    <rect x="200" y="500" width="200" height="60" class="box"/>
+    <text x="300" y="525" class="label" text-anchor="middle">
+      <tspan x="300" dy="0">Decomposer</tspan>
+      <tspan x="300" dy="1.2em">(Bacteria)</tspan>
+    </text>
+  </g>
+
+  <!-- Arrows -->
+  <!-- Sun to Plants -->
+  <line x1="500" y1="120" x2="500" y2="150" class="arrow"/>
+
+  <!-- Plants to Herbivore -->
+  <line x1="460" y1="210" x2="380" y2="260" class="arrow"/>
+
+  <!-- Plants to Omnivore -->
+  <line x1="540" y1="210" x2="620" y2="260" class="arrow"/>
+
+  <!-- Herbivore to Carnivore -->
+  <line x1="290" y1="320" x2="500" y2="380" class="arrow"/>
+
+  <!-- Omnivore to Carnivore -->
+  <line x1="710" y1="320" x2="500" y2="380" class="arrow"/>
+
+  <!-- Carnivore to Decomposer -->
+  <line x1="500" y1="440" x2="300" y2="500" class="arrow"/>
+</svg>

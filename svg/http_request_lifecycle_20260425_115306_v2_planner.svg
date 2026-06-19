@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-size="24" font-weight="bold">HTTP Request Lifecycle</text>
+
+  <!-- Nodes -->
+  <g id="client_initiates_request">
+    <rect x="40" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="130" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14">Client Initiates</text>
+  </g>
+
+  <g id="dns_lookup">
+    <rect x="260" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="350" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14">DNS Lookup</text>
+  </g>
+
+  <g id="tcp_handshake">
+    <rect x="480" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="570" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14">TCP Handshake</text>
+  </g>
+
+  <g id="send_http_request">
+    <rect x="700" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="790" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14">Send HTTP Request</text>
+  </g>
+
+  <g id="server_processes_request">
+    <rect x="920" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="1010" y="135" text-anchor="middle" dominant-baseline="middle" font-size="14">Server Processes</text>
+  </g>
+
+  <g id="generate_http_response">
+    <rect x="920" y="240" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="1010" y="275" text-anchor="middle" dominant-baseline="middle" font-size="14">Generate Response</text>
+  </g>
+
+  <g id="send_http_response">
+    <rect x="700" y="380" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="790" y="415" text-anchor="middle" dominant-baseline="middle" font-size="14">Send HTTP Response</text>
+  </g>
+
+  <g id="client_receives_response">
+    <rect x="40" y="380" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="130" y="415" text-anchor="middle" dominant-baseline="middle" font-size="14">Client Receives</text>
+  </g>
+
+  <!-- Edges -->
+  <line x1="220" y1="135" x2="260" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="440" y1="135" x2="480" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="660" y1="135" x2="700" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="880" y1="135" x2="920" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="1010" y1="170" x2="1010" y2="240" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="920" y1="275" x2="880" y2="415" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="415" x2="220" y2="415" stroke="black" marker-end="url(#arrowhead)"/>
+</svg>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold">DNS Resolution Flow</text>
+
+  <!-- Nodes -->
+  <g id="client_application">
+    <rect x="100" y="60" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="95" text-anchor="middle" dominant-baseline="middle" font-size="14">Client Application</text>
+  </g>
+
+  <g id="dns_resolver_cache">
+    <rect x="100" y="160" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="195" text-anchor="middle" dominant-baseline="middle" font-size="14">Resolver Cache</text>
+  </g>
+
+  <g id="recursive_resolver">
+    <rect x="100" y="260" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="295" text-anchor="middle" dominant-baseline="middle" font-size="14">Recursive Resolver</text>
+  </g>
+
+  <g id="root_name_server">
+    <rect x="100" y="360" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="395" text-anchor="middle" dominant-baseline="middle" font-size="14">Root Name Server</text>
+  </g>
+
+  <g id="tld_name_server">
+    <rect x="100" y="460" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="495" text-anchor="middle" dominant-baseline="middle" font-size="14">TLD Name Server</text>
+  </g>
+
+  <g id="authoritative_name_server">
+    <rect x="100" y="560" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="595" text-anchor="middle" dominant-baseline="middle" font-size="14">Authoritative Server</text>
+  </g>
+
+  <g id="response_to_client">
+    <rect x="100" y="660" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="695" text-anchor="middle" dominant-baseline="middle" font-size="14">Response to Client</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edges">
+    <!-- client_application -> dns_resolver_cache -->
+    <line x1="190" y1="130" x2="190" y2="160" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="190" y="145" text-anchor="middle" dominant-baseline="middle" font-size="12">query</text>
+
+    <!-- dns_resolver_cache -> recursive_resolver -->
+    <line x1="190" y1="230" x2="190" y2="260" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="190" y="245" text-anchor="middle" dominant-baseline="middle" font-size="12">miss</text>
+
+    <!-- recursive_resolver -> root_name_server -->
+    <line x1="190" y1="330" x2="190" y2="360" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="190" y="345" text-anchor="middle" dominant-baseline="middle" font-size="12">query .</text>
+
+    <!-- root_name_server -> tld_name_server -->
+    <line x1="190" y1="430" x2="190" y2="460" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="190" y="445" text-anchor="middle" dominant-baseline="middle" font-size="12">referral</text>
+
+    <!-- tld_name_server -> authoritative_name_server -->
+    <line x1="190" y1="530" x2="190" y2="560" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="190" y="545" text-anchor="middle" dominant-baseline="middle" font-size="12">referral</text>
+
+    <!-- authoritative_name_server -> response_to_client -->
+    <line x1="190" y1="630" x2="190" y2="660" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="190" y="645" text-anchor="middle" dominant-baseline="middle" font-size="12">answer</text>
+
+    <!-- response_to_client -> client_application -->
+    <line x1="190" y1="660" x2="190" y2="130" stroke="black" marker-end="url(#arrowhead)"/>
+    <text x="190" y="395" text-anchor="middle" dominant-baseline="middle" font-size="12">response</text>
+  </g>
+</svg>

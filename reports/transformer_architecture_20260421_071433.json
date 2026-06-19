@@ -1,0 +1,38 @@
+{
+  "timestamp": "20260421_071433",
+  "topic": "Transformer architecture",
+  "model": "openai/gpt-oss-120b",
+  "mode": "v2_planner",
+  "attempts_used": 1,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "input_embedding",
+      "positional_encoding",
+      "add_norm_1",
+      "multi_head_self_attention",
+      "add_norm_2",
+      "feed_forward_network",
+      "add_norm_3",
+      "output_projection"
+    ],
+    "group_count": 8,
+    "rect_count": 8,
+    "overlap_pairs": [],
+    "line_count": 7,
+    "polyline_count": 0,
+    "path_count": 0,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 7,
+    "has_duplicate_ids": false,
+    "errors": []
+  },
+  "artifacts": {
+    "svg": "svg/transformer_architecture_20260421_071433.svg",
+    "png": "img/transformer_architecture_20260421_071433.png",
+    "plan": "reports/transformer_architecture_20260421_071433_plan.json"
+  }
+}

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <g id="power_source">
+    <rect x="100" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Power Source</text>
+  </g>
+
+  <g id="conductors">
+    <rect x="320" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="410" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Conductors</text>
+  </g>
+
+  <g id="switch">
+    <rect x="540" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="630" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Switch</text>
+  </g>
+
+  <g id="load">
+    <rect x="760" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="850" y="135" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Load (Resistor)</text>
+  </g>
+
+  <g id="series_circuit">
+    <rect x="100" y="200" width="180" height="70" fill="#fff8e1" stroke="#000"/>
+    <text x="190" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Series Circuit</text>
+  </g>
+
+  <g id="parallel_circuit">
+    <rect x="320" y="200" width="180" height="70" fill="#fff8e1" stroke="#000"/>
+    <text x="410" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Parallel Circuit</text>
+  </g>
+
+  <g id="ohms_law">
+    <rect x="540" y="200" width="180" height="70" fill="#fff8e1" stroke="#000"/>
+    <text x="630" y="235" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Ohm's Law</text>
+  </g>
+
+  <!-- Edges -->
+  <line x1="280" y1="135" x2="320" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="135" x2="540" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="720" y1="135" x2="760" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+
+  <line x1="410" y1="170" x2="190" y2="200" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="300" y="185" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="12">Series</text>
+
+  <line x1="410" y1="170" x2="410" y2="200" stroke="black" marker-end="url(#arrowhead)"/>
+  <text x="410" y="185" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="12">Parallel</text>
+
+  <line x1="280" y1="235" x2="760" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="235" x2="760" y2="135" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="850" y1="170" x2="630" y2="200" stroke="black" marker-end="url(#arrowhead)"/>
+</svg>

@@ -1,0 +1,78 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="225" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold">Photosynthesis</text>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="210" y="275" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="300" y="310" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Light Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="430" y="275" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="520" y="310" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="650" y="275" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="740" y="310" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Oxygen Release</text>
+  </g>
+
+  <g id="electron_transport">
+    <rect x="430" y="375" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="520" y="410" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Electron Transport Chain</text>
+  </g>
+
+  <g id="atp_synthesis">
+    <rect x="650" y="375" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="740" y="410" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">ATP Synthesis (Chemiosmosis)</text>
+  </g>
+
+  <g id="nadph_formation">
+    <rect x="850" y="375" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="940" y="410" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">NADPH Formation</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="650" y="495" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="740" y="530" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Carbon Fixation (Calvin Cycle)</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="850" y="495" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="940" y="530" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14">Glucose Production</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- Light Absorption -> Water Splitting -->
+  <line x1="390" y1="310" x2="430" y2="310" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="410" y="300" text-anchor="middle" font-family="sans-serif" font-size="12">light energy</text>
+
+  <!-- Light Absorption -> Electron Transport -->
+  <path d="M390,310 C410,310 410,410 430,410" fill="none" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="410" y="360" text-anchor="middle" font-family="sans-serif" font-size="12">excited electrons</text>
+
+  <!-- Water Splitting -> Oxygen Release -->
+  <line x1="610" y1="310" x2="650" y2="310" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="630" y="300" text-anchor="middle" font-family="sans-serif" font-size="12">O₂</text>
+
+  <!-- Electron Transport -> ATP Synthesis -->
+  <line x1="610" y1="410" x2="650" y2="410" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="630" y="400" text-anchor="middle" font-family="sans-serif" font-size="12">proton gradient</text>
+
+  <!-- Electron Transport -> NADPH Formation -->
+  <line x1="610" y1="410" x2="850" y2="410" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="730" y="400" text-anchor="middle" font-family="sans-serif" font-size="12">e⁻ transfer</text>
+
+  <!-- ATP Synthesis -> Carbon Fixation -->
+  <line x1="740" y1="445" x2="740" y2="495" stroke="#000" marker-end="url(#arrow)"/>
+  <text x="750" y="470" font-family="sans-serif" font-size="12">ATP</text>
+
+  <!-- NADPH Formation -> Carbon Fixation -->
+  <path d="M850,410 C830,410 830,530

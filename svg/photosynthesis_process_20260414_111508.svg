@@ -1,0 +1,63 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Sunlight -->
+  <g id="sun_light">
+    <rect x="100" y="50" width="200" height="80" fill="#FFEB3B" stroke="#000" stroke-width="2"/>
+    <text x="200" y="100" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Sunlight</text>
+  </g>
+
+  <!-- Water -->
+  <g id="water">
+    <rect x="400" y="50" width="200" height="80" fill="#90CAF9" stroke="#000" stroke-width="2"/>
+    <text x="500" y="100" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Water (H₂O)</text>
+  </g>
+
+  <!-- Carbon Dioxide -->
+  <g id="co2">
+    <rect x="700" y="50" width="200" height="80" fill="#B0BEC5" stroke="#000" stroke-width="2"/>
+    <text x="800" y="100" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">CO₂</text>
+  </g>
+
+  <!-- Leaf -->
+  <g id="leaf">
+    <rect x="100" y="200" width="200" height="80" fill="#A5D6A7" stroke="#000" stroke-width="2"/>
+    <text x="200" y="250" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Leaf</text>
+  </g>
+
+  <!-- Light‑Dependent Reactions -->
+  <g id="light_dependent">
+    <rect x="400" y="200" width="200" height="80" fill="#FFF59D" stroke="#000" stroke-width="2"/>
+    <text x="500" y="250" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Light‑Dependent Reactions</text>
+  </g>
+
+  <!-- Calvin Cycle -->
+  <g id="calvin_cycle">
+    <rect x="700" y="200" width="200" height="80" fill="#CE93D8" stroke="#000" stroke-width="2"/>
+    <text x="800" y="250" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Calvin Cycle</text>
+  </g>
+
+  <!-- Glucose -->
+  <g id="glucose">
+    <rect x="400" y="350" width="200" height="80" fill="#FFCC80" stroke="#000" stroke-width="2"/>
+    <text x="500" y="400" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">Glucose (C₆H₁₂O₆)</text>
+  </g>
+
+  <!-- Oxygen -->
+  <g id="oxygen">
+    <rect x="100" y="350" width="200" height="80" fill="#E0E0E0" stroke="#000" stroke-width="2"/>
+    <text x="200" y="400" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#000">O₂ (Oxygen)</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="300" y1="90" x2="400" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="500" y1="90" x2="500" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="800" y1="90" x2="900" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="600" y1="240" x2="700" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="800" y1="280" x2="500" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="300" y1="240" x2="200" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

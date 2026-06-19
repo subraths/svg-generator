@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold">
+    TCP Three-Way Handshake
+  </text>
+
+  <!-- Nodes -->
+  <g id="client_send_syn">
+    <rect x="270" y="255" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="360" y="290" text-anchor="middle" dominant-baseline="middle" font-family="Arial,Helvetica,sans-serif" font-size="14">
+      Client: SEND SYN
+    </text>
+  </g>
+
+  <g id="server_recv_syn">
+    <rect x="510" y="255" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="600" y="290" text-anchor="middle" dominant-baseline="middle" font-family="Arial,Helvetica,sans-serif" font-size="14">
+      Server: RECV SYN
+    </text>
+  </g>
+
+  <g id="server_send_synack">
+    <rect x="750" y="255" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="840" y="290" text-anchor="middle" dominant-baseline="middle" font-family="Arial,Helvetica,sans-serif" font-size="14">
+      Server: SEND SYN‑ACK
+    </text>
+  </g>
+
+  <g id="client_recv_synack">
+    <rect x="270" y="355" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="360" y="390" text-anchor="middle" dominant-baseline="middle" font-family="Arial,Helvetica,sans-serif" font-size="14">
+      Client: RECV SYN‑ACK
+    </text>
+  </g>
+
+  <g id="client_send_ack">
+    <rect x="510" y="355" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="600" y="390" text-anchor="middle" dominant-baseline="middle" font-family="Arial,Helvetica,sans-serif" font-size="14">
+      Client: SEND ACK
+    </text>
+  </g>
+
+  <g id="server_recv_ack">
+    <rect x="750" y="355" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="840" y="390" text-anchor="middle" dominant-baseline="middle" font-family="Arial,Helvetica,sans-serif" font-size="14">
+      Server: RECV ACK
+    </text>
+  </g>
+
+  <g id="connection_established">
+    <rect x="510" y="475" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="600" y="510" text-anchor="middle" dominant-baseline="middle" font-family="Arial,Helvetica,sans-serif" font-size="14">
+      Connection Established
+    </text>
+  </g>
+
+  <!-- Edges -->
+  <!-- client_send_syn -> server_recv_syn -->
+  <path d="M450,290 L510,290" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="480" y="285" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12">SYN</text>
+
+  <!-- server_recv_syn -> server_send_synack -->
+  <path d="M690,290 L750,290" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="720" y="285" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12">process</text>
+
+  <!-- server_send_synack -> client_recv_synack -->
+  <path d="M840,325 C800,300 400,380 360,355" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="600" y="340" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12">SYN‑ACK</text>
+
+  <!-- client_recv_synack -> client_send_ack -->
+  <path d="M450,390 L510,390" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="480" y="385" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12">process</text>
+
+  <!-- client_send_ack -> server_recv_ack -->
+  <path d="M690,390 L750,390" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="720" y="385" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12">ACK</text>
+
+  <!-- server_recv_ack -> connection_established -->
+  <path d="M840,425 C820,460 700,440 600,475" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="720" y="445" text-anchor="

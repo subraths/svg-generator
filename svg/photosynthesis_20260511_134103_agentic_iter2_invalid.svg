@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="14">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <g id="chlorophyll">
+    <rect x="100" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="135" text-anchor="middle" dominant-baseline="middle">Chlorophyll (Pigment)</text>
+  </g>
+
+  <g id="light_energy_absorption">
+    <rect x="340" y="100" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="430" y="135" text-anchor="middle" dominant-baseline="middle">Light Energy Absorption</text>
+  </g>
+
+  <g id="water_splitting">
+    <rect x="100" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="235" text-anchor="middle" dominant-baseline="middle">Water Splitting (Photolysis)</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="340" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="430" y="235" text-anchor="middle" dominant-baseline="middle">Oxygen Release</text>
+  </g>
+
+  <g id="atp_nadph_production">
+    <rect x="100" y="300" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="335" text-anchor="middle" dominant-baseline="middle">ATP &amp; NADPH Production</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="340" y="300" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="430" y="335" text-anchor="middle" dominant-baseline="middle">Carbon Dioxide Fixation</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="100" y="400" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="190" y="435" text-anchor="middle" dominant-baseline="middle">Calvin Cycle (Light‑Independent)</text>
+  </g>
+
+  <g id="glucose_synthesis">
+    <rect x="340" y="400" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="430" y="435" text-anchor="middle" dominant-baseline="middle">Glucose Synthesis</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_chlorophyll_light_energy_absorption">
+    <line x1="280" y1="135" x2="340" y2="135" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="310" y="125" text-anchor="middle" fill="#000">absorbs</text>
+  </g>
+
+  <g id="edge_light_energy_absorption_water_splitting">
+    <line x1="340" y1="135" x2="280" y2="235" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="310" y="175" text-anchor="middle" fill="#000">drives</text>
+  </g>
+
+  <g id="edge_water_splitting_oxygen_release">
+    <line x1="280" y1="235" x2="340" y2="235" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="310" y="225" text-anchor="middle" fill="#000">produces</text>
+  </g>
+
+  <g id="edge_water_splitting_atp_nadph_production">
+    <line x1="190" y1="270" x2="190" y2="300" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="180" y="285" text-anchor="end" fill="#000">provides electrons</text>
+  </g>
+
+  <g id="edge_light_energy_absorption_atp_nadph_production">
+    <line x1="340" y1="135" x2="280" y2="335" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="310" y="225" text-anchor="middle" fill="#000">powers</text>
+  </g>
+
+  <g id="edge_atp_nadph_production_carbon_fixation">
+    <line x1="280" y1="335" x2="340" y2="335" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="310" y="325" text-anchor="middle" fill="#000">provides energy</text>
+  </g>
+
+  <g id="edge_carbon_fixation_calvin_cycle">
+    <line x1="340" y1="335" x2="280" y2="435" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="310" y="375" text-anchor="middle" fill="#000">feeds</text>
+  </g>
+
+  <g id="edge_atp_nadph_production_calvin_cycle">
+    <line x1="190" y1="370" x2="190" y2="400" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="180" y="385" text-anchor="end" fill="#000">supplies ATP/NADPH</text>
+  </g>
+
+  <g id="edge_calvin_cycle_glucose_synthesis">
+    <line x1="280" y1="435" x2="340" y2="435" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="310" y="425" text-anchor="middle" fill="#000">produ

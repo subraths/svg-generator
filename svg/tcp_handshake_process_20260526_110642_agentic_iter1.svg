@@ -1,0 +1,77 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,10 3.5,0 7" fill="#000"/>
+    </marker>
+    <style>
+      .node { fill:#fff; stroke:#000; stroke-width:2; }
+      .label { font-family:Arial,Helvetica,sans-serif; font-size:14px; pointer-events:none; }
+      .edgelabel { font-family:Arial,Helvetica,sans-serif; font-size:12px; fill:#000; pointer-events:none; }
+      .edge { fill:none; stroke:#000; stroke-width:2; marker-end:url(#arrowhead); }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold">TCP Handshake Process</text>
+
+  <!-- Nodes -->
+  <g id="client_send_syn">
+    <rect class="node" x="410" y="225" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="500" y="265" text-anchor="middle" dominant-baseline="middle">Client: SYN</text>
+  </g>
+
+  <g id="server_receive_syn">
+    <rect class="node" x="810" y="225" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="900" y="265" text-anchor="middle" dominant-baseline="middle">Server receives SYN</text>
+  </g>
+
+  <g id="server_send_syn_ack">
+    <rect class="node" x="810" y="385" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="900" y="425" text-anchor="middle" dominant-baseline="middle">Server: SYN‑ACK</text>
+  </g>
+
+  <g id="client_receive_syn_ack">
+    <rect class="node" x="410" y="385" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="500" y="425" text-anchor="middle" dominant-baseline="middle">Client receives SYN‑ACK</text>
+  </g>
+
+  <g id="client_send_ack">
+    <rect class="node" x="410" y="545" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="500" y="585" text-anchor="middle" dominant-baseline="middle">Client: ACK</text>
+  </g>
+
+  <g id="server_receive_ack">
+    <rect class="node" x="810" y="545" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="900" y="585" text-anchor="middle" dominant-baseline="middle">Server receives ACK</text>
+  </g>
+
+  <g id="connection_established">
+    <rect class="node" x="610" y="705" width="180" height="70" rx="5" ry="5"/>
+    <text class="label" x="700" y="745" text-anchor="middle" dominant-baseline="middle">Connection Established</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- client_send_syn -> server_receive_syn -->
+  <path class="edge" d="M590,260 L810,260"/>
+  <text class="edgelabel" x="700" y="250" text-anchor="middle">SYN</text>
+
+  <!-- server_receive_syn -> server_send_syn_ack -->
+  <path class="edge" d="M900,295 L900,385"/>
+  <text class="edgelabel" x="910" y="340">process SYN</text>
+
+  <!-- server_send_syn_ack -> client_receive_syn_ack -->
+  <path class="edge" d="M810,420 L590,420"/>
+  <text class="edgelabel" x="700" y="410" text-anchor="middle">SYN‑ACK</text>
+
+  <!-- client_receive_syn_ack -> client_send_ack -->
+  <path class="edge" d="M500,455 L500,545"/>
+  <text class="edgelabel" x="510" y="500">process SYN‑ACK</text>
+
+  <!-- client_send_ack -> server_receive_ack -->
+  <path class="edge" d="M590,580 L810,580"/>
+  <text class="edgelabel" x="700" y="570" text-anchor="middle">ACK</text>
+
+  <!-- server_receive_ack -> connection_established -->
+  <path class="edge" d="M900,615 C900,655 700,665 700,705"/>
+  <text class="edgelabel" x="800" y="650" text-anchor="middle">established</text>
+</svg>

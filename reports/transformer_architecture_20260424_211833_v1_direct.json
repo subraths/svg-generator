@@ -1,0 +1,47 @@
+{
+  "timestamp": "20260424_211837",
+  "batch_stamp": "20260424_211833",
+  "topic": "Transformer architecture",
+  "mode": "v1_direct",
+  "model": "openai/gpt-oss-120b",
+  "attempts_used": 5,
+  "max_attempts": 5,
+  "validation": {
+    "xml_valid": true,
+    "width": "1200",
+    "height": "800",
+    "group_ids": [
+      "encoder_input",
+      "encoder_mha",
+      "encoder_addnorm1",
+      "encoder_ffn",
+      "encoder_addnorm2",
+      "encoder_output",
+      "decoder_input",
+      "decoder_mha_masked",
+      "decoder_addnorm1",
+      "decoder_encdec_attn",
+      "decoder_addnorm2",
+      "decoder_ffn",
+      "decoder_addnorm3",
+      "decoder_output"
+    ],
+    "group_count": 14,
+    "rect_count": 14,
+    "overlap_pairs": [],
+    "line_count": 0,
+    "polyline_count": 0,
+    "path_count": 15,
+    "marker_arrow_defined": true,
+    "connector_elements_total": 15,
+    "has_duplicate_ids": false,
+    "errors": [
+      "No connectors use marker-end arrows."
+    ]
+  },
+  "artifacts": {
+    "svg": "svg/transformer_architecture_20260424_211833_v1_direct.svg",
+    "png": "img/transformer_architecture_20260424_211833_v1_direct.png",
+    "plan": null
+  }
+}

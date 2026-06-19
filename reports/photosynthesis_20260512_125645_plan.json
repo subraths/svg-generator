@@ -1,0 +1,107 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 40,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll_absorption",
+      "label": "Chlorophyll absorbs light",
+      "x": 240,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_photolysis",
+      "label": "Water splitting (photolysis)",
+      "x": 440,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph_production",
+      "label": "ATP & NADPH production",
+      "x": 640,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_fixation",
+      "label": "Carbon fixation (Calvin Cycle)",
+      "x": 40,
+      "y": 150,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_synthesis",
+      "label": "Glucose synthesis",
+      "x": 240,
+      "y": 150,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen release",
+      "x": 440,
+      "y": 150,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "stomata_co2_intake",
+      "label": "CO\u2082 intake (stomata)",
+      "x": 640,
+      "y": 150,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll_absorption",
+      "label": "light energy"
+    },
+    {
+      "from": "chlorophyll_absorption",
+      "to": "water_photolysis",
+      "label": "excites electrons"
+    },
+    {
+      "from": "water_photolysis",
+      "to": "atp_nadph_production",
+      "label": "provides electrons & H\u207a"
+    },
+    {
+      "from": "atp_nadph_production",
+      "to": "carbon_fixation",
+      "label": "ATP & NADPH used"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "glucose_synthesis",
+      "label": "produces glucose"
+    },
+    {
+      "from": "water_photolysis",
+      "to": "oxygen_release",
+      "label": "O\u2082 released"
+    },
+    {
+      "from": "stomata_co2_intake",
+      "to": "carbon_fixation",
+      "label": "CO\u2082 enters"
+    }
+  ]
+}

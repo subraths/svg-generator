@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <g id="light_absorption">
+    <rect x="200" y="335" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="290" y="370" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Light Absorption</text>
+  </g>
+
+  <g id="water_uptake">
+    <rect x="420" y="335" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="510" y="370" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Water Uptake</text>
+  </g>
+
+  <g id="carbon_fixation">
+    <rect x="640" y="335" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="730" y="370" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Carbon Dioxide Fixation</text>
+  </g>
+
+  <g id="thylakoid_reactions">
+    <rect x="200" y="435" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="290" y="470" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Light‑Dependent Reactions</text>
+  </g>
+
+  <g id="calvin_cycle">
+    <rect x="420" y="435" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="510" y="470" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Calvin Cycle (Light‑Independent)</text>
+  </g>
+
+  <g id="glucose_production">
+    <rect x="640" y="435" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="730" y="470" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Glucose Production</text>
+  </g>
+
+  <g id="oxygen_release">
+    <rect x="860" y="435" width="180" height="70" fill="#e0f7fa" stroke="black"/>
+    <text x="950" y="470" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Oxygen Release</text>
+  </g>
+
+  <!-- Edges -->
+  <path d="M290,405 L290,435" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <text x="290" y="420" font-family="sans-serif" font-size="12" text-anchor="middle" dominant-baseline="middle">excites electrons</text>
+
+  <path d="M420,370 L380,470" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <text x="400" y="420" font-family="sans-serif" font-size="12" text-anchor="middle" dominant-baseline="middle">splits, releases O₂</text>
+
+  <path d="M380,470 L420,470" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <text x="400" y="460" font-family="sans-serif" font-size="12" text-anchor="middle" dominant-baseline="middle">ATP &amp; NADPH</text>
+
+  <path d="M640,370 L600,470" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <text x="620" y="420" font-family="sans-serif" font-size="12" text-anchor="middle" dominant-baseline="middle">CO₂</text>
+
+  <path d="M600,470 L640,470" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <text x="620" y="460" font-family="sans-serif" font-size="12" text-anchor="middle" dominant-baseline="middle">produces glucose</text>
+
+  <path d="M380,470 L860,470" stroke="black" fill="none" marker-end="url(#arrow)"/>
+  <text x="620" y="480" font-family="sans-serif" font-size="12" text-anchor="middle" dominant-baseline="middle">O₂ released</text>
+</svg>

@@ -1,0 +1,86 @@
+{
+  "diagram_type": "flow",
+  "title": "Kubernetes Pod Lifecycle",
+  "nodes": [
+    {
+      "id": "pending",
+      "label": "Pending",
+      "x": 500,
+      "y": 60,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "container_creating",
+      "label": "Container Creating",
+      "x": 500,
+      "y": 160,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "running",
+      "label": "Running",
+      "x": 500,
+      "y": 260,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "succeeded",
+      "label": "Succeeded",
+      "x": 300,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "failed",
+      "label": "Failed",
+      "x": 700,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "unknown",
+      "label": "Unknown",
+      "x": 500,
+      "y": 460,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "pending",
+      "to": "container_creating",
+      "label": "containers being created"
+    },
+    {
+      "from": "container_creating",
+      "to": "running",
+      "label": "containers ready"
+    },
+    {
+      "from": "running",
+      "to": "succeeded",
+      "label": "exit 0"
+    },
+    {
+      "from": "running",
+      "to": "failed",
+      "label": "exit non-zero"
+    },
+    {
+      "from": "running",
+      "to": "unknown",
+      "label": "node lost"
+    },
+    {
+      "from": "pending",
+      "to": "unknown",
+      "label": "node lost before start"
+    }
+  ]
+}

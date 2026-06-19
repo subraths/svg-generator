@@ -1,0 +1,59 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7"
+            refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Cell Membrane -->
+  <g id="cell_membrane">
+    <rect x="50" y="50" width="200" height="120" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+    <text x="150" y="115" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#004d40">Cell Membrane</text>
+  </g>
+
+  <!-- Nucleus -->
+  <g id="nucleus">
+    <rect x="300" y="50" width="200" height="120" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="400" y="115" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#bf360c">Nucleus</text>
+  </g>
+
+  <!-- Mitochondria -->
+  <g id="mitochondria">
+    <rect x="550" y="50" width="200" height="120" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+    <text x="650" y="115" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#1b5e20">Mitochondria</text>
+  </g>
+
+  <!-- Endoplasmic Reticulum -->
+  <g id="endoplasmic_reticulum">
+    <rect x="50" y="250" width="200" height="120" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+    <text x="150" y="315" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#4a148c">Endoplasmic Reticulum</text>
+  </g>
+
+  <!-- Golgi Apparatus -->
+  <g id="golgi_apparatus">
+    <rect x="300" y="250" width="200" height="120" fill="#fffde7" stroke="#f57f17" stroke-width="2"/>
+    <text x="400" y="315" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#bf360c">Golgi Apparatus</text>
+  </g>
+
+  <!-- Lysosome -->
+  <g id="lysosome">
+    <rect x="550" y="250" width="200" height="120" fill="#ffebee" stroke="#b71c1c" stroke-width="2"/>
+    <text x="650" y="315" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#b71c1c">Lysosome</text>
+  </g>
+
+  <!-- Ribosome -->
+  <g id="ribosome">
+    <rect x="300" y="450" width="200" height="120" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+    <text x="400" y="515" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#004d40">Ribosome</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="250" y1="110" x2="300" y2="110" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="500" y1="110" x2="550" y2="110" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="150" y1="170" x2="150" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="400" y1="170" x2="400" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="650" y1="170" x2="650" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="400" y1="370" x2="400" y2="450" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+  <line x1="650" y1="370" x2="650" y2="450" stroke="black" stroke-width="2" marker-end="url(#arrowhead_marker)"/>
+</svg>

@@ -1,0 +1,57 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Layer -->
+  <g id="input_layer">
+    <rect x="50" y="150" width="150" height="100" fill="#cce5ff" stroke="#000" stroke-width="2"/>
+    <text x="125" y="200" font-size="16" text-anchor="middle" dominant-baseline="middle">Input Layer</text>
+  </g>
+
+  <!-- Weights Input → Hidden1 -->
+  <g id="weights_input_hidden">
+    <rect x="230" y="160" width="120" height="80" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+    <text x="290" y="200" font-size="16" text-anchor="middle" dominant-baseline="middle">W₁</text>
+  </g>
+
+  <!-- Hidden Layer 1 -->
+  <g id="hidden_layer1">
+    <rect x="380" y="150" width="150" height="100" fill="#d4edda" stroke="#000" stroke-width="2"/>
+    <text x="455" y="200" font-size="16" text-anchor="middle" dominant-baseline="middle">Hidden 1</text>
+  </g>
+
+  <!-- Weights Hidden1 → Hidden2 -->
+  <g id="weights_hidden_hidden">
+    <rect x="560" y="160" width="120" height="80" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+    <text x="620" y="200" font-size="16" text-anchor="middle" dominant-baseline="middle">W₂</text>
+  </g>
+
+  <!-- Hidden Layer 2 -->
+  <g id="hidden_layer2">
+    <rect x="710" y="150" width="150" height="100" fill="#d4edda" stroke="#000" stroke-width="2"/>
+    <text x="785" y="200" font-size="16" text-anchor="middle" dominant-baseline="middle">Hidden 2</text>
+  </g>
+
+  <!-- Weights Hidden2 → Output -->
+  <g id="weights_hidden_output">
+    <rect x="890" y="160" width="120" height="80" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+    <text x="950" y="200" font-size="16" text-anchor="middle" dominant-baseline="middle">W₃</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output_layer">
+    <rect x="1040" y="150" width="150" height="100" fill="#ffe5b4" stroke="#000" stroke-width="2"/>
+    <text x="1115" y="200" font-size="16" text-anchor="middle" dominant-baseline="middle">Output Layer</text>
+  </g>
+
+  <!-- Arrows showing forward pass -->
+  <line x1="200" y1="200" x2="230" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="200" x2="380" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="530" y1="200" x2="560" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="680" y1="200" x2="710" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="860" y1="200" x2="890" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1010" y1="200" x2="1040" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

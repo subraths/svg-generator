@@ -1,0 +1,65 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .label { font-family: Arial, sans-serif; font-size: 18px; fill: #000; }
+      .organism { stroke: #000; stroke-width: 2; fill-opacity: 0.2; }
+    </style>
+  </defs>
+
+  <!-- Cell Membrane -->
+  <g id="cell_membrane">
+    <ellipse cx="600" cy="400" rx="500" ry="350" class="organism" fill="#a8d5e2"/>
+    <text x="600" y="70" text-anchor="middle" class="label">Cell Membrane</text>
+  </g>
+
+  <!-- Cytoplasm -->
+  <g id="cytoplasm">
+    <text x="600" y="420" text-anchor="middle" class="label">Cytoplasm</text>
+  </g>
+
+  <!-- Nucleus -->
+  <g id="nucleus">
+    <circle cx="450" cy="350" r="80" class="organism" fill="#f7c6c7"/>
+    <text x="450" y="340" text-anchor="middle" class="label">Nucleus</text>
+    <text x="450" y="360" text-anchor="middle" class="label">(contains DNA)</text>
+    <!-- Arrow to DNA label -->
+    <line x1="450" y1="270" x2="450" y2="230" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="450" y="210" text-anchor="middle" class="label">DNA</text>
+  </g>
+
+  <!-- Mitochondrion -->
+  <g id="mitochondrion">
+    <ellipse cx="750" cy="350" rx="70" ry="40" class="organism" fill="#c8e6c9"/>
+    <text x="750" y="340" text-anchor="middle" class="label">Mitochondrion</text>
+    <text x="750" y="360" text-anchor="middle" class="label">(produces ATP)</text>
+    <!-- Arrow to ATP label -->
+    <line x1="750" y1="270" x2="750" y2="230" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="750" y="210" text-anchor="middle" class="label">ATP</text>
+  </g>
+
+  <!-- Ribosome -->
+  <g id="ribosome">
+    <circle cx="600" cy="250" r="12" class="organism" fill="#ffe0b2"/>
+    <circle cx="620" cy="260" r="12" class="organism" fill="#ffe0b2"/>
+    <circle cx="580" cy="260" r="12" class="organism" fill="#ffe0b2"/>
+    <text x="600" y="240" text-anchor="middle" class="label">Ribosome</text>
+    <text x="600" y="280" text-anchor="middle" class="label">(synthesizes proteins)</text>
+    <!-- Arrow to Protein label -->
+    <line x1="600" y1="190" x2="600" y2="150" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="600" y="130" text-anchor="middle" class="label">Protein</text>
+  </g>
+
+  <!-- Chloroplast -->
+  <g id="chloroplast">
+    <ellipse cx="500" cy="550" rx="80" ry="50" class="organism" fill="#d1c4e9"/>
+    <text x="500" y="540" text-anchor="middle" class="label">Chloroplast</text>
+    <text x="500" y="560" text-anchor="middle" class="label">(photosynthesis)</text>
+    <!-- Arrow to Light label -->
+    <line x1="500" y1="470" x2="500" y2="430" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="500" y="410" text-anchor="middle" class="label">Light Energy</text>
+  </g>
+
+</svg>

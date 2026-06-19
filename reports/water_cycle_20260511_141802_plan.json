@@ -1,0 +1,117 @@
+{
+  "diagram_type": "cycle",
+  "title": "Water Cycle",
+  "nodes": [
+    {
+      "id": "evaporation",
+      "label": "Evaporation",
+      "x": 200,
+      "y": 100,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "transpiration",
+      "label": "Transpiration",
+      "x": 600,
+      "y": 100,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "sublimation",
+      "label": "Sublimation",
+      "x": 800,
+      "y": 100,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "condensation",
+      "label": "Condensation",
+      "x": 400,
+      "y": 300,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "precipitation",
+      "label": "Precipitation",
+      "x": 400,
+      "y": 500,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "runoff",
+      "label": "Runoff",
+      "x": 1000,
+      "y": 500,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "collection",
+      "label": "Collection (Lakes/Oceans)",
+      "x": 200,
+      "y": 700,
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "infiltration",
+      "label": "Infiltration / Groundwater",
+      "x": 600,
+      "y": 700,
+      "w": 180,
+      "h": 80
+    }
+  ],
+  "edges": [
+    {
+      "from": "evaporation",
+      "to": "condensation",
+      "label": "vapor rises"
+    },
+    {
+      "from": "transpiration",
+      "to": "condensation",
+      "label": "plant moisture"
+    },
+    {
+      "from": "sublimation",
+      "to": "evaporation",
+      "label": "ice to vapor"
+    },
+    {
+      "from": "condensation",
+      "to": "precipitation",
+      "label": "cloud formation"
+    },
+    {
+      "from": "precipitation",
+      "to": "collection",
+      "label": "rain/snow falls"
+    },
+    {
+      "from": "collection",
+      "to": "infiltration",
+      "label": "seepage"
+    },
+    {
+      "from": "infiltration",
+      "to": "runoff",
+      "label": "groundwater flow"
+    },
+    {
+      "from": "runoff",
+      "to": "evaporation",
+      "label": "returns to air"
+    },
+    {
+      "from": "collection",
+      "to": "evaporation",
+      "label": "surface evaporation"
+    }
+  ]
+}

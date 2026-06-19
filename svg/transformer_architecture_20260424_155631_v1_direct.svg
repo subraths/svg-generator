@@ -1,0 +1,57 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Input Embedding -->
+  <g id="input_embedding">
+    <rect x="50" y="300" width="150" height="80" fill="#cce5ff" stroke="black"/>
+    <text x="125" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Input Embedding</text>
+  </g>
+
+  <!-- Positional Encoding -->
+  <g id="positional_encoding">
+    <rect x="250" y="300" width="150" height="80" fill="#d4edda" stroke="black"/>
+    <text x="325" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Positional Encoding</text>
+  </g>
+
+  <!-- Encoder Self-Attention -->
+  <g id="encoder_self_attention">
+    <rect x="450" y="200" width="180" height="80" fill="#fff3cd" stroke="black"/>
+    <text x="540" y="240" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Multi‑Head Self‑Attention</text>
+  </g>
+
+  <!-- Encoder Feed Forward -->
+  <g id="encoder_feed_forward">
+    <rect x="450" y="350" width="180" height="80" fill="#f8d7da" stroke="black"/>
+    <text x="540" y="390" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Feed Forward</text>
+  </g>
+
+  <!-- Decoder Self-Attention -->
+  <g id="decoder_self_attention">
+    <rect x="750" y="200" width="180" height="80" fill="#fff3cd" stroke="black"/>
+    <text x="840" y="240" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Masked Multi‑Head Self‑Attention</text>
+  </g>
+
+  <!-- Decoder Encoder‑Decoder Attention -->
+  <g id="decoder_enc_dec_attention">
+    <rect x="750" y="350" width="180" height="80" fill="#cce5ff" stroke="black"/>
+    <text x="840" y="390" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Encoder‑Decoder Attention</text>
+  </g>
+
+  <!-- Output Projection -->
+  <g id="output_projection">
+    <rect x="1000" y="300" width="150" height="80" fill="#d4edda" stroke="black"/>
+    <text x="1075" y="340" font-family="sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">Output Projection + Softmax</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="200" y1="340" x2="250" y2="340" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="340" x2="450" y2="240" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="630" y1="240" x2="450" y2="390" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="630" y1="390" x2="750" y2="240" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="930" y1="240" x2="750" y2="390" stroke="black" marker-end="url(#arrowhead)"/>
+  <line x1="930" y1="390" x2="1000" y2="340" stroke="black" marker-end="url(#arrowhead)"/>
+</svg>

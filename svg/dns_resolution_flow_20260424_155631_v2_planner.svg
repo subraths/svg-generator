@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" font-family="sans-serif" font-size="14">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold">DNS Resolution Flow</text>
+
+  <!-- Nodes -->
+  <g id="client_application">
+    <rect x="20" y="200" width="180" height="70" fill="#e0f7fa" stroke="#000"/>
+    <text x="110" y="235" text-anchor="middle" dominant-baseline="middle">Client Application</text>
+  </g>
+
+  <g id="recursive_resolver">
+    <rect x="240" y="200" width="180" height="70" fill="#e8f5e9" stroke="#000"/>
+    <text x="330" y="235" text-anchor="middle" dominant-baseline="middle">Recursive Resolver</text>
+  </g>
+
+  <g id="root_name_server">
+    <rect x="460" y="200" width="180" height="70" fill="#fff3e0" stroke="#000"/>
+    <text x="550" y="235" text-anchor="middle" dominant-baseline="middle">Root Name Server</text>
+  </g>
+
+  <g id="tld_name_server">
+    <rect x="680" y="200" width="180" height="70" fill="#f3e5f5" stroke="#000"/>
+    <text x="770" y="235" text-anchor="middle" dominant-baseline="middle">TLD Name Server</text>
+  </g>
+
+  <g id="authoritative_name_server">
+    <rect x="900" y="200" width="180" height="70" fill="#ffebee" stroke="#000"/>
+    <text x="990" y="235" text-anchor="middle" dominant-baseline="middle">Authoritative Name Server</text>
+  </g>
+
+  <g id="client_response">
+    <rect x="20" y="400" width="180" height="70" fill="#e1f5fe" stroke="#000"/>
+    <text x="110" y="435" text-anchor="middle" dominant-baseline="middle">Client Receives IP</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edge_client_application_to_recursive_resolver">
+    <line x1="200" y1="235" x2="240" y2="235" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="220" y="225" text-anchor="middle" fill="#000">DNS query</text>
+  </g>
+
+  <g id="edge_recursive_resolver_to_root_name_server">
+    <line x1="420" y1="235" x2="460" y2="235" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="440" y="225" text-anchor="middle" fill="#000">Query root</text>
+  </g>
+
+  <g id="edge_root_name_server_to_tld_name_server">
+    <line x1="640" y1="235" x2="680" y2="235" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="660" y="225" text-anchor="middle" fill="#000">Referral</text>
+  </g>
+
+  <g id="edge_tld_name_server_to_authoritative_name_server">
+    <line x1="860" y1="235" x2="900" y2="235" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="880" y="225" text-anchor="middle" fill="#000">Referral</text>
+  </g>
+
+  <g id="edge_authoritative_name_server_to_recursive_resolver">
+    <line x1="900" y1="235" x2="420" y2="235" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="660" y="250" text-anchor="middle" fill="#000">Answer</text>
+  </g>
+
+  <g id="edge_recursive_resolver_to_client_response">
+    <line x1="330" y1="270" x2="110" y2="400" stroke="#000" marker-end="url(#arrowhead)"/>
+    <text x="220" y="325" text-anchor="middle" fill="#000">Response</text>
+  </g>
+</svg>

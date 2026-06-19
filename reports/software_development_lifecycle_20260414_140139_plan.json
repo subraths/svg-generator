@@ -1,0 +1,81 @@
+{
+  "diagram_type": "flow",
+  "title": "Software Development Lifecycle",
+  "nodes": [
+    {
+      "id": "requirements",
+      "label": "Requirements",
+      "x": 520,
+      "y": 40,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "design",
+      "label": "Design",
+      "x": 520,
+      "y": 140,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "implementation",
+      "label": "Implementation",
+      "x": 520,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "testing",
+      "label": "Testing",
+      "x": 520,
+      "y": 340,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "deployment",
+      "label": "Deployment",
+      "x": 520,
+      "y": 440,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "maintenance",
+      "label": "Maintenance",
+      "x": 520,
+      "y": 540,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "requirements",
+      "to": "design",
+      "label": "next"
+    },
+    {
+      "from": "design",
+      "to": "implementation",
+      "label": "next"
+    },
+    {
+      "from": "implementation",
+      "to": "testing",
+      "label": "next"
+    },
+    {
+      "from": "testing",
+      "to": "deployment",
+      "label": "next"
+    },
+    {
+      "from": "deployment",
+      "to": "maintenance",
+      "label": "next"
+    }
+  ]
+}

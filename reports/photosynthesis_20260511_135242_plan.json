@@ -1,0 +1,125 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis",
+  "nodes": [
+    {
+      "id": "sunlight",
+      "label": "Sunlight",
+      "x": 20,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll absorption",
+      "x": 240,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_split",
+      "label": "Water splitting (photolysis)",
+      "x": 460,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen release",
+      "x": 680,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph",
+      "label": "ATP & NADPH production",
+      "x": 460,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (light\u2011independent)",
+      "x": 460,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "co2_fixation",
+      "label": "CO\u2082 fixation",
+      "x": 680,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose",
+      "label": "Glucose synthesis",
+      "x": 460,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "starch_storage",
+      "label": "Starch storage",
+      "x": 680,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight",
+      "to": "chlorophyll",
+      "label": "absorbs"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "water_split",
+      "label": "drives"
+    },
+    {
+      "from": "water_split",
+      "to": "oxygen_release",
+      "label": "produces"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "atp_nadph",
+      "label": "energizes"
+    },
+    {
+      "from": "water_split",
+      "to": "atp_nadph",
+      "label": "provides electrons"
+    },
+    {
+      "from": "atp_nadph",
+      "to": "calvin_cycle",
+      "label": "supplies energy"
+    },
+    {
+      "from": "co2_fixation",
+      "to": "calvin_cycle",
+      "label": "feeds"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "glucose",
+      "label": "produces"
+    },
+    {
+      "from": "glucose",
+      "to": "starch_storage",
+      "label": "stores as"
+    }
+  ]
+}

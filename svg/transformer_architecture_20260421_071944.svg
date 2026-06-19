@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold">Transformer Architecture</text>
+
+  <!-- Nodes -->
+  <g id="input_embedding">
+    <rect x="100" y="50" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="190" y="95" text-anchor="middle" dominant-baseline="middle" font-size="14">Input Embedding</text>
+  </g>
+
+  <g id="positional_encoding">
+    <rect x="100" y="140" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="190" y="175" text-anchor="middle" dominant-baseline="middle" font-size="14">Positional Encoding</text>
+  </g>
+
+  <g id="add_norm_1">
+    <rect x="100" y="230" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="190" y="265" text-anchor="middle" dominant-baseline="middle" font-size="14">Add &amp; Norm</text>
+  </g>
+
+  <g id="multi_head_self_attention">
+    <rect x="100" y="320" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="190" y="355" text-anchor="middle" dominant-baseline="middle" font-size="14">Multi‑Head Self‑Attention</text>
+  </g>
+
+  <g id="add_norm_2">
+    <rect x="100" y="410" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="190" y="445" text-anchor="middle" dominant-baseline="middle" font-size="14">Add &amp; Norm</text>
+  </g>
+
+  <g id="feed_forward_network">
+    <rect x="100" y="500" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="190" y="535" text-anchor="middle" dominant-baseline="middle" font-size="14">Feed‑Forward Network</text>
+  </g>
+
+  <g id="add_norm_3">
+    <rect x="100" y="590" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="190" y="625" text-anchor="middle" dominant-baseline="middle" font-size="14">Add &amp; Norm</text>
+  </g>
+
+  <g id="output_projection">
+    <rect x="100" y="680" width="180" height="70" fill="#fff" stroke="#000"/>
+    <text x="190" y="715" text-anchor="middle" dominant-baseline="middle" font-size="14">Output Projection</text>
+  </g>
+
+  <!-- Edges -->
+  <g id="edges" stroke="#000" stroke-width="2" fill="none">
+    <line x1="190" y1="120" x2="190" y2="140" marker-end="url(#arrowhead)"/>
+    <text x="200" y="130" font-size="12" dominant-baseline="middle">embed</text>
+
+    <line x1="190" y1="210" x2="190" y2="230" marker-end="url(#arrowhead)"/>
+    <text x="200" y="220" font-size="12" dominant-baseline="middle">add</text>
+
+    <line x1="190" y1="300" x2="190" y2="320" marker-end="url(#arrowhead)"/>
+    <text x="200" y="310" font-size="12" dominant-baseline="middle">norm</text>
+
+    <line x1="190" y1="390" x2="190" y2="410" marker-end="url(#arrowhead)"/>
+    <text x="200" y="400" font-size="12" dominant-baseline="middle">add &amp; norm</text>
+
+    <line x1="190" y1="480" x2="190" y2="500" marker-end="url(#arrowhead)"/>
+    <text x="200" y="490" font-size="12" dominant-baseline="middle">norm</text>
+
+    <line x1="190" y1="570" x2="190" y2="590" marker-end="url(#arrowhead)"/>
+    <text x="200" y="580" font-size="12" dominant-baseline="middle">add &amp; norm</text>
+
+    <line x1="190" y1="660" x2="190" y2="680" marker-end="url(#arrowhead)"/>
+    <text x="200" y="670" font-size="12" dominant-baseline="middle">project</text>
+  </g>
+</svg>

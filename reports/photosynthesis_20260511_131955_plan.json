@@ -1,0 +1,138 @@
+{
+  "diagram_type": "flow",
+  "title": "Photosynthesis Process",
+  "nodes": [
+    {
+      "id": "sunlight_absorption",
+      "label": "Sunlight absorption",
+      "x": 20,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "chlorophyll",
+      "label": "Chlorophyll (pigment)",
+      "x": 240,
+      "y": 20,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "water_splitting",
+      "label": "Water splitting (photolysis)",
+      "x": 20,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "oxygen_release",
+      "label": "Oxygen release",
+      "x": 240,
+      "y": 120,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "atp_nadph_production",
+      "label": "ATP & NADPH production",
+      "x": 20,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "light_dependent_reactions",
+      "label": "Light\u2011dependent reactions",
+      "x": 240,
+      "y": 240,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "calvin_cycle",
+      "label": "Calvin Cycle (light\u2011independent)",
+      "x": 20,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "carbon_fixation",
+      "label": "CO\u2082 fixation",
+      "x": 240,
+      "y": 360,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "glucose_production",
+      "label": "Glucose synthesis",
+      "x": 20,
+      "y": 480,
+      "w": 180,
+      "h": 70
+    },
+    {
+      "id": "starch_storage",
+      "label": "Starch storage",
+      "x": 240,
+      "y": 480,
+      "w": 180,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "from": "sunlight_absorption",
+      "to": "chlorophyll",
+      "label": "absorbs"
+    },
+    {
+      "from": "chlorophyll",
+      "to": "light_dependent_reactions",
+      "label": "drives"
+    },
+    {
+      "from": "light_dependent_reactions",
+      "to": "atp_nadph_production",
+      "label": "produces"
+    },
+    {
+      "from": "light_dependent_reactions",
+      "to": "oxygen_release",
+      "label": "releases O\u2082"
+    },
+    {
+      "from": "atp_nadph_production",
+      "to": "calvin_cycle",
+      "label": "provides energy"
+    },
+    {
+      "from": "calvin_cycle",
+      "to": "carbon_fixation",
+      "label": "fixes CO\u2082"
+    },
+    {
+      "from": "carbon_fixation",
+      "to": "glucose_production",
+      "label": "forms glucose"
+    },
+    {
+      "from": "glucose_production",
+      "to": "starch_storage",
+      "label": "stores"
+    },
+    {
+      "from": "water_splitting",
+      "to": "oxygen_release",
+      "label": "source of O\u2082"
+    },
+    {
+      "from": "water_splitting",
+      "to": "atp_nadph_production",
+      "label": "provides electrons"
+    }
+  ]
+}

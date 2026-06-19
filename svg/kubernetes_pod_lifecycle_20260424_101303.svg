@@ -1,0 +1,63 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="black"/>
+    </marker>
+    <style>
+      .box { fill:#e0f7fa; stroke:#006064; stroke-width:2; }
+      .label { font-family:sans-serif; font-size:20px; fill:#000; }
+      .arrow { stroke:#000; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- Pending -->
+  <g id="pending">
+    <rect class="box" x="450" y="50" width="300" height="80" rx="10" ry="10"/>
+    <text class="label" x="600" y="90" text-anchor="middle" dominant-baseline="middle">Pending</text>
+  </g>
+
+  <!-- Scheduling -->
+  <g id="scheduling">
+    <rect class="box" x="450" y="160" width="300" height="80" rx="10" ry="10"/>
+    <text class="label" x="600" y="200" text-anchor="middle" dominant-baseline="middle">Scheduling</text>
+  </g>
+
+  <!-- Container Creating -->
+  <g id="container_creating">
+    <rect class="box" x="450" y="270" width="300" height="80" rx="10" ry="10"/>
+    <text class="label" x="600" y="310" text-anchor="middle" dominant-baseline="middle">ContainerCreating</text>
+  </g>
+
+  <!-- Running -->
+  <g id="running">
+    <rect class="box" x="450" y="380" width="300" height="80" rx="10" ry="10"/>
+    <text class="label" x="600" y="420" text-anchor="middle" dominant-baseline="middle">Running</text>
+  </g>
+
+  <!-- Succeeded -->
+  <g id="succeeded">
+    <rect class="box" x="250" y="590" width="300" height="80" rx="10" ry="10"/>
+    <text class="label" x="400" y="630" text-anchor="middle" dominant-baseline="middle">Succeeded</text>
+  </g>
+
+  <!-- Failed -->
+  <g id="failed">
+    <rect class="box" x="650" y="590" width="300" height="80" rx="10" ry="10"/>
+    <text class="label" x="800" y="630" text-anchor="middle" dominant-baseline="middle">Failed</text>
+  </g>
+
+  <!-- Terminating -->
+  <g id="terminating">
+    <rect class="box" x="450" y="700" width="300" height="80" rx="10" ry="10"/>
+    <text class="label" x="600" y="740" text-anchor="middle" dominant-baseline="middle">Terminating</text>
+  </g>
+
+  <!-- Arrows -->
+  <line class="arrow" x1="600" y1="130" x2="600" y2="160" marker-end="url(#arrowhead_marker)"/>
+  <line class="arrow" x1="600" y1="240" x2="600" y2="270" marker-end="url(#arrowhead_marker)"/>
+  <line class="arrow" x1="600" y1="350" x2="600" y2="380" marker-end="url(#arrowhead_marker)"/>
+  <line class="arrow" x1="600" y1="460" x2="400" y2="590" marker-end="url(#arrowhead_marker)"/>
+  <line class="arrow" x1="600" y1="460" x2="800" y2="590" marker-end="url(#arrowhead_marker)"/>
+  <line class="arrow" x1="400" y1="670" x2="600" y2="700" marker-end="url(#arrowhead_marker)"/>
+  <line class="arrow" x1="800" y1="670" x2="600" y2="700" marker-end="url(#arrowhead_marker)"/>
+</svg>

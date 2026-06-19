@@ -1,0 +1,74 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead_marker" markerWidth="10" markerHeight="7"
+            refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#000"/>
+    </marker>
+    <style>
+      .label { font-family: Arial, sans-serif; font-size: 18px; fill: #000; }
+      .box { fill: #e0f7fa; stroke: #006064; stroke-width: 2; }
+      .ellipse { fill: #fff3e0; stroke: #bf360c; stroke-width: 2; }
+      .circle { fill: #fffde7; stroke: #f57f17; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Cell membrane (outer boundary) -->
+  <g id="cell_membrane">
+    <ellipse class="ellipse" cx="600" cy="400" rx="550" ry="350"/>
+    <text x="600" y="40" text-anchor="middle" class="label">Cell Membrane</text>
+  </g>
+
+  <!-- Nucleus -->
+  <g id="nucleus">
+    <rect class="box" x="300" y="250" width="200" height="200" rx="10"/>
+    <text x="400" y="280" text-anchor="middle" class="label">Nucleus</text>
+    <circle class="circle" cx="400" cy="380" r="30"/>
+    <text x="400" y="385" text-anchor="middle" class="label" font-size="14">Nucleolus</text>
+  </g>
+
+  <!-- Mitochondria -->
+  <g id="mitochondria">
+    <rect class="box" x="800" y="200" width="150" height="80" rx="10"/>
+    <text x="875" y="230" text-anchor="middle" class="label">Mitochondria</text>
+  </g>
+
+  <!-- Endoplasmic Reticulum -->
+  <g id="endoplasmic_reticulum">
+    <rect class="box" x="300" y="500" width="250" height="100" rx="10"/>
+    <text x="425" y="530" text-anchor="middle" class="label">Endoplasmic Reticulum</text>
+  </g>
+
+  <!-- Golgi Apparatus -->
+  <g id="golgi_apparatus">
+    <rect class="box" x="650" y="500" width="200" height="100" rx="10"/>
+    <text x="750" y="530" text-anchor="middle" class="label">Golgi Apparatus</text>
+  </g>
+
+  <!-- Ribosome -->
+  <g id="ribosome">
+    <circle class="circle" cx="200" cy="600" r="20"/>
+    <text x="200" y="595" text-anchor="middle" class="label">Ribosome</text>
+  </g>
+
+  <!-- Arrows showing relationships -->
+  <!-- Ribosome → Endoplasmic Reticulum -->
+  <line x1="220" y1="600" x2="300" y2="540"
+        stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Nucleus → Endoplasmic Reticulum -->
+  <line x1="500" y1="350" x2="300" y2="560"
+        stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Endoplasmic Reticulum → Golgi Apparatus -->
+  <line x1="550" y1="550" x2="650" y2="550"
+        stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead_marker)"/>
+
+  <!-- Mitochondria → ATP (energy) -->
+  <line x1="950" y1="240" x2="880" y2="300"
+        stroke="#000" stroke-width="2"
+        marker-end="url(#arrowhead_marker)"/>
+  <text x="910" y="310" text-anchor="middle" class="label">ATP</text>
+</svg>
